@@ -1,26 +1,68 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 14:05:31 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 14:11:23 UTC ｜ 共 165 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（2）
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `48b30a2`
+### [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) `🧪 测试版` `v3.0.17-beta.2`
 
-发布时间：2026-10-14（29 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/48b30a2b0047132973ecbfefe817bff79db23397)
+发布时间：2026-10-14（5 分钟前）｜ [查看 Release](https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.17-beta.2)
 
-*（原文，翻译暂不可用）*
+# v3.0.17-beta.2
 
-20261014
+此为测试版，版本代码为 30043，可连接正式后端。该版本提供全局版与非全局版，二者均包含 64 位 ARM 与 32 位 ARM 的安装包。这些安装包沿用原有的发布签名机制，支持覆盖升级且不会丢失账号信息及本地数据。
+
+- 修复了在校园路线模拟过程中可能出现的“定位失败 62”问题：当卫星初始化回调提交完成后，系统会及时发送首次连续定位数据；若定位功能先于卫星初始化完成，则系统仍会保留首帧数据等待后续处理，从而兼顾运动世界模块的初始化顺序。
+- 定位首帧数据的处理机制已按调用方、监听器及当前模拟环节进行隔离；当模拟被取消、失败、注销或终止时，相关数据会被及时清理，避免旧的卫星回调信息干扰后续请求。
+- 补充了小米 15 机型对 HyperOS 2 / HyperOS 3 传感器库的适配工作。对于固件版本相近的设备，系统会优先核对实际函数、UID 字段、事件结构及调用链；经结构校验及代码验证后，即可复用通用的模拟逻辑，而不会仅凭系统版本名称来推测相关偏移值。
+- 完善了全局传感器诊断功能，可区分初始化失败、心跳异常、目标未命中、事件时效性不足及数据投递异常等情况，便于用户根据 LSPosed 日志定位步频数据缺失的原因。
+
+现有的路线与步态算法、定位更新频率、设备绑定机制、会员体系、额度管理、设备数量限制及模拟器并发控制等功能均予以保留。ColorOS、已适配的 HyperOS 及 MuMu 平台的接入路径也继续维持不变；若检测到结构不匹配的情况，系统会安全终止该平台的原生接入。固件静态校验结果并不代表所有同类机型均已通过实际设备验证。
+
+全局版与非全局版分别有 116 项 Xposed 单元测试顺利通过，公共原生传感器模块的回归测试也全部达标。独立设备探针测试验证了“定位功能先于卫星初始化完成”与“卫星初始化先于定位功能完成”两种场景，连续定位间隔约为一秒。用户已确认当前测试版本运行正常。更新全局版后请重启设备，以确保原生模块完整加载。
+
+本版本经由自建的 Forgejo CI 完成全面测试，经原证书签名及四包校验后自动发布；自建下载站也会同步开启 Beta 更新服务。软件内部仅向已加入 Beta 计划的账号展示该更新。GitHub 仅作为发行版及附件的镜像平台，不会推送源代码。本次更新不会修改正式后端配置，也不会启用尚在开发中的美国地图功能。
+
+版本号：`3.0.17-beta.2`；Android versionCode：`30043`。
+更新检查：请查看下载服务器上的更新清单。
+本版本由自建 Forgejo CI 完成测试、原证书签名、四包校验及自动发布流程。
+
+安装包由自建 CI 构建并校验，GitHub 镜像则由发布程序自动上传，其内容与自建下载站上的同版本包完全一致。
+GitHub 自动附带的源代码归档对应当前的公开 main 分支，并非本次 APK 的构建源码；本次构建的相关提交信息及包摘要可查阅 build-info.json 与 SHA256SUMS 文件。
+
+<details><summary>查看原文</summary>
+
+# v3.0.17-beta.2
+
+Beta 测试版，版本代码 30043，连接正式后端。提供全局、非全局方案，各有 64 位 ARM 和 32 位 ARM 安装包，沿用原发布签名，可覆盖升级并保留账号与本地数据。
+
+- 修复闪动校园路线模拟可能出现的“定位失败 62”：已先完成卫星初始化回调提交时，及时投递首次连续定位；定位先注册时继续保留首帧等待，兼顾运动世界的初始化顺序。
+- 定位首帧协调按调用方、监听器及本轮模拟隔离，取消、失败、注销和停止模拟时清理，不让旧卫星回调影响后续请求。
+- 补齐小米 15 已静态核对的 HyperOS 2 / HyperOS 3 传感器库接入。相近固件优先核对实际函数、UID 字段、事件结构和调用链，通过结构及已加载代码校验后复用公共模拟逻辑；不按系统版本名称猜测偏移。
+- 完善全局传感器诊断，区分初始化失败、心跳、目标命中、事件时效和投递情况，方便根据 LSPosed 日志定位没有步频的问题。
+
+保留现有路线与步态算法、定位更新频率、设备绑定、会员、额度、设备名额和模拟器并发限制。ColorOS、已有 HyperOS 和 MuMu 精确接入路径继续保留；未知结构不匹配时安全停止该原生接入。固件静态校验不代表所有相近机型均已实机验证。
+
+全局和非全局各 116 项 Xposed 单元测试通过，公共原生传感器回归通过；独立设备探针验证定位先注册与卫星先注册两种顺序，连续定位间隔约一秒。用户已确认当前验收版本测试正常。更新全局版本后请重启设备，使原生模块完整加载。
+
+本版本通过自建 Forgejo CI 完整测试、原证书签名、四包核验后自动发布，自建下载站同步激活 Beta 更新；软件内仅向加入 Beta 的账号展示。GitHub 只镜像发行版和附件，不推送代码。本次不修改正式后端或启用仍在构建的美国地图。
+
+版本号：`3.0.17-beta.2`；Android versionCode：`30043`。
+更新检查：下载服务器更新清单。
+由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。
+
+安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。
+GitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。
+
+</details>
 
 ---
 
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.14-8423.66411e5`
+### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `d882fe9`
 
-发布时间：2026-10-14（27 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.14-8423.66411e5)
+发布时间：2026-10-14（3 分钟前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/d882fe933ac49bb92fd78d3464149e4de44a4eff)
 
-*（原文，翻译暂不可用）*
-
-Source commit: 66411e5503c001ebcfe7e25e9d5ec2d01bbf0dfa
+添加 kuxiaowo 的 5 个项目（主版面、程序员版和游戏版） (#1537)
 
 ---
 
@@ -28,8 +70,10 @@ Source commit: 66411e5503c001ebcfe7e25e9d5ec2d01bbf0dfa
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8423.66411e5` | 正式版 | 2026-10-14 | 27 分钟前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 29 分钟前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 3 分钟前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.2` | 测试版 | 2026-10-14 | 5 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8423.66411e5` | 正式版 | 2026-10-14 | 34 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 36 分钟前 |
 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.0` | 正式版 | 2026-10-14 | 1 小时前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.1` | 正式版 | 2026-10-14 | 2 小时前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-14 | 2 小时前 |
@@ -40,24 +84,22 @@ Source commit: 66411e5503c001ebcfe7e25e9d5ec2d01bbf0dfa
 | [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) | `v1.0.9` | 正式版 | 2026-10-14 | 4 小时前 |
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 5 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 6 小时前 |
-| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 6 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 6 小时前 |
+| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 7 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 7 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 7 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 7 小时前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 8 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 9 小时前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 11 小时前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 12 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 12 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 13 小时前 |
 | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 15 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 15 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 16 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 17 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 18 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 19 小时前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 20 小时前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 23 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 23 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 1 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 1 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 1 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 2 天前 |
@@ -130,7 +172,6 @@ Source commit: 66411e5503c001ebcfe7e25e9d5ec2d01bbf0dfa
 | [bbstom/TelegramGroup](https://github.com/bbstom/TelegramGroup) | — | 提交 | 2026-08-10 | 2 个月前 |
 | [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.1` | 正式版 | 2026-08-09 | 2 个月前 |
 | [ka-pi-ba-la/awesome-ai-tools](https://github.com/ka-pi-ba-la/awesome-ai-tools) | — | 提交 | 2026-08-08 | 2 个月前 |
-| [clashproxy/clash-download](https://github.com/clashproxy/clash-download) | — | 提交 | 2026-08-07 | 2 个月前 |
 | [codeman008/Financial_freedom](https://github.com/codeman008/Financial_freedom) | — | 提交 | 2026-08-06 | 2 个月前 |
 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `preview-seed-fixture` | 测试版 | 2026-08-06 | 2 个月前 |
 | [zjssun/TradeMirror](https://github.com/zjssun/TradeMirror) | `v1.2` | 正式版 | 2026-08-04 | 2 个月前 |
@@ -164,21 +205,15 @@ Source commit: 66411e5503c001ebcfe7e25e9d5ec2d01bbf0dfa
 | [jbiaojerry/ebook-treasure-chest](https://github.com/jbiaojerry/ebook-treasure-chest) | — | 提交 | 2026-01-13 | 9 个月前 |
 | [mpquant/Ashare](https://github.com/mpquant/Ashare) | — | 提交 | 2025-12-24 | 9 个月前 |
 | [Yu-Core/SwashbucklerDiary](https://github.com/Yu-Core/SwashbucklerDiary) | `v1.31.5` | 正式版 | 2025-12-10 | 10 个月前 |
-| [likeflyme/cloudbak](https://github.com/likeflyme/cloudbak) | — | 提交 | 2025-10-24 | 11 个月前 |
-| [xaoyaoo/PyWxDump](https://github.com/xaoyaoo/PyWxDump) | — | 提交 | 2025-10-20 | 11 个月前 |
-| [TonyJiangWJ/Ant-Forest](https://github.com/TonyJiangWJ/Ant-Forest) | `v1.5.5.4` | 正式版 | 2025-08-31 | 1 年前 |
 | [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo) | `ReleaseV1.12.3` | 正式版 | 2025-08-09 | 1 年前 |
 | [huiyadanli/RevokeMsgPatcher](https://github.com/huiyadanli/RevokeMsgPatcher) | `2.1` | 正式版 | 2025-08-03 | 1 年前 |
 | [ChatGPTNextWeb/NextChat](https://github.com/ChatGPTNextWeb/NextChat) | `v2.16.1` | 正式版 | 2025-07-29 | 1 年前 |
 | [Xposed-Modules-Repo/com.skyhand.sinahelper](https://github.com/Xposed-Modules-Repo/com.skyhand.sinahelper) | `331-2.5.1` | 正式版 | 2025-06-23 | 1 年前 |
 | [RikkaApps/Shizuku](https://github.com/RikkaApps/Shizuku) | `v13.6.0` | 正式版 | 2025-05-25 | 1 年前 |
-| [Momo707577045/m3u8-downloader](https://github.com/Momo707577045/m3u8-downloader) | — | 提交 | 2025-04-22 | 1 年前 |
-| [TonyJiangWJ/Unify-Sign](https://github.com/TonyJiangWJ/Unify-Sign) | `v2.4.2.2` | 正式版 | 2025-04-18 | 1 年前 |
 | [cooderl/wewe-rss](https://github.com/cooderl/wewe-rss) | `release-20241215130232` | 正式版 | 2024-12-15 | 1 年前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `Prerelease-Alpha` | 测试版 | 2024-08-12 | 2 年前 |
 | [Max-Tortoise/DouyinLiveRecorder](https://github.com/Max-Tortoise/DouyinLiveRecorder) | — | 提交 | 2024-07-13 | 2 年前 |
 | [jm199504/Financial-Time-Series](https://github.com/jm199504/Financial-Time-Series) | — | 提交 | 2024-07-10 | 2 年前 |
-| [zmqcherish/proxy-script](https://github.com/zmqcherish/proxy-script) | — | 提交 | 2024-05-15 | 2 年前 |
 | [Hackl0us/GeoIP2-CN](https://github.com/Hackl0us/GeoIP2-CN) | — | 提交 | 2024-05-13 | 2 年前 |
 | [hamibot/hamibot](https://github.com/hamibot/hamibot) | — | 提交 | 2023-11-01 | 2 年前 |
 | [zzzgydi/clash-verge](https://github.com/zzzgydi/clash-verge) | `v1.3.8` | 正式版 | 2023-10-30 | 2 年前 |
