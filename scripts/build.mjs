@@ -178,7 +178,7 @@ function stripNoise(s) {
     const lines = t.split('\n');
     const out = [];
     let skip = false, skipLevel = 0;
-    const isPromoHeader = (s) => /^#{1,6}\s*/.test(s) && /(推荐服务|优惠码|\bAFF\b|Telegram|中转|专线|直连|机场|Download\s*\/|\/\s*下载|下载地址|\bFAQ\b|Feedback|问题反馈|提交故障|需求建议)/i.test(s);
+    const isPromoHeader = (s) => /^#{1,6}\s*/.test(s) && /(推荐服务|优惠码|\bAFF\b|Telegram|中转|专线|直连|机场|Download\s*\/|\/\s*下载|下载地址|文件信息|\bFAQ\b|Feedback|问题反馈|提交故障|需求建议)/i.test(s);
     const headerLevel = (s) => { const m = s.match(/^(#{1,6})\s+/); return m ? m[1].length : 0; };
     for (const l of lines) {
       const s = l.trim();
