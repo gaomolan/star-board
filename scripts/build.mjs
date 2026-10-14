@@ -232,6 +232,28 @@ function splitBilingual(text) {
   }
   return null;
 }
+// annotated tag message 回退：release body 为空时取 tag message（tag 不可变，state 永久缓存）
+async function getTagMessage(full, tag, state) {
+  state.tagMsgCache ||= {};
+  const ck = `${full}:${tag}`;
+  if (ck in state.tagMsgCache) return state.tagMsgCache[ck];
+  let msg = null;
+  try {
+    const ref = await ghCached(`/repos/${full}/git/refs/tags/${encodeURIComponent(tag)}`, null);
+    const obj = ref.json && ref.json.object;
+    if (obj && obj.type === 'tag' && obj.url) {
+      const tr = await fetchTimeout(obj.url, { headers: ghHeaders });
+      if (tr.ok) {
+        const tj = await tr.json();
+        if (tj.message && tj.message.trim()) msg = tj.message;
+      }
+    }
+  } catch (e) {
+    console.warn(`  tag message 获取失败 ${full}@${tag}: ${e.message}`);
+  }
+  state.tagMsgCache[ck] = msg;
+  return msg;
+}
 // 捐赠/赞助 solicitation 段落：含捐赠关键词且带支付链接/账号，非列表项/标题的段落整段删除
 function stripDonation(s) {
   const blocks = String(s).split(/\n\s*\n/);
@@ -271,6 +293,16 @@ function isChineseDominant(s) {
   const cjk = (s.match(/[一-鿿]/g) || []).length;
   return cjk / s.length > 0.3;
 }
+// 翻译结果校验：防止翻译机"偷懒"原样返回（中英混合输入时高发）
+function isTranslationValid(src, zh) {
+  if (!zh || !zh.trim()) return false;
+  if (zh.trim() === src.trim()) return false; // 原样回显
+  const srcEn = (src.match(/[A-Za-z]/g) || []).length;
+  const zhEn = (zh.match(/[A-Za-z]/g) || []).length;
+  // 原文英文很多时，译文英文应显著减少（至少减半）；技术术语/版本号允许残留
+  if (srcEn > 200 && zhEn > srcEn * 0.5) return false;
+  return true;
+}
 
 // ---------------- 翻译（主备） ----------------
 // 主翻译源熔断：连续失败 N 次后本轮不再尝试，避免上游故障时每个条目白等超时
@@ -287,7 +319,7 @@ async function translatePrimary(text) {
       model: T_MODEL,
       temperature: 0.2,
       messages: [
-        { role: 'system', content: '你是一个翻译助手。将用户提供的 GitHub Release Notes 翻译成简体中文。保留 Markdown 格式、代码块、链接、版本号、命令原文不动，只翻译自然语言部分。直接输出译文，不要加任何解释。' },
+        { role: 'system', content: '你是一个翻译助手。将用户提供的 GitHub Release Notes 翻译成简体中文。必须翻译所有英文内容，即使文档中已包含部分中文，也要把英文部分完整翻译，不要遗漏任何英文句子。保留 Markdown 格式、代码块、链接、版本号、命令原文不动，只翻译自然语言部分。直接输出译文，不要加任何解释。' },
         { role: 'user', content: text.slice(0, MAX_TRANSLATE_CHARS) },
       ],
     }),
@@ -331,15 +363,21 @@ async function translateSmart(cache, key, text, label = '') {
   if (!text || !text.trim() || isChineseDominant(text)) return null;
   const hash = simpleHash(text);
   const hit = cache[key];
-  if (hit && hit.hash === hash) return { zh: hit.zh, cached: true };
+  if (hit && hit.hash === hash) {
+    // 缓存命中也要校验质量，坏缓存重新翻译
+    if (isTranslationValid(text, hit.zh)) return { zh: hit.zh, cached: true };
+    console.warn(`  缓存翻译质量不达标(${label})，重新翻译`);
+  }
   let zh = null;
   if (T_API_KEY && !primaryDead) {
-    zh = await translateWithRetry(() => translatePrimary(text), `${label}/主源`);
-    if (zh) {
+    const t = await translateWithRetry(() => translatePrimary(text), `${label}/主源`);
+    if (t && isTranslationValid(text, t)) {
+      zh = t;
       primaryFailStreak = 0;
     } else {
       primaryFailStreak++;
-      console.warn(`  主翻译源不可用，尝试 DeepL`);
+      if (t) console.warn(`  主源翻译质量不达标(${label})，转 DeepL`);
+      else console.warn(`  主翻译源不可用，尝试 DeepL`);
       if (primaryFailStreak >= PRIMARY_MAX_STREAK) {
         primaryDead = true;
         console.warn(`  主翻译源连续失败 ${primaryFailStreak} 次，本轮剩余条目跳过主源`);
@@ -347,7 +385,9 @@ async function translateSmart(cache, key, text, label = '') {
     }
   }
   if (!zh && DEEPL_KEY) {
-    zh = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
+    const t2 = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
+    if (t2 && isTranslationValid(text, t2)) zh = t2;
+    else if (t2) console.warn(`  DeepL 翻译质量不达标(${label})，跳过`);
   }
   if (zh) cache[key] = { zh, hash };
   return zh ? { zh, cached: false } : null;
@@ -406,7 +446,13 @@ async function main() {
       const L = relRes.json.filter((r) => !r.draft)[0] || null;
       let body = '', authorZh = '';
       if (L) {
-        const cleaned = cleanBody(L.body || '');
+        let rawBody = L.body || '';
+        // body 为空时回退到 annotated tag message（作者把 changelog 写在 tag 里）
+        if (!rawBody.trim() && L.tag_name) {
+          const tm = await getTagMessage(full, L.tag_name, state);
+          if (tm) rawBody = tm;
+        }
+        const cleaned = cleanBody(rawBody);
         const bi = splitBilingual(cleaned);
         if (bi) {
           authorZh = bi.zh.slice(0, 2000);
@@ -449,7 +495,7 @@ async function main() {
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
     const withinBackfill = r.latest && new Date(r.latest.published_at).getTime() >= backfillCutoff;
 
-    // 旧缓存迁移（304 命中时）：去捐赠段落 + 双语拆分，现场一次性自愈
+    // 旧缓存迁移（304 命中时）：去捐赠段落 + 双语拆分 + 空 body 回退 tag message，现场一次性自愈
     if (r.latest && r.latest.body) {
       const noDon = stripDonation(r.latest.body);
       if (noDon !== r.latest.body) r.latest.body = noDon;
@@ -458,6 +504,19 @@ async function main() {
         if (bi) {
           r.latest.authorZh = bi.zh.slice(0, 2000);
           r.latest.body = bi.en.slice(0, 2000);
+        }
+      }
+    } else if (r.latest && !r.latest.body && r.latest.tag) {
+      // body 为空：试 annotated tag message
+      const tm = await getTagMessage(r.full, r.latest.tag, state);
+      if (tm) {
+        const cleaned = cleanBody(tm);
+        const bi = splitBilingual(cleaned);
+        if (bi) {
+          r.latest.authorZh = bi.zh.slice(0, 2000);
+          r.latest.body = bi.en.slice(0, 2000);
+        } else {
+          r.latest.body = cleaned.slice(0, 2000);
         }
       }
     }
