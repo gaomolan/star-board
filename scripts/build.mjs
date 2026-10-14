@@ -870,7 +870,7 @@ export function renderSite(results, fresh, startedAt) {
   + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}.badge.ruleset{color:var(--accent);border-color:var(--accent)}\n'
   + '.badge.category{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--bg));font-weight:600}.badge.tag{color:var(--muted);border-color:var(--border);background:var(--card)}\n'
   + '.rowmeta{color:var(--muted);font-size:13px;margin:6px 0}.rowmeta.desc{word-break:break-word}\n'
-  + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px}\n'
+  + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px;line-height:1.7}.md-h{display:block;margin:12px 0 6px;font-size:15px}\n'
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
   + 'details pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;color:var(--muted);max-height:400px;overflow:auto}\n'
   + '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}.grid .card{margin-bottom:0}.grid .card h3{font-size:15px}\n'
@@ -890,6 +890,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
++ 'function renderMdInline(s){var t=esc(s);t=t.replace(/^#{1,6}\\s+(.+)$/gm,"<b class=\\"md-h\\">$1</b>");t=t.replace(/\\*\\*(.+?)\\*\\*/g,"<b>$1</b>");return t;}\\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function isRuleSet(full,desc){var n=String(full||"").toLowerCase().split("/")[1]||"";if(/(^|[-_ ])rules?([-_ ]|$)/.test(n))return true;return /规则集|rule.?set/i.test(desc||"");}\n'
@@ -901,7 +902,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return " <span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
-+ 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
++ 'if(r.zh){h+="<div class=\\"zh\\">"+renderMdInline(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
 + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
 + 'return h+"</div>";}\n'
 + 'function fmtDT(ts){if(!ts)return "—";var d=new Date(new Date(ts).getTime()+8*3600*1000);function p(n){return (n<10?"0":"")+n;}return d.getUTCFullYear()+"-"+p(d.getUTCMonth()+1)+"-"+p(d.getUTCDate())+" · "+p(d.getUTCHours())+":"+p(d.getUTCMinutes());}\n'
@@ -911,7 +912,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+(r.release_url?" <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(fmtDT(r.published_at))+" · ⭐ "+(r.stars||0)+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
-+ 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
++ 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+renderMdInline(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
 + 'else if(r.body){h+="<details class=\\"relsum\\"><summary>更新内容"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+esc(r.body)+"</div></details>";}\n'
 + 'return h+"</div></div>";}\n'
 + 'var _fCats=new Set(' + JSON.stringify(CAT_DEFAULT) + ');var _allCats=' + JSON.stringify(CAT_ORDER) + ';function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();'
@@ -975,29 +976,20 @@ async function deploySite(html) {
 }
 
 // Telegram 推送专用：把摘要转成干净的纯文本（Telegram HTML 模式不渲染 markdown）
-function toTgHtml(s) {
-  // Telegram 排版：### 标题 -> <b>，**加粗** -> <b>，列表 -> •，保留段落结构（借鉴 HarmonyX）
+function toPlain(s) {
   return String(s).split('\n').map(line => {
     let t = line.trim();
-    if (!t) return '';
-    // 标题行：### 新增功能 -> <b>新增功能</b>
-    let hm = t.match(/^#{1,6}\s+(.*)/);
-    if (hm) return '<b>' + escHtml(hm[1].trim()) + '</b>';
-    // 列表符统一成 •
-    t = t.replace(/^[\*+\-]\s+/, '\u2022 ').replace(/^\d+[.)]\s+/, '\u2022 ');
-    // 内联链接只留文本
-    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
-    // 去裸 URL、PR 编号
-    t = t.replace(/https?:\/\/\S+/g, '').trim();
-    t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');
-    // 先转义，再把 **加粗** 转为 <b>
-    t = escHtml(t);
-    t = t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<b>$1</b>');
-    t = t.replace(/[`~]/g, '');
+    t = t.replace(/^#{1,6}\s+/, '');                    // 去 markdown 标题
+    t = t.replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1'); // 去加粗
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');     // 内联链接只留文本
+    t = t.replace(/https?:\/\/\S+/g, '').trim();         // 去裸 URL
+    t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');    // 去 PR 编号引用 (#123)
+    t = t.replace(/^[\*+\-]\s+/, '\u2022 ').replace(/^\d+[.)]\s+/, '\u2022 '); // 列表符统一成 •
+    t = t.replace(/[`_~]/g, '').replace(/\*+/g, '');     // 去残留标记
     return t.replace(/\s+/g, ' ').trim();
   })
-  .filter(t => t && !/^[-—=*#>\s]+$/.test(t))
-  .filter((t, i, arr) => t !== arr[i - 1]);
+  .filter(t => t && !/^[-—=*#>\s]+$/.test(t))           // 去纯分隔符行
+  .filter((t, i, arr) => t !== arr[i - 1]);             // 去相邻重复行
 }
 
 // ---------------- Telegram digest ----------------
@@ -1013,7 +1005,7 @@ async function sendDigest(fresh) {
       const raw = isC ? Cr.message : (Lr.body || '');
       summary = stripNoise(raw);
     }
-    const qLines = toTgHtml(summary);
+    const qLines = toPlain(summary).map(s => escHtml(s));
     const quote = `<blockquote>${qLines.length ? qLines.join('\n') : '无更新说明'}</blockquote>`;
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
