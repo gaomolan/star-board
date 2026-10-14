@@ -34,6 +34,8 @@ const cases = [
   ['liuran001/mihomo', 'ai'],
   ['Microsoft/PowerToys', 'system'],
   ['ShareX/ShareX', 'efficiency'],
+  ['example/trademark-generator', 'other'],
+  ['example/stockholm-weather', 'other'],
 ];
 for (const [full, expected] of cases) {
   const repo = repos[full] || {};
