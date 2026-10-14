@@ -1,70 +1,53 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 09:53:33 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 10:18:15 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（2）
 
-### [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) `📝 提交` `97ac750`
+### [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) `🧪 测试版` `v1.35.0-beta.4`
 
-发布时间：2026-10-14（9 分钟前）｜ [查看提交](https://github.com/bilibili/Index-Translate/commit/97ac750cad6cddb401930373b959405f7761750d)
+发布时间：2026-10-14（26 分钟前）｜ [查看 Release](https://github.com/daimiaopeng/coolapk-desktop/releases/tag/v1.35.0-beta.4)
 
-*（原文，翻译暂不可用）*
+## 测试版更新日志
+比较范围：v1.34.1 → 6a28369
 
-docs: update TODO roadmap with unified multimodal translation, Echo-S2ST languages, and scaling out
+### 新增
+- 搜索分类支持拖动排序，并可收起不常用栏目。
+- 无图模式新增详情页图片显示开关。
+- 新增浅色界面底色自定义和动态背景图显示开关。
+- 话题页新增我的点评卡片。
+- 设置页新增“液态玻璃”总开关，默认关闭，可统一控制首页和话题导航的液态玻璃效果。
+
+### 优化
+- 移动首页滚动时可自动收起搜索栏和底部导航；详情页底栏支持随滚动隐藏。
+- 优化移动端上传、下载布局，并增加 CDN 上传入口。
+- 优化首页与话题的沉浸式导航，适配 Android 和 iOS 安全区，并统一上下导航的玻璃效果。
+- 优化设置页窄屏和大字体下的布局。
+
+### 修复
+- 修复手机快捷入口图标缺失。
+- 修复系统榜首屏内容不足时不继续加载下一页，以及双列瀑布流滚动抽动、短列加载不及时的问题。
+- 修复切换应用窗口标签后话题列表意外刷新的问题。
+- 修复头条刷新和分页时游标传递异常。
+- 修复私信图片预览及输入区高度调节问题。
+- 修复详情评论点赞状态的主题色显示，以及话题简介文字与背景对比度不足的问题。
 
 ---
 
-### [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) `✅ 正式版` `v1.0.9`
+### [z-mio/ParseHub](https://github.com/z-mio/ParseHub) `✅ 正式版` `v2.3.5`
 
-发布时间：2026-10-14（16 分钟前）｜ [查看 Release](https://github.com/xweiba/location-spoofer/releases/tag/v1.0.9)
+发布时间：2026-10-14（14 分钟前）｜ [查看 Release](https://github.com/z-mio/ParseHub/releases/tag/v2.3.5)
 
-# v1.0.9
+*（原文，翻译暂不可用）*
 
-发布日期：2026-10-14 · 构建号：11 · **非强制更新**
+## What's Changed
+* 🐛 fix(twitter): 账号被冻结的帖子报作品不可用 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/166
+* 🐛 fix(kuaishou): 作品被删除时报作品不可用 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/167
+* 🐛 fix: 补全 X 违规/受保护帖子与快手用户注销的报错 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/168
+* 🐛 fix(bilibili): 番剧和影视链接明确报不支持 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/169
+* 🔖 chore(version): 升级版本号至 2.3.5 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/170
 
-English · 繁體中文
-
-## 主要更新
-
-- 针对部分安装环境下 App 居中、上下出现大块黑边的问题（#15），添加标准启动屏，避免启动屏声明缺失或未被识别时进入旧屏幕兼容模式。
-- 添加启动屏打包检查和回归测试，确保构建产物包含对应的启动屏资源。
-- 本次为非强制更新，旧版本可继续使用；遇到显示问题的用户建议升级并重新签名安装。
-
-## 验证与适用范围
-
-- 已在 iPhone 12 Pro Max / iOS 18.6 模拟器验证地图和设置页显示，并完成启动屏资源测试、非强制更新策略测试及契约测试。
-- 移除启动屏声明的对照包可复现 #15 的黑边，使用标准启动屏后恢复正常。用户原安装包的签名处理尚未核实；iOS 18.6.2 仍需真机确认。
-
-## 自签安装
-
-- 下载 Release 附件中的未签名 IPA，自行签名后安装。
-- 签名时请保留 Bundle ID、App Group、原有 entitlements，以及启动屏声明和资源。
-
-<details><summary>查看原文</summary>
-
-# v1.0.9
-
-Release date: October 14, 2026 · Build: 11 · **Optional update**
-
-简体中文 · 繁體中文
-
-## Highlights
-
-- Added a standard launch screen to address the app appearing centered with large black bars in some installation environments (#15). This prevents legacy screen compatibility mode when launch-screen recognition is lost.
-- Added packaging checks and regression coverage to ensure the built app contains its declared launch-screen resource.
-- This update is optional. Existing versions remain supported; users affected by the display issue should update and sign the new IPA.
-
-## Validation and scope
-
-- Verified map and Settings display on an iPhone 12 Pro Max simulator running iOS 18.6, along with launch-resource tests, optional-update policy tests, and contract tests.
-- Removing the launch-screen declaration reproduced the black bars reported in #15; a standard launch screen restored normal display. The reporter's signed package has not been inspected, and iOS 18.6.2 still needs device verification.
-
-## Self-signing and installation
-
-- Download the unsigned IPA attached to this Release and sign it before installation.
-- Preserve the Bundle ID, App Group, existing entitlements, and launch-screen declaration and resources when signing.
-
-</details>
+**Full Changelog**: https://github.com/z-mio/ParseHub/compare/v2.3.4...v2.3.5
 
 ---
 
@@ -72,33 +55,33 @@ Release date: October 14, 2026 · Build: 11 · **Optional update**
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 9 分钟前 |
-| [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) | `v1.0.9` | 正式版 | 2026-10-14 | 16 分钟前 |
-| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.4` | 正式版 | 2026-10-14 | 39 分钟前 |
+| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.5` | 正式版 | 2026-10-14 | 14 分钟前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.4` | 测试版 | 2026-10-14 | 26 分钟前 |
+| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 32 分钟前 |
+| [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) | `v1.0.9` | 正式版 | 2026-10-14 | 40 分钟前 |
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 1 小时前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.3` | 测试版 | 2026-10-14 | 1 小时前 |
 | [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.2-release` | 正式版 | 2026-10-14 | 1 小时前 |
 | [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8422.a9140b8` | 正式版 | 2026-10-14 | 1 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 2 小时前 |
-| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 2 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 2 小时前 |
+| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 3 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 3 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 3 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 3 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 4 小时前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 4 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 5 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 5 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 6 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 7 小时前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 8 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 8 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 9 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 10 小时前 |
 | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 11 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 11 小时前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 13 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 12 小时前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 14 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 14 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 15 小时前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 16 小时前 |
-| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 18 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 19 小时前 |
+| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 19 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 20 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 22 小时前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
