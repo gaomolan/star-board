@@ -62,10 +62,14 @@ async function fetchTimeout(url, opts = {}, timeout = FETCH_TIMEOUT) {
   }
 }
 
-async function gh(path, retries = 2) {
+// 带 ETag 缓存的 GET：命中返回 { notModified: true }，304 不消耗 rate limit 配额
+async function ghCached(path, etag, retries = 2) {
   for (let a = 0; a <= retries; a++) {
     try {
-      const res = await fetchTimeout(`https://api.github.com${path}`, { headers: ghHeaders });
+      const headers = { ...ghHeaders };
+      if (etag) headers['If-None-Match'] = etag;
+      const res = await fetchTimeout(`https://api.github.com${path}`, { headers });
+      if (res.status === 304) return { notModified: true };
       if (res.status === 403 || res.status === 429) {
         const wait = Math.min(60000, 5000 * (a + 1));
         console.warn(`GitHub 限流 ${path}，等待 ${wait}ms`);
@@ -73,7 +77,7 @@ async function gh(path, retries = 2) {
         continue;
       }
       if (!res.ok) throw new Error(`GitHub API ${res.status} ${path}`);
-      return await res.json();
+      return { json: await res.json(), etag: res.headers.get('etag') || null };
     } catch (e) {
       if (a === retries) throw e;
       await sleep(1500 * (a + 1));
@@ -244,54 +248,74 @@ async function main() {
 
   console.log(`star-board 启动${isFirstRun ? '（首次运行，建立基线）' : ''}，用户 ${GH_USER}`);
 
-  // 1. star 列表
+  // 1. star 列表（分页 ETag 缓存：无变化返回 304，不消耗配额）
+  state.starredPages ||= {};
   let starred = [];
+  let maxPage = 0;
   for (let page = 1; ; page++) {
-    const batch = await gh(`/users/${GH_USER}/starred?per_page=100&page=${page}`);
+    maxPage = page;
+    const ck = `p${page}`;
+    const cached = state.starredPages[ck];
+    const res = await ghCached(`/users/${GH_USER}/starred?per_page=100&page=${page}`, cached?.etag);
+    let batch;
+    if (res.notModified && cached) {
+      batch = cached.items;
+    } else {
+      batch = res.json.map((r) => ({ full_name: r.full_name, html_url: r.html_url, description: r.description, language: r.language, stargazers_count: r.stargazers_count }));
+      state.starredPages[ck] = { etag: res.etag, items: batch };
+    }
     starred = starred.concat(batch);
     if (batch.length < 100) break;
+  }
+  for (const k of Object.keys(state.starredPages)) {
+    if (parseInt(k.slice(1), 10) > maxPage) delete state.starredPages[k];
   }
   if (TEST_LIMIT > 0) starred = starred.slice(0, TEST_LIMIT);
   console.log(`共 ${starred.length} 个 star`);
 
-  // 2. 逐个取 release（无 release 则取最新 commit 兜底）
+  // 2. 逐个取 release（按仓库 ETag 缓存：无变化返回 304，不消耗配额；无 release 则取最新 commit 兜底）
+  let etagHits = 0;
   const results = await pool(starred, CONCURRENCY, async (repo) => {
     const full = repo.full_name;
-    const rels = await gh(`/repos/${full}/releases?per_page=5`);
-    const valid = rels.filter((r) => !r.draft);
-    const latest = valid[0] || null;
-    const stable = valid.find((r) => !r.prerelease) || null;
+    state.repos[full] ||= {};
+    const prev = state.repos[full];
+    const relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
+    let latest;
+    if (relRes.notModified && 'cachedLatest' in prev) {
+      latest = prev.cachedLatest ? { ...prev.cachedLatest, body: '' } : null;
+      etagHits++;
+    } else {
+      const L = relRes.json.filter((r) => !r.draft)[0] || null;
+      const body = L ? cleanBody(L.body || '') : '';
+      latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body } : null;
+      prev.releasesEtag = relRes.etag;
+      prev.cachedLatest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url } : null;
+    }
     let commit = null;
     if (!latest) {
-      const commits = await gh(`/repos/${full}/commits?per_page=1`);
-      if (commits[0]) {
-        commit = {
-          sha: commits[0].sha.slice(0, 7),
-          date: commits[0].commit.committer.date,
-          message: (commits[0].commit.message || '').split('\n')[0],
-          url: commits[0].html_url,
-        };
+      const cRes = await ghCached(`/repos/${full}/commits?per_page=1`, prev.commitsEtag);
+      if (cRes.notModified && 'cachedCommit' in prev) {
+        commit = prev.cachedCommit;
+        etagHits++;
+      } else {
+        const c = cRes.json[0];
+        commit = c ? { sha: c.sha.slice(0, 7), date: c.commit.committer.date, message: (c.commit.message || '').split('\n')[0], url: c.html_url } : null;
+        prev.commitsEtag = cRes.etag;
+        prev.cachedCommit = commit;
       }
     }
     return {
       full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', stars: repo.stargazers_count || 0,
-      latest: latest ? {
-        id: latest.id, tag: latest.tag_name, name: latest.name || latest.tag_name,
-        prerelease: !!latest.prerelease, published_at: latest.published_at,
-        url: latest.html_url, body: latest.body || '',
-      } : null,
-      stable: stable ? { tag: stable.tag_name, published_at: stable.published_at } : null,
-      commit,
+      latest, commit,
     };
   });
+  console.log(`ETag 缓存命中 ${etagHits} 次（304，不消耗配额）`);
 
   // 3. 判定新增 + 翻译
   const fresh = [];
   let translatedCount = 0;
   for (const r of results) {
     if (r.__error) { console.warn(`跳过 ${r.full || '?'}: ${r.__error}`); continue; }
-    // HTML 正文先清洗，后续翻译/展示/推送都用干净文本
-    if (r.latest?.body) r.latest.body = cleanBody(r.latest.body);
     const prev = state.repos[r.full] || {};
     const curKey = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : 'none');
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
@@ -311,6 +335,7 @@ async function main() {
     }
 
     state.repos[r.full] = {
+      ...prev, // 保留 ETag 缓存
       key: curKey,
       tag: r.latest?.tag || null,
       prerelease: r.latest?.prerelease || false,
@@ -347,6 +372,7 @@ async function main() {
 
 // ---------------- 看板渲染 ----------------
 function badge(r) {
+  if (r.commit && !r.latest) return '`📝 提交`';
   if (!r.latest) return '`无 release`';
   return r.latest.prerelease ? '`🧪 测试版`' : '`✅ 正式版`';
 }
@@ -367,21 +393,25 @@ function renderDashboard(results, fresh, startedAt, isFirstRun) {
     L.push(isFirstRun ? '首次运行，基线已建立。' : '本轮无新增。');
   } else {
     for (const r of fresh) {
-      L.push(`### [${r.full}](${r.url}) ${badge(r)} \`${escMdTable(r.latest.tag)}\``);
+      const Lr = r.latest, Cr = r.commit;
+      const verTag = Lr?.tag || Cr?.sha || '';
+      const ts = Lr?.published_at || Cr?.date;
+      const bodyText = Lr?.body || Cr?.message || '';
+      L.push(`### [${r.full}](${r.url}) ${badge(r)} \`${escMdTable(verTag)}\``);
       L.push(``);
-      L.push(`发布时间：${fmtDate(r.latest.published_at)}（${timeAgo(r.latest.published_at)}）｜ [查看 Release](${r.latest.url})`);
+      L.push(`发布时间：${fmtDate(ts)}（${timeAgo(ts)}）｜ [${Lr ? '查看 Release' : '查看提交'}](${Lr?.url || Cr?.url})`);
       L.push(``);
       if (r.zh) {
         L.push(r.zh.slice(0, 3000));
         L.push(``);
         L.push(`<details><summary>查看原文</summary>`);
         L.push(``);
-        L.push((r.latest.body || '').slice(0, 4000));
+        L.push(bodyText.slice(0, 4000));
         L.push(``);
         L.push(`</details>`);
-      } else if (r.latest.body.trim()) {
-        if (isChineseDominant(r.latest.body)) { L.push(r.latest.body.slice(0, 3000)); }
-        else { L.push(`*（原文，翻译暂不可用）*`); L.push(``); L.push(r.latest.body.slice(0, 3000)); }
+      } else if (bodyText.trim()) {
+        if (isChineseDominant(bodyText)) { L.push(bodyText.slice(0, 3000)); }
+        else { L.push(`*（原文，翻译暂不可用）*`); L.push(``); L.push(bodyText.slice(0, 3000)); }
       } else {
         L.push(`*（无更新说明）*`);
       }
@@ -423,14 +453,18 @@ function renderSite(results, fresh, startedAt) {
   const data = {
     generatedAt: startedAt.toISOString().replace('T', ' ').slice(0, 16) + ' UTC',
     repoSlug: REPO_SLUG,
-    fresh: fresh.map((r) => ({
-      full: r.full, url: r.url,
-      tag: r.latest.tag, prerelease: r.latest.prerelease,
-      published_at: r.latest.published_at, date: fmtDate(r.latest.published_at),
-      zh: r.zh ? r.zh.slice(0, 3000) : null,
-      body: (r.latest.body || '').slice(0, 4000),
-      release_url: r.latest.url,
-    })),
+    fresh: fresh.map((r) => {
+      const Lr = r.latest, Cr = r.commit;
+      return {
+        full: r.full, url: r.url,
+        isCommit: !Lr,
+        tag: Lr?.tag || Cr?.sha || null, prerelease: !!Lr?.prerelease,
+        published_at: Lr?.published_at || Cr?.date, date: fmtDate(Lr?.published_at || Cr?.date),
+        zh: r.zh ? r.zh.slice(0, 3000) : null,
+        body: ((Lr?.body || '') || Cr?.message || '').slice(0, 4000),
+        release_url: Lr?.url || Cr?.url,
+      };
+    }),
     all: sorted.map((r) => {
       const ts = r.latest?.published_at || r.commit?.date;
       return {
@@ -493,7 +527,7 @@ function renderSite(results, fresh, startedAt) {
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
-+ 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
++ 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
 + 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
 + 'function statsHtml(){var s=DATA.stats;if(!s)return "";'
 + 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.n+"</b> 个项目有更新"+(o.rel?",其中 <b>"+o.rel+"</b> 个发了新版本（"+o.stable+" 正式 / "+o.beta+" 测试）":"")+"</div>";}'
@@ -575,13 +609,16 @@ async function deploySite(html) {
 // ---------------- Telegram digest ----------------
 async function sendDigest(fresh) {
   const lines = fresh.slice(0, 20).map((r) => {
-    const tag = escHtml(r.latest.tag);
+    const Lr = r.latest, Cr = r.commit;
+    const isC = !Lr;
+    const tag = escHtml(isC ? Cr.sha : Lr.tag);
     const name = escHtml(r.full);
     const summary = r.zh
       ? escHtml(r.zh.replace(/\s+/g, ' ').slice(0, 160))
-      : escHtml((r.latest.body || '无更新说明').replace(/\s+/g, ' ').slice(0, 160));
-    const kind = r.latest.prerelease ? '🧪测试版' : '✅正式版';
-    return `▪️ <b>${name}</b> <code>${tag}</code> ${kind}\n${summary}\n<a href="${r.latest.url}">查看 Release</a>`;
+      : escHtml(((isC ? Cr.message : Lr.body) || '无更新说明').replace(/\s+/g, ' ').slice(0, 160));
+    const kind = isC ? '📝提交' : (Lr.prerelease ? '🧪测试版' : '✅正式版');
+    const linkText = isC ? '查看提交' : '查看 Release';
+    return `▪️ <b>${name}</b> <code>${tag}</code> ${kind}\n${summary}\n<a href="${isC ? Cr.url : Lr.url}">${linkText}</a>`;
   });
   let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
