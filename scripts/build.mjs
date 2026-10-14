@@ -438,14 +438,14 @@ async function main() {
     state.repos[full] ||= {};
     const prev = state.repos[full];
     const relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
-    let latest;
-    if (relRes.notModified && 'cachedLatest' in prev) {
-      latest = prev.cachedLatest;
+    let releases;
+    if (relRes.notModified && 'cachedReleases' in prev) {
+      releases = prev.cachedReleases;
       etagHits++;
     } else {
-      const L = relRes.json.filter((r) => !r.draft)[0] || null;
-      let body = '', authorZh = '';
-      if (L) {
+      const Ls = relRes.json.filter((r) => !r.draft).slice(0, 3);
+      releases = [];
+      for (const L of Ls) {
         let rawBody = L.body || '';
         // body 为空时回退到 annotated tag message（作者把 changelog 写在 tag 里）
         if (!rawBody.trim() && L.tag_name) {
@@ -454,17 +454,20 @@ async function main() {
         }
         const cleaned = cleanBody(rawBody);
         const bi = splitBilingual(cleaned);
+        let body = '', authorZh = '';
         if (bi) {
           authorZh = bi.zh.slice(0, 2000);
           body = bi.en.slice(0, 2000);
         } else {
           body = cleaned.slice(0, 2000);
         }
+        releases.push({ id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body, authorZh });
       }
-      latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body, authorZh } : null;
       prev.releasesEtag = relRes.etag;
-      prev.cachedLatest = latest;
+      prev.cachedReleases = releases;
+      prev.cachedLatest = releases[0] || null; // 兼容旧字段
     }
+    const latest = releases[0] || null;
     let commit = null;
     if (!latest) {
       const cRes = await ghCached(`/repos/${full}/commits?per_page=1`, prev.commitsEtag);
@@ -480,7 +483,7 @@ async function main() {
     }
     return {
       full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', stars: repo.stargazers_count || 0,
-      latest, commit,
+      latest, releases, commit,
     };
   });
   console.log(`ETag 缓存命中 ${etagHits} 次（304，不消耗配额）`);
@@ -493,52 +496,59 @@ async function main() {
     const prev = state.repos[r.full] || {};
     const curKey = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : 'none');
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
-    const withinBackfill = r.latest && new Date(r.latest.published_at).getTime() >= backfillCutoff;
 
-    // 旧缓存迁移（304 命中时）：去捐赠段落 + 双语拆分 + 空 body 回退 tag message，现场一次性自愈
-    if (r.latest && r.latest.body) {
-      const noDon = stripDonation(r.latest.body);
-      if (noDon !== r.latest.body) r.latest.body = noDon;
-      if (!r.latest.authorZh) {
-        const bi = splitBilingual(r.latest.body);
-        if (bi) {
-          r.latest.authorZh = bi.zh.slice(0, 2000);
-          r.latest.body = bi.en.slice(0, 2000);
+    // 逐 release 处理：迁移 + 翻译（每仓库最多 3 个）
+    const releases = r.releases || (r.latest ? [r.latest] : []);
+    for (const L of releases) {
+      // 旧缓存迁移（304 命中时）：去捐赠段落 + 双语拆分 + 空 body 回退 tag message，现场一次性自愈
+      if (L.body) {
+        const noDon = stripDonation(L.body);
+        if (noDon !== L.body) L.body = noDon;
+        if (!L.authorZh) {
+          const bi = splitBilingual(L.body);
+          if (bi) {
+            L.authorZh = bi.zh.slice(0, 2000);
+            L.body = bi.en.slice(0, 2000);
+          }
+        }
+      } else if (L.tag) {
+        // body 为空：试 annotated tag message
+        const tm = await getTagMessage(r.full, L.tag, state);
+        if (tm) {
+          const cleaned = cleanBody(tm);
+          const bi = splitBilingual(cleaned);
+          if (bi) {
+            L.authorZh = bi.zh.slice(0, 2000);
+            L.body = bi.en.slice(0, 2000);
+          } else {
+            L.body = cleaned.slice(0, 2000);
+          }
         }
       }
-    } else if (r.latest && !r.latest.body && r.latest.tag) {
-      // body 为空：试 annotated tag message
-      const tm = await getTagMessage(r.full, r.latest.tag, state);
-      if (tm) {
-        const cleaned = cleanBody(tm);
-        const bi = splitBilingual(cleaned);
-        if (bi) {
-          r.latest.authorZh = bi.zh.slice(0, 2000);
-          r.latest.body = bi.en.slice(0, 2000);
-        } else {
-          r.latest.body = cleaned.slice(0, 2000);
-        }
-      }
-    }
-    let zh = null;
-    const bodyText = r.latest?.body || '';
-    const pubTime = r.latest ? new Date(r.latest.published_at).getTime() : 0;
-    const inWeek = pubTime >= Date.now() - 7 * 864e5;
-    if (r.latest) {
-      if (r.latest.authorZh) {
+      let zh = null;
+      const bodyText = L.body || '';
+      const pubTime = L.published_at ? new Date(L.published_at).getTime() : 0;
+      const inWeek = pubTime >= Date.now() - 7 * 864e5;
+      const withinBackfill = pubTime >= backfillCutoff;
+      if (L.authorZh) {
         // 作者自带中文：直接用，免翻译
-        zh = r.latest.authorZh.slice(0, 2500);
+        zh = L.authorZh.slice(0, 2500);
       } else if (bodyText && bodyText.length >= 20 && (inWeek || (isFirstRun && withinBackfill))) {
         // 有正文：7 天内的走翻译流程（含缓存哈希校验）；过短正文跳过以省配额
-        const t = await translateSmart(state.translations, `rel:${r.latest.id}`, bodyText, r.full);
+        const t = await translateSmart(state.translations, `rel:${L.id}`, bodyText, r.full);
         if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
       }
       // 兜底读缓存：ETag 命中时无正文也无妨（release 未变则译文有效）
       if (!zh) {
-        const hit = state.translations[`rel:${r.latest.id}`];
+        const hit = state.translations[`rel:${L.id}`];
         if (hit) zh = hit.zh;
       }
+      L.zh = zh;
     }
+    // 兼容：latest / zh 指向最新 release
+    r.latest = releases[0] || null;
+    r.releases = releases;
+    const zh = r.latest?.zh || null;
 
     state.repos[r.full] = {
       ...prev, // 保留 ETag 缓存
@@ -674,6 +684,17 @@ function renderSite(results, fresh, startedAt) {
     all: sorted.map((r) => {
       const ts = r.latest?.published_at || r.commit?.date;
       const inWeek = !!ts && (Date.now() - new Date(ts).getTime()) <= 7 * 864e5;
+      const releases = (r.releases || []).map((L) => {
+        const lts = L.published_at;
+        const lw = !!lts && (Date.now() - new Date(lts).getTime()) <= 7 * 864e5;
+        return {
+          tag: L.tag, prerelease: !!L.prerelease,
+          published_at: lts, date: fmtDate(lts),
+          zh: (lw && L.zh) ? L.zh.slice(0, 2500) : null,
+          body: (lw && L.body) ? L.body.slice(0, 2000) : null,
+          release_url: L.url || null,
+        };
+      });
       return {
         full: r.full, url: r.url,
         desc: (r.desc || '').slice(0, 120), lang: r.lang || '—', stars: r.stars || 0,
@@ -682,18 +703,21 @@ function renderSite(results, fresh, startedAt) {
         zh: (inWeek && r.zh) ? r.zh.slice(0, 2500) : null,
         body: (inWeek && r.latest?.body) ? r.latest.body.slice(0, 2000) : null,
         release_url: r.latest?.url || null,
+        releases,
       };
     }),
   };
-  // 今日 / 7 天新版本速览统计（只计正式版/测试版，不含仅提交）
+  // 今日 / 7 天新版本速览统计（只计正式版/测试版，不含仅提交；按版本计数）
   const stats = { today: { rel: 0, stable: 0, beta: 0 }, week: { rel: 0, stable: 0, beta: 0 } };
   for (const r of sorted) {
-    if (!r.latest) continue;
-    const d = (Date.now() - new Date(r.latest.published_at).getTime()) / 864e5;
-    const bk = d < 1 ? 'today' : (d <= 7 ? 'week' : null);
-    if (!bk) continue;
-    const o = stats[bk]; o.rel++;
-    if (r.latest.prerelease) o.beta++; else o.stable++;
+    for (const L of (r.releases || [])) {
+      if (!L.published_at) continue;
+      const d = (Date.now() - new Date(L.published_at).getTime()) / 864e5;
+      const bk = d < 1 ? 'today' : (d <= 7 ? 'week' : null);
+      if (!bk) continue;
+      const o = stats[bk]; o.rel++;
+      if (L.prerelease) o.beta++; else o.stable++;
+    }
   }
   data.stats = stats;
   // 防止 release 正文里的 </script> 冲破 script 标签
@@ -740,7 +764,7 @@ function renderSite(results, fresh, startedAt) {
 + 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
 + 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
 + 'function statsHtml(){var s=DATA.stats;if(!s)return "";'
-+ 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个项目发了新版本（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
++ 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个版本更新（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
@@ -759,15 +783,16 @@ function renderSite(results, fresh, startedAt) {
 + 'function nameRow(r){return "<div class=\\"nrow\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+" <span class=\\"rowmeta\\">"+esc(r.lang)+" · ⭐ "+(r.stars||0)+" · "+esc(r.date)+"</span></div>";}\n'
 + 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
 + 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(!t||typeOf(r)===t)&&(!l||r.lang===l);}\n'
-+ 'function renderAll(){var mode=document.getElementById("fSort").value;var list=DATA.all.filter(matchFilters);var box=document.getElementById("all");var h="",i;'
++ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
++ 'function renderAll(){var mode=document.getElementById("fSort").value;var list=(mode===\"name\"?DATA.all:flatReleases()).filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'if(mode==="name"){list.sort(function(a,b){var x=a.full.toLowerCase(),y=b.full.toLowerCase();return x<y?-1:(x>y?1:0);});'
 + 'for(i=0;i<list.length;i++){h+=nameRow(list[i]);}}'
-+ 'else{var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
++ 'else{list.sort(function(a,b){var x=a.published_at||"",y=b.published_at||"";return x<y?1:(x>y?-1:0);});var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
 + 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
 + 'h+="<details class=\\"group\\""+(i===0?" open":"")+"><summary>"+SECTIONS[i].icon+" "+SECTIONS[i].name+"（"+groups[i].length+"）</summary>";'
 + 'h+="<div class=\\"timeline\\">"+groups[i].map(tlItem).join("")+"</div></details>";}}'
 + 'if(!list.length){h="<div class=\\"empty\\">没有匹配的项目</div>";}'
-+ 'box.innerHTML=h;document.getElementById("allCount").textContent="（"+list.length+" / "+DATA.all.length+"）";}\n'
++ 'box.innerHTML=h;document.getElementById("allCount").textContent=(mode==="name"?"（"+list.length+" / "+DATA.all.length+"）":"（"+list.length+" 个版本 / "+DATA.all.length+" 个项目"+"）");}\n'
 + '(function(){'
 + 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
 + 'document.getElementById("stats").innerHTML=statsHtml();'
