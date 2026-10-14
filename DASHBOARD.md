@@ -1,6 +1,6 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 05:22:23 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 05:30:41 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（0）
 
@@ -9,7 +9,7 @@
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 45 分钟前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 53 分钟前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 1 小时前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 2 小时前 |
