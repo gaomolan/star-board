@@ -126,10 +126,12 @@ function stripHtml(s) {
 }
 function cleanBody(s) {
   let t = String(s || '');
-  // Remove embedded machine-readable changelog metadata before displaying release notes.
+  // Release authors sometimes embed changelog metadata in HTML comments.
+  // Remove the JSON block first, even if the closing comment delimiter is missing.
   t = t
-    .replace(/<!--[\\s]*flclash:changelog:json[\\s\\S]*?-->/gi, '')
-    .replace(/<!--[\\s]*flclash:changelog:(?:begin|end)[\\s]*-->/gi, '')
+    .replace(/<!--[\s]*flclash:changelog:json\b[\s\S]*?(?:-->|$)/gi, '')
+    .replace(/<!--[\s]*flclash:changelog:(?:begin|end)[\s]*-->/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
     .trim();
   if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
   return t;
@@ -550,7 +552,7 @@ function renderSite(results, fresh, startedAt) {
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
-+ 'function md(s){var x=esc(s);x=x.replace(/<!--[\\s\\S]*?-->/g,"").replace(/^###? (.+)$/gm,"<h4>$1</h4>").replace(/^[-*] (.+)$/gm,"<li>$1</li>").replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1</strong>").replace(/\\*(.+?)\\*/g,"<em>$1</em>").replace(/\\x60([^\\x60]+)\\x60/g,"<code>$1</code>").replace(/\\n{2,}/g,"</p><p>").replace(/\\n/g,"<br>");x=x.replace(/(?:<li>.*?<\\/li>\\s*)+/g,function(m){return "<ul>"+m+"</ul>";});return "<p>"+x+"</p>";}\n'
++ 'function md(s){var x=esc(s).replace(/<!--[\\s\\S]*?-->/g,"");x=x.replace(/!\\[([^\\]]*)\\]\\((https?:\\/\\/[^\\s)]+)(?:\\s+[^)]*)?\\)/g,"<img alt=\"$1\" src=\"$2\" loading=\"lazy\">");x=x.replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\s)]+)(?:\\s+[^)]*)?\\)/g,"<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>");x=x.replace(/^#{1,6}\\s+(.+)$/gm,"<h4>$1</h4>").replace(/^[-*+]\\s+(.+)$/gm,"<li>$1</li>").replace(/^\\s*\\d+\\.\\s+(.+)$/gm,"<li>$1</li>").replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1</strong>").replace(/__(.+?)__/g,"<strong>$1</strong>").replace(/\\*(.+?)\\*/g,"<em>$1</em>").replace(/\\x60([^\\x60]+)\\x60/g,"<code>$1</code>");x=x.replace(/(?:<li>.*?<\\/li>\\s*)+/g,function(m){return "<ul>"+m+"</ul>";});x=x.replace(/\\n{2,}/g,"</p><p>").replace(/\\n/g,"<br>");return "<div class=\"md\">"+x+"</div>";}\\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
@@ -562,7 +564,7 @@ function renderSite(results, fresh, startedAt) {
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
 + 'if(r.zh){h+="<div class=\\"zh\\">"+md(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
-+ 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
++ 'else if(r.body){h+="<div class=\\"zh\\">"+md(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
 + 'return h+"</div>";}\n'
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
