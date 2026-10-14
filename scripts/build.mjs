@@ -169,6 +169,10 @@ function stripNoise(s) {
     return /ghcr\.io|docker\.io|\//.test(m) ? '' : m;
   });
   t = t.replace(/^use these commit-specific image tags[\s\S]*?subsequent builds\.\s*$/gim, '');
+  // 8f) Markdown 下载表格：含安装包文件名的表格整段删除
+  t = t.replace(/^\|.*\|[ \t]*\r?\n\|[\s\-|:]+\|[ \t]*\r?\n(\|.*\|[ \t]*\r?\n?)+/gm, (m) => {
+    return /\.(apk|exe|msi|dmg|pkg|zip|tar\.gz|deb|rpm|appimage)(\s|\||$)/i.test(m) ? '' : m;
+  });
   // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
