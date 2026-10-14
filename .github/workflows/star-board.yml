@@ -36,6 +36,7 @@ jobs:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BACKFILL_ALL: ${{ contains(github.event.head_commit.message, '[backfill-all]') && '1' || '0' }}
 
       - name: 提交看板与状态
         run: |
