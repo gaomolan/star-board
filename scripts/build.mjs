@@ -160,6 +160,15 @@ function stripNoise(s) {
   t = t.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}]/gu, '');
   // 8d) conventional commit 的 scope：fix(twitter): → fix:
   t = t.replace(/\b(fix|feat|chore|docs|style|refactor|test|perf|build|ci|revert)(\([^)\n]+\)):/gi, '$1:');
+  // 8e) Docker/构建元数据：Source commit、Published images、镜像 tag 列表
+  t = t.replace(/^source commit:\s*$/gim, '');
+  t = t.replace(/^[0-9a-f]{40}\s*$/gim, '');
+  t = t.replace(/^published\s+.*images:\s*$/gim, '');
+  t = t.replace(/^[\s\-]*[\w.\/\-]+:[a-z0-9]{7,}[\w.\-]*\s*$/gim, (m) => {
+    // 只删看起来像镜像 tag 的行（ghcr.io/、docker.io/ 或含 / 的镜像名 + 长 hash tag）
+    return /ghcr\.io|docker\.io|\//.test(m) ? '' : m;
+  });
+  t = t.replace(/^use these commit-specific image tags[\s\S]*?subsequent builds\.\s*$/gim, '');
   // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
