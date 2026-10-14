@@ -1,6 +1,6 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 03:50:24 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 03:55:53 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（0）
 
@@ -9,8 +9,8 @@
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 49 分钟前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 1 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 56 分钟前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 2 小时前 |
 | [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 2 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 2 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 2 小时前 |
@@ -22,8 +22,8 @@
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 8 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 9 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 9 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 9 小时前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 11 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 10 小时前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 12 小时前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 12 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 13 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 16 小时前 |
