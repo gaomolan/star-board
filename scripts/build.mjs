@@ -125,7 +125,12 @@ function stripHtml(s) {
     .trim();
 }
 function cleanBody(s) {
-  const t = String(s || '');
+  let t = String(s || '');
+  // Remove embedded machine-readable changelog metadata before displaying release notes.
+  t = t
+    .replace(/<!--[\\s]*flclash:changelog:json[\\s\\S]*?-->/gi, '')
+    .replace(/<!--[\\s]*flclash:changelog:(?:begin|end)[\\s]*-->/gi, '')
+    .trim();
   if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
   return t;
 }
