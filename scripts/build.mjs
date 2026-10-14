@@ -105,6 +105,26 @@ function escMdTable(s) {
 function escHtml(s) {
   return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+// release 正文若是 HTML（下载表格/徽章墙）则剥离标签，避免展示乱码与浪费翻译配额
+function stripHtml(s) {
+  return String(s || '')
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|tr|table|li|ul|ol|h[1-6]|blockquote|td|th)>/gi, '\n')
+    .replace(/<\/?[a-zA-Z][^>\n]*>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#39;/gi, "'")
+    .replace(/[ \t\xa0]+/g, ' ')
+    .replace(/\n[ \t]*/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+function cleanBody(s) {
+  const t = String(s || '');
+  if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
+  return t;
+}
 function timeAgo(ts) {
   if (!ts) return '—';
   const s = Math.floor((Date.now() - new Date(ts).getTime()) / 1000);
@@ -270,14 +290,18 @@ async function main() {
   let translatedCount = 0;
   for (const r of results) {
     if (r.__error) { console.warn(`跳过 ${r.full || '?'}: ${r.__error}`); continue; }
+    // HTML 正文先清洗，后续翻译/展示/推送都用干净文本
+    if (r.latest?.body) r.latest.body = cleanBody(r.latest.body);
     const prev = state.repos[r.full] || {};
     const curKey = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : 'none');
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
     const withinBackfill = r.latest && new Date(r.latest.published_at).getTime() >= backfillCutoff;
 
     let zh = null;
-    if (r.latest?.body && (isNew || (isFirstRun && withinBackfill))) {
-      const t = await translateSmart(state.translations, `rel:${r.latest.id}`, r.latest.body, r.full);
+    const bodyText = r.latest?.body || '';
+    // 正文过短（多为纯 HTML 剥离后的残留）则跳过翻译，节省配额
+    if (bodyText.length >= 20 && (isNew || (isFirstRun && withinBackfill))) {
+      const t = await translateSmart(state.translations, `rel:${r.latest.id}`, bodyText, r.full);
       if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
     }
     // 命中缓存的旧翻译也取出来展示
@@ -417,6 +441,17 @@ function renderSite(results, fresh, startedAt) {
       };
     }),
   };
+  // 今日 / 7 天更新速览统计
+  const stats = { today: { n: 0, rel: 0, stable: 0, beta: 0 }, week: { n: 0, rel: 0, stable: 0, beta: 0 } };
+  for (const r of sorted) {
+    const ts = r.latest?.published_at || r.commit?.date;
+    const d = ts ? (Date.now() - new Date(ts).getTime()) / 864e5 : 99;
+    const bk = d < 1 ? 'today' : (d <= 7 ? 'week' : null);
+    if (!bk) continue;
+    const o = stats[bk]; o.n++;
+    if (r.latest) { o.rel++; if (r.latest.prerelease) o.beta++; else o.stable++; }
+  }
+  data.stats = stats;
   // 防止 release 正文里的 </script> 冲破 script 标签
   const json = JSON.stringify(data).replace(/<\/script/gi, '<\\/script');
 
@@ -440,7 +475,7 @@ function renderSite(results, fresh, startedAt) {
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
   + 'details pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;color:var(--muted);max-height:400px;overflow:auto}\n'
   + '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}.grid .card{margin-bottom:0}.grid .card h3{font-size:15px}\n'
-  + '.empty{color:var(--muted);padding:24px;text-align:center}details.group{margin-bottom:10px}details.group>summary{cursor:pointer;font-size:16px;font-weight:600;padding:10px 2px;list-style:none}details.group>summary::-webkit-details-marker{display:none}details.group>summary:before{content:"▸ ";color:var(--muted)}details.group[open]>summary:before{content:"▾ "}.timeline{position:relative;margin:6px 0 0 6px;padding-left:22px;border-left:2px solid var(--border)}.titem{position:relative;padding-bottom:16px}.titem .dot{position:absolute;left:-29px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--muted);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--border)}.titem .dot.stable{background:var(--green)}.titem .dot.beta{background:var(--amber)}.tmonth{font-weight:700;font-size:15px;margin:20px 0 12px}.tmonth:first-child{margin-top:6px}.titem .thead{font-size:15px;font-weight:600;word-break:break-all}.titem .thead a{color:var(--fg);text-decoration:none}.titem .thead a:hover{color:var(--accent)}.nrow{padding:10px 2px;border-bottom:1px solid var(--border);font-size:14px;word-break:break-all}.nrow a{color:var(--fg);text-decoration:none;font-weight:600}.nrow a:hover{color:var(--accent)}footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}a{color:var(--accent)}\n'
+  + '.empty{color:var(--muted);padding:24px;text-align:center}details.group{margin-bottom:10px}details.group>summary{cursor:pointer;font-size:16px;font-weight:600;padding:10px 2px;list-style:none}details.group>summary::-webkit-details-marker{display:none}details.group>summary:before{content:"▸ ";color:var(--muted)}details.group[open]>summary:before{content:"▾ "}.timeline{position:relative;margin:6px 0 0 6px;padding-left:22px;border-left:2px solid var(--border)}.titem{position:relative;padding-bottom:16px}.titem .dot{position:absolute;left:-29px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--muted);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--border)}.titem .dot.stable{background:var(--green)}.titem .dot.beta{background:var(--amber)}.tmonth{font-weight:700;font-size:15px;margin:20px 0 12px}.tmonth:first-child{margin-top:6px}.titem .thead{font-size:15px;font-weight:600;word-break:break-all}.titem .thead a{color:var(--fg);text-decoration:none}.titem .thead a:hover{color:var(--accent)}.nrow{padding:10px 2px;border-bottom:1px solid var(--border);font-size:14px;word-break:break-all}.nrow a{color:var(--fg);text-decoration:none;font-weight:600}.nrow a:hover{color:var(--accent)}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 14px}.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:13px;color:var(--muted)}.stat b{color:var(--fg);font-size:16px}footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}a{color:var(--accent)}\n'
   + '</style>\n</head>\n<body>\n<div class="wrap">\n'
   + '<header class="top"><h1>⭐ Star 动态看板</h1><div class="meta" id="meta"></div></header>\n'
   + '<div class="filters">\n'
@@ -450,7 +485,7 @@ function renderSite(results, fresh, startedAt) {
   + '<select id="fSort"><option value="time">按更新时间</option><option value="name">按名称</option></select>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
-  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div id="all"></div></section>\n'
+  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="stats" id="stats"></div><div id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
 + 'var DATA = ' + json + ';\n'
@@ -460,11 +495,14 @@ function renderSite(results, fresh, startedAt) {
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
 + 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
++ 'function statsHtml(){var s=DATA.stats;if(!s)return "";'
++ 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.n+"</b> 个项目有更新"+(o.rel?",其中 <b>"+o.rel+"</b> 个发了新版本（"+o.stable+" 正式 / "+o.beta+" 测试）":"")+"</div>";}'
++ 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
 + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
-+ 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无更新说明）</div>";}'
++ 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
 + 'return h+"</div>";}\n'
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";'
@@ -486,6 +524,7 @@ function renderSite(results, fresh, startedAt) {
 + 'box.innerHTML=h;document.getElementById("allCount").textContent="（"+list.length+" / "+DATA.all.length+"）";}\n'
 + '(function(){'
 + 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
++ 'document.getElementById("stats").innerHTML=statsHtml();'
 + 'var langs={},i;for(i=0;i<DATA.all.length;i++){langs[DATA.all[i].lang]=1;}'
 + 'var sel=document.getElementById("fLang");Object.keys(langs).sort().forEach(function(l){var o=document.createElement("option");o.value=l;o.textContent=l;sel.appendChild(o);});'
 + 'var fh="";for(i=0;i<DATA.fresh.length;i++){fh+=freshCard(DATA.fresh[i]);}'
@@ -496,6 +535,7 @@ function renderSite(results, fresh, startedAt) {
 + '["q","fType","fLang","fSort"].forEach(function(id){document.getElementById(id).addEventListener("input",renderAll);});'
 + '})();\n'
 + '</scr'+'ipt>\n</body>\n</html>\n';
+
 
 
 
