@@ -18,7 +18,8 @@
  *   TEST_LIMIT                          调试用：只处理前 N 个 star 仓库（默认 0 = 全部）
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 // ---------------- 配置 ----------------
 const GH_USER = process.env.GH_USER || 'ly6980';
@@ -426,7 +427,7 @@ async function main() {
     if (res.notModified && cached) {
       batch = cached.items;
     } else {
-      batch = res.json.map((r) => ({ full_name: r.full_name, html_url: r.html_url, description: r.description, language: r.language, stargazers_count: r.stargazers_count }));
+      batch = res.json.map((r) => ({ full_name: r.full_name, html_url: r.html_url, description: r.description, language: r.language, topics: Array.isArray(r.topics) ? r.topics : [], stargazers_count: r.stargazers_count }));
       state.starredPages[ck] = { etag: res.etag, items: batch };
     }
     starred = starred.concat(batch);
@@ -444,6 +445,21 @@ async function main() {
     const full = repo.full_name;
     state.repos[full] ||= {};
     const prev = state.repos[full];
+    // Topics 缓存优先；旧 starredPages 没有 Topics 时按仓库补取一次，失败不影响 release 流程。
+    let topics = Array.isArray(repo.topics) && repo.topics.length ? repo.topics : (Array.isArray(prev.topics) ? prev.topics : []);
+    if (!topics.length && !prev.topicsFetched) {
+      try {
+        const metaRes = await ghCached(`/repos/${full}`, prev.repoMetaEtag);
+        if (!metaRes.notModified && metaRes.json) {
+          topics = Array.isArray(metaRes.json.topics) ? metaRes.json.topics : [];
+          prev.repoMetaEtag = metaRes.etag || prev.repoMetaEtag;
+        }
+        prev.topics = topics;
+        prev.topicsFetched = true;
+      } catch (e) {
+        console.warn(`Topics 获取失败 ${full}: ${e.message}`);
+      }
+    }
     const relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
     let releases;
     if (relRes.notModified && 'cachedReleases' in prev) {
@@ -489,7 +505,7 @@ async function main() {
       }
     }
     return {
-      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', stars: repo.stargazers_count || 0,
+      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', topics, stars: repo.stargazers_count || 0,
       latest, releases, commit,
     };
   });
@@ -594,36 +610,7 @@ async function main() {
 }
 
 // ---------------- 看板渲染 ----------------
-function isRuleSet(full, desc) {
-  const name = String(full || '').toLowerCase().split('/')[1] || '';
-  if (/(^|[-_ ])rules?([-_ ]|$)/.test(name)) return true;
-  if (/规则集|rule.?set/i.test(desc || '')) return true;
-  return false;
-}
-// 项目分类（多标签，用于筛选 pills）
-function categorize(full, desc, lang) {
-  const s = String(full || '').toLowerCase() + ' ' + String(desc || '').toLowerCase();
-  const tags = [];
-  function add(t) { if (tags.indexOf(t) < 0) tags.push(t); }
-  if (isRuleSet(full, desc)) add('ruleset');
-  if (/quant|chanlun|trade|tushare|缠论|量化|stock/i.test(s)) add('fin');
-  if (/spider|crawler|爬虫/i.test(s)) add('tool');
-  if (/edgetunnel|passwall|helloworld|shadowsocks|v2ray|xray|hysteria|mihomo|sing.?box|clash/i.test(s)) add('proxy');
-  if (/gpt|llm|ollama|diffusion|whisper|Muse|gemini|agent|mcp|ai-/i.test(s)) add('ai');
-  if (/telegram|nagram/i.test(s)) add('tg');
-  if (/douyin|live|m3u8|tvbox|video|music|player|nas/i.test(s)) add('tool');
-  if (/autojs|薅羊|签到|hamibot|xposed|patch|location|定位|obsidian|note/i.test(s)) add('tool');
-  if (/wechat|微信|wxdump/i.test(s)) add('wechat');
-  if (/rss|newsnook/i.test(s)) add('rss');
-  if (/browser|extension|userscript/i.test(s)) add('tool');
-  if (lang === 'Kotlin' || /android/i.test(s)) add('android');
-  if (/tutorial|guide|awesome|指南/i.test(s)) add('doc');
-  if (!tags.length) add('other');
-  return tags;
-}
-const CAT_LABELS = { ai:'🤖 AI', proxy:'🌐 代理', android:'📱 Android', fin:'💹 量化', wechat:'💬 微信', tg:'✈️ TG', rss:'📡 RSS', ruleset:'📦 规则集', tool:'🔧 工具', doc:'📚 教程', other:'❓ 其他' };
-const CAT_ORDER = ['ai','proxy','android','tg','rss','tool','fin','wechat','ruleset','doc','other'];
-const CAT_DEFAULT = ['ai','proxy','android','tg','rss','tool'];
+import { isRuleSet, CAT_LABELS, CAT_ORDER, CAT_DEFAULT, CAT_TAG_LABELS, classifyProject } from './categories.mjs';
 function badge(r) {
   if (r.commit && !r.latest) return '`📝 提交`';
   if (!r.latest) return '`无 release`';
@@ -698,7 +685,7 @@ function renderDashboard(results, fresh, startedAt, isFirstRun) {
 }
 
 // ---------------- 网站生成 ----------------
-function renderSite(results, fresh, startedAt) {
+export function renderSite(results, fresh, startedAt) {
   const sorted = [...results].sort((a, b) => {
     const ta = a.latest?.published_at || a.commit?.date || '';
     const tb = b.latest?.published_at || b.commit?.date || '';
@@ -709,8 +696,9 @@ function renderSite(results, fresh, startedAt) {
     repoSlug: REPO_SLUG,
     fresh: fresh.map((r) => {
       const Lr = r.latest, Cr = r.commit;
+      const category = classifyProject(r.full, r.desc, r.lang, r.topics);
       return {
-        full: r.full, url: r.url,
+        full: r.full, url: r.url, primary: category.primary, tags: category.tags,
         isCommit: !Lr,
         tag: Lr?.tag || Cr?.sha || null, prerelease: !!Lr?.prerelease,
         published_at: Lr?.published_at || Cr?.date, date: fmtDate(Lr?.published_at || Cr?.date),
@@ -735,8 +723,8 @@ function renderSite(results, fresh, startedAt) {
       });
       return {
         full: r.full, url: r.url,
-        desc: (r.desc || '').slice(0, 120), lang: r.lang || '—', stars: r.stars || 0,
-        cats: categorize(r.full, r.desc, r.lang),
+        desc: (r.desc || '').slice(0, 120), lang: r.lang || '—', stars: r.stars || 0, topics: r.topics || [],
+        ...(() => { const c = classifyProject(r.full, r.desc, r.lang, r.topics); return { cats: [c.primary], primary: c.primary, tags: c.tags, categoryConfidence: c.confidence }; })(),
         tag: r.latest?.tag || null, prerelease: !!r.latest?.prerelease,
         published_at: ts, date: fmtDate(ts),
         zh: (inWeek && r.zh) ? r.zh.slice(0, 2500) : null,
@@ -759,6 +747,18 @@ function renderSite(results, fresh, startedAt) {
     }
   }
   data.stats = stats;
+  // 分类质量检查只告警，不阻断 release 翻译、缓存和页面生成。
+  const categoryCounts = Object.fromEntries(CAT_ORDER.map((k) => [k, 0]));
+  let reviewCount = 0, invalidCount = 0;
+  for (const item of data.all) {
+    if (!CAT_ORDER.includes(item.primary)) invalidCount++;
+    else categoryCounts[item.primary]++;
+    if (item.categoryConfidence === 'review') reviewCount++;
+  }
+  if (invalidCount) console.warn(`分类质量检查：${invalidCount} 个项目主分类无效`);
+  if (data.all.length && categoryCounts.other / data.all.length > 0.25) console.warn(`分类质量检查：其他占比 ${Math.round(categoryCounts.other / data.all.length * 100)}%，建议检查分类规则`);
+  if (reviewCount) console.log(`分类待复核：${reviewCount} 个项目`);
+  console.log('主分类统计：' + Object.entries(categoryCounts).filter(([, n]) => n > 0).map(([k, n]) => CAT_LABELS[k] + ':' + n).join(' / '));
   // 防止 release 正文里的 </script> 冲破 script 标签
   const json = JSON.stringify(data).replace(/<\/script/gi, '<\\/script');
 
@@ -794,6 +794,8 @@ function renderSite(results, fresh, startedAt) {
   + '<section><h2 style="display:none">📋 全部项目 <span id="allCount"></span></h2><div class="stats" id="stats" style="display:none"></div><div id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
++ 'var CAT_LABELS = ' + JSON.stringify(CAT_LABELS) + ';\n'
++ 'var CAT_TAG_LABELS = ' + JSON.stringify(CAT_TAG_LABELS) + ';\n'
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
@@ -806,7 +808,7 @@ function renderSite(results, fresh, startedAt) {
 + 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个版本更新（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
-+ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
++ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return " <span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
 + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
 + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
@@ -815,7 +817,7 @@ function renderSite(results, fresh, startedAt) {
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></div>";\n'
-+ 'h+="<div class=\\"rowmeta\\">"+badge(r)+(r.tag?"<span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+(r.release_url?" <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a>":"")+"</div>";\n'
++ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+(r.release_url?" <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(fmtDT(r.published_at))+" · ⭐ "+(r.stars||0)+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
 + 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要</summary><div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
@@ -824,7 +826,7 @@ function renderSite(results, fresh, startedAt) {
 + 'var _fCats=new Set(' + JSON.stringify(CAT_DEFAULT) + ');var _allCats=' + JSON.stringify(CAT_ORDER) + ';function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();'
 + 'function catMatch(r){var cs=r.cats||["other"];for(var i=0;i<cs.length;i++){if(_fCats.has(cs[i]))return true;}return false;}\n'
 + 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(_fCats.size===0||catMatch(r));}\n'
-+ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cats:r.cats,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
++ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cats:r.cats,primary:r.primary,tags:r.tags,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
 + 'function renderAll(){var list=flatReleases().filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'list.sort(function(a,b){var x=a.published_at||"",y=b.published_at||"";return x<y?1:(x>y?-1:0);});var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
 + 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
@@ -929,4 +931,6 @@ async function sendDigest(fresh) {
   }
 }
 
-main().catch((e) => { console.error('FATAL', e); process.exit(1); });
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().catch((e) => { console.error('FATAL', e); process.exit(1); });
+}

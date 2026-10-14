@@ -1,0 +1,35 @@
+name: category-validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'state.json'
+      - '.github/workflows/category-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: 检查 JavaScript 语法
+        run: |
+          node --check scripts/build.mjs
+          node --check scripts/categories.mjs
+          node --check scripts/test-categories.mjs
+          node --check scripts/test-site-browser.mjs
+      - name: 验证当前 Star 项目分类
+        run: node scripts/test-categories.mjs
+      - name: 安装浏览器测试依赖
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: 验证网页分类交互与移动端布局
+        run: node scripts/test-site-browser.mjs
