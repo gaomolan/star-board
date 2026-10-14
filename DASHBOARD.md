@@ -1,38 +1,101 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 02:33:21 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 03:10:37 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（0）
+## 🆕 本次新增（1）
 
-本轮无新增。
+### [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) `✅ 正式版` `v0.7.35`
+
+发布时间：2026-10-14（11 分钟前）｜ [查看 Release](https://github.com/EKKOLearnAI/ekko-studio/releases/tag/v0.7.35)
+
+## 更新重点
+
+- 新增 Agent 卡片进入聊天思考头像的过渡动画，并改善减少动态效果时的可见性与主题背景衔接 (#3378、#3386)
+- 新增土耳其语界面支持 (#3338)
+- 修复关闭「显示费用」后，聊天用量卡片仍然显示的问题 (#3381)
+- 更新 Edge TTS 语音服务接口兼容性 (#3381)
+- 改善会话删除、归档与未读状态的跨设备同步 (#3380)
+- 修复编程 Agent 通过兼容接口调用模型时的 Token 用量回传，使自动压缩能正确识别上下文用量 (#3334)
+- 按模型输出上限设置 Anthropic 兼容请求，减少长回复和工具调用被提前截断的问题 (#3334)
+- 修复 Ekko 自定义 Anthropic 地址的路径拼接，兼容根地址、版本路径和完整消息接口 (#3384)
+- Studio 与桌面端版本同步更新为 `0.7.35`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3387)
+
+## What's Changed
+* fix(coding-agents): forward canonical usage and model output limit through Responses proxy by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3334
+* feat(i18n): add Turkish locale support by @KeuqS in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
+* [codex] animate Agent cards into thinking avatars by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3378
+* fix: honor Show Cost and restore Edge TTS synthesis by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3381
+* [codex] clear unread counts when another device deletes a session by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3380
+* fix(ekko): resolve Anthropic host roots through v1/messages by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3384
+* [codex] keep Agent deployment visible and match chat theme backgrounds by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3386
+* [codex] prepare Studio 0.7.35 with localized changelog by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3387
+
+## New Contributors
+* @KeuqS made their first contribution in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
+
+**Full Changelog**: https://github.com/EKKOLearnAI/ekko-studio/compare/v0.7.34...v0.7.35
+
+<details><summary>查看原文</summary>
+
+## 更新重点
+
+- 新增 Agent 卡片进入聊天思考头像的过渡动画，并改善减少动态效果时的可见性与主题背景衔接 (#3378、#3386)
+- 新增土耳其语界面支持 (#3338)
+- 修复关闭「显示费用」后，聊天用量卡片仍然显示的问题 (#3381)
+- 更新 Edge TTS 语音服务接口兼容性 (#3381)
+- 改善会话删除、归档与未读状态的跨设备同步 (#3380)
+- 修复编程 Agent 通过兼容接口调用模型时的 Token 用量回传，使自动压缩能正确识别上下文用量 (#3334)
+- 按模型输出上限设置 Anthropic 兼容请求，减少长回复和工具调用被提前截断的问题 (#3334)
+- 修复 Ekko 自定义 Anthropic 地址的路径拼接，兼容根地址、版本路径和完整消息接口 (#3384)
+- Studio 与桌面端版本同步更新为 `0.7.35`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3387)
+
+## What's Changed
+* fix(coding-agents): forward canonical usage and model output limit through Responses proxy by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3334
+* feat(i18n): add Turkish locale support by @KeuqS in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
+* [codex] animate Agent cards into thinking avatars by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3378
+* fix: honor Show Cost and restore Edge TTS synthesis by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3381
+* [codex] clear unread counts when another device deletes a session by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3380
+* fix(ekko): resolve Anthropic host roots through v1/messages by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3384
+* [codex] keep Agent deployment visible and match chat theme backgrounds by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3386
+* [codex] prepare Studio 0.7.35 with localized changelog by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3387
+
+## New Contributors
+* @KeuqS made their first contribution in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
+
+**Full Changelog**: https://github.com/EKKOLearnAI/ekko-studio/compare/v0.7.34...v0.7.35
+
+</details>
+
+---
+
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 39 分钟前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 58 分钟前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 11 分钟前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 1 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 1 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 1 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 1 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 2 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 2 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-13 | 2 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 3 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 4 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-13 | 3 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 4 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 5 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 6 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 6 小时前 |
-| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 7 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 8 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 8 小时前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 10 小时前 |
-| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 11 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 12 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 14 小时前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 18 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 7 小时前 |
+| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 8 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 9 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 9 小时前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 11 小时前 |
+| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 12 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 13 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 15 小时前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 19 小时前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 19 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 21 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 22 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2851.0` | 测试版 | 2026-10-12 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 1 天前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.7` | 正式版 | 2026-10-12 | 1 天前 |
 | [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
 | [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5-beta2` | 测试版 | 2026-10-12 | 1 天前 |
 | [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.8.12-beta.6` | 测试版 | 2026-10-12 | 1 天前 |
@@ -47,7 +110,7 @@
 | [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `v2.9.0` | 正式版 | 2026-10-11 | 2 天前 |
 | [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 2 天前 |
 | [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 3 天前 |
-| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.0-beta.2` | 正式版 | 2026-10-10 | 3 天前 |
+| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.0-beta.2` | 测试版 | 2026-10-10 | 3 天前 |
 | [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 3 天前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.1` | 正式版 | 2026-10-10 | 3 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 3 天前 |
@@ -60,11 +123,11 @@
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-09 | 4 天前 |
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.0` | 正式版 | 2026-10-09 | 4 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.31.1703` | 正式版 | 2026-10-09 | 4 天前 |
-| [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 4 天前 |
+| [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 5 天前 |
 | [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 5 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 5 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.1` | 正式版 | 2026-10-08 | 5 天前 |
-| [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 5 天前 |
+| [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 6 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 6 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.16.0` | 正式版 | 2026-10-07 | 6 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 6 天前 |
@@ -76,7 +139,7 @@
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 9 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.4-1` | 正式版 | 2026-10-04 | 9 天前 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.6.0` | 正式版 | 2026-10-03 | 10 天前 |
-| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 10 天前 |
+| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 11 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 13 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 13 天前 |
 | [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.1` | 正式版 | 2026-09-25 | 18 天前 |
