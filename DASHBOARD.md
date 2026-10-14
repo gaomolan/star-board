@@ -1,17 +1,148 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 01:51:54 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 02:04:29 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（0）
+## 🆕 本次新增（1）
 
-本轮无新增。
+### [chen08209/FlClash](https://github.com/chen08209/FlClash) `✅ 正式版` `v0.9.0`
+
+发布时间：2026-10-14（9 分钟前）｜ [查看 Release](https://github.com/chen08209/FlClash/releases/tag/v0.9.0)
+
+<!-- flclash:changelog:begin -->
+### 重大变更
+- **视图** 移除了 DNS 和 NTP 覆盖开关；选定的键值将应用于所有配置文件
+- **数据库** 移除了自定义覆盖；请将其重新构建为自定义配置文件
+
+### 新功能
+- **视图** 按键设置 DNS、NTP、嗅探器和 TUN 参数
+- **配置文件** 自定义配置文件
+- **界面** 堆叠式面板、上下文菜单和排序模式
+- **提供商** DNS、主机和端口设置无需重启即可生效
+- **Android** 启动器快捷方式和一键按需访问
+- **核心** 通过分享链接导入及 mrs 规则集
+
+### 错误修复
+- **数据库** 无法读取的设置不再阻碍启动或恢复操作
+- **桌面端** Windows 和 Linux 桌面端修复
+- **核心、辅助** 提升权限的核心仅响应其所有者
+
+<!-- flclash:changelog:end -->
+
+<!-- flclash:changelog:json
+{"schemaVersion":2,"versions":[{"version":"0.9.0","tag":"v0.9.0","date":"2026-10-14","预发布":false,"groups":[{"type":"破坏性","entries":[{"id":"491fae1","scope":"视图","text":"已移除 DNS 和 NTP 覆盖开关； 选定的键将应用于所有配置文件"},{"id":"1677024","scope":"database","text":"已移除自定义覆盖设置；请将其重建为自定义配置文件"}]},{"type":"feat","entries":[{"id":"491fae1","scope":"视图","text":"按键设置的 DNS、NTP、嗅探器和 TUN 配置"},{"id":"3abda78","scope":"profiles","text":"自定义配置文件"},{"id":"8c43053","scope":"ui","text":"堆叠视图、上下文菜单和排序模式"},{"id":"532ebf0","scope":"providers","text":"无需重启即可应用 DNS、主机和端口设置"},{"id":"d3fa225","scope":"android","text":"启动器快捷方式和一步式按需访问"},{"id":"2fa2f7f","scope":"core","text":"导入共享链接和 MRS 规则集"}]},{"type":"fix","entries":[{"id":"1677024","scope":"database","text":"无法读取的设置不再阻碍启动或恢复"},{"id":"94a25f4","scope":"desktop","text":"Windows 和 Linux 桌面端修复"},{"id":"d780cb8","scope":"core,helper","text":"具有提升权限的 Core 仅响应其所有者"}]}]}]}
+-->
+<div align=center>
+
+[![版本下载](https://img.shields.io/github/downloads/chen08209/FlClash/v0.9.0/total?style=flat-square&logo=github)](https://img.shields.io/github/downloads/chen08209/FlClash/v0.9.0/)
+
+</div>
+
+**请根据您的操作系统下载：**
+
+<div align=left>
+<table>
+    <thead align=left>
+ <tr>
+ <th>操作系统</th>
+ <th>下载</th>
+ </tr>
+    </thead>
+    <tbody align=left>
+ <tr>
+ <td>Android</td>
+            <td>
+ <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-arm64-v8a.apk"><img src="https://img.shields.io/badge/APK-ARMv8-168039.svg?logo=android"></a><br>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-armeabi-v7a.apk"><img src="https://img.shields.io/badge/APK-ARMv7-45bf55.svg?logo=android"></a><br>
+ <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-x86_64.apk"><img src="https://img.shields.io/badge/APK-x64-96ed89.svg?logo=android"></a>
+            </td>
+ </tr>
+ <tr>
+ <td>Windows</td>
+            <td>
+ <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-windows-amd64-setup.exe"><img src="https://img.shields.io/badge/Setup-x64-2d7d9a.svg?logo=windows"></a><br>
+ <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-windows-amd64.zip"><img src="https://img.shields.io/badge/Portable-x64-67b7d1.svg?logo=windows"></a>
+            </td>
+ </tr>
+ <tr>
+ <td>macOS</td>
+            <td>
+ <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-macos-arm64.dmg"><img src="https://img.shields.io/badge/DMG-Apple%20Silicon-%2
+
+<details><summary>查看原文</summary>
+
+<!-- flclash:changelog:begin -->
+### Breaking Changes
+- **views** DNS and NTP override toggles are removed; picked keys apply to every profile
+- **database** Custom overwrites are removed; rebuild them as custom profiles
+
+### Features
+- **views** Per-key DNS, NTP, sniffer and TUN settings
+- **profiles** Custom profiles
+- **ui** Stacked sheets, context menus and a sort mode
+- **providers** DNS, Hosts and ports apply without a restart
+- **android** Launcher shortcuts and one-step on-demand access
+- **core** Share link import and mrs rule sets
+
+### Bug Fixes
+- **database** Unreadable settings no longer block startup or restores
+- **desktop** Windows and Linux desktop fixes
+- **core,helper** The elevated Core only answers its owner
+
+<!-- flclash:changelog:end -->
+
+<!-- flclash:changelog:json
+{"schemaVersion":2,"versions":[{"version":"0.9.0","tag":"v0.9.0","date":"2026-10-14","prerelease":false,"groups":[{"type":"breaking","entries":[{"id":"491fae1","scope":"views","text":"DNS and NTP override toggles are removed; picked keys apply to every profile"},{"id":"1677024","scope":"database","text":"Custom overwrites are removed; rebuild them as custom profiles"}]},{"type":"feat","entries":[{"id":"491fae1","scope":"views","text":"Per-key DNS, NTP, sniffer and TUN settings"},{"id":"3abda78","scope":"profiles","text":"Custom profiles"},{"id":"8c43053","scope":"ui","text":"Stacked sheets, context menus and a sort mode"},{"id":"532ebf0","scope":"providers","text":"DNS, Hosts and ports apply without a restart"},{"id":"d3fa225","scope":"android","text":"Launcher shortcuts and one-step on-demand access"},{"id":"2fa2f7f","scope":"core","text":"Share link import and mrs rule sets"}]},{"type":"fix","entries":[{"id":"1677024","scope":"database","text":"Unreadable settings no longer block startup or restores"},{"id":"94a25f4","scope":"desktop","text":"Windows and Linux desktop fixes"},{"id":"d780cb8","scope":"core,helper","text":"The elevated Core only answers its owner"}]}]}]}
+-->
+<div align=center>
+
+[![Release Downloads](https://img.shields.io/github/downloads/chen08209/FlClash/v0.9.0/total?style=flat-square&logo=github)](https://img.shields.io/github/downloads/chen08209/FlClash/v0.9.0/)
+
+</div>
+
+**Download based on your OS:**
+
+<div align=left>
+<table>
+    <thead align=left>
+        <tr>
+            <th>OS</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody align=left>
+        <tr>
+        <td>Android</td>
+            <td>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-arm64-v8a.apk"><img src="https://img.shields.io/badge/APK-ARMv8-168039.svg?logo=android"></a><br>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-armeabi-v7a.apk"><img src="https://img.shields.io/badge/APK-ARMv7-45bf55.svg?logo=android"></a><br>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-android-x86_64.apk"><img src="https://img.shields.io/badge/APK-x64-96ed89.svg?logo=android"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>Windows</td>
+            <td>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-windows-amd64-setup.exe"><img src="https://img.shields.io/badge/Setup-x64-2d7d9a.svg?logo=windows"></a><br>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-windows-amd64.zip"><img src="https://img.shields.io/badge/Portable-x64-67b7d1.svg?logo=windows"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>macOS</td>
+            <td>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-macos-arm64.dmg"><img src="https://img.shields.io/badge/DMG-Apple%20Silicon-%23000000.svg?logo=apple"></a><br>
+                <a href="https://github.com/chen08209/FlClash/releases/download/v0.9.0/FlClash-0.9.0-macos-amd64.dmg"
+
+</details>
+
+---
+
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 15 分钟前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 28 分钟前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 53 分钟前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 9 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 28 分钟前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 42 分钟前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-13 | 2 小时前 |
 | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 3 小时前 |
@@ -20,9 +151,9 @@
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 6 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 7 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 7 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 7 小时前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 9 小时前 |
-| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 10 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 8 小时前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 10 小时前 |
+| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 11 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 11 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 14 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 18 小时前 |
@@ -75,7 +206,6 @@
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 9 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.4-1` | 正式版 | 2026-10-04 | 9 天前 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.6.0` | 正式版 | 2026-10-03 | 10 天前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.8.99` | 正式版 | 2026-10-03 | 10 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 10 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 13 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 13 天前 |
