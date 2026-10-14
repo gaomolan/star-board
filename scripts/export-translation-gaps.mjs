@@ -120,5 +120,5 @@ const summaryLines = [
   gaps.length > 100 ? `其余 ${gaps.length - 100} 条详见 Actions 工件 \`translation-gaps\`。` : '',
   ''
 ];
-writeFileSync('translation-gaps-summary.md', summaryLines.join('\\n'), 'utf8');
-console.log(summaryLines.slice(0, 18).join('\\n'));
+writeFileSync('translation-gaps-summary.md', summaryLines.join('\n'), 'utf8');
+console.log(summaryLines.slice(0, 18).join('\n'));
