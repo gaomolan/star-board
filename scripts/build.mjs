@@ -152,6 +152,10 @@ function stripNoise(s) {
   t = t.replace(/^\s*[a-fA-F0-9]{32,}\s*\|?\s*$/gm, '');
   // 8) 下载章节：标题含下载/download、后面主要是平台名/链接的行，整段删除
   t = stripDownloadSection(t);
+  // 8b) GitHub 自动生成的 release notes 噪音
+  t = t.replace(/^#{1,6}\s*what'?s changed\s*$/gim, '');  // ## What's Changed 标题
+  t = t.replace(/\s+by @\S+ in https?:\/\/[^\s]+/g, '');  // by @user in PR链接
+  t = t.replace(/^\*?\*?full changelog\*?\*?:?\s*https?:\/\/\S+\s*$/gim, '');  // Full Changelog 行
   // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
@@ -809,7 +813,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个版本更新（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
-+ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+"</div>";'
++ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return " <span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
 + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
 + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
@@ -818,7 +822,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></div>";\n'
-+ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+"</div>";'
++ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+(r.release_url?" <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(fmtDT(r.published_at))+" · ⭐ "+(r.stars||0)+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
 + 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
