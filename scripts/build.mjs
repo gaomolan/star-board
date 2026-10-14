@@ -600,28 +600,26 @@ function isRuleSet(full, desc) {
   if (/规则集|rule.?set/i.test(desc || '')) return true;
   return false;
 }
-// 项目分类（用于筛选 pills）
+// 项目分类（多标签，用于筛选 pills）
 function categorize(full, desc, lang) {
   const s = String(full || '').toLowerCase() + ' ' + String(desc || '').toLowerCase();
-  if (isRuleSet(full, desc)) return 'ruleset';
-  if (/quant|chanlun|trade|tushare|缠论|量化|stock/i.test(s)) return 'fin';
-  if (/spider|crawler|爬虫/i.test(s)) return 'tool';
-  if (/edgetunnel|passwall|helloworld|shadowsocks|v2ray|xray|hysteria/i.test(s)) return 'proxy';
-  if (/mihomo|sing.?box|clash/i.test(s)) return 'proxy';
-  if (/gpt|llm|ollama|diffusion|whisper|Muse|gemini|agent|mcp|ai-/i.test(s)) return 'ai';
-  if (/telegram|nagram/i.test(s)) return 'tg';
-  if (/coolapk|v2ex|linux\.do|memos/i.test(s)) return 'other';
-  if (/douyin|live|m3u8|tvbox|video|music|player|nas/i.test(s)) return 'tool';
-  if (/autojs|薅羊|签到|hamibot/i.test(s)) return 'tool';
-  if (/xposed|patch/i.test(s)) return 'tool';
-  if (/location|定位/i.test(s)) return 'tool';
-  if (/obsidian|note/i.test(s)) return 'tool';
-  if (/wechat|微信|wxdump/i.test(s)) return 'wechat';
-  if (/rss|newsnook/i.test(s)) return 'rss';
-  if (/browser|extension|userscript/i.test(s)) return 'tool';
-  if (lang === 'Kotlin' || /android/i.test(s)) return 'android';
-  if (/tutorial|guide|awesome|指南/i.test(s)) return 'doc';
-  return 'other';
+  const tags = [];
+  function add(t) { if (tags.indexOf(t) < 0) tags.push(t); }
+  if (isRuleSet(full, desc)) add('ruleset');
+  if (/quant|chanlun|trade|tushare|缠论|量化|stock/i.test(s)) add('fin');
+  if (/spider|crawler|爬虫/i.test(s)) add('tool');
+  if (/edgetunnel|passwall|helloworld|shadowsocks|v2ray|xray|hysteria|mihomo|sing.?box|clash/i.test(s)) add('proxy');
+  if (/gpt|llm|ollama|diffusion|whisper|Muse|gemini|agent|mcp|ai-/i.test(s)) add('ai');
+  if (/telegram|nagram/i.test(s)) add('tg');
+  if (/douyin|live|m3u8|tvbox|video|music|player|nas/i.test(s)) add('tool');
+  if (/autojs|薅羊|签到|hamibot|xposed|patch|location|定位|obsidian|note/i.test(s)) add('tool');
+  if (/wechat|微信|wxdump/i.test(s)) add('wechat');
+  if (/rss|newsnook/i.test(s)) add('rss');
+  if (/browser|extension|userscript/i.test(s)) add('tool');
+  if (lang === 'Kotlin' || /android/i.test(s)) add('android');
+  if (/tutorial|guide|awesome|指南/i.test(s)) add('doc');
+  if (!tags.length) add('other');
+  return tags;
 }
 const CAT_LABELS = { ai:'🤖 AI', proxy:'🌐 代理', android:'📱 Android', fin:'💹 量化', wechat:'💬 微信', tg:'✈️ TG', rss:'📡 RSS', ruleset:'📦 规则集', tool:'🔧 工具', doc:'📚 教程', other:'❓ 其他' };
 const CAT_ORDER = ['ai','proxy','android','tg','rss','tool','fin','wechat','ruleset','doc','other'];
@@ -738,7 +736,7 @@ function renderSite(results, fresh, startedAt) {
       return {
         full: r.full, url: r.url,
         desc: (r.desc || '').slice(0, 120), lang: r.lang || '—', stars: r.stars || 0,
-        cat: categorize(r.full, r.desc, r.lang),
+        cats: categorize(r.full, r.desc, r.lang),
         tag: r.latest?.tag || null, prerelease: !!r.latest?.prerelease,
         published_at: ts, date: fmtDate(ts),
         zh: (inWeek && r.zh) ? r.zh.slice(0, 2500) : null,
@@ -824,8 +822,9 @@ function renderSite(results, fresh, startedAt) {
 + 'else if(r.body){h+="<details class=\\"relsum\\"><summary>更新内容</summary><div class=\\"zh\\">"+esc(r.body)+"</div></details>";}\n'
 + 'return h+"</div></div>";}\n'
 + 'var _fCats=new Set(' + JSON.stringify(CAT_DEFAULT) + ');var _allCats=' + JSON.stringify(CAT_ORDER) + ';function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();'
-+ 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(_fCats.size===0||_fCats.has(r.cat||"other"));}\n'
-+ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cat:r.cat,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
++ 'function catMatch(r){var cs=r.cats||["other"];for(var i=0;i<cs.length;i++){if(_fCats.has(cs[i]))return true;}return false;}\n'
++ 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(_fCats.size===0||catMatch(r));}\n'
++ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cats:r.cats,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
 + 'function renderAll(){var list=flatReleases().filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'list.sort(function(a,b){var x=a.published_at||"",y=b.published_at||"";return x<y?1:(x>y?-1:0);});var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
 + 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
