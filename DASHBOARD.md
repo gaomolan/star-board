@@ -1,34 +1,18 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 09:21:10 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 09:25:20 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（1）
+## 🆕 本次新增（0）
 
-### [z-mio/ParseHub](https://github.com/z-mio/ParseHub) `✅ 正式版` `v2.3.4`
-
-发布时间：2026-10-14（7 分钟前）｜ [查看 Release](https://github.com/z-mio/ParseHub/releases/tag/v2.3.4)
-
-*（原文，翻译暂不可用）*
-
-## What's Changed
-* 🐛 fix(instagram): 获取帖子失败时保留原始错误信息 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/160
-* 🐛 fix(facebook): 保留 watch 链接的 v 参数, 兼容无缩略图视频 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/162
-* 🐛 fix(xhs): 新增游客 session 与移动端回退, 修复 App 分享链解析失败 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/163
-* ♻️ refactor(errors): 回退链路保留每一层的错误, 成功时上报失败层 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/164
-* 🔖 chore(version): 升级版本号至 2.3.4 by @devin-ai-integration[bot] in https://github.com/z-mio/ParseHub/pull/165
-
-**Full Changelog**: https://github.com/z-mio/ParseHub/compare/v2.3.3...v2.3.4
-
----
-
+本轮无新增。
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.4` | 正式版 | 2026-10-14 | 7 分钟前 |
-| [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 35 分钟前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.3` | 测试版 | 2026-10-14 | 47 分钟前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.2-release` | 正式版 | 2026-10-14 | 50 分钟前 |
+| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.4` | 正式版 | 2026-10-14 | 11 分钟前 |
+| [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 40 分钟前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.3` | 测试版 | 2026-10-14 | 51 分钟前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.2-release` | 正式版 | 2026-10-14 | 54 分钟前 |
 | [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8422.a9140b8` | 正式版 | 2026-10-14 | 1 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 2 小时前 |
