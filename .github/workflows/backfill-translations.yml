@@ -2,12 +2,6 @@ name: backfill translations
 
 on:
   workflow_dispatch:
-    inputs:
-      max_releases:
-        description: "每个仓库最多处理的缓存 Release 数（0 表示全部缓存项）"
-        required: true
-        default: "0"
-        type: string
 
 permissions:
   contents: write
