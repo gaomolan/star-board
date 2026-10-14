@@ -674,7 +674,7 @@ function renderSite(results, fresh, startedAt) {
     return tb.localeCompare(ta);
   });
   const data = {
-    generatedAt: startedAt.toISOString().replace('T', ' ').slice(0, 16) + ' UTC',
+    generatedAt: new Date(startedAt.getTime() + 8 * 3600 * 1000).toISOString().replace('T', ' ').slice(0, 16) + ' UTC+8',
     repoSlug: REPO_SLUG,
     fresh: fresh.map((r) => {
       const Lr = r.latest, Cr = r.commit;
@@ -740,6 +740,7 @@ function renderSite(results, fresh, startedAt) {
   + '.wrap{max-width:960px;margin:0 auto;padding:0 16px}header.top{padding:26px 0 6px}h1{font-size:24px;margin:0 0 4px}.meta{color:var(--muted);font-size:13px}\n'
   + '.filters{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;z-index:10}\n'
   + '.filters input,.filters select{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:14px}\n'
+  + '.pills{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pill{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer}.pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}\n'
   + '.filters input{flex:1;min-width:150px}h2{font-size:18px;margin:26px 0 12px}\n'
   + '.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px}\n'
   + '.card h3{margin:0 0 6px;font-size:16px;word-break:break-all}.card h3 a{color:var(--fg);text-decoration:none}.card h3 a:hover{color:var(--accent)}\n'
@@ -755,8 +756,7 @@ function renderSite(results, fresh, startedAt) {
   + '<header class="top"><h1>⭐ Star 动态看板</h1><div class="meta" id="meta"></div></header>\n'
   + '<div class="filters">\n'
   + '<input id="q" type="search" placeholder="搜索项目名 / 简介…">\n'
-  + '<select id="fType"><option value="">全部类型</option><option value="stable">✅ 正式版</option><option value="beta">🧪 测试版</option><option value="commit">📝 仅提交</option></select>\n'
-  + '<select id="fLang"><option value="">全部语言</option></select>\n'
+  + '<div class="pills" id="fTypePills"><button class="pill active" data-v="stable">✅ 正式版</button><button class="pill" data-v="beta">🧪 测试版</button><button class="pill" data-v="commit">📝 仅提交</button><button class="pill" data-v="">全部</button></div>\n'
   + '<select id="fSort"><option value="time">按更新时间</option><option value="name">按名称</option></select>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
@@ -788,8 +788,8 @@ function renderSite(results, fresh, startedAt) {
 + 'else if(r.body){h+="<details class=\\"relsum\\"><summary>更新内容</summary><div class=\\"zh\\">"+esc(r.body)+"</div></details>";}\n'
 + 'return h+"</div></div>";}\n'
 + 'function nameRow(r){return "<div class=\\"nrow\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+" <span class=\\"rowmeta\\">"+esc(r.lang)+" · ⭐ "+(r.stars||0)+" · "+esc(r.date)+"</span></div>";}\n'
-+ 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
-+ 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(!t||typeOf(r)===t)&&(!l||r.lang===l);}\n'
++ 'var _fType="stable";function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();'
++ 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(!_fType||typeOf(r)===_fType);}\n'
 + 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
 + 'function renderAll(){var mode=document.getElementById("fSort").value;var list=(mode===\"name\"?DATA.all:flatReleases()).filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'if(mode==="name"){list.sort(function(a,b){var x=a.full.toLowerCase(),y=b.full.toLowerCase();return x<y?-1:(x>y?1:0);});'
@@ -803,14 +803,13 @@ function renderSite(results, fresh, startedAt) {
 + '(function(){'
 + 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
 + 'document.getElementById("stats").innerHTML=statsHtml();'
-+ 'var langs={},i;for(i=0;i<DATA.all.length;i++){langs[DATA.all[i].lang]=1;}'
-+ 'var sel=document.getElementById("fLang");Object.keys(langs).sort().forEach(function(l){var o=document.createElement("option");o.value=l;o.textContent=l;sel.appendChild(o);});'
 + 'var fh="";for(i=0;i<DATA.fresh.length;i++){fh+=freshCard(DATA.fresh[i]);}'
 + 'document.getElementById("fresh").innerHTML=fh||"<div class=\\"empty\\">本轮无新增</div>";'
 + 'document.getElementById("freshCount").textContent=DATA.fresh.length?"（"+DATA.fresh.length+"）":"";'
 + 'if(!DATA.fresh.length){document.getElementById("freshSec").style.display="none";}'
 + 'renderAll();'
-+ '["q","fType","fLang","fSort"].forEach(function(id){document.getElementById(id).addEventListener("input",renderAll);});'
++ '["q","fSort"].forEach(function(id){document.getElementById(id).addEventListener("input",renderAll);});'
++ 'document.getElementById("fTypePills").addEventListener("click",function(e){var b=e.target.closest(".pill");if(!b)return;_fType=b.getAttribute("data-v");var ps=this.querySelectorAll(".pill");for(var i=0;i<ps.length;i++)ps[i].classList.toggle("active",ps[i]===b);renderAll();});'
 + '})();\n'
 + '</scr'+'ipt>\n</body>\n</html>\n';
 
