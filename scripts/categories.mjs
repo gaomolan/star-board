@@ -54,14 +54,14 @@ function classifyProject(full, desc, lang, topics = []) {
   {
     if (isRuleSet(full, desc) || /(^|[-_ ])(rules?|rule-set|anti-ad|adguard|adblock)([-_ ]|$)|规则集|广告过滤/.test(text)) primary = 'rules';
     else if (/password manager|two.factor|\b2fa\b|privacy|security|vulnerability|漏洞|安全审计|密码管理|隐私保护/.test(text) && !/proxy|mihomo|clash/.test(text)) primary = 'security';
-    else if (/\\b(?:quant|quantitative|trading|trade|stock|finance|financial|tushare|chanlun)\\b|缠论|量化|证券|金融|股票|回测|market data/.test(text)) primary = 'finance';
+    else if (/\b(?:quant|quantitative|trading|trade|stock|finance|financial|tushare|chanlun)\b|缠论|量化|证券|金融|股票|回测|market data/.test(text)) primary = 'finance';
     else if (/crawler|spider|scraper|爬虫|采集|数据抓取|数据解析|data ingestion|data pipeline|数据集|数据接口/.test(text)) primary = 'data';
     else if (/ebook|e-book|reader|reading|novel|book source|电子书|阅读器|书源|小说阅读/.test(text)) primary = 'reading';
     else if (/video|music|player|m3u8|douyin|iptv|tvbox|live stream|media server|nas-tools|视频|音乐|播放器|直播|影视|媒体库/.test(text)) primary = 'media';
     else if (/telegram|wechat|weixin|v2ex|forum|community|social|聊天|社交|论坛|社区客户端|微信|电报/.test(text)) primary = 'social';
     else if (/obsidian|notebook|knowledge management|note-taking|notes app|知识管理|笔记|知识库/.test(text)) primary = 'knowledge';
     else if (/tutorial|guide|awesome|book|course|learning|指南|教程|学习资源|精选列表|入门/.test(text)) primary = 'learning';
-    else if (/\\b(?:gpt|llm|ollama|diffusion|whisper|gemini|agent|artificial intelligence|machine learning|large language model)\\b|人工智能|大模型|智能体|模型推理/.test(text)) primary = 'ai';
+    else if (/\b(?:gpt|llm|ollama|diffusion|whisper|gemini|agent|artificial intelligence|machine learning|large language model)\b|人工智能|大模型|智能体|模型推理/.test(text)) primary = 'ai';
     else if (/proxy|vpn|mihomo|clash|sing.?box|shadowsocks|v2ray|xray|hysteria|passwall|network|dns|tunnel|代理|网络工具|域名解析/.test(text)) primary = 'network';
     else if (/android system|system enhancement|permission|appops|shizuku|xposed|patcher|location spoof|系统管理|权限管理|系统增强|定位模拟/.test(text)) primary = 'system';
     else if (/framework|library|sdk|api client|developer tool|debugger|compiler|programming language|开发框架|开发库|调试工具|开发工具/.test(text) || /^(JavaScript|TypeScript|Rust|Go|C#|C\+\+)$/.test(lang || '')) primary = 'dev';
