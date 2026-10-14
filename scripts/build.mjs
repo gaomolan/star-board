@@ -34,6 +34,7 @@ function siteUrl() {
   return `https://${o}.github.io/${r}/`;
 }
 const BACKFILL_DAYS = parseInt(process.env.BACKFILL_DAYS || '30', 10);
+const BACKFILL_ALL = process.env.BACKFILL_ALL === '1';
 const TEST_LIMIT = parseInt(process.env.TEST_LIMIT || '0', 10);
 
 const T_API_URL = (process.env.TRANSLATE_API_URL || 'https://api.life-pulse.io/v1').replace(/\/+$/, '');
@@ -626,7 +627,7 @@ async function main() {
       if (L.authorZh) {
         // 作者自带中文：直接用，免翻译
         zh = L.authorZh.slice(0, 2500);
-      } else if (bodyText && bodyText.length >= 20 && (inWeek || (isFirstRun && withinBackfill))) {
+      } else if (bodyText && bodyText.length >= 20 && (BACKFILL_ALL || inWeek || (isFirstRun && withinBackfill))) {
         // 有正文：7 天内的走翻译流程（含缓存哈希校验）；过短正文跳过以省配额
         const t = await translateSmart(state, `rel:${L.id}`, bodyText, r.full);
         if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
