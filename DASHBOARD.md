@@ -1,136 +1,16 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 07:23:33 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 07:36:40 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（3）
+## 🆕 本次新增（1）
 
-### [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) `✅ 正式版` `v7.3.1.5`
+### [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) `✅ 正式版` `v2026.10.14.1-release`
 
-发布时间：2026-10-14（14 分钟前）｜ [查看 Release](https://github.com/Kindness-Kismet/AstraGram-Desktop/releases/tag/v7.3.1.5)
-
-- 调整了 Windows 上图片和视频的打开行为，现在默认在应用窗口内打开，背景模糊，顶部显示发送者和操作按钮，两侧提供圆形翻页按钮，底部提供带位置计数的缩略图条；可在设置中关闭窗口内查看
-- 新增了窗口内媒体查看器的开合与全屏动画，现在可以看到媒体从聊天缩略图展开并收回，缩略图不在可见区域时则原地淡入淡出；全屏时主窗口保持原位，背景使用暗化的系统模糊，按 Esc 可以返回窗口内
-- 对窗口内媒体查看器的控件进行了改善，这使得小窗口下的布局更紧凑，视频控制条不会遮挡翻页按钮，空间不足时转发和保存会移入更多菜单，视频控制条跟随浅色或深色主题；按钮支持悬停提示，闲置时控件自动隐藏，悬停时保持显示，更多菜单和视频设置菜单点击才会打开
-- 新增了文件夹栏和对话列表顶部的自定义标志，现在可以选择图片并自动适配原有标志大小，也可以让标志跟随主题颜色
-- 调整了视频预览的行为，现在右键菜单提供“查看视频封面”，可大图查看上传者设置的封面或 Telegram 生成的缩略图，替换原有带时间的预览帧网格及其播放入口
-- 修复了关于从设置返回对话的错误，该问题曾导致照片和贴纸在过渡期间停留在占位画面，随后突然出现
-- 修复了关于机器人小程序菜单的错误，该问题曾导致内嵌网页遮住弹出菜单
-- 修复了关于 Windows 应用启动的错误，该问题曾导致应用图标未变化时也刷新整个桌面的图标
-- 调整了留档撤回消息的显示行为，现在开启“半透明显示已删除消息”时，显示强度从 40% 提高到 60%，文字和相册内容更清楚
-
-<details><summary>查看原文</summary>
-
-- Changed how photos and videos open on Windows; they now open inside the app window by default over a blurred backdrop, with sender information and actions at the top, round previous and next buttons, and a thumbnail strip with a position counter; you can turn off this behavior in settings
-- Added opening, closing and full-screen transitions to the in-window media viewer, so you can now follow media as it expands from its chat thumbnail and returns to it, or fades in place when the thumbnail is out of view; full screen keeps the app window in place, uses a dimmed system blur backdrop, and lets you return to the window with Esc
-- Improved the in-window media viewer controls, which now fit small windows, keep video controls clear of navigation buttons, move forward and save into the more menu when space is tight, and give video controls the light or dark app theme; button tooltips explain actions, controls hide when idle and stay visible under the pointer, and the more and video settings menus open on click
-- Added custom logos for the folder sidebar and the top of the chat list, so you can now choose an image fitted to the original logo size and optionally make it follow the theme color
-- Changed how video previews work; the context menu now offers View Video Cover to open the uploader's cover or Telegram-generated thumbnail as a large image, replacing the timestamped frame grid and its playback shortcuts
-- Fixed an issue with returning from settings to a chat that previously caused photos and stickers to remain frozen as placeholders during the transition and then appear abruptly
-- Fixed an issue with menus in bot mini apps that previously caused embedded web pages to cover popup menus
-- Fixed an issue with app startup on Windows that previously caused all desktop icons to refresh even when the app icon had not changed
-- Changed how retained deleted messages look; with semi-transparent display enabled, they now use 60% opacity instead of 40%, making text and album
-
-</details>
-
----
-
-### [mason173/aira-browser](https://github.com/mason173/aira-browser) `✅ 正式版` `v3.7.4`
-
-发布时间：2026-10-14（12 分钟前）｜ [查看 Release](https://github.com/mason173/aira-browser/releases/tag/v3.7.4)
+发布时间：2026-10-14（4 分钟前）｜ [查看 Release](https://github.com/ArvinLovegood/go-stock/releases/tag/v2026.10.14.1-release)
 
 *（原文，翻译暂不可用）*
 
-# Aira Community 3.7.4 (1000531)
-
-这是 **Community 未签名 HAP**，包名 `org.aira.browser`。不是华为应用市场里的 Official 商店包（`com.aira.browser`）。
-
-下载后需要你自己用 `org.aira.browser` 的 HarmonyOS 签名材料签名，再侧载安装。未签名包不能直接装到设备上。
-
-## 安装
-
-1. 用 DevEco Studio 打开本仓库的 `AiraBrowser/`，为 `org.aira.browser` 配置你自己的签名。
-2. 对这个 HAP 签名（DevEco 或 HarmonyOS `hap-sign-tool`）。
-3. 用 `hdc` 安装到已开启开发者调试的设备。
-
-Community 默认没有官方云、华为账号、华为云空间和 IAP。本地浏览、WebDAV 和自建 Personal Server 可用。
-
-## 产物
-
-- 文件：`Aira-community-v3.7.4-1000531-default-unsigned.hap`
-- 包名：`org.aira.browser`
-- versionName：`3.7.4`
-- versionCode：`1000531`
-- SHA-256：`0fe301e86261daacc473db9f9d1cd18861d96d8f7a80df0a3c9313cc526a2732`
-
-## 更新日志
-
-### 3.7.4 (1000531)
-
-2026-10-14
-
-这次更新让地址栏的书签搜索更快，并修好了隐私标签、登录和下载上的几个问题。
-
-- 地址栏的书签搜索改用持久化索引，冷启动后打开也能即搜即得。
-- 重开应用后，隐私标签的内容和预览图都能正常恢复，不再只剩空白。
-- 普通模式下退出应用后仍保留登录状态，常用网站不用反复登录。
-- 网页里发起的下载继续交给浏览器完成，不再因为重放一次性链接被服务器拒绝。
-- 修好了网页定位调用偶发失效的问题。
-- 打开的分享网页能正常显示，不再出现空白或误弹下载。
-- 深色主题下，弹窗按钮的底色不再发白。
-
-## Changelog
-
-### 3.7.4 (1000531)
-
-2026-10-14
-
-This release makes address-bar bookmark search faster, and fixes several private-tab, sign-in, and download issues.
-
-- Address-bar bookmark search now uses a persistent index, so results are ready as soon as you open it, even on a cold start.
-- After reopening the app, private tabs restore their content and preview images instead of coming back blank.
-- Normal-mode sign-in is kept after you leave the app, so frequently used sites no longer ask you to sign in again.
-- Downloads started from a web page are still completed by the browser, instead of replaying one-time links that the server rejects.
-- Fixed occasional failures in web page location requests.
-- Shared pages you open now display correctly, without a blank screen or a download prompt by mistake.
-- In dark theme, dialog button backgrounds no longer appear washed out.
-
----
-
-### [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) `🧪 测试版` `v1.35.0-beta.2`
-
-发布时间：2026-10-14（8 分钟前）｜ [查看 Release](https://github.com/daimiaopeng/coolapk-desktop/releases/tag/v1.35.0-beta.2)
-
-# 测试版更新日志
-
-比较范围：正式版 v1.34.1 → 最新提交 9f229f8
-
-## 新增
-
-- 新增“滚动时自动隐藏导航”设置，默认开启。移动布局向下滚动时收起首页搜索栏、底部 Dock 和详情操作栏，保留首页栏目栏，向上滚动恢复显示。
-- 无图模式新增“进入详情时展示图片”选项，可在首页和列表隐藏图片，进入动态或问答详情后显示。
-- 新增浅色界面底色设置，支持柔和浅灰、暖米色及自定义颜色，并提供效果预览。
-- 新增“显示动态背景图”开关，可关闭作者背景与装饰图，保留正文配图和头像。
-- 新增搜索分类拖动排序，支持自动保存与恢复默认，桌面和移动端均生效，“综合”固定在首位。
-
-## 优化
-
-- 首页与话题页导航采用半透明玻璃样式，话题栏目、排序和搜索整合为连续导航区域。
-- 话题栏目与排序选中状态统一使用加粗文字和绿色下划线，取消绿色胶囊背景；移动首页导航使用直角边缘。
-- 优化话题筛选与搜索布局，根据可用空间排列，减少不必要的换行。
-- 优化“我的打分”卡片，显示个人星级和操作提示；点击可打开自己的点评，无关联点评时展示个人评分信息。
-- 优化移动端上传下载页面的统计、筛选和任务卡片布局，并补充 CDN 文件上传快捷入口。
-- 导航栏目设置改为折叠展示，减少设置页面的默认展开内容。
-
-## 修复
-
-- 修正头条刷新与加载更多的游标传递，改善刷新反复返回较早内容的问题。
-- 修复私信粘贴图片后预览异常、发送按钮被挤出输入区的问题。
-- 修复反馈输入区展开高度不足和无法拖动调整高度的问题。
-- 修复设置页面在窄窗口和大字体下说明、按钮及输入控件相互挤压的问题。
-- 修复详情评论已点赞状态未正确显示主题色的问题。
-- 修复话题简介文字与浅色背景对比不足的问题。
-- 修复话题点评页排序入口重复显示的问题。
-- 修复“我的打分”入口点击无反应的问题。
+v2026.10.14.1-release
 
 ---
 
@@ -138,21 +18,22 @@ This release makes address-bar bookmark search faster, and fixes several private
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.2` | 测试版 | 2026-10-14 | 8 分钟前 |
-| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 12 分钟前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 14 分钟前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 26 分钟前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 47 分钟前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.1-release` | 正式版 | 2026-10-14 | 4 分钟前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.2` | 测试版 | 2026-10-14 | 22 分钟前 |
+| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 26 分钟前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 28 分钟前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 39 分钟前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 1 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 1 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 2 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 3 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 3 小时前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 4 小时前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 5 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 5 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 6 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 6 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 7 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 8 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 9 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 9 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 11 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 11 小时前 |
@@ -161,7 +42,7 @@ This release makes address-bar bookmark search faster, and fixes several private
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 16 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 17 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 19 小时前 |
-| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 23 小时前 |
+| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 1 天前 |
 | [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
@@ -173,7 +54,6 @@ This release makes address-bar bookmark search faster, and fixes several private
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-11 | 2 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-11 | 2 天前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-11 | 2 天前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.11.1-release` | 正式版 | 2026-10-11 | 2 天前 |
 | [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 3 天前 |
 | [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `v2.9.0` | 正式版 | 2026-10-11 | 3 天前 |
 | [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 3 天前 |
