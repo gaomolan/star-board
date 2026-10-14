@@ -148,7 +148,7 @@ function fmtDate(ts) {
 function isPrereleaseRelease(tag, name, githubPrerelease = false) {
   if (githubPrerelease) return true;
   const text = `${tag || ''} ${name || ''}`.toLowerCase();
-  return /(?:^|[._+\\-/\\s])(?:alpha|beta|rc|pre(?:view|release)?|canary|nightly|dev(?:elopment)?|snapshot|unstable|eap|experimental)(?:$|[._+\\-/\\s]|\\d)/i.test(text);
+  return /(?:^|[._+\/-]|\s)(?:alpha|beta|rc|pre(?:view|release)?|canary|nightly|dev(?:elopment)?|snapshot|unstable|eap|experimental)(?:$|[._+\/-]|\s|\d)/i.test(text);
 }
 
 function simpleHash(s) {
