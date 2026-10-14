@@ -975,20 +975,29 @@ async function deploySite(html) {
 }
 
 // Telegram 推送专用：把摘要转成干净的纯文本（Telegram HTML 模式不渲染 markdown）
-function toPlain(s) {
+function toTgHtml(s) {
+  // Telegram 排版：### 标题 -> <b>，**加粗** -> <b>，列表 -> •，保留段落结构（借鉴 HarmonyX）
   return String(s).split('\n').map(line => {
     let t = line.trim();
-    t = t.replace(/^#{1,6}\s+/, '');                    // 去 markdown 标题
-    t = t.replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1'); // 去加粗
-    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');     // 内联链接只留文本
-    t = t.replace(/https?:\/\/\S+/g, '').trim();         // 去裸 URL
-    t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');    // 去 PR 编号引用 (#123)
-    t = t.replace(/^[\*+\-]\s+/, '\u2022 ').replace(/^\d+[.)]\s+/, '\u2022 '); // 列表符统一成 •
-    t = t.replace(/[`_~]/g, '').replace(/\*+/g, '');     // 去残留标记
+    if (!t) return '';
+    // 标题行：### 新增功能 -> <b>新增功能</b>
+    let hm = t.match(/^#{1,6}\s+(.*)/);
+    if (hm) return '<b>' + escHtml(hm[1].trim()) + '</b>';
+    // 列表符统一成 •
+    t = t.replace(/^[\*+\-]\s+/, '\u2022 ').replace(/^\d+[.)]\s+/, '\u2022 ');
+    // 内联链接只留文本
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+    // 去裸 URL、PR 编号
+    t = t.replace(/https?:\/\/\S+/g, '').trim();
+    t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');
+    // 先转义，再把 **加粗** 转为 <b>
+    t = escHtml(t);
+    t = t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<b>$1</b>');
+    t = t.replace(/[`~]/g, '');
     return t.replace(/\s+/g, ' ').trim();
   })
-  .filter(t => t && !/^[-—=*#>\s]+$/.test(t))           // 去纯分隔符行
-  .filter((t, i, arr) => t !== arr[i - 1]);             // 去相邻重复行
+  .filter(t => t && !/^[-—=*#>\s]+$/.test(t))
+  .filter((t, i, arr) => t !== arr[i - 1]);
 }
 
 // ---------------- Telegram digest ----------------
@@ -1004,7 +1013,7 @@ async function sendDigest(fresh) {
       const raw = isC ? Cr.message : (Lr.body || '');
       summary = stripNoise(raw);
     }
-    const qLines = toPlain(summary).map(s => escHtml(s));
+    const qLines = toTgHtml(summary);
     const quote = `<blockquote>${qLines.length ? qLines.join('\n') : '无更新说明'}</blockquote>`;
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
