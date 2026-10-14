@@ -38,7 +38,7 @@ try {
 
   assert.match(await page.locator('#meta').textContent(), /3 个项目/);
   assert.equal(await page.locator('.titem').count(), 2, '默认分类筛选应显示智能与金融项目');
-  assert.equal(await page.locator('.category').count(), 3, '新增卡片与时间线应显示主分类徽标');
+  assert.equal(await page.locator('.category').count(), 4, '新增卡片与时间线应显示主分类徽标');
 
   await page.locator('#fCatPills button[data-v="reading"]').click();
   assert.equal(await page.locator('.titem').count(), 3, '选择阅读分类后应显示阅读项目');
