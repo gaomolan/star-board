@@ -793,7 +793,7 @@ function renderSite(results, fresh, startedAt) {
   + '<div class="pills" id="fCatPills">' + CAT_ORDER.map(function(k){return '<button class="pill' + (CAT_DEFAULT.indexOf(k)>=0 ? ' active' : '') + '" data-v="' + k + '">' + CAT_LABELS[k] + '</button>';}).join('') + '<button class="pill" data-v="">全部</button></div>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
-  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="stats" id="stats"></div><div id="all"></div></section>\n'
+  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="stats" id="stats" style="display:none"></div><div id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
 + 'var DATA = ' + json + ';\n'
