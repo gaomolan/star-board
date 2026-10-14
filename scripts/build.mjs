@@ -600,6 +600,14 @@ async function main() {
         const detectedPrerelease = !!L.prerelease || /(?:^|[.\-_\s])(?:alpha|beta|preview|pre|rc|dev|nightly|canary)(?:$|[.\-_\s\d])/i.test(releaseLabel);
         releases.push({ id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: detectedPrerelease, published_at: L.published_at, url: L.html_url, body, authorZh });
       }
+      // 普通增量运行只请求最新版本，但必须保留此前回填的历史 Release 正文，避免缓存被截断。
+      if (!BACKFILL_ALL && Array.isArray(prev.cachedReleases) && prev.cachedReleases.length > releases.length) {
+        const knownIds = new Set(releases.map((item) => String(item.id)));
+        for (const old of prev.cachedReleases) {
+          if (!knownIds.has(String(old.id))) releases.push(old);
+        }
+        releases.sort((a, b) => new Date(b.published_at || 0).getTime() - new Date(a.published_at || 0).getTime());
+      }
       prev.releasesEtag = relRes.etag;
       prev.cachedReleases = releases;
       prev.cachedLatest = releases[0] || null; // 兼容旧字段
