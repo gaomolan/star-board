@@ -475,15 +475,15 @@ function renderSite(results, fresh, startedAt) {
       };
     }),
   };
-  // 今日 / 7 天更新速览统计
-  const stats = { today: { n: 0, rel: 0, stable: 0, beta: 0 }, week: { n: 0, rel: 0, stable: 0, beta: 0 } };
+  // 今日 / 7 天新版本速览统计（只计正式版/测试版，不含仅提交）
+  const stats = { today: { rel: 0, stable: 0, beta: 0 }, week: { rel: 0, stable: 0, beta: 0 } };
   for (const r of sorted) {
-    const ts = r.latest?.published_at || r.commit?.date;
-    const d = ts ? (Date.now() - new Date(ts).getTime()) / 864e5 : 99;
+    if (!r.latest) continue;
+    const d = (Date.now() - new Date(r.latest.published_at).getTime()) / 864e5;
     const bk = d < 1 ? 'today' : (d <= 7 ? 'week' : null);
     if (!bk) continue;
-    const o = stats[bk]; o.n++;
-    if (r.latest) { o.rel++; if (r.latest.prerelease) o.beta++; else o.stable++; }
+    const o = stats[bk]; o.rel++;
+    if (r.latest.prerelease) o.beta++; else o.stable++;
   }
   data.stats = stats;
   // 防止 release 正文里的 </script> 冲破 script 标签
@@ -530,7 +530,7 @@ function renderSite(results, fresh, startedAt) {
 + 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
 + 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
 + 'function statsHtml(){var s=DATA.stats;if(!s)return "";'
-+ 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.n+"</b> 个项目有更新"+(o.rel?",其中 <b>"+o.rel+"</b> 个发了新版本（"+o.stable+" 正式 / "+o.beta+" 测试）":"")+"</div>";}'
++ 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个项目发了新版本（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
