@@ -1,6 +1,6 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-14T19:07:58.974Z
+生成时间：2026-10-14T22:56:04.589Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
@@ -8,18 +8,18 @@
 
 - 仓库数：172
 - 缓存条目数：458
-- Release 总数：9011
-- 符合检查条件的 Release：5209
+- Release 总数：9013
+- 符合检查条件的 Release：5210
 - 有效缓存：439
-- 缺失译文：4761
+- 缺失译文：4762
 - 哈希过期：7
 - 无效译文：2
 - 跳过（作者已提供中文）：129
-- 跳过（原文过短或中文占比过高）：3673
+- 跳过（原文过短或中文占比过高）：3674
 
 ## 缺口分类
 
-- missing：4761
+- missing：4762
 - stale_hash：7
 - invalid_translation：2
 
@@ -126,4 +126,4 @@
 - [AstrBotDevs/AstrBot — v3.0.1](https://github.com/AstrBotDevs/AstrBot/releases/tag/v3.0.1) — `rel:100025674`（missing）
 - [AstrBotDevs/AstrBot — v3.0.0](https://github.com/AstrBotDevs/AstrBot/releases/tag/v3.0.0) — `rel:98657778`（missing）
 
-其余 4670 条详见 Actions 工件 `translation-gaps`。
+其余 4671 条详见 Actions 工件 `translation-gaps`。
