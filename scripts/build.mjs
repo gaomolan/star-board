@@ -973,6 +973,23 @@ async function deploySite(html) {
   console.log(res.ok ? '网站已部署到 gh-pages 分支' : `网站部署失败: HTTP ${res.status}`);
 }
 
+// Telegram 推送专用：把摘要转成干净的纯文本（Telegram HTML 模式不渲染 markdown）
+function toPlain(s) {
+  return String(s).split('\n').map(line => {
+    let t = line.trim();
+    t = t.replace(/^#{1,6}\s+/, '');                    // 去 markdown 标题
+    t = t.replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1'); // 去加粗
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');     // 内联链接只留文本
+    t = t.replace(/https?:\/\/\S+/g, '').trim();         // 去裸 URL
+    t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');    // 去 PR 编号引用 (#123)
+    t = t.replace(/^[\*+\-]\s+/, '\u2022 ').replace(/^\d+[.)]\s+/, '\u2022 '); // 列表符统一成 •
+    t = t.replace(/[`_~]/g, '').replace(/\*+/g, '');     // 去残留标记
+    return t.replace(/\s+/g, ' ').trim();
+  })
+  .filter(t => t && !/^[-—=*#>\s]+$/.test(t))           // 去纯分隔符行
+  .filter((t, i, arr) => t !== arr[i - 1]);             // 去相邻重复行
+}
+
 // ---------------- Telegram digest ----------------
 async function sendDigest(fresh) {
   const lines = fresh.slice(0, 20).map((r) => {
@@ -980,19 +997,18 @@ async function sendDigest(fresh) {
     const isC = !Lr;
     const tag = escHtml(isC ? Cr.sha.slice(0, 7) : Lr.tag);
     const name = escHtml(r.full);
-    // 摘要：优先用清洗过的中文，没有则对原文做去噪
+    // 摘要：优先用清洗过的中文，没有则对原文做去噪；转纯文本后整段进引用块
     let summary = r.zh || '';
     if (!summary) {
       const raw = isC ? Cr.message : (Lr.body || '');
-      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160) || '无更新说明';
-    } else {
-      summary = summary.replace(/\s+/g, ' ').trim().slice(0, 160);
+      summary = stripNoise(raw);
     }
-    summary = escHtml(summary);
+    const qLines = toPlain(summary).map(s => escHtml(s));
+    const quote = `<blockquote>${qLines.length ? qLines.join('\n') : '无更新说明'}</blockquote>`;
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
     const url = isC ? Cr.url : Lr.url;
-    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${summary}\n<a href="${url}">${linkText}</a>`;
+    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${quote}<a href="${url}">${linkText}</a>`;
   });
   let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
