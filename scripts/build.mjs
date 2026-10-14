@@ -571,7 +571,7 @@ function renderSite(results, fresh, startedAt) {
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";\n'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+" · "+ago(r.published_at)+" · "+esc(r.lang)+" · ⭐ "+(r.stars||0)+(r.release_url?" · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a>":"")+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
-+ 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要</summary><div class=\\"zh\\">"+md(r.zh)+"</div></details>";}\n'
++ 'if(r.zh){h+="<div class=\\\"summary-label\\\">更新内容摘要（中文）</div><div class=\\\"zh\\\">"+md(r.zh)+"</div>";}if(r.body){h+="<details class=\\\"relsum\\\"><summary>查看原文（默认折叠）</summary><div class=\\\"zh\\\">"+md(r.body)+"</div></details>";}\\n'
 + 'return h+"</div></div>";}\n'
 + 'function nameRow(r){return "<div class=\\"nrow\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+" <span class=\\"rowmeta\\">"+esc(r.lang)+" · ⭐ "+(r.stars||0)+" · "+esc(r.date)+"</span></div>";}\n'
 + 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
