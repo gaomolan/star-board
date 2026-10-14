@@ -388,6 +388,28 @@ async function translatePrimary(text) {
   return t;
 }
 
+// 无密钥兜底：Google Translate 网页端公开接口。仅在主源与 DeepL 均不可用时调用。
+let googleFailStreak = 0;
+let googleDead = false;
+async function translateGoogle(text) {
+  if (googleDead) return null;
+  const params = new URLSearchParams({
+    client: 'gtx',
+    sl: 'auto',
+    tl: 'zh-CN',
+    dt: 't',
+    q: text.slice(0, MAX_TRANSLATE_CHARS),
+  });
+  const res = await fetchTimeout(`https://translate.googleapis.com/translate_a/single?${params.toString()}`, {
+    headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0 star-board/translation-fallback' },
+  }, 20000);
+  if (!res.ok) throw new Error(`Google Translate ${res.status}`);
+  const j = await res.json();
+  const translated = Array.isArray(j?.[0]) ? j[0].map((part) => Array.isArray(part) ? part[0] || '' : '').join('').trim() : '';
+  if (!translated) throw new Error('Google Translate 返回为空');
+  return translated;
+}
+
 async function translateDeepL(text) {
   const params = new URLSearchParams();
   params.append('text', text.slice(0, MAX_TRANSLATE_CHARS));
@@ -466,9 +488,34 @@ async function translateSmart(state, key, text, label = '') {
     }
     return null;
   };
+  const doGoogle = async () => {
+    if (googleDead) return null;
+    try {
+      const t = await translateWithRetry(() => translateGoogle(text), `${label}/Google兜底`);
+      if (t && isTranslationValid(text, t)) {
+        googleFailStreak = 0;
+        await sleep(120); // 控制无密钥公共接口的请求频率
+        return t;
+      }
+      googleFailStreak++;
+      if (googleFailStreak >= 8) {
+        googleDead = true;
+        console.warn('Google Translate 连续失败，停止本轮公共接口请求');
+      }
+      if (t) console.warn(`  Google 翻译质量不达标(${label})`);
+    } catch (e) {
+      googleFailStreak++;
+      console.warn(`  Google 翻译异常(${label}): ${e.message}`);
+      if (googleFailStreak >= 8) {
+        googleDead = true;
+        console.warn('Google Translate 连续失败，停止本轮公共接口请求');
+      }
+    }
+    return null;
+  };
   let zh = null;
-  if (isMixed) zh = await doDeepL() || await doPrimary();
-  else zh = await doPrimary() || await doDeepL();
+  if (isMixed) zh = await doDeepL() || await doPrimary() || await doGoogle();
+  else zh = await doPrimary() || await doDeepL() || await doGoogle();
   if (zh) cache[key] = { zh, hash };
   return zh ? { zh, cached: false } : null;
 }
