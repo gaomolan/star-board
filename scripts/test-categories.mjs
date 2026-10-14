@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { readFileSync as readSource } from 'node:fs';
 import { CAT_ORDER, CAT_LABELS, classifyProject } from './categories.mjs';
 
+const buildSource = readSource(new URL('./build.mjs', import.meta.url), 'utf8');
+assert.ok(buildSource.includes("var CAT_LABELS = ' + JSON.stringify(CAT_LABELS)"), '生成的看板必须向浏览器脚本注入主分类标签');
+assert.ok(buildSource.includes("var CAT_TAG_LABELS = ' + JSON.stringify(CAT_TAG_LABELS)"), '生成的看板必须向浏览器脚本注入辅助标签');
 const state = JSON.parse(readFileSync(new URL('../state.json', import.meta.url), 'utf8'));
 const repos = state.repos || {};
 const names = Object.keys(repos);
