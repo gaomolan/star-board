@@ -770,7 +770,7 @@ export function renderSite(results, fresh, startedAt) {
   + '@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--muted:#8b949e;--card:#161b22;--border:#30363d;--accent:#4493f8;--green:#3fb950;--amber:#d29922}}\n'
   + '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.6}\n'
   + '.wrap{max-width:960px;margin:0 auto;padding:0 16px}header.top{padding:26px 0 6px}h1{font-size:24px;margin:0 0 4px}.meta{color:var(--muted);font-size:13px}\n'
-  + '.filters{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;z-index:10}\n'
+  + '.filters{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;z-index:10}@media(max-width:640px){.filters{position:static;border-bottom:none}}\n'
   + '.filters input,.filters select{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:14px}\n'
   + '.pills{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pill{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer}.pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}\n'
   + '.filters input{flex:1;min-width:150px}h2{font-size:18px;margin:26px 0 12px}\n'
