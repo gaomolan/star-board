@@ -778,6 +778,7 @@ export function renderSite(results, fresh, startedAt) {
   + '.card h3{margin:0 0 6px;font-size:16px;word-break:break-all}.card h3 a{color:var(--fg);text-decoration:none}.card h3 a:hover{color:var(--accent)}\n'
   + '.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;margin:0 6px 4px 0;border:1px solid var(--border);white-space:nowrap}\n'
   + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}.badge.ruleset{color:var(--accent);border-color:var(--accent)}\n'
+  + '.badge.category{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--bg));font-weight:600}.badge.tag{color:var(--muted);border-color:var(--border);background:var(--card)}\n'
   + '.rowmeta{color:var(--muted);font-size:13px;margin:6px 0}.rowmeta.desc{word-break:break-word}\n'
   + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px}\n'
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
