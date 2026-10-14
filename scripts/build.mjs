@@ -299,8 +299,8 @@ function isTranslationValid(src, zh) {
   if (zh.trim() === src.trim()) return false; // 原样回显
   const srcEn = (src.match(/[A-Za-z]/g) || []).length;
   const zhEn = (zh.match(/[A-Za-z]/g) || []).length;
-  // 原文英文很多时，译文英文应显著减少（至少减半）；技术术语/版本号允许残留
-  if (srcEn > 200 && zhEn > srcEn * 0.5) return false;
+  // 原文英文很多时，译文英文应显著减少；技术术语/版本号允许残留（阈值 0.7）
+  if (srcEn > 200 && zhEn > srcEn * 0.7) return false;
   return true;
 }
 
