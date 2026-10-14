@@ -125,14 +125,7 @@ function stripHtml(s) {
     .trim();
 }
 function cleanBody(s) {
-  let t = String(s || '');
-  // Release authors sometimes embed changelog metadata in HTML comments.
-  // Remove the JSON block first, even if the closing comment delimiter is missing.
-  t = t
-    .replace(/<!--[\s]*flclash:changelog:json\b[\s\S]*?(?:-->|$)/gi, '')
-    .replace(/<!--[\s]*flclash:changelog:(?:begin|end)[\s]*-->/gi, '')
-    .replace(/<!--[\s\S]*?-->/g, '')
-    .trim();
+  const t = String(s || '');
   if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
   return t;
 }
@@ -151,13 +144,6 @@ function fmtDate(ts) {
   const d = new Date(ts);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
-// GitHub 的 prerelease 标记优先；同时识别常见预发布版本号，避免 beta/rc 被误标正式版。
-function isPrereleaseRelease(tag, name, githubPrerelease = false) {
-  if (githubPrerelease) return true;
-  const text = `${tag || ''} ${name || ''}`.toLowerCase();
-  return /(?:^|[._+\/-]|\s)(?:alpha|beta|rc|pre(?:view|release)?|canary|nightly|dev(?:elopment)?|snapshot|unstable|eap|experimental)(?:$|[._+\/-]|\s|\d)/i.test(text);
-}
-
 function simpleHash(s) {
   let h = 0;
   for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; }
@@ -305,11 +291,6 @@ async function main() {
       latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body } : null;
       prev.releasesEtag = relRes.etag;
       prev.cachedLatest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url } : null;
-    }
-    // 兼容 ETag 缓存：即使 Release 未变化，也重新按 tag/name 校正分类。
-    if (latest) {
-      latest.prerelease = isPrereleaseRelease(latest.tag, latest.name, latest.prerelease);
-      if (prev.cachedLatest) prev.cachedLatest.prerelease = latest.prerelease;
     }
     let commit = null;
     if (!latest) {
@@ -498,7 +479,6 @@ function renderSite(results, fresh, startedAt) {
         tag: r.latest?.tag || null, prerelease: !!r.latest?.prerelease,
         published_at: ts, date: fmtDate(ts),
         zh: (inWeek && r.zh) ? r.zh.slice(0, 2500) : null,
-        body: (inWeek && r.latest?.body) ? r.latest.body.slice(0, 4000) : null,
         release_url: r.latest?.url || null,
       };
     }),
@@ -533,7 +513,7 @@ function renderSite(results, fresh, startedAt) {
   + '.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;margin:0 6px 4px 0;border:1px solid var(--border);white-space:nowrap}\n'
   + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}\n'
   + '.rowmeta{color:var(--muted);font-size:13px;margin:6px 0}.rowmeta.desc{word-break:break-word}\n'
-  + '.zh{white-space:normal;word-break:break-word;margin:4px 0;font-size:14px}.summary-label{font-size:13px;font-weight:600;margin-top:6px}.md h4{font-size:14px;margin:8px 0 3px}.md p{margin:4px 0}.md ul{margin:3px 0;padding-left:20px}.md li{margin:2px 0}.md img{max-width:100%;height:aut\n'
+  + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px}\n'
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
   + 'details pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;color:var(--muted);max-height:400px;overflow:auto}\n'
   + '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}.grid .card{margin-bottom:0}.grid .card h3{font-size:15px}\n'
@@ -553,7 +533,6 @@ function renderSite(results, fresh, startedAt) {
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
-+ 'function md(s){var x=esc(s).replace(/<!--[\\s\\S]*?-->/g,"");x=x.replace(/!\\[([^\\]]*)\\]\\((https?:\\/\\/[^\\s)]+)(?:\\s+[^)]*)?\\)/g,\x60<img alt="$1" src="$2" loading="lazy">\x60);x=x.replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\s)]+)(?:\\s+[^)]*)?\\)/g,\x60<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>\x60);x=x.replace(/^#{1,6}\\s+(.+)$/gm,"<h4>$1</h4>").replace(/^[-*+]\\s+(.+)$/gm,"<li>$1</li>").replace(/^\\s*\\d+\\.\\s+(.+)$/gm,"<li>$1</li>").replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1</strong>").replace(/__(.+?)__/g,"<strong>$1</strong>").replace(/\\*(.+?)\\*/g,"<em>$1</em>").replace(/\\x60([^\\x60]+)\\x60/g,"<code>$1</code>");x=x.replace(/(?:<li>.*?<\\/li>\\s*)+/g,function(m){return "<ul>"+m+"</ul>";});x=x.replace(/\\n{2,}/g,"</p><p>").replace(/\\n/g,"<br>");return "<div class=\\\"md\\\">"+x+"</div>";}\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
@@ -564,15 +543,15 @@ function renderSite(results, fresh, startedAt) {
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
-+ 'if(r.zh){h+="<div class=\\"zh\\">"+md(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
-+ 'else if(r.body){h+="<div class=\\"zh\\">"+md(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
++ 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
++ 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
 + 'return h+"</div>";}\n'
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";\n'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+" · "+ago(r.published_at)+" · "+esc(r.lang)+" · ⭐ "+(r.stars||0)+(r.release_url?" · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a>":"")+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
-+ 'if(r.zh){h+="<div class=\\\"summary-label\\\">更新内容摘要（中文）</div><div class=\\\"zh\\\">"+md(r.zh)+"</div>";}if(r.body){h+="<details class=\\\"relsum\\\"><summary>查看原文（默认折叠）</summary><div class=\\\"zh\\\">"+md(r.body)+"</div></details>";}\n'
++ 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要</summary><div class=\\"zh\\">"+esc(r.zh)+"</div></details>";}\n'
 + 'return h+"</div></div>";}\n'
 + 'function nameRow(r){return "<div class=\\"nrow\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+" <span class=\\"rowmeta\\">"+esc(r.lang)+" · ⭐ "+(r.stars||0)+" · "+esc(r.date)+"</span></div>";}\n'
 + 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
