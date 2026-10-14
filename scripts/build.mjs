@@ -818,7 +818,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></div>";\n'
-+ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+(r.release_url?" <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</div>";'
++ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(fmtDT(r.published_at))+" · ⭐ "+(r.stars||0)+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
 + 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
