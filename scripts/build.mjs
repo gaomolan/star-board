@@ -886,14 +886,21 @@ async function sendDigest(fresh) {
   const lines = fresh.slice(0, 20).map((r) => {
     const Lr = r.latest, Cr = r.commit;
     const isC = !Lr;
-    const tag = escHtml(isC ? Cr.sha : Lr.tag);
+    const tag = escHtml(isC ? Cr.sha.slice(0, 7) : Lr.tag);
     const name = escHtml(r.full);
-    const summary = r.zh
-      ? escHtml(r.zh.replace(/\s+/g, ' ').slice(0, 160))
-      : escHtml(((isC ? Cr.message : Lr.body) || '无更新说明').replace(/\s+/g, ' ').slice(0, 160));
-    const kind = isC ? '📝提交' : (Lr.prerelease ? '🧪测试版' : '✅正式版');
+    // 摘要：优先用清洗过的中文，没有则对原文做去噪
+    let summary = r.zh || '';
+    if (!summary) {
+      const raw = isC ? Cr.message : (Lr.body || '');
+      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160) || '无更新说明';
+    } else {
+      summary = summary.replace(/\s+/g, ' ').trim().slice(0, 160);
+    }
+    summary = escHtml(summary);
+    const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
-    return `▪️ <b>${name}</b> <code>${tag}</code> ${kind}\n${summary}\n<a href="${isC ? Cr.url : Lr.url}">${linkText}</a>`;
+    const url = isC ? Cr.url : Lr.url;
+    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${summary}\n<a href="${url}">${linkText}</a>`;
   });
   let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
