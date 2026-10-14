@@ -444,6 +444,21 @@ async function main() {
     const full = repo.full_name;
     state.repos[full] ||= {};
     const prev = state.repos[full];
+    // Topics 缓存优先；旧 starredPages 没有 Topics 时按仓库补取一次，失败不影响 release 流程。
+    let topics = Array.isArray(repo.topics) && repo.topics.length ? repo.topics : (Array.isArray(prev.topics) ? prev.topics : []);
+    if (!topics.length && !prev.topicsFetched) {
+      try {
+        const metaRes = await ghCached(`/repos/${full}`, prev.repoMetaEtag);
+        if (!metaRes.notModified && metaRes.json) {
+          topics = Array.isArray(metaRes.json.topics) ? metaRes.json.topics : [];
+          prev.repoMetaEtag = metaRes.etag || prev.repoMetaEtag;
+        }
+        prev.topics = topics;
+        prev.topicsFetched = true;
+      } catch (e) {
+        console.warn(`Topics 获取失败 ${full}: ${e.message}`);
+      }
+    }
     const relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
     let releases;
     if (relRes.notModified && 'cachedReleases' in prev) {
@@ -489,7 +504,7 @@ async function main() {
       }
     }
     return {
-      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', topics: Array.isArray(repo.topics) ? repo.topics : [], stars: repo.stargazers_count || 0,
+      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', topics, stars: repo.stargazers_count || 0,
       latest, releases, commit,
     };
   });
