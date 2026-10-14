@@ -125,6 +125,12 @@ function isChineseDominant(s) {
 }
 
 // ---------------- 翻译（主备） ----------------
+// 主翻译源熔断：连续失败 N 次后本轮不再尝试，避免上游故障时每个条目白等超时
+let primaryFailStreak = 0;
+let primaryDead = false;
+const PRIMARY_MAX_STREAK = 3;
+const PRIMARY_TIMEOUT = 15000;
+
 async function translatePrimary(text) {
   const res = await fetchTimeout(`${T_API_URL}/chat/completions`, {
     method: 'POST',
@@ -137,7 +143,7 @@ async function translatePrimary(text) {
         { role: 'user', content: text.slice(0, MAX_TRANSLATE_CHARS) },
       ],
     }),
-  });
+  }, PRIMARY_TIMEOUT);
   if (!res.ok) throw new Error(`主翻译源 ${res.status}`);
   const j = await res.json();
   const t = j.choices?.[0]?.message?.content?.trim();
@@ -178,9 +184,18 @@ async function translateSmart(cache, key, text, label = '') {
   const hit = cache[key];
   if (hit && hit.hash === hash) return { zh: hit.zh, cached: true };
   let zh = null;
-  if (T_API_KEY) {
+  if (T_API_KEY && !primaryDead) {
     zh = await translateWithRetry(() => translatePrimary(text), `${label}/主源`);
-    if (!zh) console.warn(`  主翻译源不可用，尝试 DeepL`);
+    if (zh) {
+      primaryFailStreak = 0;
+    } else {
+      primaryFailStreak++;
+      console.warn(`  主翻译源不可用，尝试 DeepL`);
+      if (primaryFailStreak >= PRIMARY_MAX_STREAK) {
+        primaryDead = true;
+        console.warn(`  主翻译源连续失败 ${primaryFailStreak} 次，本轮剩余条目跳过主源`);
+      }
+    }
   }
   if (!zh && DEEPL_KEY) {
     zh = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
