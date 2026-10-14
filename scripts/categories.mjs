@@ -72,4 +72,4 @@ function classifyProject(full, desc, lang, topics = []) {
   return { primary, tags, confidence: primary === 'other' ? 'review' : (CATEGORY_OVERRIDES[name] ? 'override' : 'rule') };
 }
 
-export { CAT_LABELS, CAT_ORDER, CAT_DEFAULT, CAT_TAG_LABELS, classifyProject };
+export { isRuleSet, CAT_LABELS, CAT_ORDER, CAT_DEFAULT, CAT_TAG_LABELS, classifyProject };
