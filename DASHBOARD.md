@@ -1,34 +1,69 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 04:29:16 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 04:42:36 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（0）
+## 🆕 本次新增（1）
 
-本轮无新增。
+### [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) `🧪 测试版` `v3.0.17-beta.1`
+
+发布时间：2026-10-14（5 分钟前）｜ [查看 Release](https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.17-beta.1)
+
+# v3.0.17-beta.1
+
+Beta 测试版，版本代码 30042，连接正式后端。提供全局、非全局方案，各有 64 位 ARM 和 32 位 ARM 安装包，沿用原发布签名，可覆盖升级并保留账号与本地数据。
+
+- 新增已验收的 MuMu Android 12 ARM64 全局传感器接入，修复未单独勾选运动软件时缺少模拟步频的问题。没有硬件计步器时使用加速度步态，不虚构硬件传感器；其他模拟器与系统版本需核对实际接入能力。
+- 修复 Android 12 定位接口定义在父类时公共定位适配未启用的问题，复用连续定位注册后的首帧等待，避免定位早于卫星状态初始化。用户在运动世界复测未再出现此前的“未知错误”。
+- 未获得 Root 授权或模块未启用时，隐藏主导航并拦截其他功能，仅开放数据采集与导出，支持授权后重试；避免通过返回栈或启动入口绕过限制。
+- 全局版本移除配置应用坐标系入口及历史页面恢复入口；非全局版本继续保留。
+- Hook 运行状态区分仅加速度步态与硬件计步传感器投递，方便定位模拟器差异。
+
+路线、定位频率及步频公共算法保持；ColorOS 和 HyperOS 原生接入布局保持。全局与非全局各 99 项 Xposed 单元测试通过，无 Root 访问隔离通过独立页面验收，MuMu ARM64 定位首帧和运动世界未知错误修复已验收。本次未将 Android 15 模拟器或 x86/x86_64 传感器标记为已适配，也未重新完成其他手机系统的实机回归。
+
+更新全局版本后请重启设备，使系统模块完整加载。保留账号、会员、额度、设备名额和模拟器并发限制。本次不修改后端。
+
+通过自建 Forgejo CI 测试、构建并核验四个安装包后自动发布，下载站同步激活 Beta 更新。软件内仅向加入 Beta 的账号展示此版本；稳定版继续保留。GitHub 仅镜像发行版及附件，不推送源码。
+
+| 模拟方案 | 架构 | 安装包 |
+| --- | --- | --- |
+| 非全局 | 32 位 ARM | LocationSpoofer-v3.0.17-beta.1-non-global-32bit-armeabi-v7a.apk |
+| 非全局 | 64 位 ARM | LocationSpoofer-v3.0.17-beta.1-non-global-64bit-arm64-v8a.apk |
+| 全局 | 32 位 ARM | LocationSpoofer-v3.0.17-beta.1-global-32bit-armeabi-v7a.apk |
+| 全局 | 64 位 ARM | LocationSpoofer-v3.0.17-beta.1-global-64bit-arm64-v8a.apk |
+
+版本号：`3.0.17-beta.1`；Android versionCode：`30042`。
+更新检查：下载服务器更新清单。
+由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。
+
+安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。
+GitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。
+
+---
+
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 6 分钟前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 17 分钟前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 5 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 21 分钟前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 32 分钟前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 1 小时前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 2 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 2 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 3 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 3 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 3 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 4 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 5 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 6 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 6 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 8 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 8 小时前 |
-| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 9 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 10 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 9 小时前 |
+| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 10 小时前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 10 小时前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 13 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 14 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 16 小时前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 20 小时前 |
-| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 20 小时前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 21 小时前 |
+| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 21 小时前 |
 | [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 23 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2851.0` | 测试版 | 2026-10-12 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
@@ -71,7 +106,7 @@
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 6 天前 |
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.21.0` | 正式版 | 2026-10-05 | 8 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 8 天前 |
-| [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 8 天前 |
+| [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 9 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 9 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 9 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.4-1` | 正式版 | 2026-10-04 | 9 天前 |
@@ -89,7 +124,7 @@
 | [yuanzl77/IPTV](https://github.com/yuanzl77/IPTV) | — | 提交 | 2026-09-21 | 22 天前 |
 | [zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles) | `v1.7.5` | 正式版 | 2026-09-20 | 23 天前 |
 | [black-ant/Ant-Browser](https://github.com/black-ant/Ant-Browser) | `V1.8.0` | 正式版 | 2026-09-19 | 24 天前 |
-| [liaoliao666/v2ex](https://github.com/liaoliao666/v2ex) | `1.9.6` | 正式版 | 2026-09-19 | 24 天前 |
+| [liaoliao666/v2ex](https://github.com/liaoliao666/v2ex) | `1.9.6` | 正式版 | 2026-09-19 | 25 天前 |
 | [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) | `epub-latest` | 正式版 | 2026-09-18 | 25 天前 |
 | [j4Uq/TVBoxOSC](https://github.com/j4Uq/TVBoxOSC) | `20260914-1520` | 正式版 | 2026-09-14 | 29 天前 |
 | [shufflewzc/faker3](https://github.com/shufflewzc/faker3) | — | 提交 | 2026-09-14 | 29 天前 |
