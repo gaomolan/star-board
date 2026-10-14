@@ -594,9 +594,16 @@ async function main() {
 }
 
 // ---------------- 看板渲染 ----------------
+function isRuleSet(full, desc) {
+  const name = String(full || '').toLowerCase().split('/')[1] || '';
+  if (/(^|[-_ ])rules?([-_ ]|$)/.test(name)) return true;
+  if (/规则集|rule.?set/i.test(desc || '')) return true;
+  return false;
+}
 function badge(r) {
   if (r.commit && !r.latest) return '`📝 提交`';
   if (!r.latest) return '`无 release`';
+  if (isRuleSet(r.full, r.desc)) return '`📦 规则集`';
   return r.latest.prerelease ? '`🧪 测试版`' : '`✅ 正式版`';
 }
 
@@ -745,7 +752,7 @@ function renderSite(results, fresh, startedAt) {
   + '.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px}\n'
   + '.card h3{margin:0 0 6px;font-size:16px;word-break:break-all}.card h3 a{color:var(--fg);text-decoration:none}.card h3 a:hover{color:var(--accent)}\n'
   + '.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;margin:0 6px 4px 0;border:1px solid var(--border);white-space:nowrap}\n'
-  + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}\n'
+  + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}.badge.ruleset{color:var(--accent);border-color:var(--accent)}\n'
   + '.rowmeta{color:var(--muted);font-size:13px;margin:6px 0}.rowmeta.desc{word-break:break-word}\n'
   + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px}\n'
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
@@ -756,7 +763,7 @@ function renderSite(results, fresh, startedAt) {
   + '<header class="top"><h1>⭐ Star 动态看板</h1><div class="meta" id="meta"></div></header>\n'
   + '<div class="filters">\n'
   + '<input id="q" type="search" placeholder="搜索项目名 / 简介…">\n'
-  + '<div class="pills" id="fTypePills"><button class="pill active" data-v="stable">✅ 正式版</button><button class="pill" data-v="beta">🧪 测试版</button><button class="pill" data-v="commit">📝 仅提交</button><button class="pill" data-v="">全部</button></div>\n'
+  + '<div class="pills" id="fTypePills"><button class="pill active" data-v="stable">✅ 正式版</button><button class="pill" data-v="beta">🧪 测试版</button><button class="pill" data-v="ruleset">📦 规则集</button><button class="pill" data-v="commit">📝 仅提交</button><button class="pill" data-v="">全部</button></div>\n'
   + '<select id="fSort"><option value="time">按更新时间</option><option value="name">按名称</option></select>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
@@ -768,8 +775,9 @@ function renderSite(results, fresh, startedAt) {
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
-+ 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
-+ 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
++ 'function isRuleSet(full,desc){var n=String(full||"").toLowerCase().split("/")[1]||"";if(/(^|[-_ ])rules?([-_ ]|$)/.test(n))return true;return /规则集|rule.?set/i.test(desc||"");}\n'
++ 'function badge(r){if(r.isCommit||!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";if(isRuleSet(r.full,r.desc))return "<span class=\\"badge ruleset\\">📦 规则集</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
++ 'function typeOf(r){if(!r.tag)return "commit";if(isRuleSet(r.full,r.desc))return "ruleset";return r.prerelease?"beta":"stable";}\n'
 + 'function statsHtml(){var s=DATA.stats;if(!s)return "";'
 + 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个版本更新（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
