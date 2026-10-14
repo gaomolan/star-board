@@ -173,6 +173,23 @@ function stripNoise(s) {
   t = t.replace(/^\|.*\|[ \t]*\r?\n\|[\s\-|:]+\|[ \t]*\r?\n(\|.*\|[ \t]*\r?\n?)+/gm, (m) => {
     return /\.(apk|exe|msi|dmg|pkg|zip|tar\.gz|deb|rpm|appimage)(\s|\||$)/i.test(m) ? '' : m;
   });
+  // 8g) 推广/AFF/模板章节：状态机删除整个章节
+  {
+    const lines = t.split('\n');
+    const out = [];
+    let skip = false;
+    const isPromoHeader = (s) => /^#{1,6}\s*/.test(s) && /(推荐服务|优惠码|\bAFF\b|Telegram|中转|专线|直连|机场|Download\s*\/|\/\s*下载|Feedback|问题反馈|提交故障|需求建议)/i.test(s);
+    const isAnyHeader = (s) => /^#{1,6}\s+/.test(s);
+    for (const l of lines) {
+      const s = l.trim();
+      if (isPromoHeader(s)) { skip = true; continue; }
+      if (skip && (isAnyHeader(s) || /^---\s*$/.test(s))) { skip = false; }
+      if (skip) continue;
+      if (/\bAFF\b/i.test(s) && s.length < 300 && /简评|注/.test(s)) continue;
+      out.push(l);
+    }
+    t = out.join('\n');
+  }
   // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
