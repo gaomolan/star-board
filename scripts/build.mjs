@@ -793,6 +793,8 @@ function renderSite(results, fresh, startedAt) {
   + '<section><h2 style="display:none">📋 全部项目 <span id="allCount"></span></h2><div class="stats" id="stats" style="display:none"></div><div id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
++ 'var CAT_LABELS = ' + JSON.stringify(CAT_LABELS) + ';\n'
++ 'var CAT_TAG_LABELS = ' + JSON.stringify(CAT_TAG_LABELS) + ';\n'
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
