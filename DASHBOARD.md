@@ -1,36 +1,16 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 04:14:05 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 04:22:22 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（1）
 
-### [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) `🧪 测试版` `v1.35.0-beta.1`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `444236a`
 
-发布时间：2026-10-14（2 分钟前）｜ [查看 Release](https://github.com/daimiaopeng/coolapk-desktop/releases/tag/v1.35.0-beta.1)
+发布时间：2026-10-14（1 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/444236afdaa14afee3a47f96c158936779c7a3bd)
 
-# 测试版更新日志
+*（原文，翻译暂不可用）*
 
-比较范围：正式版 v1.34.1 → bc5ec56
-
-## 新增
-
-- 新增浅色界面底色设置，支持柔和浅灰、暖米色和自定义颜色，可恢复默认配色。
-- 新增滚动自动隐藏导航，默认开启：移动布局向下阅读时收起首页搜索栏、底部 Dock 或详情操作栏，反向滚动恢复，首页栏目栏保持显示。
-- 无图模式新增“进入详情时展示图片”开关：首页和列表继续隐藏图片，动态及问答详情可显示图片并查看大图。
-- 新增搜索分类拖动排序，支持自动保存和恢复默认，综合分类固定在首位。
-- 上传任务页面增加 CDN 文件上传入口。
-
-## 优化
-
-- 优化上传下载页面在窄屏下的任务统计、长文件名、进度和操作按钮布局。
-- 将外观设置中的主导航栏目与个人中心栏目设置改为折叠展示。
-- 优化反馈私信输入区，默认展开模板，支持鼠标及触屏拖动调整高度、双击恢复默认。
-
-## 修复
-
-- 修复私信粘贴图片后预览异常、发送按钮被挤出可见区域的问题。
-- 修复头条刷新时丢失首条动态游标的问题，并调整加载更多时的游标传递。
-- 修复设置页在窄窗口或大字体下，说明文字、控件及按钮相互挤压的问题。
+20261014
 
 ---
 
@@ -38,17 +18,17 @@
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 2 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 1 分钟前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 12 分钟前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 1 小时前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 2 小时前 |
 | [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 2 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 2 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 3 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 3 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 3 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-13 | 4 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 4 小时前 |
 | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 5 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 6 小时前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 7 小时前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 8 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 8 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 9 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 10 小时前 |
