@@ -255,7 +255,7 @@ function splitBilingual(text) {
   }
   // 模式2：--- 分隔块中相邻的英文条目块 + 中文条目块
   const parts = t.split(/^\s*---\s*$/m);
-  if (parts.length < 2) return null;
+  if (parts.length >= 2) {
   const infos = parts.map((p) => {
     const s = p.trim();
     if (!s) return null;
@@ -272,6 +272,17 @@ function splitBilingual(text) {
       const enPart = aEN ? a.text : b.text;
       if (zhPart.length < 30 || enPart.length < 30) continue;
       return { zh: zhPart, en: enPart };
+    }
+  }
+  }  // 模式2结束
+  // 模式3：开头是 "简体中文 · English" 语言切换头
+  const langM = t.match(/^(\*{0,2}简体中文\*{0,2}\s*[·|/]\s*\*{0,2}English\*{0,2})/im);
+  if (langM) {
+    const rest = t.slice(langM.index + langM[0].length).trim();
+    const cjkCount = (rest.match(/[一-鿿]/g) || []).length;
+    // 如果剩余内容中文主导（CJK 占比 > 20% 且绝对数量 >= 50），直接当中文用
+    if (cjkCount >= 50 && cjkCount / rest.length > 0.2) {
+      return { zh: rest, en: '' };
     }
   }
   return null;
