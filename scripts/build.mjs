@@ -254,7 +254,7 @@ async function main() {
       }
     }
     return {
-      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—',
+      full, url: repo.html_url, desc: repo.description || '', lang: repo.language || '—', stars: repo.stargazers_count || 0,
       latest: latest ? {
         id: latest.id, tag: latest.tag_name, name: latest.name || latest.tag_name,
         prerelease: !!latest.prerelease, published_at: latest.published_at,
@@ -411,7 +411,7 @@ function renderSite(results, fresh, startedAt) {
       const ts = r.latest?.published_at || r.commit?.date;
       return {
         full: r.full, url: r.url,
-        desc: (r.desc || '').slice(0, 120), lang: r.lang || '—',
+        desc: (r.desc || '').slice(0, 120), lang: r.lang || '—', stars: r.stars || 0,
         tag: r.latest?.tag || null, prerelease: !!r.latest?.prerelease,
         published_at: ts, date: fmtDate(ts),
       };
@@ -440,52 +440,61 @@ function renderSite(results, fresh, startedAt) {
   + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
   + 'details pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;color:var(--muted);max-height:400px;overflow:auto}\n'
   + '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}.grid .card{margin-bottom:0}.grid .card h3{font-size:15px}\n'
-  + '.empty{color:var(--muted);padding:24px;text-align:center}footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}a{color:var(--accent)}\n'
+  + '.empty{color:var(--muted);padding:24px;text-align:center}details.group{margin-bottom:10px}details.group>summary{cursor:pointer;font-size:16px;font-weight:600;padding:10px 2px;list-style:none}details.group>summary::-webkit-details-marker{display:none}details.group>summary:before{content:"▸ ";color:var(--muted)}details.group[open]>summary:before{content:"▾ "}footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}a{color:var(--accent)}\n'
   + '</style>\n</head>\n<body>\n<div class="wrap">\n'
   + '<header class="top"><h1>⭐ Star 动态看板</h1><div class="meta" id="meta"></div></header>\n'
   + '<div class="filters">\n'
   + '<input id="q" type="search" placeholder="搜索项目名 / 简介…">\n'
   + '<select id="fType"><option value="">全部类型</option><option value="stable">✅ 正式版</option><option value="beta">🧪 测试版</option><option value="commit">📝 仅提交</option></select>\n'
   + '<select id="fLang"><option value="">全部语言</option></select>\n'
+  + '<select id="fSort"><option value="time">按更新时间</option><option value="name">按名称</option></select>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
   + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="grid" id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
-  + 'var DATA = ' + json + ';\n'
-  + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
-  + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
-  + 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
-  + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
-  + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
-  + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
-  + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
-  + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无更新说明）</div>";}'
-  + 'return h+"</div>";}\n'
-  + 'function allCard(r){var h="<div class=\\"card\\" data-full=\\""+esc(r.full.toLowerCase())+"\\" data-desc=\\""+esc((r.desc||"").toLowerCase())+"\\" data-type=\\""+(r.tag?(r.prerelease?"beta":"stable"):"commit")+"\\" data-lang=\\""+esc(r.lang)+"\\">";'
-  + 'h+="<h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
-  + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+" <span class=\\"badge\\">"+esc(r.lang)+"</span></div>";'
-  + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+" · "+ago(r.published_at)+"</div>";'
-  + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}'
-  + 'return h+"</div>";}\n'
-  + 'function applyFilters(){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
-  + 'var cards=document.querySelectorAll("#all .card");var n=0;'
-  + 'for(var i=0;i<cards.length;i++){var c=cards[i];var ok=(!q||c.getAttribute("data-full").indexOf(q)>=0||c.getAttribute("data-desc").indexOf(q)>=0)&&(!t||c.getAttribute("data-type")===t)&&(!l||c.getAttribute("data-lang")===l);'
-  + 'c.style.display=ok?"":"none";if(ok)n++;}'
-  + 'document.getElementById("allCount").textContent="（"+n+" / "+cards.length+"）";}\n'
-  + '(function(){'
-  + 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
-  + 'var langs={},i;for(i=0;i<DATA.all.length;i++){langs[DATA.all[i].lang]=1;}'
-  + 'var sel=document.getElementById("fLang");Object.keys(langs).sort().forEach(function(l){var o=document.createElement("option");o.value=l;o.textContent=l;sel.appendChild(o);});'
-  + 'var fh="";for(i=0;i<DATA.fresh.length;i++){fh+=freshCard(DATA.fresh[i]);}'
-  + 'document.getElementById("fresh").innerHTML=fh||"<div class=\\"empty\\">本轮无新增</div>";'
-  + 'document.getElementById("freshCount").textContent=DATA.fresh.length? "（"+DATA.fresh.length+"）":"";'
-  + 'if(!DATA.fresh.length){document.getElementById("freshSec").style.display="none";}'
-  + 'var ah="";for(i=0;i<DATA.all.length;i++){ah+=allCard(DATA.all[i]);}'
-  + 'document.getElementById("all").innerHTML=ah;applyFilters();'
-  + '["q","fType","fLang"].forEach(function(id){document.getElementById(id).addEventListener("input",applyFilters);});'
-  + '})();\n'
-  + '</scr'+'ipt>\n</body>\n</html>\n';
++ 'var DATA = ' + json + ';\n'
++ 'var BUCKETS=[{icon:"🔥",name:"近 7 天有更新"},{icon:"🗓️",name:"近 30 天有更新"},{icon:"🕰️",name:"近 90 天有更新"},{icon:"💤",name:"长期未更新"}];\n'
++ 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
++ 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
++ 'function bucketOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<=7)return 0;if(d<=30)return 1;if(d<=90)return 2;return 3;}\n'
++ 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
++ 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
++ 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
++ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
++ 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
++ 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
++ 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无更新说明）</div>";}'
++ 'return h+"</div>";}\n'
++ 'function allCard(r){var h="<div class=\\"card\\">";'
++ 'h+="<h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
++ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+" <span class=\\"badge\\">"+esc(r.lang)+"</span></div>";'
++ 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+" · "+ago(r.published_at)+" · ⭐ "+(r.stars||0)+"</div>";'
++ 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}'
++ 'return h+"</div>";}\n'
++ 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
++ 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(!t||typeOf(r)===t)&&(!l||r.lang===l);}\n'
++ 'function renderAll(){var mode=document.getElementById("fSort").value;var list=DATA.all.filter(matchFilters);var box=document.getElementById("all");var h="",i;'
++ 'if(mode==="name"){list.sort(function(a,b){var x=a.full.toLowerCase(),y=b.full.toLowerCase();return x<y?-1:(x>y?1:0);});'
++ 'h="<div class=\\"grid\\">"+list.map(allCard).join("")+"</div>";if(!list.length){h="<div class=\\"empty\\">没有匹配的项目</div>";}}'
++ 'else{var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[bucketOf(list[i])].push(list[i]);}'
++ 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
++ 'h+="<details class=\\"group\\""+(i<2?" open":"")+"><summary>"+BUCKETS[i].icon+" "+BUCKETS[i].name+"（"+groups[i].length+"）</summary><div class=\\"grid\\">"+groups[i].map(allCard).join("")+"</div></details>";}'
++ 'if(!h){h="<div class=\\"empty\\">没有匹配的项目</div>";}}'
++ 'box.innerHTML=h;document.getElementById("allCount").textContent="（"+list.length+" / "+DATA.all.length+"）";}\n'
++ '(function(){'
++ 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
++ 'var langs={},i;for(i=0;i<DATA.all.length;i++){langs[DATA.all[i].lang]=1;}'
++ 'var sel=document.getElementById("fLang");Object.keys(langs).sort().forEach(function(l){var o=document.createElement("option");o.value=l;o.textContent=l;sel.appendChild(o);});'
++ 'var fh="";for(i=0;i<DATA.fresh.length;i++){fh+=freshCard(DATA.fresh[i]);}'
++ 'document.getElementById("fresh").innerHTML=fh||"<div class=\\"empty\\">本轮无新增</div>";'
++ 'document.getElementById("freshCount").textContent=DATA.fresh.length?"（"+DATA.fresh.length+"）":"";'
++ 'if(!DATA.fresh.length){document.getElementById("freshSec").style.display="none";}'
++ 'renderAll();'
++ '["q","fType","fLang","fSort"].forEach(function(id){document.getElementById(id).addEventListener("input",renderAll);});'
++ '})();\n'
++ '</scr'+'ipt>\n</body>\n</html>\n';
+
 }
 
 // ---------------- gh-pages 部署 ----------------
