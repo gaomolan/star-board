@@ -969,7 +969,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'var DATA = ' + json + ';\n'
 + 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
-+ 'function renderMdInline(s){var t=esc(s);t=t.replace(/^#{1,6}\\s+(.+)$/gm,"<b class=\\"md-h\\">$1</b>");t=t.replace(/\\*\\*(.+?)\\*\\*/g,"<b>$1</b>");return t;}\\n'
++ 'function renderMdInline(s){var t=esc(s);t=t.replace(/^#{1,6}\\s+(.+)$/gm,"<b class=\\"md-h\\">$1</b>");t=t.replace(/\\*\\*(.+?)\\*\\*/g,"<b>$1</b>");return t;}'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
 + 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function isRuleSet(full,desc){var n=String(full||"").toLowerCase().split("/")[1]||"";if(/(^|[-_ ])rules?([-_ ]|$)/.test(n))return true;return /规则集|rule.?set/i.test(desc||"");}\n'
