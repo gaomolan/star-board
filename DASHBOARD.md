@@ -1,74 +1,17 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 06:38:21 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 06:47:48 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（1）
+## 🆕 本次新增（0）
 
-### [microsoft/PowerToys](https://github.com/microsoft/PowerToys) `🧪 测试版` `v0.102.2862.0`
-
-发布时间：2026-10-14（2 分钟前）｜ [查看 Release](https://github.com/microsoft/PowerToys/releases/tag/v0.102.2862.0)
-
-# PowerToys 预览版 v0.102.2862.0
-
-这是 **PowerToys 0.102 发布系列** 的预览通道版本，基于 `stable` 分支构建。 该版本继 v0.102.2851.0 之后发布；下文所述内容仅描述自该预览版以来的变更，而非 0.102 与 0.101 版本间的完整变更日志。此版本并非最终稳定版。
-
-## 亮点
-
-- **高级粘贴**：为内置和已保存的自定义操作添加了无界面命令行界面（CLI），支持文件、标准输入（stdin）和剪贴板工作流。
-- **命令面板**：为紧凑模式的垂直布局添加了全屏预览选择器。
-- **命令面板**：修复了因继承自 Windows App SDK 的运行时目录覆盖导致的已启动应用启动失败问题。
-- **命令面板**：修复了当扩展程序替换内容页面的详细信息时，详细信息窗格显示为空的问题。
-- **New+**：修复了上下文菜单的内存泄漏问题，并改进了模板目标和路径的处理。
-- **设置**：当模块无法加载或设置读取失败时，保留模块启用偏好设置。
-
-## 高级粘贴
-
-- 添加了无界面命令行工具（CLI），可在不打开用户界面的情况下运行内置和已保存的自定义操作，支持文件、标准输入（stdin）或剪贴板输入，以及文件、剪贴板或纯文本标准输出（stdout）；AI 操作使用“设置”中配置的提供程序，并遵循 @MuyuanMS 和 @Copilot 在 #50834 中提出的现有策略
-- 更新了“高级粘贴”CLI 以适配 System.CommandLine 2.0，保留了现有命令、别名、输出格式以及 @LegendaryBlair 和 @Copilot 在 #51230 中提出的类似帮助文档的选项值
-
-## 命令面板
-
-- 将紧凑模式中的垂直位置滑块替换为支持拖动、滚动和键盘控制的全屏预览选择器，同时为展开的搜索结果预留空间（参见 #51011，由 @jiripolasek 提交）
-- 修复了当扩展程序替换内容页面的详细信息时，详细信息窗格显示为空的问题，该问题发生在 #51231 中，当时系统会初始化新内容并脱离之前的详细信息
-- 修复了从命令面板启动的应用程序的启动失败问题，通过防止它们继承其 Windows App SDK 运行时-dire
-
-<details><summary>查看原文</summary>
-
-# PowerToys Preview v0.102.2862.0
-
-This is a preview-channel build for the **PowerToys 0.102 release train**, produced from the `stable` branch. It follows v0.102.2851.0; the notes below describe changes since that preview, not the complete 0.102 versus 0.101 changelog. This is not the final stable release.
-
-## Highlights
-
-- **Advanced Paste**: Added a headless CLI for built-in and saved custom actions, with file, stdin, and clipboard workflows.
-- **Command Palette**: Added a full-screen preview picker for compact-mode vertical positioning.
-- **Command Palette**: Fixed startup failures in launched apps caused by an inherited Windows App SDK runtime-directory override.
-- **Command Palette**: Fixed blank details panes when extensions replace a content page's details.
-- **New+**: Fixed context-menu memory leaks and improved template destination and path handling.
-- **Settings**: Preserved module enablement preferences when modules cannot load or settings reads fail.
-
-## Advanced Paste
-
-- Added a headless CLI to run built-in and saved custom actions without opening the UI, with file, stdin, or clipboard input and file, clipboard, or text-only stdout output; AI actions use providers configured in Settings and honor existing policies in #50834 by @MuyuanMS and @Copilot
-- Updated the Advanced Paste CLI for System.CommandLine 2.0, preserving existing commands, aliases, output formats, and help-like option values in #51230 by @LegendaryBlair and @Copilot
-
-## Command Palette
-
-- Replaced compact mode's vertical-position slider with a full-screen preview picker supporting drag, scroll, and keyboard controls, while reserving room for expanded search results in #51011 by @jiripolasek
-- Fixed blank details panes when extensions replace a content page's details, initializing new content and detaching the previous details in #51231
-- Fixed startup failures in applications launched from Command Palette by preventing them from inheriting its Windows App SDK runtime-dire
-
-</details>
-
----
-
+本轮无新增。
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 2 分钟前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 21 分钟前 |
-| [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 48 分钟前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 11 分钟前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 31 分钟前 |
+| [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 57 分钟前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 2 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-14 | 2 小时前 |
 | [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.1` | 测试版 | 2026-10-14 | 2 小时前 |
@@ -80,12 +23,12 @@ This is a preview-channel build for the **PowerToys 0.102 release train**, produ
 | [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 8 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 8 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 10 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 10 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 11 小时前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 12 小时前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 12 小时前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 15 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 16 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 18 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 19 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 23 小时前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 23 小时前 |
 | [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 1 天前 |
