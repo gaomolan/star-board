@@ -156,6 +156,8 @@ function stripNoise(s) {
   t = t.replace(/^#{1,6}\s*what'?s changed\s*$/gim, '');  // ## What's Changed 标题
   t = t.replace(/\s+by @\S+ in https?:\/\/[^\s]+/g, '');  // by @user in PR链接
   t = t.replace(/^\*?\*?full changelog\*?\*?:?\s*https?:\/\/\S+\s*$/gim, '');  // Full Changelog 行
+  // 8c) 表情符号（emoji）清洗
+  t = t.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}]/gu, '');
   // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
