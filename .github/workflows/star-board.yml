@@ -38,6 +38,17 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           BACKFILL_ALL: ${{ contains(github.event.head_commit.message, '[backfill-all]') && '1' || '0' }}
 
+      - name: 导出历史译文缺口（只读）
+        run: node scripts/export-translation-gaps.mjs
+
+      - name: 上传译文诊断报告
+        uses: actions/upload-artifact@v4
+        with:
+          name: translation-gaps
+          path: translation-gaps.json
+          if-no-files-found: error
+          retention-days: 3
+
       - name: 提交看板与状态
         run: |
           git config user.name "star-board-bot"
