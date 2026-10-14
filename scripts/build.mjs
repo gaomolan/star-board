@@ -545,10 +545,10 @@ async function main() {
         const t = await translateSmart(state.translations, `rel:${L.id}`, bodyText, r.full);
         if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
       }
-      // 兜底读缓存：ETag 命中时无正文也无妨（release 未变则译文有效）
+      // 兜底读缓存：仅当译文通过质量校验才使用（防坏缓存）
       if (!zh) {
         const hit = state.translations[`rel:${L.id}`];
-        if (hit) zh = hit.zh;
+        if (hit && bodyText && isTranslationValid(bodyText, hit.zh)) zh = hit.zh;
       }
       L.zh = zh;
     }
