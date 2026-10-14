@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: 24
 
+      # 全量回填会先尝试现有主源/DeepL，失败后使用无密钥 Google Translate 兜底；成功译文直接写入 state.json 缓存。
       - name: 抓取 star 动态并生成看板
         run: node scripts/build.mjs
         env:
