@@ -752,8 +752,9 @@ function renderSite(results, fresh, startedAt) {
     repoSlug: REPO_SLUG,
     fresh: fresh.map((r) => {
       const Lr = r.latest, Cr = r.commit;
+      const category = classifyProject(r.full, r.desc, r.lang, r.topics);
       return {
-        full: r.full, url: r.url,
+        full: r.full, url: r.url, primary: category.primary, tags: category.tags,
         isCommit: !Lr,
         tag: Lr?.tag || Cr?.sha || null, prerelease: !!Lr?.prerelease,
         published_at: Lr?.published_at || Cr?.date, date: fmtDate(Lr?.published_at || Cr?.date),
@@ -802,6 +803,18 @@ function renderSite(results, fresh, startedAt) {
     }
   }
   data.stats = stats;
+  // 分类质量检查只告警，不阻断 release 翻译、缓存和页面生成。
+  const categoryCounts = Object.fromEntries(CAT_ORDER.map((k) => [k, 0]));
+  let reviewCount = 0, invalidCount = 0;
+  for (const item of data.all) {
+    if (!CAT_ORDER.includes(item.primary)) invalidCount++;
+    else categoryCounts[item.primary]++;
+    if (item.categoryConfidence === 'review') reviewCount++;
+  }
+  if (invalidCount) console.warn(`分类质量检查：${invalidCount} 个项目主分类无效`);
+  if (data.all.length && categoryCounts.other / data.all.length > 0.25) console.warn(`分类质量检查：其他占比 ${Math.round(categoryCounts.other / data.all.length * 100)}%，建议检查分类规则`);
+  if (reviewCount) console.log(`分类待复核：${reviewCount} 个项目`);
+  console.log('主分类统计：' + Object.entries(categoryCounts).filter(([, n]) => n > 0).map(([k, n]) => CAT_LABELS[k] + ':' + n).join(' / '));
   // 防止 release 正文里的 </script> 冲破 script 标签
   const json = JSON.stringify(data).replace(/<\/script/gi, '<\\/script');
 
@@ -867,7 +880,7 @@ function renderSite(results, fresh, startedAt) {
 + 'var _fCats=new Set(' + JSON.stringify(CAT_DEFAULT) + ');var _allCats=' + JSON.stringify(CAT_ORDER) + ';function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();'
 + 'function catMatch(r){var cs=r.cats||["other"];for(var i=0;i<cs.length;i++){if(_fCats.has(cs[i]))return true;}return false;}\n'
 + 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(_fCats.size===0||catMatch(r));}\n'
-+ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cats:r.cats,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
++ 'function flatReleases(){var out=[],ri,r,rels,i,rel;for(ri=0;ri<DATA.all.length;ri++){r=DATA.all[ri];rels=(r.releases&&r.releases.length)?r.releases:null;if(rels){for(i=0;i<rels.length;i++){rel=rels[i];out.push({full:r.full,url:r.url,desc:r.desc,lang:r.lang,stars:r.stars,cats:r.cats,primary:r.primary,tags:r.tags,tag:rel.tag,prerelease:rel.prerelease,published_at:rel.published_at,date:rel.date,zh:rel.zh,body:rel.body,release_url:rel.release_url});}}else{out.push(r);}}return out;}\n'
 + 'function renderAll(){var list=flatReleases().filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'list.sort(function(a,b){var x=a.published_at||"",y=b.published_at||"";return x<y?1:(x>y?-1:0);});var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
 + 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
