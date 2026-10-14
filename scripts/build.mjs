@@ -17,7 +17,8 @@
  *   BACKFILL_DAYS                       首次运行时只翻译 N 天内的 release（默认 30）
  *   TEST_LIMIT                          调试用：只处理前 N 个 star 仓库（默认 0 = 全部）
  */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 
 // ---------------- 配置 ----------------
 const GH_USER = process.env.GH_USER || 'ly6980';
@@ -25,6 +26,12 @@ const GH_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
 const REPO_SLUG = process.env.REPO_SLUG || '';
 const STATE_PATH = process.env.STATE_PATH || 'state.json';
 const DASHBOARD_PATH = process.env.DASHBOARD_PATH || 'DASHBOARD.md';
+const SITE_PATH = process.env.SITE_PATH || 'site/index.html';
+function siteUrl() {
+  if (!REPO_SLUG || !REPO_SLUG.includes('/')) return '';
+  const [o, r] = REPO_SLUG.split('/');
+  return `https://${o}.github.io/${r}/`;
+}
 const BACKFILL_DAYS = parseInt(process.env.BACKFILL_DAYS || '30', 10);
 const TEST_LIMIT = parseInt(process.env.TEST_LIMIT || '0', 10);
 
@@ -293,12 +300,20 @@ async function main() {
   console.log(`新增 ${fresh.length} 条，本次新翻译 ${translatedCount} 条`);
 
   // 4. 渲染 DASHBOARD.md
-  const md = renderDashboard(results.filter((r) => !r.__error), fresh, startedAt, isFirstRun);
+  const okResults = results.filter((r) => !r.__error);
+  const md = renderDashboard(okResults, fresh, startedAt, isFirstRun);
   writeFileSync(DASHBOARD_PATH, md);
   writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
   console.log(`已写入 ${DASHBOARD_PATH} / ${STATE_PATH}`);
 
-  // 5. Telegram digest（首次运行不推送，避免 171 条刷屏）
+  // 5. 生成网站并部署到 gh-pages
+  const siteHtml = renderSite(okResults, fresh, startedAt);
+  mkdirSync(dirname(SITE_PATH), { recursive: true });
+  writeFileSync(SITE_PATH, siteHtml);
+  console.log(`已写入 ${SITE_PATH}（${siteHtml.length} 字节）`);
+  await deploySite(siteHtml);
+
+  // 6. Telegram digest（首次运行不推送，避免 171 条刷屏）
   if (!isFirstRun && fresh.length > 0 && TG_TOKEN && TG_CHAT) {
     await sendDigest(fresh);
   } else if (!TG_TOKEN || !TG_CHAT) {
@@ -374,6 +389,136 @@ function renderDashboard(results, fresh, startedAt, isFirstRun) {
   return L.join('\n');
 }
 
+// ---------------- 网站生成 ----------------
+function renderSite(results, fresh, startedAt) {
+  const sorted = [...results].sort((a, b) => {
+    const ta = a.latest?.published_at || a.commit?.date || '';
+    const tb = b.latest?.published_at || b.commit?.date || '';
+    return tb.localeCompare(ta);
+  });
+  const data = {
+    generatedAt: startedAt.toISOString().replace('T', ' ').slice(0, 16) + ' UTC',
+    repoSlug: REPO_SLUG,
+    fresh: fresh.map((r) => ({
+      full: r.full, url: r.url,
+      tag: r.latest.tag, prerelease: r.latest.prerelease,
+      published_at: r.latest.published_at, date: fmtDate(r.latest.published_at),
+      zh: r.zh ? r.zh.slice(0, 3000) : null,
+      body: (r.latest.body || '').slice(0, 4000),
+      release_url: r.latest.url,
+    })),
+    all: sorted.map((r) => {
+      const ts = r.latest?.published_at || r.commit?.date;
+      return {
+        full: r.full, url: r.url,
+        desc: (r.desc || '').slice(0, 120), lang: r.lang || '—',
+        tag: r.latest?.tag || null, prerelease: !!r.latest?.prerelease,
+        published_at: ts, date: fmtDate(ts),
+      };
+    }),
+  };
+  // 防止 release 正文里的 </script> 冲破 script 标签
+  const json = JSON.stringify(data).replace(/<\/script/gi, '<\\/script');
+
+  return '<!DOCTYPE html>\n'
+  + '<html lang="zh-CN">\n<head>\n<meta charset="utf-8">\n'
+  + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+  + '<title>⭐ Star 动态看板</title>\n<style>\n'
+  + ':root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e3e5e8;--accent:#0969da;--green:#1a7f37;--amber:#9a6700}\n'
+  + '@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--muted:#8b949e;--card:#161b22;--border:#30363d;--accent:#4493f8;--green:#3fb950;--amber:#d29922}}\n'
+  + '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.6}\n'
+  + '.wrap{max-width:960px;margin:0 auto;padding:0 16px}header.top{padding:26px 0 6px}h1{font-size:24px;margin:0 0 4px}.meta{color:var(--muted);font-size:13px}\n'
+  + '.filters{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;z-index:10}\n'
+  + '.filters input,.filters select{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:14px}\n'
+  + '.filters input{flex:1;min-width:150px}h2{font-size:18px;margin:26px 0 12px}\n'
+  + '.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px}\n'
+  + '.card h3{margin:0 0 6px;font-size:16px;word-break:break-all}.card h3 a{color:var(--fg);text-decoration:none}.card h3 a:hover{color:var(--accent)}\n'
+  + '.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;margin:0 6px 4px 0;border:1px solid var(--border);white-space:nowrap}\n'
+  + '.badge.stable{color:var(--green);border-color:var(--green)}.badge.beta{color:var(--amber);border-color:var(--amber)}.badge.commit{color:var(--muted)}\n'
+  + '.rowmeta{color:var(--muted);font-size:13px;margin:6px 0}.rowmeta.desc{word-break:break-word}\n'
+  + '.zh{white-space:pre-wrap;word-break:break-word;margin:8px 0;font-size:14px}\n'
+  + 'details{margin-top:8px}details summary{cursor:pointer;color:var(--accent);font-size:14px}\n'
+  + 'details pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;color:var(--muted);max-height:400px;overflow:auto}\n'
+  + '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}.grid .card{margin-bottom:0}.grid .card h3{font-size:15px}\n'
+  + '.empty{color:var(--muted);padding:24px;text-align:center}footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}a{color:var(--accent)}\n'
+  + '</style>\n</head>\n<body>\n<div class="wrap">\n'
+  + '<header class="top"><h1>⭐ Star 动态看板</h1><div class="meta" id="meta"></div></header>\n'
+  + '<div class="filters">\n'
+  + '<input id="q" type="search" placeholder="搜索项目名 / 简介…">\n'
+  + '<select id="fType"><option value="">全部类型</option><option value="stable">✅ 正式版</option><option value="beta">🧪 测试版</option><option value="commit">📝 仅提交</option></select>\n'
+  + '<select id="fLang"><option value="">全部语言</option></select>\n'
+  + '</div>\n'
+  + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
+  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="grid" id="all"></div></section>\n'
+  + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
+  + '</div>\n<script>\n'
+  + 'var DATA = ' + json + ';\n'
+  + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
+  + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
+  + 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
+  + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
+  + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
+  + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
+  + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
+  + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无更新说明）</div>";}'
+  + 'return h+"</div>";}\n'
+  + 'function allCard(r){var h="<div class=\\"card\\" data-full=\\""+esc(r.full.toLowerCase())+"\\" data-desc=\\""+esc((r.desc||"").toLowerCase())+"\\" data-type=\\""+(r.tag?(r.prerelease?"beta":"stable"):"commit")+"\\" data-lang=\\""+esc(r.lang)+"\\">";'
+  + 'h+="<h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
+  + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+" <span class=\\"badge\\">"+esc(r.lang)+"</span></div>";'
+  + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+" · "+ago(r.published_at)+"</div>";'
+  + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}'
+  + 'return h+"</div>";}\n'
+  + 'function applyFilters(){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
+  + 'var cards=document.querySelectorAll("#all .card");var n=0;'
+  + 'for(var i=0;i<cards.length;i++){var c=cards[i];var ok=(!q||c.getAttribute("data-full").indexOf(q)>=0||c.getAttribute("data-desc").indexOf(q)>=0)&&(!t||c.getAttribute("data-type")===t)&&(!l||c.getAttribute("data-lang")===l);'
+  + 'c.style.display=ok?"":"none";if(ok)n++;}'
+  + 'document.getElementById("allCount").textContent="（"+n+" / "+cards.length+"）";}\n'
+  + '(function(){'
+  + 'document.getElementById("meta").textContent="共 "+DATA.all.length+" 个项目 · 生成于 "+DATA.generatedAt+" · 每 3 小时自动更新";'
+  + 'var langs={},i;for(i=0;i<DATA.all.length;i++){langs[DATA.all[i].lang]=1;}'
+  + 'var sel=document.getElementById("fLang");Object.keys(langs).sort().forEach(function(l){var o=document.createElement("option");o.value=l;o.textContent=l;sel.appendChild(o);});'
+  + 'var fh="";for(i=0;i<DATA.fresh.length;i++){fh+=freshCard(DATA.fresh[i]);}'
+  + 'document.getElementById("fresh").innerHTML=fh||"<div class=\\"empty\\">本轮无新增</div>";'
+  + 'document.getElementById("freshCount").textContent=DATA.fresh.length? "（"+DATA.fresh.length+"）":"";'
+  + 'if(!DATA.fresh.length){document.getElementById("freshSec").style.display="none";}'
+  + 'var ah="";for(i=0;i<DATA.all.length;i++){ah+=allCard(DATA.all[i]);}'
+  + 'document.getElementById("all").innerHTML=ah;applyFilters();'
+  + '["q","fType","fLang"].forEach(function(id){document.getElementById(id).addEventListener("input",applyFilters);});'
+  + '})();\n'
+  + '</scr'+'ipt>\n</body>\n</html>\n';
+}
+
+// ---------------- gh-pages 部署 ----------------
+async function ghApiJson(method, path, body) {
+  const res = await fetchTimeout(`https://api.github.com${path}`, {
+    method,
+    headers: { ...ghHeaders, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  let j = {};
+  try { j = await res.json(); } catch { /* ignore */ }
+  return { res, j };
+}
+
+async function deploySite(html) {
+  if (!GH_TOKEN || !siteUrl()) { console.log('跳过网站部署：缺少 GH_TOKEN 或 REPO_SLUG'); return; }
+  const [owner, repo] = REPO_SLUG.split('/');
+  const path = `/repos/${owner}/${repo}/contents/index.html`;
+  let sha = null;
+  try {
+    const got = await ghApiJson('GET', path + '?ref=gh-pages');
+    if (got.res.ok && got.j.sha) sha = got.j.sha;
+  } catch { /* 分支/文件可能尚不存在 */ }
+  const body = {
+    message: `site: 更新看板页面 ${new Date().toISOString().slice(0, 16).replace('T', ' ')}`,
+    content: Buffer.from(html, 'utf8').toString('base64'),
+    branch: 'gh-pages',
+  };
+  if (sha) body.sha = sha;
+  const { res } = await ghApiJson('PUT', path, body);
+  console.log(res.ok ? '网站已部署到 gh-pages 分支' : `网站部署失败: HTTP ${res.status}`);
+}
+
 // ---------------- Telegram digest ----------------
 async function sendDigest(fresh) {
   const lines = fresh.slice(0, 20).map((r) => {
@@ -387,7 +532,9 @@ async function sendDigest(fresh) {
   });
   let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
-  if (REPO_SLUG) text += `\n\n<a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
+  const url = siteUrl();
+  if (url) text += `\n\n<a href="${url}">打开完整看板</a>`;
+  else if (REPO_SLUG) text += `\n\n<a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
 
   // 按 4096 字符切分
   const chunks = [];
