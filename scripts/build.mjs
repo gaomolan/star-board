@@ -450,7 +450,7 @@ function renderSite(results, fresh, startedAt) {
   + '<select id="fSort"><option value="time">按更新时间</option><option value="name">按名称</option></select>\n'
   + '</div>\n'
   + '<section id="freshSec"><h2>🆕 本次新增 <span id="freshCount"></span></h2><div id="fresh"></div></section>\n'
-  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div class="grid" id="all"></div></section>\n'
+  + '<section><h2>📋 全部项目 <span id="allCount"></span></h2><div id="all"></div></section>\n'
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
 + 'var DATA = ' + json + ';\n'
