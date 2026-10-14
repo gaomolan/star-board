@@ -488,7 +488,7 @@ async function main() {
     try {
       const patches = JSON.parse(readFileSync(TRANSLATION_PATCH_PATH, 'utf8'));
       for (const [key, entry] of Object.entries(patches)) {
-        const id = key.match(/^rel:(\\d+)$/)?.[1];
+        const id = key.match(/^rel:(\d+)$/)?.[1];
         if (!id || !entry?.zh || !entry?.hash) continue;
         let source = null;
         for (const rec of Object.values(state.repos)) {
