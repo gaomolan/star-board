@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # 每 3 小时运行一次（UTC 分钟 0）
-    - cron: '0 */3 * * *'
+    # 每 1 小时运行一次（UTC 分钟 0）
+    - cron: '0 * * * *'
   workflow_dispatch:  # 手动触发按钮
 
 permissions:
