@@ -1,6 +1,6 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 03:28:16 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 03:37:27 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（0）
 
@@ -9,9 +9,9 @@
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 26 分钟前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 36 分钟前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 1 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 1 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 2 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 2 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 2 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 3 小时前 |
@@ -28,7 +28,7 @@
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 13 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 15 小时前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 19 小时前 |
-| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 19 小时前 |
+| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 20 小时前 |
 | [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 22 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2851.0` | 测试版 | 2026-10-12 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
