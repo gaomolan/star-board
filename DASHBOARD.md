@@ -1,34 +1,16 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 08:27:37 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 08:35:51 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（2）
+## 🆕 本次新增（1）
 
-### [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) `📝 提交` `22e3b54`
+### [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) `✅ 正式版` `v2026.10.14.2-release`
 
-发布时间：2026-10-14（48 分钟前）｜ [查看提交](https://github.com/Niklaus88/Clash-Config/commit/22e3b5418d6f7aff5b31bd5c65cecc6712551b4a)
-
-*（原文，翻译暂不可用）*
-
-Revert "fix(webrtc): prevent 198.18.0.1 leak by adding STUN/TURN domains to fake-ip-filter"
-
----
-
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.14-8422.a9140b8`
-
-发布时间：2026-10-14（8 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.14-8422.a9140b8)
+发布时间：2026-10-14（5 分钟前）｜ [查看 Release](https://github.com/ArvinLovegood/go-stock/releases/tag/v2026.10.14.2-release)
 
 *（原文，翻译暂不可用）*
 
-Source commit: a9140b8b532ebf1f23aa5b97034ecb3532b3003f
-
-Published multi-platform images:
-- ghcr.io/diygod/rsshub:a9140b8b532ebf1f23aa5b97034ecb3532b3003f
-- ghcr.io/diygod/rsshub:chromium-bundled-a9140b8b532ebf1f23aa5b97034ecb3532b3003f
-- diygod/rsshub:a9140b8b532ebf1f23aa5b97034ecb3532b3003f
-- diygod/rsshub:chromium-bundled-a9140b8b532ebf1f23aa5b97034ecb3532b3003f
-
-Use these commit-specific image tags to reproduce this release. Daily Docker tags may be updated by subsequent builds.
+v2026.10.14.2-release
 
 ---
 
@@ -36,13 +18,13 @@ Use these commit-specific image tags to reproduce this release. Daily Docker tag
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8422.a9140b8` | 正式版 | 2026-10-14 | 8 分钟前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 48 分钟前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.1-release` | 正式版 | 2026-10-14 | 56 分钟前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.14.2-release` | 正式版 | 2026-10-14 | 5 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8422.a9140b8` | 正式版 | 2026-10-14 | 16 分钟前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-14 | 56 分钟前 |
 | [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0-beta.2` | 测试版 | 2026-10-14 | 1 小时前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 1 小时前 |
 | [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.5` | 正式版 | 2026-10-14 | 1 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 1 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 2 小时前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 2 小时前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 2 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.17-beta.1` | 测试版 | 2026-10-14 | 3 小时前 |
@@ -51,7 +33,7 @@ Use these commit-specific image tags to reproduce this release. Daily Docker tag
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 6 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 7 小时前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 8 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 9 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 10 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 10 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 12 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 12 小时前 |
