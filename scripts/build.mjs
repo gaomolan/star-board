@@ -863,7 +863,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function line(icon,name,o){return "<div class=\\"stat\\">"+icon+" "+name+"：<b>"+o.rel+"</b> 个版本更新（"+o.stable+" 正式 / "+o.beta+" 测试）</div>";}\n'
 + 'return line("⚡","今日",s.today)+line("🔥","7 天内",s.week);}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
-+ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+"</div>";'
++ 'h+="<div>"+badge(r)+(r.tag?" <span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?" <span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return " <span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
 + 'if(r.zh){h+="<div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}}'
 + 'else if(r.body){h+="<div class=\\"zh\\">"+esc(r.body)+"</div>";}else{h+="<div class=\\"rowmeta\\">（无文字更新说明，详见 Release）</div>";}'
@@ -872,7 +872,7 @@ export function renderSite(results, fresh, startedAt) {
 + 'function tlItem(r){var dot=r.tag?(r.prerelease?"beta":"stable"):"commit";\n'
 + 'var h="<div class=\\"titem\\"><span class=\\"dot "+dot+"\\"></span><div class=\\"tbody\\">";\n'
 + 'h+="<div class=\\"thead\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></div>";\n'
-+ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+"</div>";'
++ 'h+="<div class=\\\"rowmeta\\\">"+badge(r)+(r.tag?"<span class=\\\"badge\\\">"+esc(r.tag)+"</span>":"")+(r.primary?"<span class=\\\"badge category\\\">"+esc(CAT_LABELS[r.primary]||"其他")+"</span>":"")+(r.tags||[]).map(function(t){return "<span class=\\\"badge tag\\\">"+esc(CAT_TAG_LABELS[t]||t)+"</span>";}).join("")+(r.release_url?" <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(fmtDT(r.published_at))+" · ⭐ "+(r.stars||0)+"</div>";\n'
 + 'if(r.desc){h+="<div class=\\"rowmeta desc\\">"+esc(r.desc)+"</div>";}\n'
 + 'if(r.zh){h+="<details class=\\"relsum\\"><summary>更新内容摘要"+(r.release_url?" · <a href=\\\""+r.release_url+"\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">查看 Release</a>":"")+"</summary><div class=\\"zh\\">"+esc(r.zh)+"</div>";if(r.body){h+="<details><summary>查看原文</summary><pre>"+esc(r.body)+"</pre></details>";}h+="</details>";}\n'
@@ -945,11 +945,18 @@ async function sendDigest(fresh) {
     const isC = !Lr;
     const tag = escHtml(isC ? Cr.sha.slice(0, 7) : Lr.tag);
     const name = escHtml(r.full);
-    // 摘要：优先用清洗过的中文，没有则对原文做去噪
+    // 时间：MM-DD HH:MM（UTC+8）
+    let timeStr = '';
+    const pubAt = isC ? Cr.date : Lr.published_at;
+    if (pubAt) {
+      const d = new Date(new Date(pubAt).getTime() + 8 * 3600 * 1000);
+      timeStr = `${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;
+    }
+    // 摘要：优先用清洗过的中文，没有则对原文做去噪；无摘要时省略该行
     let summary = r.zh || '';
     if (!summary) {
       const raw = isC ? Cr.message : (Lr.body || '');
-      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160) || '无更新说明';
+      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160);
     } else {
       summary = summary.replace(/\s+/g, ' ').trim().slice(0, 160);
     }
@@ -957,13 +964,17 @@ async function sendDigest(fresh) {
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
     const url = isC ? Cr.url : Lr.url;
-    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${summary}\n<a href="${url}">${linkText}</a>`;
+    let card = `📦 <b>${name}</b>\n${kind} · <code>${tag}</code>`;
+    if (timeStr) card += `\n🕐 ${timeStr}`;
+    if (summary) card += `\n${summary}`;
+    card += `\n<a href="${url}">🔗 ${linkText}</a>`;
+    return card;
   });
-  let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
+  let text = `⭐ <b>Star 更新速览</b> · 新增 ${fresh.length} 条\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
   const url = siteUrl();
-  if (url) text += `\n\n<a href="${url}">打开完整看板</a>`;
-  else if (REPO_SLUG) text += `\n\n<a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
+  if (url) text += `\n\n🖥️ <a href="${url}">打开完整看板</a>`;
+  else if (REPO_SLUG) text += `\n\n🖥️ <a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
 
   // 按 4096 字符切分
   const chunks = [];
