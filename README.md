@@ -1,12 +1,19 @@
 # ⭐ star-board
 
 GitHub star 项目动态看板：每 3 小时自动抓取 star 列表的最新 release（含测试版区分），
-新增内容自动翻译成中文，生成双语看板（中文在上、原文默认折叠），并推送 Telegram 汇总。
+新增内容自动翻译成中文，生成双语网站（中文在上、原文默认折叠，支持搜索/筛选），并推送 Telegram 汇总。
 
 ## 看什么
 
-- `DASHBOARD.md`：🆕 本次新增 ＋ 📋 全部项目（按最近更新排序）
+- **网站**：`https://<你的用户名>.github.io/star-board/` —— 🆕 本次新增 ＋ 📋 全部项目，支持关键词搜索、正式版/测试版/语言筛选
+- `DASHBOARD.md`：同上内容的 Markdown 版（仓库内直接看）
 - `state.json`：运行状态缓存（已见版本、翻译缓存），请勿手动修改
+
+## 网站部署（GitHub Pages）
+
+1. 仓库设为 Public（Settings → Danger Zone → Change visibility）；
+2. Settings → Pages → Source 选 `Deploy from a branch`，分支选 `gh-pages`、目录 `/ (root)`；
+3. 工作流每轮运行会自动把新版页面推到 `gh-pages` 分支并发布。
 
 ## 需要配置的 Secrets
 
