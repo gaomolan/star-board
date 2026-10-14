@@ -18,7 +18,8 @@
  *   TEST_LIMIT                          调试用：只处理前 N 个 star 仓库（默认 0 = 全部）
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 // ---------------- 配置 ----------------
 const GH_USER = process.env.GH_USER || 'ly6980';
@@ -684,7 +685,7 @@ function renderDashboard(results, fresh, startedAt, isFirstRun) {
 }
 
 // ---------------- 网站生成 ----------------
-function renderSite(results, fresh, startedAt) {
+export function renderSite(results, fresh, startedAt) {
   const sorted = [...results].sort((a, b) => {
     const ta = a.latest?.published_at || a.commit?.date || '';
     const tb = b.latest?.published_at || b.commit?.date || '';
@@ -923,4 +924,6 @@ async function sendDigest(fresh) {
   }
 }
 
-main().catch((e) => { console.error('FATAL', e); process.exit(1); });
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().catch((e) => { console.error('FATAL', e); process.exit(1); });
+}
