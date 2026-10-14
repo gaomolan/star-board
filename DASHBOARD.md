@@ -1,78 +1,15 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 03:10:37 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 03:13:56 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（1）
+## 🆕 本次新增（0）
 
-### [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) `✅ 正式版` `v0.7.35`
-
-发布时间：2026-10-14（11 分钟前）｜ [查看 Release](https://github.com/EKKOLearnAI/ekko-studio/releases/tag/v0.7.35)
-
-## 更新重点
-
-- 新增 Agent 卡片进入聊天思考头像的过渡动画，并改善减少动态效果时的可见性与主题背景衔接 (#3378、#3386)
-- 新增土耳其语界面支持 (#3338)
-- 修复关闭「显示费用」后，聊天用量卡片仍然显示的问题 (#3381)
-- 更新 Edge TTS 语音服务接口兼容性 (#3381)
-- 改善会话删除、归档与未读状态的跨设备同步 (#3380)
-- 修复编程 Agent 通过兼容接口调用模型时的 Token 用量回传，使自动压缩能正确识别上下文用量 (#3334)
-- 按模型输出上限设置 Anthropic 兼容请求，减少长回复和工具调用被提前截断的问题 (#3334)
-- 修复 Ekko 自定义 Anthropic 地址的路径拼接，兼容根地址、版本路径和完整消息接口 (#3384)
-- Studio 与桌面端版本同步更新为 `0.7.35`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3387)
-
-## What's Changed
-* fix(coding-agents): forward canonical usage and model output limit through Responses proxy by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3334
-* feat(i18n): add Turkish locale support by @KeuqS in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
-* [codex] animate Agent cards into thinking avatars by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3378
-* fix: honor Show Cost and restore Edge TTS synthesis by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3381
-* [codex] clear unread counts when another device deletes a session by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3380
-* fix(ekko): resolve Anthropic host roots through v1/messages by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3384
-* [codex] keep Agent deployment visible and match chat theme backgrounds by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3386
-* [codex] prepare Studio 0.7.35 with localized changelog by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3387
-
-## New Contributors
-* @KeuqS made their first contribution in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
-
-**Full Changelog**: https://github.com/EKKOLearnAI/ekko-studio/compare/v0.7.34...v0.7.35
-
-<details><summary>查看原文</summary>
-
-## 更新重点
-
-- 新增 Agent 卡片进入聊天思考头像的过渡动画，并改善减少动态效果时的可见性与主题背景衔接 (#3378、#3386)
-- 新增土耳其语界面支持 (#3338)
-- 修复关闭「显示费用」后，聊天用量卡片仍然显示的问题 (#3381)
-- 更新 Edge TTS 语音服务接口兼容性 (#3381)
-- 改善会话删除、归档与未读状态的跨设备同步 (#3380)
-- 修复编程 Agent 通过兼容接口调用模型时的 Token 用量回传，使自动压缩能正确识别上下文用量 (#3334)
-- 按模型输出上限设置 Anthropic 兼容请求，减少长回复和工具调用被提前截断的问题 (#3334)
-- 修复 Ekko 自定义 Anthropic 地址的路径拼接，兼容根地址、版本路径和完整消息接口 (#3384)
-- Studio 与桌面端版本同步更新为 `0.7.35`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3387)
-
-## What's Changed
-* fix(coding-agents): forward canonical usage and model output limit through Responses proxy by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3334
-* feat(i18n): add Turkish locale support by @KeuqS in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
-* [codex] animate Agent cards into thinking avatars by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3378
-* fix: honor Show Cost and restore Edge TTS synthesis by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3381
-* [codex] clear unread counts when another device deletes a session by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3380
-* fix(ekko): resolve Anthropic host roots through v1/messages by @wtj-0527 in https://github.com/EKKOLearnAI/ekko-studio/pull/3384
-* [codex] keep Agent deployment visible and match chat theme backgrounds by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3386
-* [codex] prepare Studio 0.7.35 with localized changelog by @EKKOLearnAI in https://github.com/EKKOLearnAI/ekko-studio/pull/3387
-
-## New Contributors
-* @KeuqS made their first contribution in https://github.com/EKKOLearnAI/ekko-studio/pull/3338
-
-**Full Changelog**: https://github.com/EKKOLearnAI/ekko-studio/compare/v0.7.34...v0.7.35
-
-</details>
-
----
-
+本轮无新增。
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 11 分钟前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.35` | 正式版 | 2026-10-14 | 12 分钟前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 1 小时前 |
 | [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 1 小时前 |
 | [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 1 小时前 |
