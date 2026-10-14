@@ -408,17 +408,20 @@ async function translateWithRetry(fn, label) {
   for (let a = 0; a < 2; a++) {
     try { return await fn(); }
     catch (e) {
+      // DeepL 456（配额用尽）不重试，直接抛出由上层处理
+      if (/\b456\b/.test(e.message)) throw e;
       console.warn(`  翻译失败(${label}) 第${a + 1}次: ${e.message}`);
       if (a === 0) await sleep(2000);
     }
   }
   return null;
 }
-async function translateSmart(cache, key, text, label = '') {
+async function translateSmart(state, key, text, label = '') {
   if (!text || !text.trim()) return null;
   const cjkRatio = (text.match(/[一-鿿]/g) || []).length / text.length;
   if (cjkRatio > 0.7) return null; // 几乎纯中文，无需翻译
   const hash = simpleHash(text);
+  const cache = state.translations;
   const hit = cache[key];
   if (hit && hit.hash === hash) {
     // 缓存命中也要校验质量，坏缓存重新翻译
@@ -443,9 +446,22 @@ async function translateSmart(cache, key, text, label = '') {
   };
   const doDeepL = async () => {
     if (!DEEPL_KEY) return null;
-    const t = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
-    if (t && isTranslationValid(text, t)) return t;
-    if (t) console.warn(`  DeepL 翻译质量不达标(${label})`);
+    // DeepL 配额熔断：456 后 24 小时内跳过
+    if (state.deeplQuotaExceededAt && Date.now() - state.deeplQuotaExceededAt < 24 * 3600 * 1000) {
+      return null;
+    }
+    try {
+      const t = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
+      if (t && isTranslationValid(text, t)) return t;
+      if (t) console.warn(`  DeepL 翻译质量不达标(${label})`);
+    } catch (e) {
+      if (/\b456\b/.test(e.message)) {
+        state.deeplQuotaExceededAt = Date.now();
+        console.warn(`  DeepL 配额用尽(456)，24 小时内跳过 DeepL`);
+      } else {
+        console.warn(`  DeepL 异常(${label}): ${e.message}`);
+      }
+    }
     return null;
   };
   let zh = null;
@@ -612,7 +628,7 @@ async function main() {
         zh = L.authorZh.slice(0, 2500);
       } else if (bodyText && bodyText.length >= 20 && (inWeek || (isFirstRun && withinBackfill))) {
         // 有正文：7 天内的走翻译流程（含缓存哈希校验）；过短正文跳过以省配额
-        const t = await translateSmart(state.translations, `rel:${L.id}`, bodyText, r.full);
+        const t = await translateSmart(state, `rel:${L.id}`, bodyText, r.full);
         if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
       }
       // 兜底读缓存：仅当译文通过质量校验才使用（防坏缓存）
@@ -945,18 +961,11 @@ async function sendDigest(fresh) {
     const isC = !Lr;
     const tag = escHtml(isC ? Cr.sha.slice(0, 7) : Lr.tag);
     const name = escHtml(r.full);
-    // 时间：MM-DD HH:MM（UTC+8）
-    let timeStr = '';
-    const pubAt = isC ? Cr.date : Lr.published_at;
-    if (pubAt) {
-      const d = new Date(new Date(pubAt).getTime() + 8 * 3600 * 1000);
-      timeStr = `${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;
-    }
-    // 摘要：优先用清洗过的中文，没有则对原文做去噪；无摘要时省略该行
+    // 摘要：优先用清洗过的中文，没有则对原文做去噪
     let summary = r.zh || '';
     if (!summary) {
       const raw = isC ? Cr.message : (Lr.body || '');
-      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160);
+      summary = stripNoise(raw).replace(/\s+/g, ' ').trim().slice(0, 160) || '无更新说明';
     } else {
       summary = summary.replace(/\s+/g, ' ').trim().slice(0, 160);
     }
@@ -964,17 +973,13 @@ async function sendDigest(fresh) {
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
     const url = isC ? Cr.url : Lr.url;
-    let card = `📦 <b>${name}</b>\n${kind} · <code>${tag}</code>`;
-    if (timeStr) card += `\n🕐 ${timeStr}`;
-    if (summary) card += `\n${summary}`;
-    card += `\n<a href="${url}">🔗 ${linkText}</a>`;
-    return card;
+    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${summary}\n<a href="${url}">${linkText}</a>`;
   });
-  let text = `⭐ <b>Star 更新速览</b> · 新增 ${fresh.length} 条\n\n${lines.join('\n\n')}`;
+  let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
   const url = siteUrl();
-  if (url) text += `\n\n🖥️ <a href="${url}">打开完整看板</a>`;
-  else if (REPO_SLUG) text += `\n\n🖥️ <a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
+  if (url) text += `\n\n<a href="${url}">打开完整看板</a>`;
+  else if (REPO_SLUG) text += `\n\n<a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
 
   // 按 4096 字符切分
   const chunks = [];
