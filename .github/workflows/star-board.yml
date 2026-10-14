@@ -41,6 +41,7 @@ jobs:
       - name: 导出历史译文缺口（只读）
         run: node scripts/export-translation-gaps.mjs
 
+      # 工件仅短期保存；导出内容用于后续核验与人工回填，不改写缓存
       - name: 上传译文诊断报告
         uses: actions/upload-artifact@v4
         with:
