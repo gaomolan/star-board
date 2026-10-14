@@ -1,6 +1,8 @@
 name: star-board
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 每 3 小时运行一次（UTC 分钟 0）
     - cron: '0 */3 * * *'
