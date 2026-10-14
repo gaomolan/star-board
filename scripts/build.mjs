@@ -177,15 +177,20 @@ function stripNoise(s) {
   {
     const lines = t.split('\n');
     const out = [];
-    let skip = false;
-    const isPromoHeader = (s) => /^#{1,6}\s*/.test(s) && /(推荐服务|优惠码|\bAFF\b|Telegram|中转|专线|直连|机场|Download\s*\/|\/\s*下载|Feedback|问题反馈|提交故障|需求建议)/i.test(s);
-    const isAnyHeader = (s) => /^#{1,6}\s+/.test(s);
+    let skip = false, skipLevel = 0;
+    const isPromoHeader = (s) => /^#{1,6}\s*/.test(s) && /(推荐服务|优惠码|\bAFF\b|Telegram|中转|专线|直连|机场|Download\s*\/|\/\s*下载|下载地址|\bFAQ\b|Feedback|问题反馈|提交故障|需求建议)/i.test(s);
+    const headerLevel = (s) => { const m = s.match(/^(#{1,6})\s+/); return m ? m[1].length : 0; };
     for (const l of lines) {
       const s = l.trim();
-      if (isPromoHeader(s)) { skip = true; continue; }
-      if (skip && (isAnyHeader(s) || /^---\s*$/.test(s))) { skip = false; }
-      if (skip) continue;
+      if (isPromoHeader(s)) { skip = true; skipLevel = headerLevel(s); continue; }
+      if (skip) {
+        const lv = headerLevel(s);
+        if (lv > 0 && lv <= skipLevel) { skip = false; }
+        else if (/^---\s*$/.test(s)) { skip = false; }
+        else continue;
+      }
       if (/\bAFF\b/i.test(s) && s.length < 300 && /简评|注/.test(s)) continue;
+      if (/^Created at\s+/i.test(s)) continue;
       out.push(l);
     }
     t = out.join('\n');
