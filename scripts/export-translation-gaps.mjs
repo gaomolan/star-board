@@ -84,3 +84,41 @@ const report = {
 };
 writeFileSync(outPath, JSON.stringify(report, null, 2) + '\n', 'utf8');
 console.log(`翻译缓存诊断完成：缓存 ${stats.translationCacheEntries} 条；可检查 Release ${stats.eligibleReleaseCount} 条；有效缓存 ${stats.validCachedCount} 条；缺失 ${stats.missingCount} 条；哈希过期 ${stats.staleHashCount} 条；译文质量无效 ${stats.invalidTranslationCount} 条；导出 ${gaps.length} 条到 ${outPath}`);
+
+const byReason = gaps.reduce((acc, item) => {
+  acc[item.reason] = (acc[item.reason] || 0) + 1;
+  return acc;
+}, {});
+const summaryLines = [
+  '# 历史译文缺口诊断',
+  '',
+  `生成时间：${report.generated_at}`,
+  '',
+  '> 本报告由工作流自动生成；仅诊断，不修改 state.json。',
+  '',
+  '## 统计',
+  '',
+  `- 仓库数：${stats.repoCount}`,
+  `- 缓存条目数：${stats.translationCacheEntries}`,
+  `- Release 总数：${stats.releaseCount}`,
+  `- 符合检查条件的 Release：${stats.eligibleReleaseCount}`,
+  `- 有效缓存：${stats.validCachedCount}`,
+  `- 缺失译文：${stats.missingCount}`,
+  `- 哈希过期：${stats.staleHashCount}`,
+  `- 无效译文：${stats.invalidTranslationCount}`,
+  `- 跳过（作者已提供中文）：${stats.skippedAuthorChineseCount}`,
+  `- 跳过（原文过短或中文占比过高）：${stats.skippedChineseOrShortCount}`,
+  '',
+  '## 缺口分类',
+  '',
+  ...Object.entries(byReason).map(([reason, count]) => `- ${reason}：${count}`),
+  '',
+  '## 缺失译文条目（最多 100 条）',
+  '',
+  ...gaps.slice(0, 100).map((item) => `- [${item.repo} — ${item.name || item.tag || item.release_id}](${item.url || '#'}) — \`${item.key}\`（${item.reason}）`),
+  '',
+  gaps.length > 100 ? `其余 ${gaps.length - 100} 条详见 Actions 工件 \`translation-gaps\`。` : '',
+  ''
+];
+writeFileSync('translation-gaps-summary.md', summaryLines.join('\\n'), 'utf8');
+console.log(summaryLines.slice(0, 18).join('\\n'));
