@@ -531,15 +531,31 @@ async function main() {
         console.warn(`Topics 获取失败 ${full}: ${e.message}`);
       }
     }
-    const relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
+    let relRes;
     let releases;
-    if (relRes.notModified && 'cachedReleases' in prev) {
+    if (BACKFILL_ALL) {
+      // 回填模式分页获取全部 Release，避免只处理最近 3 条造成历史覆盖缺口。
+      const all = [];
+      let page = 1;
+      while (true) {
+        const pageRes = await ghCached(`/repos/${full}/releases?per_page=100&page=${page}`, null);
+        const batch = pageRes.json || [];
+        all.push(...batch.filter((r) => !r.draft));
+        if (batch.length < 100) break;
+        page++;
+      }
+      relRes = { etag: null, json: all };
+    } else {
+      relRes = await ghCached(`/repos/${full}/releases?per_page=5`, prev.releasesEtag);
+    }
+    if (!BACKFILL_ALL && relRes.notModified && 'cachedReleases' in prev) {
       releases = prev.cachedReleases;
       etagHits++;
     } else {
-      const Ls = relRes.json.filter((r) => !r.draft).slice(0, 3);
+      const Ls = (relRes.json || []).filter((r) => !r.draft);
+      const selected = BACKFILL_ALL ? Ls : Ls.slice(0, 3);
       releases = [];
-      for (const L of Ls) {
+      for (const L of selected) {
         let rawBody = L.body || '';
         // body 为空时回退到 annotated tag message（作者把 changelog 写在 tag 里）
         if (!rawBody.trim() && L.tag_name) {
@@ -555,7 +571,9 @@ async function main() {
         } else {
           body = cleaned.slice(0, 2000);
         }
-        releases.push({ id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body, authorZh });
+        const releaseLabel = `${L.tag_name || ''} ${L.name || ''}`;
+        const detectedPrerelease = !!L.prerelease || /(?:^|[.\-_\s])(?:alpha|beta|preview|pre|rc|dev|nightly|canary)(?:$|[.\-_\s\d])/i.test(releaseLabel);
+        releases.push({ id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: detectedPrerelease, published_at: L.published_at, url: L.html_url, body, authorZh });
       }
       prev.releasesEtag = relRes.etag;
       prev.cachedReleases = releases;
