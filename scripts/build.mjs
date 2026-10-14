@@ -129,24 +129,66 @@ function cleanBody(s) {
   if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) t = stripHtml(t);
   return stripNoise(t);
 }
-// 发布注记噪音过滤：只删确定无用的（HTML 注释、哈希表、下载链接），不动正文
+// 发布注记噪音过滤：只删确定无用的（HTML 注释、图片、哈希表、下载章节/链接），不动正文
 function stripNoise(s) {
   let t = String(s || '');
   // 1) HTML 注释
   t = t.replace(/<!--[\s\S]*?-->/g, '');
-  // 2) 引用式链接定义：[label]: https://...
+  // 2) Markdown 图片（先于链接转文本，避免留下孤儿 "!"）：[![alt](img)](link) 和 ![alt](img) 整段删除
+  t = t.replace(/\[!\[([^\]\n]*)\]\([^)\n]+\)\]\([^)\n]+\)/g, '');
+  t = t.replace(/!\[([^\]\n]*)\]\([^)\n]+\)/g, '');
+  // 3) 引用式链接定义：[label]: https://...
   t = t.replace(/^\s*\[[^\]\n]+\]:\s*https?:\/\/\S+\s*$/gm, '');
-  // 3) 内联链接只留文本：[text](url) → text，[text][ref] → text
+  // 4) 内联链接只留文本：[text](url) → text，[text][ref] → text
   t = t.replace(/\[([^\]\n]+)\]\([^)\n]+\)/g, '$1');
   t = t.replace(/\[([^\]\n]+)\]\[[^\]\n]*\]/g, '$1');
-  // 4) 哈希/校验章节整个删除（标题含关键词且内容含长哈希串才删，防误伤）
+  // 5) 哈希/校验章节整个删除（标题含关键词且内容含长哈希串才删，防误伤）
   t = t.replace(/^#{1,6}\s*[^\n]*(哈希|hash|checksum|sha[\s-]?256|sha[\s-]?512|\bmd5\b)[^\n]*\r?\n([\s\S]*?)(?=^#{1,6}\s|\s*\Z)/gim,
     (m) => (/[a-fA-F0-9]{32,}/.test(m) ? '' : m));
-  // 5) 残留的孤立长哈希行
+  // 6) 残留的孤立长哈希行
   t = t.replace(/^\s*[a-fA-F0-9]{32,}\s*\|?\s*$/gm, '');
-  // 6) 整理空行
+  // 7) 下载章节：标题含下载/download、后面主要是平台名/链接的行，整段删除
+  t = stripDownloadSection(t);
+  // 8) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
+}
+// 下载章节过滤：标题行含下载/download（# 标题或 **加粗**），后续内容 70%+ 为平台名/链接/空行时整段删除
+function stripDownloadSection(s) {
+  const lines = String(s).split('\n');
+  const out = [];
+  const isDlHeader = (l) => {
+    const t = l.trim();
+    return t.length <= 60 && /(下载|download)/i.test(t) &&
+      (/^#{1,6}\s/.test(t) || /^\*{1,2}[^*]+\*{1,2}\s*:?\s*$/.test(t));
+  };
+  const isNoise = (l) => {
+    const t = l.trim();
+    return !t ||
+      /^(Android|iOS|iPadOS|watchOS|tvOS|Windows|macOS|Linux|HarmonyOS|OpenHarmony|操作系统|OS|下载|Download|x64|x86|x86_64|aarch64|arm64|armv7|armeabi-v7a|apk|exe|msi|dmg|pkg|zip|tar\.gz)$/i.test(t) ||
+      /^https?:\/\/\S+$/.test(t) ||
+      /^\|/.test(t);
+  };
+  let i = 0;
+  while (i < lines.length) {
+    if (isDlHeader(lines[i])) {
+      let j = i + 1, noise = 0, total = 0;
+      while (j < lines.length && total < 20) {
+        const t = lines[j].trim();
+        if (!t) { j++; continue; }
+        if (/^#{1,6}\s/.test(t)) break;
+        if (/^\*{1,2}[^*]+\*{1,2}\s*:/.test(t)) break;
+        if (/^[-*]\s+\S/.test(t) && !isNoise(t)) break;
+        total++;
+        if (isNoise(t)) noise++;
+        j++;
+      }
+      if (total > 0 && noise / total >= 0.7) { i = j; continue; }
+    }
+    out.push(lines[i]);
+    i++;
+  }
+  return out.join('\n');
 }
 // 作者自带中英双语（如 "## English" 分节）：拆出中文直接用、免翻译，英文进原文
 function splitBilingual(text) {
