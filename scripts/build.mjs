@@ -134,22 +134,24 @@ function stripNoise(s) {
   let t = String(s || '');
   // 1) HTML 注释
   t = t.replace(/<!--[\s\S]*?-->/g, '');
-  // 2) Markdown 图片（先于链接转文本，避免留下孤儿 "!"）：[![alt](img)](link) 和 ![alt](img) 整段删除
+  // 2) 捐赠/赞助段落（先于链接转文本，URL 尚完整时判定）
+  t = stripDonation(t);
+  // 3) Markdown 图片（先于链接转文本，避免留下孤儿 "!"）：[![alt](img)](link) 和 ![alt](img) 整段删除
   t = t.replace(/\[!\[([^\]\n]*)\]\([^)\n]+\)\]\([^)\n]+\)/g, '');
   t = t.replace(/!\[([^\]\n]*)\]\([^)\n]+\)/g, '');
-  // 3) 引用式链接定义：[label]: https://...
+  // 4) 引用式链接定义：[label]: https://...
   t = t.replace(/^\s*\[[^\]\n]+\]:\s*https?:\/\/\S+\s*$/gm, '');
-  // 4) 内联链接只留文本：[text](url) → text，[text][ref] → text
+  // 5) 内联链接只留文本：[text](url) → text，[text][ref] → text
   t = t.replace(/\[([^\]\n]+)\]\([^)\n]+\)/g, '$1');
   t = t.replace(/\[([^\]\n]+)\]\[[^\]\n]*\]/g, '$1');
-  // 5) 哈希/校验章节整个删除（标题含关键词且内容含长哈希串才删，防误伤）
+  // 6) 哈希/校验章节整个删除（标题含关键词且内容含长哈希串才删，防误伤）
   t = t.replace(/^#{1,6}\s*[^\n]*(哈希|hash|checksum|sha[\s-]?256|sha[\s-]?512|\bmd5\b)[^\n]*\r?\n([\s\S]*?)(?=^#{1,6}\s|\s*\Z)/gim,
     (m) => (/[a-fA-F0-9]{32,}/.test(m) ? '' : m));
-  // 6) 残留的孤立长哈希行
+  // 7) 残留的孤立长哈希行
   t = t.replace(/^\s*[a-fA-F0-9]{32,}\s*\|?\s*$/gm, '');
-  // 7) 下载章节：标题含下载/download、后面主要是平台名/链接的行，整段删除
+  // 8) 下载章节：标题含下载/download、后面主要是平台名/链接的行，整段删除
   t = stripDownloadSection(t);
-  // 8) 整理空行
+  // 9) 整理空行
   t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
 }
@@ -190,20 +192,59 @@ function stripDownloadSection(s) {
   }
   return out.join('\n');
 }
-// 作者自带中英双语（如 "## English" 分节）：拆出中文直接用、免翻译，英文进原文
+// 作者自带中英双语：拆出中文直接用、免翻译，英文进原文
+// 模式1："## English" 章节标记；模式2："---" 分隔的中英区块
 function splitBilingual(text) {
-  const m = String(text || '').match(/^#{1,4}\s*english\b[^\n]*/im);
-  if (!m) return null;
-  const before = text.slice(0, m.index).trim();
-  const after = text.slice(m.index).trim();
-  const cjkBefore = (before.match(/[一-鿿]/g) || []).length;
-  const cjkAfter = (after.match(/[一-鿿]/g) || []).length;
-  let zhPart, enPart;
-  if (cjkBefore >= cjkAfter && cjkBefore >= 30) { zhPart = before; enPart = after; }
-  else if (cjkAfter > cjkBefore && cjkAfter >= 30) { zhPart = after; enPart = before; }
-  else return null;
-  if ((enPart.match(/[A-Za-z]/g) || []).length < 30) return null;
-  return { zh: zhPart, en: enPart };
+  const t = String(text || '');
+  const m = t.match(/^#{1,4}\s*english\b[^\n]*/im);
+  if (m) {
+    const before = t.slice(0, m.index).trim();
+    const after = t.slice(m.index).trim();
+    const cjkBefore = (before.match(/[一-鿿]/g) || []).length;
+    const cjkAfter = (after.match(/[一-鿿]/g) || []).length;
+    let zhPart, enPart;
+    if (cjkBefore >= cjkAfter && cjkBefore >= 30) { zhPart = before; enPart = after; }
+    else if (cjkAfter > cjkBefore && cjkAfter >= 30) { zhPart = after; enPart = before; }
+    else return null;
+    if ((enPart.match(/[A-Za-z]/g) || []).length < 30) return null;
+    return { zh: zhPart, en: enPart };
+  }
+  // 模式2：--- 分隔块中相邻的英文条目块 + 中文条目块
+  const parts = t.split(/^\s*---\s*$/m);
+  if (parts.length < 2) return null;
+  const infos = parts.map((p) => {
+    const s = p.trim();
+    if (!s) return null;
+    const cjk = (s.match(/[一-鿿]/g) || []).length;
+    return { text: s, ratio: cjk / s.length, hasBullets: /^[-*]\s+\S/m.test(s) };
+  });
+  for (let i = 0; i < infos.length - 1; i++) {
+    const a = infos[i], b = infos[i + 1];
+    if (!a || !b || !a.hasBullets || !b.hasBullets) continue;
+    const aEN = a.ratio < 0.1, aCN = a.ratio > 0.3;
+    const bEN = b.ratio < 0.1, bCN = b.ratio > 0.3;
+    if ((aEN && bCN) || (aCN && bEN)) {
+      const zhPart = aCN ? a.text : b.text;
+      const enPart = aEN ? a.text : b.text;
+      if (zhPart.length < 30 || enPart.length < 30) continue;
+      return { zh: zhPart, en: enPart };
+    }
+  }
+  return null;
+}
+// 捐赠/赞助 solicitation 段落：含捐赠关键词且带支付链接/账号，非列表项/标题的段落整段删除
+function stripDonation(s) {
+  const blocks = String(s).split(/\n\s*\n/);
+  const out = blocks.filter((b) => {
+    const t = b.trim();
+    if (!t) return true;
+    if (/^[-*]\s/.test(t) || /^#{1,6}\s/.test(t)) return true;
+    const hasKw = /(donat(e|ion)s?|sponsor(ship|ed)?|afdian|爱发电|patreon|ko-fi|opencollective|打赏|捐赠|赞助|众筹)/i.test(t);
+    if (!hasKw) return true;
+    const hasPay = /(https?:\/\/\S+|账户|账号|account|微信|支付宝|wechat|alipay)/i.test(t);
+    return !hasPay;
+  });
+  return out.join('\n\n').trim();
 }
 function timeAgo(ts) {
   if (!ts) return '—';
@@ -408,12 +449,16 @@ async function main() {
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
     const withinBackfill = r.latest && new Date(r.latest.published_at).getTime() >= backfillCutoff;
 
-    // 双语迁移：旧缓存（304 命中、无 authorZh）现场拆分，一次性自愈
-    if (r.latest && !r.latest.authorZh && r.latest.body) {
-      const bi = splitBilingual(r.latest.body);
-      if (bi) {
-        r.latest.authorZh = bi.zh.slice(0, 2000);
-        r.latest.body = bi.en.slice(0, 2000);
+    // 旧缓存迁移（304 命中时）：去捐赠段落 + 双语拆分，现场一次性自愈
+    if (r.latest && r.latest.body) {
+      const noDon = stripDonation(r.latest.body);
+      if (noDon !== r.latest.body) r.latest.body = noDon;
+      if (!r.latest.authorZh) {
+        const bi = splitBilingual(r.latest.body);
+        if (bi) {
+          r.latest.authorZh = bi.zh.slice(0, 2000);
+          r.latest.body = bi.en.slice(0, 2000);
+        }
       }
     }
     let zh = null;
