@@ -125,8 +125,27 @@ function stripHtml(s) {
     .trim();
 }
 function cleanBody(s) {
-  const t = String(s || '');
-  if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
+  let t = String(s || '');
+  if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) t = stripHtml(t);
+  return stripNoise(t);
+}
+// 发布注记噪音过滤：只删确定无用的（HTML 注释、哈希表、下载链接），不动正文
+function stripNoise(s) {
+  let t = String(s || '');
+  // 1) HTML 注释
+  t = t.replace(/<!--[\s\S]*?-->/g, '');
+  // 2) 引用式链接定义：[label]: https://...
+  t = t.replace(/^\s*\[[^\]\n]+\]:\s*https?:\/\/\S+\s*$/gm, '');
+  // 3) 内联链接只留文本：[text](url) → text，[text][ref] → text
+  t = t.replace(/\[([^\]\n]+)\]\([^)\n]+\)/g, '$1');
+  t = t.replace(/\[([^\]\n]+)\]\[[^\]\n]*\]/g, '$1');
+  // 4) 哈希/校验章节整个删除（标题含关键词且内容含长哈希串才删，防误伤）
+  t = t.replace(/^#{1,6}\s*[^\n]*(哈希|hash|checksum|sha[\s-]?256|sha[\s-]?512|\bmd5\b)[^\n]*\r?\n([\s\S]*?)(?=^#{1,6}\s|\s*\Z)/gim,
+    (m) => (/[a-fA-F0-9]{32,}/.test(m) ? '' : m));
+  // 5) 残留的孤立长哈希行
+  t = t.replace(/^\s*[a-fA-F0-9]{32,}\s*\|?\s*$/gm, '');
+  // 6) 整理空行
+  t = t.replace(/\n{3,}/g, '\n\n').trim();
   return t;
 }
 // 作者自带中英双语（如 "## English" 分节）：拆出中文直接用、免翻译，英文进原文
