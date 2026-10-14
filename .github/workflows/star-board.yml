@@ -1,0 +1,39 @@
+name: star-board
+
+on:
+  schedule:
+    # 每 3 小时运行一次（UTC 分钟 0）
+    - cron: '0 */3 * * *'
+  workflow_dispatch:  # 手动触发按钮
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: 抓取 star 动态并生成看板
+        run: node scripts/build.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+          REPO_SLUG: ${{ github.repository }}
+          TRANSLATE_API_URL: ${{ secrets.TRANSLATE_API_URL }}
+          TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - name: 提交看板与状态
+        run: |
+          git config user.name "star-board-bot"
+          git config user.email "star-board-bot@users.noreply.github.com"
+          git add DASHBOARD.md state.json
+          git diff --cached --quiet || (git commit -m "chore: update dashboard $(date -u +%Y-%m-%dT%H:%M:%SZ)" && git push)
