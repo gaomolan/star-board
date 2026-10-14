@@ -36,6 +36,8 @@ const cases = [
   ['ShareX/ShareX', 'efficiency'],
   ['example/trademark-generator', 'other'],
   ['example/stockholm-weather', 'other'],
+  ['example/quant-trading-dashboard', 'finance'],
+  ['example/gpt-agent-tool', 'ai'],
 ];
 for (const [full, expected] of cases) {
   const repo = repos[full] || {};
