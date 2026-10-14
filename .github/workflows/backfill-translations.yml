@@ -1,0 +1,53 @@
+name: backfill translations
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_releases:
+        description: "每个仓库最多处理的缓存 Release 数（0 表示全部缓存项）"
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-board-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: 补齐历史 Release 翻译缓存
+        run: node scripts/build.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+          REPO_SLUG: ${{ github.repository }}
+          TRANSLATE_API_URL: ${{ secrets.TRANSLATE_API_URL }}
+          TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ""
+          TELEGRAM_CHAT_ID: ""
+          BACKFILL_ALL: "1"
+          TEST_LIMIT: "0"
+      - name: 提交补齐后的缓存
+        run: |
+          git config user.name "star-board-bot"
+          git config user.email "star-board-bot@users.noreply.github.com"
+          git add state.json DASHBOARD.md site/index.html
+          if git diff --cached --quiet; then
+            echo "没有产生新的翻译缓存"
+          else
+            git commit -m "chore: 补齐历史 Release 中文翻译缓存"
+            git push origin HEAD:main
+          fi
