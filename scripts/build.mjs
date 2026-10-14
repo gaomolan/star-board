@@ -454,12 +454,12 @@ function renderSite(results, fresh, startedAt) {
   + '<footer>由 star-board 每 3 小时自动更新 · <a href="https://github.com/' + escHtml(REPO_SLUG) + '">仓库</a></footer>\n'
   + '</div>\n<script>\n'
 + 'var DATA = ' + json + ';\n'
++ 'var SECTIONS=[{icon:"⚡",name:"今日内有更新"},{icon:"🔥",name:"7 天内有更新"},{icon:"🗓️",name:"30 天内有更新"},{icon:"🕰️",name:"更早之前"}];\n'
 + 'function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}\n'
 + 'function ago(ts){if(!ts)return "";var s=Math.floor((Date.now()-new Date(ts).getTime())/1000);if(s<0)return "刚刚";if(s<3600)return Math.floor(s/60)+" 分钟前";if(s<86400)return Math.floor(s/3600)+" 小时前";if(s<86400*30)return Math.floor(s/86400)+" 天前";if(s<86400*365)return Math.floor(s/86400/30)+" 个月前";return Math.floor(s/86400/365)+" 年前";}\n'
++ 'function sectionOf(r){if(!r.published_at)return 3;var d=(Date.now()-new Date(r.published_at).getTime())/86400000;if(d<1)return 0;if(d<=7)return 1;if(d<=30)return 2;return 3;}\n'
 + 'function badge(r){if(!r.tag)return "<span class=\\"badge commit\\">📝 仅提交</span>";return r.prerelease?"<span class=\\"badge beta\\">🧪 测试版</span>":"<span class=\\"badge stable\\">✅ 正式版</span>";}\n'
 + 'function typeOf(r){return r.tag?(r.prerelease?"beta":"stable"):"commit";}\n'
-+ 'function monthKey(ts){var d=new Date(ts);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");}\n'
-+ 'function monthLabel(ts){var d=new Date(ts);return d.getFullYear()+" 年 "+(d.getMonth()+1)+" 月";}\n'
 + 'function freshCard(r){var h="<div class=\\"card\\"><h3><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a></h3>";'
 + 'h+="<div>"+badge(r)+(r.tag?" <span class=\\"badge\\">"+esc(r.tag)+"</span>":"")+"</div>";'
 + 'h+="<div class=\\"rowmeta\\">"+esc(r.date)+"（"+ago(r.published_at)+"） · <a href=\\""+r.release_url+"\\" target=\\"_blank\\" rel=\\"noopener\\">查看 Release</a></div>";'
@@ -475,13 +475,13 @@ function renderSite(results, fresh, startedAt) {
 + 'function nameRow(r){return "<div class=\\"nrow\\"><a href=\\""+r.url+"\\" target=\\"_blank\\" rel=\\"noopener\\">"+esc(r.full)+"</a> "+badge(r)+" <span class=\\"rowmeta\\">"+esc(r.lang)+" · ⭐ "+(r.stars||0)+" · "+esc(r.date)+"</span></div>";}\n'
 + 'function matchFilters(r){var q=document.getElementById("q").value.toLowerCase();var t=document.getElementById("fType").value;var l=document.getElementById("fLang").value;'
 + 'return (!q||r.full.toLowerCase().indexOf(q)>=0||(r.desc||"").toLowerCase().indexOf(q)>=0)&&(!t||typeOf(r)===t)&&(!l||r.lang===l);}\n'
-+ 'function renderAll(){var mode=document.getElementById("fSort").value;var list=DATA.all.filter(matchFilters);var box=document.getElementById("all");var h="",i,lastMonth="";'
++ 'function renderAll(){var mode=document.getElementById("fSort").value;var list=DATA.all.filter(matchFilters);var box=document.getElementById("all");var h="",i;'
 + 'if(mode==="name"){list.sort(function(a,b){var x=a.full.toLowerCase(),y=b.full.toLowerCase();return x<y?-1:(x>y?1:0);});'
 + 'for(i=0;i<list.length;i++){h+=nameRow(list[i]);}}'
-+ 'else{for(i=0;i<list.length;i++){var r=list[i];var mk=r.published_at?monthKey(r.published_at):"";'
-+ 'if(mk!==lastMonth){lastMonth=mk;h+="<div class=\\"tmonth\\">"+(mk?monthLabel(r.published_at):"未知时间")+"</div>";}'
-+ 'h+=tlItem(r);}'
-+ 'if(h){h="<div class=\\"timeline\\">"+h+"</div>";}}'
++ 'else{var groups=[[],[],[],[]];for(i=0;i<list.length;i++){groups[sectionOf(list[i])].push(list[i]);}'
++ 'for(i=0;i<4;i++){if(!groups[i].length)continue;'
++ 'h+="<details class=\\"group\\""+(i===0?" open":"")+"><summary>"+SECTIONS[i].icon+" "+SECTIONS[i].name+"（"+groups[i].length+"）</summary>";'
++ 'h+="<div class=\\"timeline\\">"+groups[i].map(tlItem).join("")+"</div></details>";}}'
 + 'if(!list.length){h="<div class=\\"empty\\">没有匹配的项目</div>";}'
 + 'box.innerHTML=h;document.getElementById("allCount").textContent="（"+list.length+" / "+DATA.all.length+"）";}\n'
 + '(function(){'
@@ -496,6 +496,7 @@ function renderSite(results, fresh, startedAt) {
 + '["q","fType","fLang","fSort"].forEach(function(id){document.getElementById(id).addEventListener("input",renderAll);});'
 + '})();\n'
 + '</scr'+'ipt>\n</body>\n</html>\n';
+
 
 
 }
