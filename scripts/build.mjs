@@ -481,6 +481,30 @@ async function main() {
     : { repos: {}, translations: {} };
   state.repos ||= {};
   state.translations ||= {};
+
+  // 可审阅的人工翻译补丁：仅在 release 原文哈希匹配时并入缓存，防止错配或覆盖有效原文。
+  const TRANSLATION_PATCH_PATH = resolve('translation-patch.json');
+  if (existsSync(TRANSLATION_PATCH_PATH)) {
+    try {
+      const patches = JSON.parse(readFileSync(TRANSLATION_PATCH_PATH, 'utf8'));
+      for (const [key, entry] of Object.entries(patches)) {
+        const id = key.match(/^rel:(\\d+)$/)?.[1];
+        if (!id || !entry?.zh || !entry?.hash) continue;
+        let source = null;
+        for (const rec of Object.values(state.repos)) {
+          const release = (rec.cachedReleases || []).find((item) => String(item.id) === id);
+          if (release) { source = release.body || ''; break; }
+        }
+        if (source !== null && simpleHash(source) === entry.hash) {
+          state.translations[key] = entry;
+        } else {
+          console.warn(`  跳过人工翻译补丁 ${key}：原文不存在或哈希不匹配`);
+        }
+      }
+    } catch (e) {
+      console.warn(`人工翻译补丁读取失败：${e.message}`);
+    }
+  }
   const isFirstRun = Object.keys(state.repos).length === 0;
   const backfillCutoff = Date.now() - BACKFILL_DAYS * 86400 * 1000;
 
