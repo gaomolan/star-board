@@ -609,7 +609,7 @@ async function main() {
 }
 
 // ---------------- 看板渲染 ----------------
-import { CAT_LABELS, CAT_ORDER, CAT_DEFAULT, CAT_TAG_LABELS, classifyProject } from './categories.mjs';
+import { isRuleSet, CAT_LABELS, CAT_ORDER, CAT_DEFAULT, CAT_TAG_LABELS, classifyProject } from './categories.mjs';
 function badge(r) {
   if (r.commit && !r.latest) return '`📝 提交`';
   if (!r.latest) return '`无 release`';
