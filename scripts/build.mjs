@@ -625,7 +625,7 @@ const CAT_ORDER = ['ai','network','system','dev','efficiency','knowledge','readi
 const CAT_DEFAULT = ['ai','network','system','efficiency','social','finance'];
 const CAT_TAG_LABELS = {android:'Android',rss:'RSS',mcp:'MCP',browser:'浏览器',extension:'扩展',proxy:'代理协议',telegram:'Telegram',wechat:'微信',ios:'iOS',windows:'Windows',linux:'Linux',cli:'CLI',web:'Web',dataset:'数据集',ebook:'电子书',adblock:'广告过滤'};
 const CATEGORY_OVERRIDES = {
-  'metacubex/mihomo':'network','liuran001/mihomo':'network','fw876/helloworld':'network','openwrt-passwall/openwrt-passwall':'network',
+  'metacubex/mihomo':'network','liuran001/mihomo':'ai','fw876/helloworld':'network','openwrt-passwall/openwrt-passwall':'network',
   'privacy-protection-tools/anti-ad':'rules','tg-twilight/awavenue-ads-rule':'rules','echs-top/proxy':'rules','zmqcherish/proxy-script':'rules',
   'rsshub/rsshub':'data','diygod/rsshub-radar':'efficiency','monica-pass/monica':'security','microsoft/powertoys':'system',
   'wink-wink-wink555/markinote':'knowledge','joeytoday/obsidian-canvas-enhance':'knowledge','lfnovo/open-notebook':'knowledge','yyyyymmmmm/inkroot':'knowledge',
