@@ -129,6 +129,21 @@ function cleanBody(s) {
   if ((t.match(/<\/?[a-zA-Z][^>\n]*>/g) || []).length > 8) return stripHtml(t);
   return t;
 }
+// 作者自带中英双语（如 "## English" 分节）：拆出中文直接用、免翻译，英文进原文
+function splitBilingual(text) {
+  const m = String(text || '').match(/^#{1,4}\s*english\b[^\n]*/im);
+  if (!m) return null;
+  const before = text.slice(0, m.index).trim();
+  const after = text.slice(m.index).trim();
+  const cjkBefore = (before.match(/[一-鿿]/g) || []).length;
+  const cjkAfter = (after.match(/[一-鿿]/g) || []).length;
+  let zhPart, enPart;
+  if (cjkBefore >= cjkAfter && cjkBefore >= 30) { zhPart = before; enPart = after; }
+  else if (cjkAfter > cjkBefore && cjkAfter >= 30) { zhPart = after; enPart = before; }
+  else return null;
+  if ((enPart.match(/[A-Za-z]/g) || []).length < 30) return null;
+  return { zh: zhPart, en: enPart };
+}
 function timeAgo(ts) {
   if (!ts) return '—';
   const s = Math.floor((Date.now() - new Date(ts).getTime()) / 1000);
@@ -287,8 +302,18 @@ async function main() {
       etagHits++;
     } else {
       const L = relRes.json.filter((r) => !r.draft)[0] || null;
-      const body = L ? cleanBody(L.body || '').slice(0, 2000) : '';
-      latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body } : null;
+      let body = '', authorZh = '';
+      if (L) {
+        const cleaned = cleanBody(L.body || '');
+        const bi = splitBilingual(cleaned);
+        if (bi) {
+          authorZh = bi.zh.slice(0, 2000);
+          body = bi.en.slice(0, 2000);
+        } else {
+          body = cleaned.slice(0, 2000);
+        }
+      }
+      latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body, authorZh } : null;
       prev.releasesEtag = relRes.etag;
       prev.cachedLatest = latest;
     }
@@ -322,13 +347,24 @@ async function main() {
     const isNew = !isFirstRun && prev.key && prev.key !== curKey && curKey !== 'none';
     const withinBackfill = r.latest && new Date(r.latest.published_at).getTime() >= backfillCutoff;
 
+    // 双语迁移：旧缓存（304 命中、无 authorZh）现场拆分，一次性自愈
+    if (r.latest && !r.latest.authorZh && r.latest.body) {
+      const bi = splitBilingual(r.latest.body);
+      if (bi) {
+        r.latest.authorZh = bi.zh.slice(0, 2000);
+        r.latest.body = bi.en.slice(0, 2000);
+      }
+    }
     let zh = null;
     const bodyText = r.latest?.body || '';
     const pubTime = r.latest ? new Date(r.latest.published_at).getTime() : 0;
     const inWeek = pubTime >= Date.now() - 7 * 864e5;
     if (r.latest) {
-      // 有正文：7 天内的走翻译流程（含缓存哈希校验）；过短正文跳过以省配额
-      if (bodyText && bodyText.length >= 20 && (inWeek || (isFirstRun && withinBackfill))) {
+      if (r.latest.authorZh) {
+        // 作者自带中文：直接用，免翻译
+        zh = r.latest.authorZh.slice(0, 2500);
+      } else if (bodyText && bodyText.length >= 20 && (inWeek || (isFirstRun && withinBackfill))) {
+        // 有正文：7 天内的走翻译流程（含缓存哈希校验）；过短正文跳过以省配额
         const t = await translateSmart(state.translations, `rel:${r.latest.id}`, bodyText, r.full);
         if (t) { zh = t.zh; if (!t.cached) translatedCount++; }
       }
