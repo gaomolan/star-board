@@ -144,6 +144,13 @@ function fmtDate(ts) {
   const d = new Date(ts);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
+// GitHub 的 prerelease 标记优先；同时识别常见预发布版本号，避免 beta/rc 被误标正式版。
+function isPrereleaseRelease(tag, name, githubPrerelease = false) {
+  if (githubPrerelease) return true;
+  const text = `${tag || ''} ${name || ''}`.toLowerCase();
+  return /(?:^|[._+\\-/\\s])(?:alpha|beta|rc|pre(?:view|release)?|canary|nightly|dev(?:elopment)?|snapshot|unstable|eap|experimental)(?:$|[._+\\-/\\s]|\\d)/i.test(text);
+}
+
 function simpleHash(s) {
   let h = 0;
   for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; }
@@ -186,7 +193,8 @@ async function translateDeepL(text) {
   const params = new URLSearchParams();
   params.append('text', text.slice(0, MAX_TRANSLATE_CHARS));
   params.append('target_lang', 'ZH');
-  const res = await fetchTimeout('https://api-free.deepl.com/v2/translate', {
+  const endpoint = DEEPL_KEY.endsWith(':fx') ? 'https://api-free.deepl.com/v2/translate' : 'https://api.deepl.com/v2/translate';
+  const res = await fetchTimeout(endpoint, {
     method: 'POST',
     headers: { Authorization: `DeepL-Auth-Key ${DEEPL_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded' },
     body: params,
@@ -290,6 +298,11 @@ async function main() {
       latest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url, body } : null;
       prev.releasesEtag = relRes.etag;
       prev.cachedLatest = L ? { id: L.id, tag: L.tag_name, name: L.name || L.tag_name, prerelease: !!L.prerelease, published_at: L.published_at, url: L.html_url } : null;
+    }
+    // 兼容 ETag 缓存：即使 Release 未变化，也重新按 tag/name 校正分类。
+    if (latest) {
+      latest.prerelease = isPrereleaseRelease(latest.tag, latest.name, latest.prerelease);
+      if (prev.cachedLatest) prev.cachedLatest.prerelease = latest.prerelease;
     }
     let commit = null;
     if (!latest) {
