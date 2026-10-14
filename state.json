@@ -307,10 +307,10 @@
       "desc": "EasyXT是基于miniqmt中xtquant的二次开发封装库，旨在简化xtquant的使用，提供更友好的API接口。通过统一的接口设计、智能参数处理和完善的错误处理，让量化交易开发变得更加简单高效。"
     },
     "appshubcc/bett-rules": {
-      "key": "rel:411216876",
+      "key": "rel:412248763",
       "tag": "latest",
       "prerelease": false,
-      "published_at": "2026-10-13T03:09:31Z",
+      "published_at": "2026-10-14T01:23:09Z",
       "url": "https://github.com/appshubcc/bett-rules",
       "lang": "Go",
       "desc": "Custom rules-dat for mihomo and more"
