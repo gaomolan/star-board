@@ -360,7 +360,9 @@ async function translateWithRetry(fn, label) {
   return null;
 }
 async function translateSmart(cache, key, text, label = '') {
-  if (!text || !text.trim() || isChineseDominant(text)) return null;
+  if (!text || !text.trim()) return null;
+  const cjkRatio = (text.match(/[一-鿿]/g) || []).length / text.length;
+  if (cjkRatio > 0.7) return null; // 几乎纯中文，无需翻译
   const hash = simpleHash(text);
   const hit = cache[key];
   if (hit && hit.hash === hash) {
@@ -368,27 +370,32 @@ async function translateSmart(cache, key, text, label = '') {
     if (isTranslationValid(text, hit.zh)) return { zh: hit.zh, cached: true };
     console.warn(`  缓存翻译质量不达标(${label})，重新翻译`);
   }
-  let zh = null;
-  if (T_API_KEY && !primaryDead) {
+  const isMixed = cjkRatio > 0.15; // 混合内容：DeepL 优先（专业 MT 更擅长混合文本）
+  const doPrimary = async () => {
+    if (!T_API_KEY || primaryDead) return null;
     const t = await translateWithRetry(() => translatePrimary(text), `${label}/主源`);
     if (t && isTranslationValid(text, t)) {
-      zh = t;
       primaryFailStreak = 0;
-    } else {
-      primaryFailStreak++;
-      if (t) console.warn(`  主源翻译质量不达标(${label})，转 DeepL`);
-      else console.warn(`  主翻译源不可用，尝试 DeepL`);
-      if (primaryFailStreak >= PRIMARY_MAX_STREAK) {
-        primaryDead = true;
-        console.warn(`  主翻译源连续失败 ${primaryFailStreak} 次，本轮剩余条目跳过主源`);
-      }
+      return t;
     }
-  }
-  if (!zh && DEEPL_KEY) {
-    const t2 = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
-    if (t2 && isTranslationValid(text, t2)) zh = t2;
-    else if (t2) console.warn(`  DeepL 翻译质量不达标(${label})，跳过`);
-  }
+    primaryFailStreak++;
+    if (t) console.warn(`  主源翻译质量不达标(${label})`);
+    if (primaryFailStreak >= PRIMARY_MAX_STREAK) {
+      primaryDead = true;
+      console.warn(`  主翻译源连续失败 ${primaryFailStreak} 次，本轮剩余条目跳过主源`);
+    }
+    return null;
+  };
+  const doDeepL = async () => {
+    if (!DEEPL_KEY) return null;
+    const t = await translateWithRetry(() => translateDeepL(text), `${label}/DeepL`);
+    if (t && isTranslationValid(text, t)) return t;
+    if (t) console.warn(`  DeepL 翻译质量不达标(${label})`);
+    return null;
+  };
+  let zh = null;
+  if (isMixed) zh = await doDeepL() || await doPrimary();
+  else zh = await doPrimary() || await doDeepL();
   if (zh) cache[key] = { zh, hash };
   return zh ? { zh, cached: false } : null;
 }
