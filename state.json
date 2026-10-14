@@ -1279,10 +1279,10 @@
       "desc": "安卓平台自动化工具，无需 root。"
     },
     "DIYgod/RSSHub": {
-      "key": "rel:411960879",
-      "tag": "v2026.10.13-8420.3a4942f",
+      "key": "rel:412255620",
+      "tag": "v2026.10.14-8421.a7faf80",
       "prerelease": false,
-      "published_at": "2026-10-13T17:59:52Z",
+      "published_at": "2026-10-14T01:36:38Z",
       "url": "https://github.com/DIYgod/RSSHub",
       "lang": "TypeScript",
       "desc": "🧡 Everything is RSSible"
@@ -1700,6 +1700,10 @@
     "rel:405746497": {
       "zh": "# helloworld v196.19\n\n自 v196.18 以来的变更：\n\n- luci-app-ssr-plus：修复了 Xray 解析旧版 SS 订阅的问题 (`16617be`)\n- xray-core：恢复对旧版 VMess alterId 出站支持 (`baf2040`)\n\n软件包：\n- luci-app-ssr-plus\n- xray-core\n- mihomo\n- naiveproxy",
       "hash": "3262088607"
+    },
+    "rel:412255620": {
+      "zh": "源代码提交：a7faf8049727d0edb163ae6abe5126b7317d0f31\n\n已发布的多平台镜像：\n- ghcr.io/diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31\n- ghcr.io/diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31\n- diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31\n- diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31\n\n使用这些特定于提交的镜像标签来重现此版本。每日 Docker 标签可能会因后续构建而更新。",
+      "hash": "2074281949"
     }
   }
 }

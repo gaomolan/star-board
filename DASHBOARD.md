@@ -1,14 +1,37 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-14 01:29:07 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-14 01:41:24 UTC ｜ 共 171 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（1）
 
-### [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) `✅ 正式版` `latest`
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.14-8421.a7faf80`
 
-发布时间：2026-10-14（6 分钟前）｜ [查看 Release](https://github.com/appshubcc/bett-rules/releases/tag/latest)
+发布时间：2026-10-14（5 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.14-8421.a7faf80)
 
-*（无更新说明）*
+源代码提交：a7faf8049727d0edb163ae6abe5126b7317d0f31
+
+已发布的多平台镜像：
+- ghcr.io/diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31
+- ghcr.io/diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31
+- diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31
+- diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31
+
+使用这些特定于提交的镜像标签来重现此版本。每日 Docker 标签可能会因后续构建而更新。
+
+<details><summary>查看原文</summary>
+
+Source commit: a7faf8049727d0edb163ae6abe5126b7317d0f31
+
+Published multi-platform images:
+- ghcr.io/diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31
+- ghcr.io/diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31
+- diygod/rsshub:a7faf8049727d0edb163ae6abe5126b7317d0f31
+- diygod/rsshub:chromium-bundled-a7faf8049727d0edb163ae6abe5126b7317d0f31
+
+Use these commit-specific image tags to reproduce this release. Daily Docker tags may be updated by subsequent builds.
+
+
+</details>
 
 ---
 
@@ -16,24 +39,24 @@
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 6 分钟前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 30 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.14-8421.a7faf80` | 正式版 | 2026-10-14 | 5 分钟前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-14 | 19 分钟前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-14 | 43 分钟前 |
 | [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-14 | 1 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-13 | 1 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 2 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610132237` | 正式版 | 2026-10-13 | 3 小时前 |
 | [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-13 | 3 小时前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 5 小时前 |
 | [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-13 | 5 小时前 |
-| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 6 小时前 |
+| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-13 | 7 小时前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.16` | 正式版 | 2026-10-13 | 7 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.13-8420.3a4942f` | 正式版 | 2026-10-13 | 7 小时前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 7 小时前 |
 | [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.34.1` | 正式版 | 2026-10-13 | 9 小时前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 10 小时前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 11 小时前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.8` | 正式版 | 2026-10-13 | 13 小时前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 17 小时前 |
-| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 17 小时前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-13 | 18 小时前 |
+| [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 18 小时前 |
 | [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.4` | 正式版 | 2026-10-13 | 20 小时前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2851.0` | 测试版 | 2026-10-12 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.0` | 正式版 | 2026-10-12 | 1 天前 |
