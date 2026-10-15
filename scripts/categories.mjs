@@ -6,15 +6,15 @@ function isRuleSet(full, desc) {
 }
 // 项目分类：每个仓库一个主分类，辅助标签独立保存。
 const CAT_LABELS = {
-  ai:'智能', network:'网络', system:'系统', dev:'开发', efficiency:'效率',
+  ai:'智能', network:'网络', proxy:'代理', system:'系统', dev:'开发', efficiency:'效率',
   knowledge:'知识', reading:'阅读', media:'媒体', social:'社交', finance:'金融',
   rules:'规则', data:'数据', security:'安全', learning:'学习', other:'其他'
 };
-const CAT_ORDER = ['ai','network','system','dev','efficiency','knowledge','reading','media','social','finance','rules','data','security','learning','other'];
-const CAT_DEFAULT = ['ai','network','system','efficiency','social','finance'];
+const CAT_ORDER = ['ai','network','proxy','system','dev','efficiency','knowledge','reading','media','social','finance','rules','data','security','learning','other'];
+const CAT_DEFAULT = ['ai','network','proxy','system','efficiency','social','finance'];
 const CAT_TAG_LABELS = {android:'Android',rss:'RSS',mcp:'MCP',browser:'浏览器',extension:'扩展',proxy:'代理协议',telegram:'Telegram',wechat:'微信',ios:'iOS',windows:'Windows',linux:'Linux',cli:'CLI',web:'Web',dataset:'数据集',ebook:'电子书',adblock:'广告过滤'};
 const CATEGORY_OVERRIDES = {
-  'metacubex/mihomo':'network','liuran001/mihomo':'ai','fw876/helloworld':'network','openwrt-passwall/openwrt-passwall':'network',
+  'metacubex/mihomo':'proxy','liuran001/mihomo':'ai','fw876/helloworld':'network','openwrt-passwall/openwrt-passwall':'network',
   'privacy-protection-tools/anti-ad':'rules','tg-twilight/awavenue-ads-rule':'rules','echs-top/proxy':'rules','zmqcherish/proxy-script':'rules',
   'rsshub/rsshub':'data','diygod/rsshub-radar':'efficiency','monica-pass/monica':'security','microsoft/powertoys':'system',
   'wink-wink-wink555/markinote':'knowledge','joeytoday/obsidian-canvas-enhance':'knowledge','lfnovo/open-notebook':'knowledge','yyyyymmmmm/inkroot':'knowledge',
