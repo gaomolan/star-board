@@ -528,6 +528,7 @@ async function main() {
     : { repos: {}, translations: {} };
   state.repos ||= {};
   state.translations ||= {};
+  state.pushed ||= {}; // 已推送的 release/commit ID -> 推送时间戳（防重复推送）
 
   // 可审阅的人工翻译补丁：仅在 release 原文哈希匹配时并入缓存，防止错配或覆盖有效原文。
   const TRANSLATION_PATCH_PATH = resolve('translation-patch.json');
@@ -771,10 +772,28 @@ async function main() {
   await deploySite(siteHtml);
 
   // 6. Telegram digest（首次运行不推送，避免 171 条刷屏）
-  if (!isFirstRun && fresh.length > 0 && TG_TOKEN && TG_CHAT) {
-    await sendDigest(fresh);
+  // 去重：过滤已推送过的 ID（防并发构建重复推送）
+  const now = Date.now();
+  // 清理 7 天前的推送记录
+  for (const k of Object.keys(state.pushed)) {
+    if (now - state.pushed[k] > 7 * 86400 * 1000) delete state.pushed[k];
+  }
+  const toPush = fresh.filter(r => {
+    const pid = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : null);
+    return pid && !state.pushed[pid];
+  });
+  if (!isFirstRun && toPush.length > 0 && TG_TOKEN && TG_CHAT) {
+    await sendDigest(toPush);
+    // 记录已推送
+    for (const r of toPush) {
+      const pid = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : null);
+      if (pid) state.pushed[pid] = now;
+    }
+    console.log(`Telegram 已推送 ${toPush.length} 条（去重后）`);
   } else if (!TG_TOKEN || !TG_CHAT) {
     console.log('未配置 Telegram，跳过推送');
+  } else if (fresh.length > 0 && toPush.length === 0) {
+    console.log(`Telegram 跳过 ${fresh.length} 条（均已推送过）`);
   }
 }
 
