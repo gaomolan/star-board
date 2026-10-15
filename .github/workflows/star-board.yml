@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: star-board-state-writes
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
