@@ -1,26 +1,26 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-14T23:55:51.267Z
+生成时间：2026-10-15T01:10:01.260Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：172
-- 缓存条目数：1850
-- Release 总数：9013
-- 符合检查条件的 Release：5210
-- 有效缓存：1711
-- 缺失译文：3494
-- 哈希过期：4
+- 缓存条目数：1853
+- Release 总数：9015
+- 符合检查条件的 Release：5212
+- 有效缓存：1713
+- 缺失译文：3493
+- 哈希过期：5
 - 无效译文：1
 - 跳过（作者已提供中文）：129
 - 跳过（原文过短或中文占比过高）：3674
 
 ## 缺口分类
 
-- missing：3494
-- stale_hash：4
+- missing：3493
+- stale_hash：5
 - invalid_translation：1
 
 ## 缺失译文条目（最多 100 条）
@@ -89,6 +89,7 @@
 - [Teamper/JHS — JHS 4.7.0](https://github.com/Teamper/JHS/releases/tag/v4.7.0) — `rel:332888469`（missing）
 - [Teamper/JHS — JHS 4.5.0](https://github.com/Teamper/JHS/releases/tag/v4.5.0) — `rel:331899917`（missing）
 - [Teamper/JHS — JHS 4.4.1](https://github.com/Teamper/JHS/releases/tag/v4.4.1) — `rel:331893094`（missing）
+- [eternity4719/HowToLiveBetter — 电子书（EPUB / PDF / 离线 HTML / Anki，自动更新）](https://github.com/eternity4719/HowToLiveBetter/releases/tag/epub-latest) — `rel:391356253`（stale_hash）
 - [kenischu/ReSource — 2.0.8](https://github.com/kenischu/ReSource/releases/tag/2.0.8) — `rel:307880275`（missing）
 - [kenischu/ReSource — 1.8.23](https://github.com/kenischu/ReSource/releases/tag/1.8.23) — `rel:284477468`（missing）
 - [daimiaopeng/coolapk-desktop — 酷安 v1.21.0](https://github.com/daimiaopeng/coolapk-desktop/releases/tag/v1.21.0) — `rel:392071623`（missing）
@@ -124,6 +125,5 @@
 - [felinics/Memoh — v0.13.1](https://github.com/felinics/Memoh/releases/tag/v0.13.1) — `rel:341154510`（missing）
 - [felinics/Memoh — v0.13.0](https://github.com/felinics/Memoh/releases/tag/v0.13.0) — `rel:340528450`（missing）
 - [felinics/Memoh — v0.12.0](https://github.com/felinics/Memoh/releases/tag/v0.12.0) — `rel:336429207`（missing）
-- [felinics/Memoh — v0.11.0](https://github.com/felinics/Memoh/releases/tag/v0.11.0) — `rel:333618278`（missing）
 
 其余 3399 条详见 Actions 工件 `translation-gaps`。
