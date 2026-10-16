@@ -1104,8 +1104,8 @@
     "hash": "1641141878"
   },
   "rel:391597631": {
-    "zh": "## 更新内容 (v2.6.0)\n- feat: 集成 DeepAgents 并完善对话、检索与桌面兼容性 (358503e)\n- feat: 完善任务规划、上下文恢复和模型推理配置 (39fec6a)\n- test: 修复跨平台回归的导入路径与过期测试约定 (016efd4)\n- test: 稳定共享队列并发回归并输出 CI 耗时 (5f71a3a)\n- perf: 按月聚合日期统计并修复月历请求状态 (5b6ff7a)\n- ci: 保留首个失败详情并预留 Windows 回归时间 (404b73b)\n- feat: 固定语义检索消息总量并完善 AI 过程展示 (629f1cd)\n- test: 修正快照恢复断言并稳定慢磁盘等待 (1700040)\n- fix: 默认开启已有账号自动回看并修复启动跳转 (1cb66a8)\n- fix: 精简对话界面并优化过程与用量展示 (8200a92)\n- chore: 高级版与兑换码获取方式改为进 QQ 3 群私聊咨询群主 (3efba1f)\n- feat: 完善 AI 交互、企微联系人分类与导出界面 (32ae362)\n- chore: 删除应用内 QQ 群反馈功能 (1a269a5)\n- feat: 完善功能展示与年度总结账号联动 (2646cfd)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.5.1...v2.6.0",
-    "hash": "3703980223"
+    "zh": "## 更新内容 (v2.6.0)\n- feat: 集成 DeepAgents 并完善对话、检索与桌面兼容性 (358503e)\n- feat: 完善任务规划、上下文恢复和模型推理配置 (39fec6a)\n- test: 修复跨平台回归的导入路径与过期测试约定 (016efd4)\n- test: 稳定共享队列并发回归并输出 CI 耗时 (5f71a3a)\n- perf: 按月聚合日期统计并修复月历请求状态 (5b6ff7a)\n- ci: 保留首个失败详情并预留 Windows 回归时间 (404b73b)\n- feat: 固定语义检索消息总量并完善 AI 过程展示 (629f1cd)\n- test: 修正快照恢复断言并稳定慢磁盘等待 (1700040)\n- fix: 默认开启已有账号自动回看并修复启动跳转 (1cb66a8)\n- fix: 精简对话界面并优化过程与用量展示 (8200a92)\n- feat: 完善 AI 交互、企微联系人分类与导出界面 (32ae362)\n- feat: 完善功能展示与年度总结账号联动 (2646cfd)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.5.1...v2.6.0",
+    "hash": "3299302615"
   },
   "rel:388124635": {
     "zh": "## 更新内容 (v2.5.1)\n- fix: 修复朋友圈导出、年度统计与公开信息 (50d94f5)\n- docs: 更新高级功能官网与工作流演示 (a851051)\n- docs: 明确群好友申请的确认主体 (0bbebe9)\n- revert: 恢复官网更新前的页面与演示 (ff1650f)\n- feat: 高级能力扩到 61 项，新增自动化任务组与 8 个演示场景 (e8adbab)\n- feat: 首屏改版——标语移入导航栏，整幕介绍高级功能 (14a2857)\n- fix: 回写类 27 项改为「直接写入微信 · 可随时还原」 (53f89ee)\n- style: 回写类情境条徽标改为绿色无框直显、文案更明确 (c6b689f)\n- feat: 完善企微资料展示与群成员侧栏 (24b2a0f)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.5.0...v2.5.1",
@@ -1144,8 +1144,8 @@
     "hash": "3606564673"
   },
   "rel:368330078": {
-    "zh": "## 更新内容 (v2.0.8)\n- feat: 添加发布release时的QQ通知功能 (8421727)\n- fix: 避免开发依赖阻塞桌面后端启动 (860196b)\n- fix: 完善聊天大图的本地优先回源流程 (a07f648)\n- fix: 合并同一微信账号的存储目录别名 (6730619)\n- fix: 恢复完整的年度聊天活跃数据 (7b1de9f)\n- fix: 改进数据库密钥进程访问诊断与重试 (9081ec7)\n- fix: 固定 QQ 发布通知 Action 版本 (02fc255)\n- chore: 准备 2.0.8 (20507c0)\n- fix: 修正打包阶段的权限读取参数 (bd78570)\n- chore: 重新准备 2.0.8 (c9dcc9a)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.0.7...v2.0.8",
-    "hash": "3681557696"
+    "zh": "## 更新内容 (v2.0.8)\n- fix: 避免开发依赖阻塞桌面后端启动 (860196b)\n- fix: 完善聊天大图的本地优先回源流程 (a07f648)\n- fix: 合并同一微信账号的存储目录别名 (6730619)\n- fix: 恢复完整的年度聊天活跃数据 (7b1de9f)\n- fix: 改进数据库密钥进程访问诊断与重试 (9081ec7)\n- chore: 准备 2.0.8 (20507c0)\n- fix: 修正打包阶段的权限读取参数 (bd78570)\n- chore: 重新准备 2.0.8 (c9dcc9a)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.0.7...v2.0.8",
+    "hash": "1351476421"
   },
   "rel:367631979": {
     "zh": "## 更新内容 (v2.0.7)\n- fix: 修正数据库密钥捕获错误提示 (6452d64)\n- chore: 准备 2.0.7 (aba995b)\n完整变更: https://github.com/LifeArchiveProject/WeChatDataAnalysis/compare/v2.0.6...v2.0.7",
