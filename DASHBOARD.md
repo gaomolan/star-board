@@ -1,28 +1,94 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-16 20:21:36 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-16 23:11:30 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（2）
+## 🆕 本次新增（5）
 
-### [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) `📝 提交` `32a40aa`
+### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610162237`
 
-发布时间：2026-10-16（39 分钟前）｜ [查看提交](https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/32a40aa06619f888d6f5817c0117fbbcb755bd28)
+发布时间：2026-10-16（34 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610162237)
 
-*（原文，翻译暂不可用）*
-
-chore(rules): auto generate derived rule files
+*（无更新说明）*
 
 ---
 
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.16-8438.13395e1`
+### [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) `✅ 正式版` `v0.7.0`
 
-发布时间：2026-10-16（2 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.16-8438.13395e1)
+发布时间：2026-10-16（1 小时前）｜ [查看 Release](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.7.0)
 
-源码提交记录：13395e189cedf3dc981ae1b360597913149d4fcb
+可在您的 ChatGPT 套餐下运行；回测评分以每条决策发出后的首个收盘价为依据；启动时若发现有新版本发布会给出提示；每个 GitHub 发布版本均附带安装包。
+
+## 新增功能
+
+- **支持您的 ChatGPT 套餐。** 通过 OpenAI 为开源应用提供的登录机制，`chatgpt` 服务提供方可让 TradingAgents 在 ChatGPT Plus 或 Pro 套餐下运行，而无需使用 API 密钥。在 CLI 的提供商菜单中选择“Subscription”即可；若需无人值守运行，可在 Docker 或 Python 环境中设置 `llm_provider="chatgpt"`，随后执行 `tradingagents login chatgpt` 完成一次登录。`tradingagents logout chatgpt` 则可撤销登录状态。CLI 会列出该套餐支持的所有模型，推理强度设置规则也与 OpenAI 平台一致。（#1194、#1475）
+- **启动时显示更新信息。** 交互式 CLI 会提示是否有新版本发布；若能识别出 TradingAgents 的安装方式，还会显示对应的升级命令；同时也会展示 Tauric Research 针对当前运行版本的公告信息。该检查功能每天最多在后台执行一次，因此不会拖慢运行速度；无终端环境的运行场景则不会触发检查；设置 `TRADINGAGENTS_NO_UPDATE_CHECK=1` 亦可禁用此功能。
+- **发布版本下载功能。** 每个 GitHub 发布版本均包含源代码压缩包与安装包，用户无需克隆代码库，直接通过 `pip install` 命令即可完成对应版本的安装。
+
+## 从 0.6.0 版本升级须知
+
+- 系统会自动安装 `cryptography` 42 及 `packaging` 24 或更高版本。
+- 决策评分现以该决策发出后的首个收盘价作为依据。已记录在内存日志中的历史决策仍沿用原定的决策当日收盘价作为评分基准；因此使用同一 `run_id` 恢复的回测结果可能同时包含两种评分规则。如需进行公平对比，请新建运行任务。
+
+## 问题修复
+
+- 决策评分不再以决策当日之后才发布的新闻信息为依据：日期为 *d* 的运行任务仅会读取 *d* 日收盘后发布的新闻；因此内存日志与回测结果均以 *d* 日之后的首个收盘价作为评分基准，而非 *d* 日当日收盘价。（#1518）
+- 无终端环境的运行场景（如定时任务或 CI 流程）启动时不再向公告服务器发送请求。
+- 其他服务提供商的模型层级配置得以完整保留。
 
 <details><summary>查看原文</summary>
 
-Source commit: 13395e189cedf3dc981ae1b360597913149d4fcb
+Runs on your ChatGPT plan, backtests scored from the first close after each decision, a note at start-up when a newer release is out, and a wheel attached to each GitHub release.
+
+## Added
+
+- **Your ChatGPT plan.** The `chatgpt` provider runs TradingAgents on a ChatGPT Plus or Pro plan instead of an API key, through OpenAI's sign-in for open-source apps. Choose "Subscription" in the CLI's provider menu; for unattended runs, Docker and Python (`llm_provider="chatgpt"`), sign in once with `tradingagents login chatgpt`. `tradingagents logout chatgpt` revokes the sign-in. The CLI lists the plan's models, and reasoning effort applies as it does for OpenAI. (#1194, #1475)
+- **What's new at start-up.** The interactive CLI mentions a newer release, with the command that upgrades this install when it can tell how TradingAgents was installed, and notices from Tauric Research for the running version. It checks at most once a day in the background, so a run never waits on it; runs without a terminal never check, and `TRADINGAGENTS_NO_UPDATE_CHECK=1` turns it off.
+- **Release downloads.** Each GitHub release carries the source archive and a wheel, so a version installs with `pip install` from its release page without cloning.
+
+## Upgrading from 0.6.0
+
+- `cryptography` 42 and `packaging` 24 or later are installed.
+- Decisions are now scored from the first close after their date. Outcomes already settled in a memory log keep the earlier entry, the close of the decision date, so a backtest resumed with `run_id` mixes the two; start a new run to compare like with like.
+
+## Fixed
+
+- A decision is no longer scored against news it could not have traded on: a run dated *d* reads news published after the close on *d*, so the memory log and backtests enter it at the first close after *d*, not the close of *d*. (#1518)
+- A run without a terminal, such as a scheduled job or CI, no longer contacts the announcements server before it starts.
+- A model tier on another provider keeps its configu
+
+</details>
+
+---
+
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `387cf35`
+
+发布时间：2026-10-16（21 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/387cf35451915f1b01ffac3244b4516b11ce0a86)
+
+*（原文，翻译暂不可用）*
+
+20261016
+
+---
+
+### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `7c983e3`
+
+发布时间：2026-10-16（1 小时前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/7c983e3991f4ebd4f53cd4d770942f5f882b44c0)
+
+*（原文，翻译暂不可用）*
+
+Update 2026/10/17
+
+---
+
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.16-8440.e50d306`
+
+发布时间：2026-10-16（15 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.16-8440.e50d306)
+
+源码提交记录：e50d3068d9ccd0cc274365befe238e97f0724b06
+
+<details><summary>查看原文</summary>
+
+Source commit: e50d3068d9ccd0cc274365befe238e97f0724b06
 
 </details>
 
@@ -32,28 +98,29 @@ Source commit: 13395e189cedf3dc981ae1b360597913149d4fcb
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-16 | 39 分钟前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.16-8438.13395e1` | 正式版 | 2026-10-16 | 2 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-16 | 3 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-16 | 5 小时前 |
-| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 5 小时前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 6 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.2` | 正式版 | 2026-10-16 | 7 小时前 |
-| [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-16 | 8 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.1` | 测试版 | 2026-10-16 | 8 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-16 | 9 小时前 |
-| [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5` | 正式版 | 2026-10-16 | 10 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2883.0` | 测试版 | 2026-10-16 | 11 小时前 |
-| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-16 | 11 小时前 |
-| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.6` | 正式版 | 2026-10-16 | 13 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.0-beta.3` | 测试版 | 2026-10-16 | 13 小时前 |
-| [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 14 小时前 |
-| [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 15 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-16 | 19 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-16 | 20 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610152237` | 正式版 | 2026-10-15 | 21 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-15 | 22 小时前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.0` | 正式版 | 2026-10-15 | 22 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.16-8440.e50d306` | 正式版 | 2026-10-16 | 15 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-16 | 21 分钟前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610162237` | 正式版 | 2026-10-16 | 34 分钟前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-16 | 1 小时前 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 1 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-16 | 3 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-16 | 8 小时前 |
+| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 8 小时前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 9 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.2` | 正式版 | 2026-10-16 | 10 小时前 |
+| [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-16 | 11 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.1` | 测试版 | 2026-10-16 | 11 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-16 | 12 小时前 |
+| [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5` | 正式版 | 2026-10-16 | 13 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2883.0` | 测试版 | 2026-10-16 | 13 小时前 |
+| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-16 | 14 小时前 |
+| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.6` | 正式版 | 2026-10-16 | 15 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.0-beta.3` | 测试版 | 2026-10-16 | 16 小时前 |
+| [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 17 小时前 |
+| [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 18 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-16 | 22 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-16 | 22 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.0` | 正式版 | 2026-10-15 | 1 天前 |
 | [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.10` | 正式版 | 2026-10-15 | 1 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.4` | 正式版 | 2026-10-15 | 1 天前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-15 | 1 天前 |
@@ -89,14 +156,14 @@ Source commit: 13395e189cedf3dc981ae1b360597913149d4fcb
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 6 天前 |
 | [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.10` | 测试版 | 2026-10-10 | 6 天前 |
 | [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 6 天前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.2.1-rc01` | 测试版 | 2026-10-09 | 6 天前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.2.1-rc01` | 测试版 | 2026-10-09 | 7 天前 |
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.0` | 正式版 | 2026-10-09 | 7 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.31.1703` | 正式版 | 2026-10-09 | 7 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 7 天前 |
 | [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 7 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 8 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 8 天前 |
-| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 8 天前 |
+| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 9 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.16.0` | 正式版 | 2026-10-07 | 9 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 9 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 9 天前 |
@@ -104,8 +171,7 @@ Source commit: 13395e189cedf3dc981ae1b360597913149d4fcb
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 11 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 11 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 11 天前 |
-| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 11 天前 |
-| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.6.0` | 正式版 | 2026-10-03 | 12 天前 |
+| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 12 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 13 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.32` | 正式版 | 2026-09-30 | 16 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 16 天前 |
