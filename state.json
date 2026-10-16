@@ -8,7 +8,7 @@
       "url": "https://github.com/zhanghai/MaterialFiles",
       "lang": "Kotlin",
       "desc": "Material Design file manager for Android",
-      "releasesEtag": "W/\"86e9f8b499da150dab8e61e9a4d82835e419b5b1e68e5f26d23d044bb98439eb\"",
+      "releasesEtag": "W/\"342d9504e75699402d7f14fd23dc071b99031eab0314fbe85e4c706ab7860e2e\"",
       "cachedLatest": {
         "id": 392329662,
         "tag": "v1.7.5",
@@ -405,7 +405,7 @@
       "url": "https://github.com/1zumiii/AppOpsNext",
       "lang": "Kotlin",
       "desc": "Modern Android 15+ AppOps manager powered by Shizuku.",
-      "releasesEtag": "W/\"d2624623c2ef2c1f7665ae083ebd5c4239b06fe1ece4fd83c5499e38aa99a67d\"",
+      "releasesEtag": "W/\"23268b5da2e905e977d864cd016b07795fc52310240da8b31f560ad72159cba4\"",
       "cachedLatest": {
         "id": 410548155,
         "tag": "v1.6.5-beta2",
@@ -618,7 +618,7 @@
       "url": "https://github.com/Monica-Pass/Monica",
       "lang": "Kotlin",
       "desc": " Monica Pass，Password Management, 2FA Generator",
-      "releasesEtag": "W/\"5826b434e12ffd423e3553ef630bf65e8c3bea52ca0c00277b1b57056d62fe87\"",
+      "releasesEtag": "W/\"55cb91f666917e1af3b52eceb7db33b92f464df2ec7c16036c5a70467233ffb7\"",
       "cachedLatest": {
         "id": 411105596,
         "tag": "V1.0.319",
@@ -1140,11 +1140,11 @@
         {
           "id": 310170382,
           "tag": "preview",
-          "name": "⚠️ Development Preview (build.202610150228)",
+          "name": "⚠️ Development Preview (build.202610160624)",
           "prerelease": true,
           "published_at": "2026-04-17T04:49:31Z",
           "url": "https://github.com/Monica-Pass/Monica/releases/tag/preview",
-          "body": "> ** 注意：这是一个自动构建的开发预览版本 (Development Preview)**\n>\n> 此版本用于快速体验最新代码，可能包含未完成的功能或 Bug。\n> 正式使用请下载下面的 Stable 版本。\n> 但是实际上 Stable 版本可能不如这个预览版本更新，毕竟 Stable 版本需要经过更多的测试和验证。\n> 预览版本可能会更快地包含最新的功能和修复，但也可能更不稳定。\n> ---\n> **构建信息：**\n> *   **Build Suffix**: `build.202610150228`\n> *   **Generated APK Count**: `2`\n> **Generated APKs:**\n> *   `Monica-Android-arm64-v8a-1.0.320-build.202610150228-26101512-01.APK`\n> *   `Monica-Android-armeabi-v7a-1.0.320-build.202610150228-26101512-01.APK`\n> *   **Commit SHA**: `05fe9c323cacadf673815497ce559255b70e5e50`\n> *   **Ref**: `refs/heads/main`",
+          "body": "> ** 注意：这是一个自动构建的开发预览版本 (Development Preview)**\n>\n> 此版本用于快速体验最新代码，可能包含未完成的功能或 Bug。\n> 正式使用请下载下面的 Stable 版本。\n> 但是实际上 Stable 版本可能不如这个预览版本更新，毕竟 Stable 版本需要经过更多的测试和验证。\n> 预览版本可能会更快地包含最新的功能和修复，但也可能更不稳定。\n> ---\n> **构建信息：**\n> *   **Build Suffix**: `build.202610160624`\n> *   **Generated APK Count**: `2`\n> **Generated APKs:**\n> *   `Monica-Android-arm64-v8a-1.0.320-build.202610160624-26101612-01.APK`\n> *   `Monica-Android-armeabi-v7a-1.0.320-build.202610160624-26101612-01.APK`\n> *   **Commit SHA**: `74118c2a6f28fbb9ec8a674ab62b0c81385aedb5`\n> *   **Ref**: `refs/heads/main`",
           "authorZh": "",
           "zh": "> ** 注意：这是一个自动构建的开发预览版本 (Development Preview)**\n> 此版本用于快速体验最新代码，可能包含未完成的功能或 Bug。\n> 正式使用请下载下面的 Stable 版本。\n> 但是实际上 Stable 版本可能不如这个预览版本更新，毕竟 Stable 版本需要经过更多的测试和验证。\n> 预览版本可能会更快地包含最新的功能和修复，但也可能更不稳定。\n> **构建信息：**"
         },
@@ -1598,7 +1598,7 @@
       "url": "https://github.com/komi-store/komi-store",
       "lang": "Kotlin",
       "desc": "🩵 A free, open-source app store for developers' releases on GitHub, Codeberg & Forgejo — browse, discover, and install apps with one click. Formerly GitHub Store.",
-      "releasesEtag": "W/\"b833331f14ab1d41c51f76bf1acc8f239d2b865669c53c1930b59aecaec59d51\"",
+      "releasesEtag": "W/\"cf1cc90bd066ce7ea7be0d259960dae89c2033f421cf85a15e0a4de07296f149\"",
       "cachedLatest": {
         "id": 345135056,
         "tag": "v1.9.2",
@@ -1852,7 +1852,7 @@
       "url": "https://github.com/Inginnng/EditHere",
       "lang": "C++",
       "desc": "EditHere — 截图、写下意见、直接调整布局，把修改意图一次交给 AI。",
-      "releasesEtag": "W/\"8515b61fc4069a290ba0832120b93971fd361a0821fc7131e8dca6c8e287fa94\"",
+      "releasesEtag": "W/\"e1b382d8ad61959a897bad6f3c5ddcc63ec02b44e757a204e2c22bc2e286930e\"",
       "cachedLatest": {
         "id": 411957949,
         "tag": "v0.11.1",
@@ -2087,7 +2087,7 @@
       "url": "https://github.com/exteraless/exteraless",
       "lang": "Java",
       "desc": "",
-      "releasesEtag": "W/\"8091938bddbada19a355093c98303e58283c507d690ceef8f7caa91b2f94af58\"",
+      "releasesEtag": "W/\"bca8620aceba3ffdb537585912036cd8b000951142ebe0c37b741bf9864b0dd4\"",
       "cachedLatest": {
         "id": 412073070,
         "tag": "ci-1ad6a60",
@@ -2212,9 +2212,9 @@
       "url": "https://github.com/bilibili/Index-Translate",
       "lang": "Python",
       "desc": "A Multilingual, Multimodal Translation Model Family",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"a3459186ada106fbdab0e0502763ce21c823f74663ca40bb60039d56f1b5f45c\"",
+      "commitsEtag": "W/\"629a3f3dd08286718a674833c7cab1f1689e88b5198932517eba169bcc8c549f\"",
       "cachedCommit": {
         "sha": "9aff74c",
         "date": "2026-10-14T11:03:36Z",
@@ -2231,7 +2231,7 @@
       "url": "https://github.com/privacy-protection-tools/anti-AD",
       "lang": "—",
       "desc": "致力于成为中文区命中率最高的广告过滤列表，实现精确的广告屏蔽和隐私保护。anti-AD 现已支持 AdGuardHome，dnsmasq，Surge，Pi-Hole，Clash, mihomo，smartdns，sing-box 等网络组件。完全兼容常见的广告过滤工具所支持的各种广告过滤列表格式",
-      "releasesEtag": "W/\"d5a35c0df629152199766bc09f746ead1a0e8c2a80b59149d00f762b59082108\"",
+      "releasesEtag": "W/\"c41ce2b212de9bb64a28008fdadd6788ccccc53a099a7a9aac5aa76d7819c715\"",
       "cachedLatest": {
         "id": 23366538,
         "tag": "v4.3",
@@ -2342,7 +2342,7 @@
       "url": "https://github.com/AstrBotDevs/AstrBot",
       "lang": "Python",
       "desc": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "releasesEtag": "W/\"fe677c11c99ad8952dd1ad086dbf030e38125bdadc55704a57d8b1e7ae8648c1\"",
+      "releasesEtag": "W/\"dc9f23f1abeb575ee30fa600d3900dc34f39a16ef31c47ea08bb7387821067e1\"",
       "cachedLatest": {
         "id": 412689154,
         "tag": "v4.29.0",
@@ -5214,9 +5214,9 @@
       "url": "https://github.com/dukangalex/HiClash",
       "lang": "JavaScript",
       "desc": "Mihomo（Clash Meta）覆写脚本和配置文件，无DNS泄露，内置多项分流策略、地区策略，实现全局排除节点、自动识别节点倍率功能，解决机场使用私有DNS导致无法解析节点域名的问题，支持多项自定义配置",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"c4c85e8618c43704443984aa2d79b429bf8a4267e13787aaf16372cb506427f0\"",
+      "commitsEtag": "W/\"0374d25b529841b1949c688bcb4ffffd89c73528283071c76b53fa3570b3c1a0\"",
       "cachedCommit": {
         "sha": "c2985e9",
         "date": "2026-10-13T07:33:10Z",
@@ -5236,9 +5236,9 @@
       "url": "https://github.com/QuantFans/quantdigger",
       "lang": "Python",
       "desc": "基于python的量化交易平台",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"57232a605b59e31d63b864f759600a5803afd8b3dfbcef2accc515d27dd5bc82\"",
+      "commitsEtag": "W/\"9d4c585395ba574601675f391d2245ce0026614a3dff4ef4bcd8c328d8304d3f\"",
       "cachedCommit": {
         "sha": "8b6c436",
         "date": "2020-05-02T09:52:05Z",
@@ -5258,9 +5258,9 @@
       "url": "https://github.com/jm199504/Financial-Time-Series",
       "lang": "Jupyter Notebook",
       "desc": "金融时间序列（预测分析 / 相似度 / 数据处理）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"5af538507d45a652c348974565bf371004036f294ead90eb22bf7b982a4b9552\"",
+      "commitsEtag": "W/\"6a3a0fefbc66b2400b87aee51960e6e565ac1f0d3d4311c085bd89519730ea15\"",
       "cachedCommit": {
         "sha": "c9ffc54",
         "date": "2024-07-10T13:46:47Z",
@@ -5277,7 +5277,7 @@
       "url": "https://github.com/sunnyswag/StockRL",
       "lang": "Jupyter Notebook",
       "desc": "在A股(股票)市场上训练强化学习交易智能体",
-      "releasesEtag": "W/\"d32dfeed59179b588facb265b2cfa15fcbab1ec059a5196306f0d12e8ac8e44d\"",
+      "releasesEtag": "W/\"aec5e8bf67dac0cbdda2b6b6e8a30f824d70433eea1312f223bb5829d9debda5\"",
       "cachedLatest": {
         "id": 43121949,
         "tag": "1.0",
@@ -5311,7 +5311,7 @@
       "url": "https://github.com/Kindness-Kismet/AstraGram-Desktop",
       "lang": "C++",
       "desc": "An enhanced version of a modern and aesthetically pleasing Telegram client.",
-      "releasesEtag": "W/\"2a8b430394f11b5ca2a8239b628300f060184cac0b409fcf7cf40c3d1b1efbd3\"",
+      "releasesEtag": "W/\"86691c4ff852d6c0e3529e1e3cd8c16ae114672e74faadeccae4dcfd3dca7e21\"",
       "cachedLatest": {
         "id": 413418695,
         "tag": "v7.3.1.7",
@@ -5678,7 +5678,7 @@
       "url": "https://github.com/mason173/aira-browser",
       "lang": "JavaScript",
       "desc": "Aira Browser · 鸿蒙原生浏览器",
-      "releasesEtag": "W/\"6a5b82c95fbfe63103299077abc6889854377e1eed18b32d6690673afbb10e3b\"",
+      "releasesEtag": "W/\"864740e5a168ddbc6573125cad287d4e7be94fbc7ac44a7d091139b6a1b4e345\"",
       "cachedLatest": {
         "id": 412433101,
         "tag": "v3.7.4",
@@ -5891,7 +5891,7 @@
       "url": "https://github.com/echs-top/proxy",
       "lang": "JavaScript",
       "desc": "自用 mihomo/mihomo_smart 模板/规则",
-      "releasesEtag": "W/\"0806fde351999789dcbcd34cdec0d3e8eeba141a4693ed402ccb1b0976c559f0\"",
+      "releasesEtag": "W/\"9c30d0e09b1912ecb0c4de84bd69cf04aaf849fe67855e629acc4d72441b418d\"",
       "cachedLatest": {
         "id": 339579516,
         "tag": "zashboard",
@@ -5928,9 +5928,9 @@
       "url": "https://github.com/pengchujin/livecanvas",
       "lang": "Python",
       "desc": "一句话，做成有封面、有动画的 Live 图。Turn a sentence into a Live Photo with a designed cover and animation.",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"2dfe42428945e73a56104b87456ee7df353cce3095ea20fdd41b63b35d27c53c\"",
+      "commitsEtag": "W/\"5d5e7764e1fe690bc0a61e064f0e9be83361950396d5d1e344155350ab488082\"",
       "cachedCommit": {
         "sha": "168e146",
         "date": "2026-10-10T04:47:12Z",
@@ -5947,7 +5947,7 @@
       "url": "https://github.com/pengchujin/jzsub",
       "lang": "Python",
       "desc": "JZSub — 一条视频链接，自动交付最高画质、封面和 GPT 双语字幕 MP4。",
-      "releasesEtag": "W/\"2795989c9859359ac3cb006cef15887a74db003dea51a52ed430346a335089e3\"",
+      "releasesEtag": "W/\"a0747b8b8c8c6da6154336967c7d5997fdd0f7e4abb3b60c5c47e77187736245\"",
       "cachedLatest": {
         "id": 353006873,
         "tag": "v1.8.1",
@@ -6073,26 +6073,37 @@
       ]
     },
     "Teamper/JHS": {
-      "key": "rel:396554779",
-      "tag": "v6.5.1",
+      "key": "rel:414601603",
+      "tag": "v6.5.2",
       "prerelease": false,
-      "published_at": "2026-09-25T11:40:10Z",
+      "published_at": "2026-10-16T05:54:22Z",
       "url": "https://github.com/Teamper/JHS",
       "lang": "JavaScript",
       "desc": "JAV Helper Suite — JavDB / JavBus 浏览、收藏、筛选、新作追踪、资源检索、媒体预览与数据备份增强用户脚本",
-      "releasesEtag": "W/\"c677fb3753198ed41ac2d6a41aab8b93b4058b3873c0da927947fb14508aa998\"",
+      "releasesEtag": "W/\"f5e14a334daaf67075dea15e85563696a0e05add872d04ab0961ec59bcabc4b7\"",
       "cachedLatest": {
-        "id": 396554779,
-        "tag": "v6.5.1",
-        "name": "JHS 6.5.1",
+        "id": 414601603,
+        "tag": "v6.5.2",
+        "name": "JHS 6.5.2",
         "prerelease": false,
-        "published_at": "2026-09-25T11:40:10Z",
-        "url": "https://github.com/Teamper/JHS/releases/tag/v6.5.1",
-        "body": "### 修复\n\n- WebDAV 备份、列出与读取文件使用独立的 10 秒请求超时，修复 6.5.0 网络服务迁移后误用普通请求 5 秒默认值的问题；备份日志增加凭据读取、导出、加密、建目录和上传的安全耗时记录。\n- 榜单增强回归 JavDB 原生 Movies、Playback 和 TOP250 页面，保留原生类别、周期、年份、排名、分页及导航；页内排序和批量操作明确限定范围。\n- TOP250 字幕按钮仅筛选当前已加载卡片的“中字磁链”标记，筛选条件随原生分类和分页链接延续。\n- 旧 `/advanced_search` 热播、TOP250、进阶检索及 123AV 链接在插件挂载前迁至有效页面，修复旧路径 404；123AV 片库使用明确来源参数并放入 FC2 分类入口。\n- FC2 登录弹窗与 TOP250 解耦；外部片库卡片只接受 HTTP/HTTPS 地址。",
+        "published_at": "2026-10-16T05:54:22Z",
+        "url": "https://github.com/Teamper/JHS/releases/tag/v6.5.2",
+        "body": "### 新增\n\n- 列表“更多筛选”新增“全部未下载”，排除屏蔽项和已下载作品，保留未下载的待鉴定、收藏和已看内容。\n- 设置中的“默认显示选项卡”支持全部筛选，包括“屏蔽项”和“全部未下载”等智能筛选，下次进入列表页生效；保留原有默认设置，选项与列表共用同一份筛选定义。\n\n### 修复\n\n- 启用“浏览后自动移除新作品标记”后，已浏览卡片渐隐移除，后续作品按原有筛选、排序和分页规则补位；保留其他卡片及封面节点、浏览位置和选择项，避免整体刷新回到顶部。\n- 新作品手动移除和状态标记移除共用局部更新逻辑；处理连续移除、动画期间翻页或切换筛选和关闭重开弹窗，避免已移除卡片重新出现、页码越界或旧回调覆盖新界面。\n- 最后一页移空时回到上一页，全部移空时显示原有空状态；减少动态效果时直接完成补位。",
         "authorZh": "",
-        "zh": "### 修复\n\n- 为 WebDAV 备份、文件列表及读取操作分别设置了 10 秒的请求超时时间，解决了 6.5.0 版本中网络服务迁移后误用普通请求 5 秒默认超时值的问题；备份日志中还新增了读取凭证、导出数据、加密处理、创建目录及上传操作的安全耗时记录。\n- 榜单功能恢复了对 JavDB 原生 Movies、Playback 及 TOP250 页面的支持，保留了原有的分类、时间周期、年份、排名、分页及导航功能；页面内的排序与批量操作功能也明确限定了其作用范围。\n- TOP250 页面上的字幕按钮仅会筛选当前已加载卡片中带有“中字磁链”标记的条目，相关筛选条件会随原生分类与分页链接的设置而延续。\n- 原先位于 `/advanced_search` 路径下的热播内容、TOP250、高级检索及 123AV 相关链接，在插件加载前均已迁移至有效页面，从而解决了旧路径出现 404 错误的问题；123AV 片库则通过指定明确的来源参数，并将其整合至 FC2 分类入口中。\n- FC2 登录弹窗功能已与 TOP250 页面解除关联；外部片库卡片仅能接受 HTTP/HTTPS 格式的链接地址。"
+        "zh": null
       },
       "cachedReleases": [
+        {
+          "id": 414601603,
+          "tag": "v6.5.2",
+          "name": "JHS 6.5.2",
+          "prerelease": false,
+          "published_at": "2026-10-16T05:54:22Z",
+          "url": "https://github.com/Teamper/JHS/releases/tag/v6.5.2",
+          "body": "### 新增\n\n- 列表“更多筛选”新增“全部未下载”，排除屏蔽项和已下载作品，保留未下载的待鉴定、收藏和已看内容。\n- 设置中的“默认显示选项卡”支持全部筛选，包括“屏蔽项”和“全部未下载”等智能筛选，下次进入列表页生效；保留原有默认设置，选项与列表共用同一份筛选定义。\n\n### 修复\n\n- 启用“浏览后自动移除新作品标记”后，已浏览卡片渐隐移除，后续作品按原有筛选、排序和分页规则补位；保留其他卡片及封面节点、浏览位置和选择项，避免整体刷新回到顶部。\n- 新作品手动移除和状态标记移除共用局部更新逻辑；处理连续移除、动画期间翻页或切换筛选和关闭重开弹窗，避免已移除卡片重新出现、页码越界或旧回调覆盖新界面。\n- 最后一页移空时回到上一页，全部移空时显示原有空状态；减少动态效果时直接完成补位。",
+          "authorZh": "",
+          "zh": null
+        },
         {
           "id": 396554779,
           "tag": "v6.5.1",
@@ -6752,7 +6763,7 @@
       "url": "https://github.com/liuran001/mihomo",
       "lang": "Go",
       "desc": "A simple LLM for Genshin Impact parsed data from the Kurogame API.",
-      "releasesEtag": "W/\"b551e75011046a6ce06fb6cbb91fda756a712c6c1cbf1c972ab63ff31d77f717\"",
+      "releasesEtag": "W/\"5e16edac2cd8a3f319a2770ab83856e2328d5a7f50286b8f7e49a92a4cfe2357\"",
       "cachedLatest": {
         "id": 373897180,
         "tag": "Prerelease-Alpha",
@@ -6789,7 +6800,7 @@
       "url": "https://github.com/eternity4719/HowToLiveBetter",
       "lang": "HTML",
       "desc": "高性价比人生指南: 长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
-      "releasesEtag": "W/\"ca6b816af6d51d2ffc5369cbd31a82ff5d454095d07c12ba594b2cacc0a7008e\"",
+      "releasesEtag": "W/\"016ce87a2ef0416933836d55cb5c663c788cc45564cec62aa9a86b54dccd095d\"",
       "cachedLatest": {
         "id": 391356253,
         "tag": "epub-latest",
@@ -6826,9 +6837,9 @@
       "url": "https://github.com/op7418/Humanizer-zh",
       "lang": "Python",
       "desc": "Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"6c17fee9dcb1828f9f1666ed3e3bf1fb395a849151467d8b9791ed82eb8e8d95\"",
+      "commitsEtag": "W/\"e2fa700251b8248957ceb3372ccc3bcefb08124b54cb4699470efe015b828e49\"",
       "cachedCommit": {
         "sha": "f4518a8",
         "date": "2026-09-23T02:24:26Z",
@@ -6848,7 +6859,7 @@
       "url": "https://github.com/kenischu/ReSource",
       "lang": "—",
       "desc": "",
-      "releasesEtag": "W/\"cb6320b286fbf74f93a32885692732ad6902e89f7f220224ee81c3bba6ba5ef4\"",
+      "releasesEtag": "W/\"45b619fbdd8660948ef802158aa7eeefc47afc50732e2e40f4e2dea02b57530e\"",
       "cachedLatest": {
         "id": 402291557,
         "tag": "3.0.7",
@@ -7391,7 +7402,7 @@
       "url": "https://github.com/daimiaopeng/coolapk-desktop",
       "lang": "Vue",
       "desc": "酷安跨平台桌面版",
-      "releasesEtag": "W/\"c9fa7753d79ff5d18a76d926b7243c5d50a4af3174489c044ba807f581e69d33\"",
+      "releasesEtag": "W/\"4e4ab1fee6e6bd8bfad7a4546fd78e3cccda8a40298470903d93d2c406f4b3c5\"",
       "cachedLatest": {
         "id": 413400828,
         "tag": "v1.35.0",
@@ -8176,7 +8187,7 @@
       "url": "https://github.com/linesoft2/TaskMonitor",
       "lang": "C#",
       "desc": "从进程维度实时监测系统负载情况。",
-      "releasesEtag": "W/\"bf5c0fb7f59475fca8b0b998754a517a9385b98e5d8ed9cbc0f4ae7792251df5\"",
+      "releasesEtag": "W/\"ee41506ba3aa9f983e4e5d2a55a97d76502fbf73316443d34d9b9be124ce1d9a\"",
       "cachedLatest": {
         "id": 400077274,
         "tag": "v2026.9.30.1",
@@ -8224,7 +8235,7 @@
       "url": "https://github.com/Conquerer-yinn/Kakaaaa-quant",
       "lang": "Python",
       "desc": "面向 A 股研究工作流的轻量量化研究工作台 · 情绪指标 / Excel 历史主表 / 飞书卡片 / FastAPI / React",
-      "releasesEtag": "W/\"1f1fa0d17fe3ef1fcdc1d836789b390be444a3628c3dc8347bea891fbc789ab2\"",
+      "releasesEtag": "W/\"b2ebca5546ca1922c64aea615176f9034939dac0e1447d79995831044d502756\"",
       "cachedLatest": {
         "id": 375626289,
         "tag": "v1.0.0",
@@ -8368,7 +8379,7 @@
       "url": "https://github.com/guangxiangdebizi/FinanceMCP",
       "lang": "TypeScript",
       "desc": "这是一个金融领域相关的mcp,本项目通过集成 Tushare API 和 Binance API 为语言模型（如Claude）提供全面的实时金融数据访问能力，支持股票、基金、债券、宏观经济指标、稳定币、虚拟货币等多维度金融数据分析。其中也包含了金融数据查询、财经新闻查询、国家统计局数据查询等",
-      "releasesEtag": "W/\"75b1a6b42b13392e1ad7d7e54e9f6d8a294ea8caa01443c0c99066238719398f\"",
+      "releasesEtag": "W/\"256c7d4963199f04e66ca9613410dae5b33f85ff97471ea583548e69a4364e72\"",
       "cachedLatest": {
         "id": 382524559,
         "tag": "v4.11.2",
@@ -8545,9 +8556,9 @@
       "url": "https://github.com/moyuweiqing/A-stock-prediction-algorithm-based-on-machine-learning",
       "lang": "HTML",
       "desc": "（陆续更新）重新整理过的基于机器学习的股票价格预测算法，里面包含了基本的回测系统以及各种不同的机器学习算法的股票价格预测，包含：LSTM算法、Prophet算法、AutoARIMA、朴素贝叶斯、SVM、随机森林等",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"82a812b78473579c0cfa27b426e351d1b5b26c78e7ee0dd8d24563669ccb10a7\"",
+      "commitsEtag": "W/\"1924a286d5febbdf83dbd9f39d6b6ca692270a4c367ef26e188ac1bae6cf1e46\"",
       "cachedCommit": {
         "sha": "f6a1a4f",
         "date": "2023-03-30T07:54:35Z",
@@ -8564,7 +8575,7 @@
       "url": "https://github.com/wink-wink-wink555/MarkiNote",
       "lang": "Python",
       "desc": "An AI Agent-powered Markdown Document Management & Reading System. The AI Agent understands your intent and autonomously invokes 11 different tools to read, create, edit, delete, move files, and even search the web or fetch webpage content.",
-      "releasesEtag": "W/\"1bef6bd2bc189750bec9b6820237c71abb79fc7231cd105b2068ce1036f35396\"",
+      "releasesEtag": "W/\"a038ab81d29736ef5fa52fee0017ab877887df2357c5c1d729d35c2284a14ce5\"",
       "cachedLatest": {
         "id": 307999785,
         "tag": "v3.0.1",
@@ -8664,7 +8675,7 @@
       "url": "https://github.com/rootSunc/CNEquity",
       "lang": "Python",
       "desc": "中国 A 股数据基础设施。55个日更数据集：股票行情、基本面、期货数据、资金面、公告事件、指数行业、宏观与风险。行级溯源、PIT 语义、复权与历史成分内置，MCP 原生。自托管，零注册、零 API Token",
-      "releasesEtag": "W/\"b5aab47e79a2ff6993b5d30841b93639b7c9aafae1a8ceed0dd9b7cd4405f081\"",
+      "releasesEtag": "W/\"084582486f64e92e94a5c24789ff1436b22f6569813d440dbf12e75a3e6f25b8\"",
       "cachedLatest": {
         "id": 406083718,
         "tag": "v0.16.0",
@@ -8918,9 +8929,9 @@
       "url": "https://github.com/mpquant/Ashare",
       "lang": "Python",
       "desc": "股票行情实时数据接口-A股,完全免费的沪深证券股票数据-中国股市,python最简封装的API接口,包含日线,历史K线,分时线,分钟线,全部实时采集，系统包括新浪腾讯双数据核心采集获取，自动故障切换，STOCK数据格式成DataFrame格式,可用来查询研究量化分析，股票程序自动化交易系统.为量化研究者在数据获取方面极大地减轻工作量，更加专注于策略和模型的研究与实现。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"e68ccf8495bea4cf2423f67d389a40fe1a235b32e511b10b588abce576368a12\"",
+      "commitsEtag": "W/\"71636e1aa2810bf7b1152862dabc7776f6e621d5dcd0bf60a015b1f3c8e94e0f\"",
       "cachedCommit": {
         "sha": "7ef1ce0",
         "date": "2025-12-24T02:41:09Z",
@@ -8937,9 +8948,9 @@
       "url": "https://github.com/freestylefly/awesome-gpt-image-2",
       "lang": "JavaScript",
       "desc": "Prompt as Code | GPT Image 2 / 2.5 提示词与案例库，530+ 个案例、20+ 套工业级模板与可复用 Skills，新增 2.5 同提示词对比专区，附完整提示词与生成记录，持续更新。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"da82422df46288329331e99bda9667380ce0ff09da4dcea7ee4fd76a8673df12\"",
+      "commitsEtag": "W/\"a355989504745cb05b7a5a10260ab352fcadb44a64c6806aac1dfab7ab0ed8a9\"",
       "cachedCommit": {
         "sha": "63e6176",
         "date": "2026-10-14T08:48:13Z",
@@ -8956,9 +8967,9 @@
       "url": "https://github.com/create-codeless/spider2023",
       "lang": "Python",
       "desc": "爬虫逆向破解心得记录，包含网易易盾、极验验证码、数美验证码、顶象验证码、同盾验证码、腾讯验证码、拼多多验证码，瑞数4 5 6代，包含验证码识别、滑块、点选、空间推理。已更新电商/工商/航空/抖音/小红书/文书采集系统。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"cc19c390421f81b0faecc881d6603f7aab44f3da9ae8482c558b3e4134dd92bd\"",
+      "commitsEtag": "W/\"2241ed90d6522ddb71d81e72e6f85c09ff6a7046e2348cc0cb09613f50ff25e1\"",
       "cachedCommit": {
         "sha": "b9d51ca",
         "date": "2023-08-16T07:04:21Z",
@@ -8975,7 +8986,7 @@
       "url": "https://github.com/quant-king299/EasyXT",
       "lang": "Python",
       "desc": "EasyXT是基于miniqmt中xtquant的二次开发封装库，旨在简化xtquant的使用，提供更友好的API接口。通过统一的接口设计、智能参数处理和完善的错误处理，让量化交易开发变得更加简单高效。",
-      "releasesEtag": "W/\"4beb6863a2d070012f6ae8e087a947135705444c64737e354fafa1b6647d2bae\"",
+      "releasesEtag": "W/\"8625a6fbc92815ae1173cc9a6524632bac343360fc1440901926ca86228c609a\"",
       "cachedLatest": {
         "id": 296210895,
         "tag": "v1.0.0",
@@ -9012,7 +9023,7 @@
       "url": "https://github.com/appshubcc/bett-rules",
       "lang": "Go",
       "desc": "Custom rules-dat for mihomo and more",
-      "releasesEtag": "W/\"ee01b1a9525c91e1ce0a6e2aae1ce0bbe67c20ef3b1a684a8318055e7c997f86\"",
+      "releasesEtag": "W/\"f3e3c4b442f6a20c81572b129756210003b1ec30ce6cbaafd75158ab98946cbb\"",
       "cachedLatest": {
         "id": 414411742,
         "tag": "latest",
@@ -9049,7 +9060,7 @@
       "url": "https://github.com/waditu/tushare",
       "lang": "Python",
       "desc": "TuShare is a utility for crawling historical data of China stocks",
-      "releasesEtag": "W/\"c8024fe513160749d7a57681ad414e3303c0ba4768e3856bd4b0c4a0108abb66\"",
+      "releasesEtag": "W/\"9279a8a57ae5f6c8bb5fb8b37aeacc5441de738d2b8d2a22adbe5d76859e8fac\"",
       "cachedLatest": {
         "id": 1078520,
         "tag": "0.2.0",
@@ -9083,7 +9094,7 @@
       "url": "https://github.com/felinics/Memoh",
       "lang": "Go",
       "desc": "✨ The open-source multi-agent platform. Every agent gets its own computer, desktop, network, and long-term memory.  You can bring your own key, or host your coding agent like Claude Code, Codex and so on.",
-      "releasesEtag": "W/\"a212d5db244561fefbd896bec5c734f00b27f5cd86b37f3a36b6a54b17c176cf\"",
+      "releasesEtag": "W/\"eb0113015cb6991f79476533ba3cbf56d7765de08670e0c3ac53e78cc8d28ac1\"",
       "cachedLatest": {
         "id": 403540027,
         "tag": "v0.21.0",
@@ -9766,7 +9777,7 @@
       "url": "https://github.com/crimera/piko-newx",
       "lang": "Python",
       "desc": "New X on Android compatible piko builds",
-      "releasesEtag": "W/\"659b33132fac87a4a9550c5263dc8562588e180f8c2166dc3e7a5e3f2c223124\"",
+      "releasesEtag": "W/\"2326d79b80e1ae9d59f38800ffa0c1c1544836d75b76f2c222f196d1c9551558\"",
       "cachedLatest": {
         "id": 414314696,
         "tag": "v3.57.0",
@@ -10947,7 +10958,7 @@
       "url": "https://github.com/crimera/piko",
       "lang": "Java",
       "desc": "morphe patches for twitter and instagram",
-      "releasesEtag": "W/\"bb74a7eeaa92aab2f801bdf09044936e0a285f9a5b0339322d4d321b91de0fd8\"",
+      "releasesEtag": "W/\"f0f1bcaf6359727406e7063fa00d5eafadc7cfd6cfada303af0618b126493a5f\"",
       "cachedLatest": {
         "id": 409015294,
         "tag": "v3.10.0",
@@ -15480,9 +15491,9 @@
       "url": "https://github.com/tradingeconomics/notebooks",
       "lang": "Jupyter Notebook",
       "desc": "Trading Economics Python Jupyter Notebooks showcase how everyone can make insights and data science. Trading Economics has more than 20 million indicators from 196 countries plus historical, delayed and live quotes for exchange rates, stocks, indexes, bonds and commodity prices",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"b31289cd19f77716c6822c7c85655c0cc18f19183e100f03f172ff47ff849cbd\"",
+      "commitsEtag": "W/\"358ce22524e4f145e8f6df799775618b2d1e8884108ff8ddbb577224b26067bf\"",
       "cachedCommit": {
         "sha": "764a328",
         "date": "2026-04-23T21:39:04Z",
@@ -15502,9 +15513,9 @@
       "url": "https://github.com/tradingeconomics/tradingeconomics",
       "lang": "JavaScript",
       "desc": "TRADING ECONOMICS - API Code Examples",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"0a977fd81bc099b8de00bb43fd295d77d16394e868c4ba3e98ba0a54772f3f06\"",
+      "commitsEtag": "W/\"5ebb8de0056a7f9b75925f34b24fb4e04a230ffb5b010e10a11653c53e0d1832\"",
       "cachedCommit": {
         "sha": "caea352",
         "date": "2026-08-31T12:43:24Z",
@@ -15524,9 +15535,9 @@
       "url": "https://github.com/Niklaus88/Clash-Config",
       "lang": "JavaScript",
       "desc": "Clash 系代理配置 （解决手机端/桌面端 DNS/WebRTC 泄露问题）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"c87f57b69e324ab8f031c823dc544779330f3874a9f7ed99d2019b792eeaee39\"",
+      "commitsEtag": "W/\"fe387f5cd03519fae414bc20d26fa58c6552f3ce57cdad163227bf2c39a8117e\"",
       "cachedCommit": {
         "sha": "22e3b54",
         "date": "2026-10-14T07:41:52Z",
@@ -15543,7 +15554,7 @@
       "url": "https://github.com/jiji262/douyin-downloader",
       "lang": "Python",
       "desc": "A practical Douyin downloader for both single-item and profile batch downloads, with progress display, retries, SQLite deduplication, and browser fallback support. 抖音批量下载工具，去水印，支持视频、图集、合集、音乐(原声)。",
-      "releasesEtag": "W/\"e5f85bba0fa53d4dfcda7b44373836cbccf2036cb41fc6977acdcf6ca090b8ce\"",
+      "releasesEtag": "W/\"ebc4476d688d5ac4b207608e2427217a3c49bcfab7494d7508f0c5ca83187c3a\"",
       "cachedLatest": {
         "id": 406365288,
         "tag": "desktop-v0.12.5",
@@ -15591,9 +15602,9 @@
       "url": "https://github.com/JushiZen/Nimbus.Player",
       "lang": "—",
       "desc": "云幕 Nimbus Player: 产品介绍与问题反馈",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"3703e3136ac6f3fd8ff7a293583c7e33452788476bef045e32292d2e4e997f80\"",
+      "commitsEtag": "W/\"485b8d806886ee4f088106d0410ff3515a5bf3989230559c21d3cea76650d623\"",
       "cachedCommit": {
         "sha": "81bde08",
         "date": "2026-10-15T06:12:19Z",
@@ -15610,7 +15621,7 @@
       "url": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule",
       "lang": "Adblock Filter List",
       "desc": "众多优秀广告规则的上游、开源社区中最棒的广告过滤器之一。适配AdGuard/Home/DNS、AdAway、hosts、Mosdns、ClashMeta、QuantumultX等主流广告拦截工具/代理工具。",
-      "releasesEtag": "W/\"09be2b415370d33074be50f62b0174e4f9419f17921396b325cc6ae42976b520\"",
+      "releasesEtag": "W/\"3a9304ee05eaba67a688fdf424d2fa4d3995125f50b56992c70d18a9271bc9b8\"",
       "cachedLatest": {
         "id": 393007265,
         "tag": "1.7.8-release",
@@ -15985,7 +15996,7 @@
       "url": "https://github.com/UniClipboard/UniClipboard",
       "lang": "TypeScript",
       "desc": "Real-time clipboard sync across all your devices — local-first, peer-to-peer, and end-to-end encrypted. No account. No cloud dependency. No central server.",
-      "releasesEtag": "W/\"cc0ec5029009f08b79319190f353b4dbe39a6c8877ef59d3fb60b419d403991c\"",
+      "releasesEtag": "W/\"43272e8b3ceb2a2f02b7572b4d47eb39a49a851e99e8e818f26b53068421709c\"",
       "cachedLatest": {
         "id": 407430051,
         "tag": "v1.1.2",
@@ -18032,9 +18043,9 @@
       "url": "https://github.com/loc567/loc567",
       "lang": "C",
       "desc": "loc567 是一款完全开源免费的纯网页端iOS模拟定位工具。在线体验地址：https://loc567.com",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"2bbde49fc84d8328f9bc1856e921621261e142bda23ffb81aebcf2b953b02ee6\"",
+      "commitsEtag": "W/\"f410ba83832bc1aa29c12058c78de9240d23cf19dec08458914576904342fc35\"",
       "cachedCommit": {
         "sha": "7199937",
         "date": "2026-06-19T04:13:24Z",
@@ -18054,9 +18065,9 @@
       "url": "https://github.com/johamwon/wechrss",
       "lang": "Python",
       "desc": "将微信公众号文章转换为 RSS 的自托管工具",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"554635f231720a04893a9032a77b5b377e6b39856c0340ed354de3464eeb7ac0\"",
+      "commitsEtag": "W/\"41d46a4e9c2770404946ff9cf0b29de8c07221566ed52ab5dbb0f86e6234d404\"",
       "cachedCommit": {
         "sha": "c8ea4b7",
         "date": "2026-10-10T12:39:25Z",
@@ -18066,21 +18077,21 @@
       "cachedReleases": []
     },
     "AIsouler/MyClash": {
-      "key": "commit:9d4fba1",
+      "key": "commit:decc398",
       "tag": null,
       "prerelease": false,
-      "published_at": "2026-10-13T14:06:16Z",
+      "published_at": "2026-10-16T02:37:35Z",
       "url": "https://github.com/AIsouler/MyClash",
       "lang": "JavaScript",
       "desc": "Mihomo（Clash Meta）覆写脚本与配置文件，无DNS泄露，内置分流与地区策略，支持节点自动识别、倍率分类、全局排除及多项自定义配置，解决机场私有 DNS 导致的节点域名解析问题。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"2d162697187a1815f91db4529f2094b61b0c8ebf73d8b9a415e06e0661ccc382\"",
+      "commitsEtag": "W/\"852cb7b0cd8f6df66a4266d6d16bb6946b5b95fae39e54d9cdc9667cb60acc99\"",
       "cachedCommit": {
-        "sha": "9d4fba1",
-        "date": "2026-10-13T14:06:16Z",
-        "message": "feat: 补充公共 DNS 过滤项",
-        "url": "https://github.com/AIsouler/MyClash/commit/9d4fba1dd1f35de4b3a9ccc27badcc804e9ca148"
+        "sha": "decc398",
+        "date": "2026-10-16T02:37:35Z",
+        "message": "perf: 优化倍率匹配 #58",
+        "url": "https://github.com/AIsouler/MyClash/commit/decc398cffd432cd1e374cebd964fbc67363cd8a"
       },
       "cachedReleases": []
     },
@@ -18092,7 +18103,7 @@
       "url": "https://github.com/LifeArchiveProject/WeChatDataAnalysis",
       "lang": "Python",
       "desc": "微信4.x数据解密并生成年度总结，高仿微信，实时更新，导出和修改聊天记录，朋友圈，收藏，自动回复等大量便捷功能",
-      "releasesEtag": "W/\"00704d64769c9a281cb8bb928a91b3c3e1a7e0158f366cdde684b402ab68d954\"",
+      "releasesEtag": "W/\"7fc56bf39ab66dca75e0778ff21088a2ef359a673a9b95dbb99ffe0c342f8a86\"",
       "cachedLatest": {
         "id": 409459543,
         "tag": "macos-source-runtime-38116174842-1",
@@ -18624,7 +18635,7 @@
       "url": "https://github.com/joeytoday/obsidian-canvas-enhance",
       "lang": "TypeScript",
       "desc": "⚡ Supercharge your canvas experience! Graph view integration and unlimited styling options empower flowcharts, dynamic presentations, and interconnected knowledge. ",
-      "releasesEtag": "W/\"1dd08688ae8e65f0ac8d4ec4d3890af5f5aed90720ab26cafaae32d3a5c3abfc\"",
+      "releasesEtag": "W/\"726d6ce16f813a4c2eb69f3529ee9b2e2708d87fd2299c5c6ef5b7f2b2b350b8\"",
       "cachedLatest": {
         "id": 413495076,
         "tag": "1.0.9",
@@ -18892,7 +18903,7 @@
       "url": "https://github.com/black-ant/Ant-Browser",
       "lang": "Go",
       "desc": "指纹浏览器",
-      "releasesEtag": "W/\"3776929b1dc145bea2f368d07838a380a1543d10a4b57126d9037d80044b7b75\"",
+      "releasesEtag": "W/\"49acd07915c9e40be85afc2d615068f5dd74c11448c474d7cef7fe6f95a74800\"",
       "cachedLatest": {
         "id": 392106224,
         "tag": "V1.8.0",
@@ -18995,7 +19006,7 @@
       "url": "https://github.com/LibChecker/LibChecker",
       "lang": "Kotlin",
       "desc": "An app to view libraries used in apps in your device.",
-      "releasesEtag": "W/\"81addedb28389c0c68d9d39032806fa3e90200b2da9474f5aa5128d208aafea7\"",
+      "releasesEtag": "W/\"ede9db8533eb044a2cebaf3e150dcef6669faf49a9085a68ad399db48e560a85\"",
       "cachedLatest": {
         "id": 340502819,
         "tag": "2.5.4",
@@ -19623,9 +19634,9 @@
       "url": "https://github.com/2977094657/ZsxqCrawler",
       "lang": "Python",
       "desc": "可视化知识星球爬虫与文件下载工具，支持星球导入导出分享、话题采集、文件批量下载等功能",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"8ec621a1fc25dc521d2586b354675613fcde9025f6a7bc1af18ffa4dc79b9997\"",
+      "commitsEtag": "W/\"3a91422dd08fd83f4f7e3719dfa09c9eae889db49714ff5359928c268e00a580\"",
       "cachedCommit": {
         "sha": "7c289af",
         "date": "2026-06-25T18:29:29Z",
@@ -19638,26 +19649,37 @@
       "topicsFetched": true
     },
     "HuangZhuoRui/LocationSpoofer": {
-      "key": "rel:414233697",
-      "tag": "v3.0.18",
+      "key": "rel:414477254",
+      "tag": "v3.0.19",
       "prerelease": false,
-      "published_at": "2026-10-15T20:17:25Z",
+      "published_at": "2026-10-16T02:38:28Z",
       "url": "https://github.com/HuangZhuoRui/LocationSpoofer",
       "lang": "Kotlin",
       "desc": "虚拟定位软件，主要是定位，集成了 WiFi、蓝牙、基站等方案，主要有定点模拟和路线模拟。非全局方案，需要单独 hook 对应的软件(因为不想单独去适配各大手机厂商的系统)，",
-      "releasesEtag": "W/\"79a34419f12817e6fc47305cc84187a01f4eb678269d2044a15a77376aa13c15\"",
+      "releasesEtag": "W/\"76802d7e971f86ae063968d43356f7ab7b4c90ed98f4f68381ee15f9be2f84eb\"",
       "cachedLatest": {
-        "id": 414233697,
-        "tag": "v3.0.18",
-        "name": "LocationSpoofer v3.0.18 · 全局 / 非全局 · 32 位 / 64 位",
+        "id": 414477254,
+        "tag": "v3.0.19",
+        "name": "LocationSpoofer v3.0.19 · 全局 / 非全局 · 32 位 / 64 位",
         "prerelease": false,
-        "published_at": "2026-10-15T20:17:25Z",
-        "url": "https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.18",
-        "body": "# v3.0.18\n\n- 新增会员 Google 平面地图、卫星地图和地点搜索，路线规划继续使用自建服务。\n- 优化地图本地缓存，减少重复加载；支持设定默认图源并记住上次选择。\n- 修复切换图源后路线、标记不可见，以及搜索结果点击误打开浏览器的问题。\n- 完善 WGS84 坐标兼容，避免全局版本沿用旧应用坐标系配置造成偏移。\n- 将实际路线录制入口整合到地图右侧工具栏。\n- 完善云端系统适配、运行配置校验与账号异常提示。\n\n提供全局、非全局两种方案，各含 ARM 64 位和 32 位安装包。更新后请重启设备以加载新的系统模块。\n\n版本号：`3.0.18`；Android versionCode：`30052`。\n更新检查：下载服务器更新清单。\n由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。\n\n安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。\nGitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。",
+        "published_at": "2026-10-16T02:38:28Z",
+        "url": "https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.19",
+        "body": "# v3.0.19\n\n- 修复部分模拟器开始模拟时误报版本过旧并退出账号的问题，完善安装包架构识别。\n- 运行配置暂不可用时保留已登录账号，避免无关的重复登录。\n- 完善 OS4、Android 17 的系统传感器动态匹配，兼容更多相似结构。\n- 补充传感器接入状态诊断，便于定位系统更新后的适配问题。\n\n提供全局、非全局两种版本，各含 ARM 64 位和 32 位安装包。更新后请重启设备，以加载新的系统模块。\n\n版本号：`3.0.19`；Android versionCode：`30053`。\n更新检查：下载服务器更新清单。\n由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。\n\n安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。\nGitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。",
         "authorZh": "",
-        "zh": "# v3.0.18\n\n- 新增会员功能：支持使用 Google 平面地图、卫星地图及地点搜索服务；路线规划功能则继续沿用自研服务。\n- 优化地图本地缓存机制，减少重复加载操作；支持设置默认地图源并记住用户上次的选择。\n- 修复了切换地图源后路线与标记点不可见的问题，同时修正了点击搜索结果时意外打开浏览器的故障。\n- 完善了 WGS84 坐标系统的兼容性，避免全局版本因沿用旧版应用坐标系配置而产生坐标偏移。\n- 将实际路线录制功能入口整合至地图右侧工具栏中。\n- 优化了云端系统的适配性、运行配置校验机制以及账号异常状态的提示功能。\n\n本版本提供全局版与非全局版两种方案，每种方案均包含 ARM 64 位与 32 位安装包。更新完成后请重启设备以使新的系统模块生效。\n\n版本号：`3.0.18`；Android versionCode：`30052`。\n更新检查：可下载更新清单文件进行确认。\n本版本经由自研的 Forgejo CI 系统完成测试、原证书签名、四包校验及自动发布流程。\n\n所有安装包均由自研 CI 系统构建并校验，GitHub 镜像文件则由发布程序自动上传；这些安装包与自设下载站提供的同版本安装包完全一致。\nGitHub 上自动附带的源代码压缩包对应当前的公开 main 分支代码，并非本次 APK 构建所使用的源码；本次构建的相关提交信息及包校验摘要均记录在 build-info.json 与 SHA256SUMS 文件中。"
+        "zh": "# v3.0.19\n\n- 修复了部分模拟器在开始模拟时误判为版本过旧并导致账号退出的问题，同时优化了安装包的架构识别功能。\n- 当运行配置暂时不可用时，系统会保留已登录的账号信息，从而避免不必要的重复登录操作。\n- 完善了 OS4 和 Android 17 环境下的系统传感器动态匹配机制，提升了对结构相似设备的兼容性。\n- 新增了传感器接入状态诊断功能，便于排查系统更新后出现的适配问题。\n\n本次更新提供了全局版与非全局版两种版本，每种版本均包含 ARM 64 位与 32 位两种安装包。更新完成后请重启设备，以便新系统模块顺利加载。\n\n版本号：`3.0.19`；Android versionCode：`30053`。\n更新检查：可下载更新清单以确认最新版本信息。\n本次发布流程由自建的 Forgejo CI 系统完成测试、原证书签名、安装包校验以及自动发布操作。\n\n所有安装包均由自建 CI 系统构建并校验，GitHub 镜像亦由发布程序自动上传，其内容与自建下载站上的同版本安装包完全一致。\nGitHub 自动附带的源代码归档对应的是公开的 main 分支代码，并非本次 APK 的构建源码；本次构建的提交记录与安装包校验信息均记录在 build-info.json 及 SHA256SUMS 文件中。"
       },
       "cachedReleases": [
+        {
+          "id": 414477254,
+          "tag": "v3.0.19",
+          "name": "LocationSpoofer v3.0.19 · 全局 / 非全局 · 32 位 / 64 位",
+          "prerelease": false,
+          "published_at": "2026-10-16T02:38:28Z",
+          "url": "https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.19",
+          "body": "# v3.0.19\n\n- 修复部分模拟器开始模拟时误报版本过旧并退出账号的问题，完善安装包架构识别。\n- 运行配置暂不可用时保留已登录账号，避免无关的重复登录。\n- 完善 OS4、Android 17 的系统传感器动态匹配，兼容更多相似结构。\n- 补充传感器接入状态诊断，便于定位系统更新后的适配问题。\n\n提供全局、非全局两种版本，各含 ARM 64 位和 32 位安装包。更新后请重启设备，以加载新的系统模块。\n\n版本号：`3.0.19`；Android versionCode：`30053`。\n更新检查：下载服务器更新清单。\n由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。\n\n安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。\nGitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。",
+          "authorZh": "",
+          "zh": "# v3.0.19\n\n- 修复了部分模拟器在开始模拟时误判为版本过旧并导致账号退出的问题，同时优化了安装包的架构识别功能。\n- 当运行配置暂时不可用时，系统会保留已登录的账号信息，从而避免不必要的重复登录操作。\n- 完善了 OS4 和 Android 17 环境下的系统传感器动态匹配机制，提升了对结构相似设备的兼容性。\n- 新增了传感器接入状态诊断功能，便于排查系统更新后出现的适配问题。\n\n本次更新提供了全局版与非全局版两种版本，每种版本均包含 ARM 64 位与 32 位两种安装包。更新完成后请重启设备，以便新系统模块顺利加载。\n\n版本号：`3.0.19`；Android versionCode：`30053`。\n更新检查：可下载更新清单以确认最新版本信息。\n本次发布流程由自建的 Forgejo CI 系统完成测试、原证书签名、安装包校验以及自动发布操作。\n\n所有安装包均由自建 CI 系统构建并校验，GitHub 镜像亦由发布程序自动上传，其内容与自建下载站上的同版本安装包完全一致。\nGitHub 自动附带的源代码归档对应的是公开的 main 分支代码，并非本次 APK 的构建源码；本次构建的提交记录与安装包校验信息均记录在 build-info.json 及 SHA256SUMS 文件中。"
+        },
         {
           "id": 414233697,
           "tag": "v3.0.18",
@@ -20639,9 +20661,9 @@
       "url": "https://github.com/tingaicompass/AI-Compass",
       "lang": "Python",
       "desc": "“AI-Compass”将为社区指引在 AI 技术海洋中航行的方向，无论你是初学者还是进阶开发者，都能在这里找到通往 AI 各大方向的路径。旨在帮助开发者系统性地了解 AI 的核心概念、主流技术、前沿趋势，并通过实践掌握从理论到落地的全过程。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"f4db436372c08587d7b0a18ee15de51c5200eb1ba39a0ea34e4cf87943519431\"",
+      "commitsEtag": "W/\"75136f4d188440ce855ce1abe390b1b5855a0d7cec4f35579a64c834bea7a7b8\"",
       "cachedCommit": {
         "sha": "2e99c16",
         "date": "2026-09-24T04:11:24Z",
@@ -20658,7 +20680,7 @@
       "url": "https://github.com/XIaodou0416/Beans-Music",
       "lang": "Swift",
       "desc": "Beans Music - iOS 26 液态玻璃风格第三方音乐播放器（仅供学习）",
-      "releasesEtag": "W/\"97a8d92282e927990b4e9eb4362fff13f564d5fec6e18077b825155b1bcc6039\"",
+      "releasesEtag": "W/\"ee853bd5241e3fd4f966c839d3e36d6fc66760a84e3592dcb7175737c10016b5\"",
       "cachedLatest": {
         "id": 383579437,
         "tag": "v1.6.6",
@@ -20695,7 +20717,7 @@
       "url": "https://github.com/ZGMFX01A/OrigRead",
       "lang": "Kotlin",
       "desc": "Modern Android RSS reader for phones & tablets, featuring full-text reading, multi-source discovery, and bi-directional AI citation back to source.",
-      "releasesEtag": "W/\"7432e2be047d4dbbf5fd4196bc0fbcf9c5fc265944d94225978786b31ec61028\"",
+      "releasesEtag": "W/\"6364d53a99ed2859bfe410f03aa17c13430a9ccb5b84c6cf73f540d417dc0241\"",
       "cachedLatest": {
         "id": 403014908,
         "tag": "v1.7.0",
@@ -20850,7 +20872,7 @@
       "url": "https://github.com/yeximm/Access_wechat_article",
       "lang": "Python",
       "desc": "微信文章爬虫，用于采集、整理和归档微信公众号公开文章元数据，欢迎一起学习讨论。A Windows research workbench for collecting, organizing, and archiving public WeChat article metadata.",
-      "releasesEtag": "W/\"bb7dc4a858e007a8ed544c79bede39d49811ff275a83d9f5cb8580d84b9dd0c1\"",
+      "releasesEtag": "W/\"8cec9849c53ef231981a0a18e033f06647cb5bb0935ecfccfacdb3bde66dcc01\"",
       "cachedLatest": {
         "id": 375147520,
         "tag": "v2.2.0",
@@ -20994,7 +21016,7 @@
       "url": "https://github.com/Ajaxc/WeChatList",
       "lang": "HTML",
       "desc": "微信文章导出",
-      "releasesEtag": "W/\"922069b6160dcdc8f8c7b41dd513fa7fc670fd2d3b3c987339b8825583d6af58\"",
+      "releasesEtag": "W/\"87aff35b6ce1b2748d4a8199f442bf4811c65bccb46d7f7ee5206ffd41a8241c\"",
       "cachedLatest": {
         "id": 412378431,
         "tag": "2.5.2",
@@ -21042,7 +21064,7 @@
       "url": "https://github.com/x554960766/wechat-mp-tools",
       "lang": "Python",
       "desc": "微信公众号采集、视频号高清视频解析、抖音全能下载、小红书下载、快手、B站批量下载",
-      "releasesEtag": "W/\"e63ec064bd8d5b4318cc264b8750aaf6a6282bdd602481d6db386f5bd06e9456\"",
+      "releasesEtag": "W/\"416f9c96fe5899aea8aea01d787e540357a49a798c5c5cce644fa68fc2177e81\"",
       "cachedLatest": {
         "id": 413566445,
         "tag": "v2.2.1",
@@ -21508,9 +21530,9 @@
       "url": "https://github.com/shufflewzc/faker3",
       "lang": "JavaScript",
       "desc": "",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"fec3232f31385381a1dbdc806b3f371827772c06df7748ab027fad73aac94286\"",
+      "commitsEtag": "W/\"d1eb8d971801732b5775ccb4e751c0e0b18d9ed3003e3917bbe777804513e768\"",
       "cachedCommit": {
         "sha": "c309ef7",
         "date": "2026-09-14T06:49:54Z",
@@ -21530,7 +21552,7 @@
       "url": "https://github.com/zhangxiangliang/stock-api",
       "lang": "TypeScript",
       "desc": "查询 A 股、美股、港股与场内基金行情，并通过 Node.js、浏览器、CLI 或 MCP 快速接入。",
-      "releasesEtag": "W/\"26ff64a640d5c5e9c6bcef611ff56ce53dad8905452cde8991276037b6ddc490\"",
+      "releasesEtag": "W/\"cf1cab809f345d0ce9adbceb2cb74f6fe8c4795db3a3ae14b1972d56843bd188\"",
       "cachedLatest": {
         "id": 393033832,
         "tag": "v2.7.5",
@@ -21729,9 +21751,9 @@
       "url": "https://github.com/yijixiuxin/chanlun-pro",
       "lang": "Python",
       "desc": "基于缠中说禅所讲缠论理论，以便量化分析市场行情的工具",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"f528fb6e77f9ca22c5db8a2fa9305ad2476958c94fa9443b29fa04af86658256\"",
+      "commitsEtag": "W/\"97531216ace37d718bb7df04c985b5326f823c5f719546ad4ee0a0925dac91b4\"",
       "cachedCommit": {
         "sha": "6b182c9",
         "date": "2026-10-15T13:06:38Z",
@@ -21748,7 +21770,7 @@
       "url": "https://github.com/imharryzhu/AndroidControl",
       "lang": "JavaScript",
       "desc": "超强群控，可以实时查看和控制安卓手机的安卓远程控制软件，致力于完成一个高端的安卓群控软件 可以群控，录制运行脚本等等功能...... ",
-      "releasesEtag": "W/\"0bf261d513bd9a5e3f5c645cc10f63096119db12c5c2a2a96e0ea2f7a648c1c2\"",
+      "releasesEtag": "W/\"69bd597df638738e50faeae1f40b750c61bc16215fb9a30352ee5a8f629e5801\"",
       "cachedLatest": {
         "id": 9363763,
         "tag": "1.0.1",
@@ -21804,7 +21826,7 @@
       "url": "https://github.com/Panniantong/Agent-Reach",
       "lang": "Python",
       "desc": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-      "releasesEtag": "W/\"3142cfca4e62ca072650f06548f7b88259480b0372b8cca5ef1716e203af17e8\"",
+      "releasesEtag": "W/\"2290d69e0444bb29c42e4d0cc1d89615ab5180fa33f1435ef2f785f841740835\"",
       "cachedLatest": {
         "id": 337945536,
         "tag": "v1.5.0",
@@ -21904,9 +21926,9 @@
       "url": "https://github.com/cq0206/wechat2rss",
       "lang": "—",
       "desc": "🤗更优雅的微信公众号订阅方式，支持私有化部署、微信公众号RSS生成（基于微信读书）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"196ab869d94931d34b8595d5a5e89ae6c811567b734fa31b7d8dd67406b78f4d\"",
+      "commitsEtag": "W/\"cceecd44d686f219cd55002577c00951af8201e0b822584afd598a15ce2f2348\"",
       "cachedCommit": {
         "sha": "e751c64",
         "date": "2026-03-20T00:22:36Z",
@@ -21926,7 +21948,7 @@
       "url": "https://github.com/7723mod/NPatch",
       "lang": "Kotlin",
       "desc": "NPatch是一个复刻自LSPatch，以LSPosed为基础的免root的Xposed框架",
-      "releasesEtag": "W/\"b67709b7cc7da7aaac308aef35c8c9572be244127345f50dae29d9f0bcb83a95\"",
+      "releasesEtag": "W/\"6ba4e8093c5c2335c2a76aee67ce6a159442495261732194d46ba54d40b76828\"",
       "cachedLatest": {
         "id": 410574118,
         "tag": "v1.0.9",
@@ -22103,7 +22125,7 @@
       "url": "https://github.com/opendatalab/MinerU",
       "lang": "Python",
       "desc": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
-      "releasesEtag": "W/\"fff7a821feb60ce335d926551a2d600a9a4d94b7ba3c1fb5e6f89104a31492a4\"",
+      "releasesEtag": "W/\"1cc203cf3077e83c5587e3261343ed3abe5ac6770f2ff0f5b6546a77e0cae883\"",
       "cachedLatest": {
         "id": 409343850,
         "tag": "mineru-4.0.12-released",
@@ -24315,7 +24337,7 @@
       "url": "https://github.com/reeden-org/reeden-app",
       "lang": "—",
       "desc": "Reeden 是一款功能强大的纯本地电子书阅读器，支持多种格式，提供丰富的阅读体验和个性化设置。  支持 Windows、Mac、Linux、iOS、Android 平台。",
-      "releasesEtag": "W/\"6f24083dc80e3d4c7faab1b94aa8f9b90d7eb18bb84eac16f2807bc86a02046a\"",
+      "releasesEtag": "W/\"55257b3542f04d891095bd3c44760ed51fe7aa561e3c8b95c49e365773841d3e\"",
       "cachedLatest": {
         "id": 405896894,
         "tag": "v1.43.1",
@@ -25240,7 +25262,7 @@
       "url": "https://github.com/yyyyymmmmm/InkRoot",
       "lang": "Dart",
       "desc": "InkRoot-墨鸣笔记-基于memos开发的第三方APP（支持安卓iOS平板等设备）接入AI，webdav同步等功能，   专为追求高效记录与深度积累的用户设计。它帮助你默默书写、静心沉淀，让每一次落笔都成为未来思想生根发芽的力量。      完美对接 Memos 服务器，保障数据安全与私密，适合个人及团队的知识管理需求。      无论是快速捕捉灵感，还是系统性整理思考，墨鸣都助你沉淀积累，厚积薄发。",
-      "releasesEtag": "W/\"653c2f40be082d85558a6607d63aad7dcf2dfa16bdcffe6d99261ca47ff44f76\"",
+      "releasesEtag": "W/\"e48e971ea6ed7d5987e850eece848207804ef77f570ce55104ef9a0d76db494f\"",
       "cachedLatest": {
         "id": 342780048,
         "tag": "v1.1.13",
@@ -25321,7 +25343,7 @@
       "url": "https://github.com/T8RIN/ImageToolbox",
       "lang": "Kotlin",
       "desc": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
-      "releasesEtag": "W/\"cbc11f1d06c8ff29e5bd888192c08b0fa8ef8cba36d2931fa823dcf5adfda215\"",
+      "releasesEtag": "W/\"de792414c6a38cdf5a54622ebb3968a89d3bdf7db930ec88251765a9585550cd\"",
       "cachedLatest": {
         "id": 408279360,
         "tag": "4.2.1-rc01",
@@ -27863,7 +27885,7 @@
       "url": "https://github.com/ShareX/ShareX",
       "lang": "C#",
       "desc": "ShareX is a free and open-source application that enables users to capture or record any area of their screen with a single keystroke. It also supports uploading images, text, and various file types to a wide range of destinations.",
-      "releasesEtag": "W/\"1213890bb8d6b3bfd91cf22464c2feea42c2796c911ee6ad51183a786538f320\"",
+      "releasesEtag": "W/\"dd5a51ef7b6c008e52199df2866861eb76f1671db7695635aa2631d7e4138f50\"",
       "cachedLatest": {
         "id": 348413536,
         "tag": "v21.0.0",
@@ -28869,26 +28891,37 @@
       ]
     },
     "appshubcc/Bettbox": {
-      "key": "rel:411802199",
-      "tag": "v1.19.5",
+      "key": "rel:414656052",
+      "tag": "v1.19.6",
       "prerelease": false,
-      "published_at": "2026-10-13T15:00:27Z",
+      "published_at": "2026-10-16T07:14:30Z",
       "url": "https://github.com/appshubcc/Bettbox",
       "lang": "Go",
       "desc": "Another Better Mihomo Client",
-      "releasesEtag": "W/\"bc8622ce29424b1c1f07db5a09a7526b7cf8f8bc66d328853c55c74a5dbbdb7a\"",
+      "releasesEtag": "W/\"5265ac2a4c04e1b00cf08d0ab14c947b62c68f738bf198edb156f8de4fd87721\"",
       "cachedLatest": {
-        "id": 411802199,
-        "tag": "v1.19.5",
-        "name": "v1.19.5",
+        "id": 414656052,
+        "tag": "v1.19.6",
+        "name": "v1.19.6",
         "prerelease": false,
-        "published_at": "2026-10-13T15:00:27Z",
-        "url": "https://github.com/appshubcc/Bettbox/releases/tag/v1.19.5",
-        "body": "- 全新的导航栏以及多平台全局主题：『无界』，关键词：简洁，素雅，精致，留白\r\n- 全新的首页联动开关以及自定义，桌面端侧边栏新增灵动悬浮卡片，均为细节可选设置\r\n- macOS端更加原生现代，Linux端更安全的提权方式，强化的Android和Windows端服务生命周期\r\n- 更加强大的编辑器，支持放大缩小丝滑显示(Android端支持双指平滑缩放)，相关密集计算以及JS脚本引擎下沉到Rust\r\n- 重构主要应用场景的转场动画，确保首帧和部分弹出页面简洁流畅，延迟动画可选同步至其他页面\r\n- 专业精致的日志页面，资源页面自适应Providers显示，新增手动重置图标缓存，更快的应用列表获取速度，桌面端请求连接列表支持图标显示，多平台可选的回环流量防护，优化连通性测试多余请求，设置分类梳理调整，网络变化可选清理DNS缓存，Flutter大版本及底层依赖更新，内核同步更新至当前主线版本，APP打包与 CI 流程精简，Readme新增推荐等等\r\n# Bettbox 正式版本发布\r\n\n---\r\n\n---\r\n---\r\n\n| **OS/ 系统** | **Requirements / 版本要求** | **Direct Links / 点击直链下载** |\r\n|:---:|:---|:---|\r\n| | macOS 12.0+ | |\r\n| | Android 8.0+\n*(Compatible with Android TV)* | \n|\r\n| | Windows 8.1+\n*(Compatible for Older CPU)* | \n|\r\n| | Linux Kernel 5.4+\n*(Compatible for Older CPU)* | \n|\r\n---",
+        "published_at": "2026-10-16T07:14:30Z",
+        "url": "https://github.com/appshubcc/Bettbox/releases/tag/v1.19.6",
+        "body": "- 按需禁用 Impeller，修复部分桌面端渲染异常\r\n- 新增配置开启脚本后，支持独立覆写逻辑\r\n- 修复部分Android设备无法使用自定义字体\r\n- 重构首页出站运行模式选择卡片与视觉布局\r\n- Linux 打包内嵌 Polkit 授权规则并收紧权限范围 by VillagerTom\r\n- 优化 Linux 端Appimage右键重启逻辑\r\n- 优化移动端导航栏的平滑滚动并统一动画开关\r\n- 全面统一卡片、对话框主题风格，提升UI精致度\r\n- 编辑器全选优化，桌面端支持触控板双指及快捷键缩放\r\n- 优化详情页面中应用进程图标的提取与加载性能\r\n\n- 注意：因Google账号原因，此版本临时禁用了Windows数字签名流程\r\n# Bettbox 正式版本发布\r\n\n---\r\n\n---\r\n---\r\n\n| **OS/ 系统** | **Requirements / 版本要求** | **Direct Links / 点击直链下载** |\r\n|:---:|:---|:---|\r\n| | macOS 12.0+ | |\r\n| | Android 8.0+\n*(Compatible with Android TV)* | \n|\r\n| | Windows 8.1+\n*(Compatible for Older CPU)* | \n|\r\n| | Linux Kernel 5.4+\n*(Compatible for Older CPU)* | \n|\r\n---",
         "authorZh": "",
-        "zh": "- 全新的导航栏以及多平台全局主题：“无界”，其特点为简洁、素雅、精致且注重留白设计  \n- 新增首页联动开关与自定义功能；桌面端侧边栏还新增了灵动悬浮卡片，这些均为可自由配置的细节选项  \n- macOS端体验更加贴近原生风格且更具现代感；Linux端则采用了更为安全的权限提升机制；Android与Windows端的服务生命周期管理也得到了强化  \n- 编辑器功能进一步增强：支持平滑的缩放操作（Android端可通过双指手势实现流畅缩放）；各类密集计算任务以及JS脚本引擎均已迁移至Rust实现  \n- 主要应用场景的转场动画经过全面重构，确保初始画面及部分弹出页面呈现简洁流畅的效果；延迟触发的动画亦可选择同步至其他页面  \n- 日志页面设计更为专业精致；资源页面能根据Providers配置自动适配显示方式；新增手动重置图标缓存的功能；应用列表获取速度显著提升；桌面端请求连接列表现已支持图标显示；多平台均提供可选的回环流量防护机制；冗余的连通性测试请求已得到优化；设置分类也经过重新梳理调整；网络状态变化时可选择性清除DNS缓存；Flutter版本及底层依赖均已升级；内核同步至当前主线版本；应用打包与CI流程也得到简化；Readme文档中还新增了多项推荐内容等等  \n\n# Bettbox 正式版本发布  \n\n---\n\n---\n---\n\n| **操作系统** | **版本要求** | **直接下载链接** |\n|:---:|:---|:---|\n| | macOS 12.0及以上 | |\n| | Android 8.0及以上  \n*(兼容Android TV)* | \n|\n| | Windows 8.1及以上  \n*(兼容旧款CPU)* | \n|\n| | Linux内核5.4及以上  \n*(兼容旧款CPU)* | \n|\n---"
+        "zh": "- 可按需禁用 Impeller，修复了部分桌面端的渲染异常问题  \n- 新增配置项：在启用脚本后，支持单独覆写相关逻辑  \n- 修复了部分 Android 设备无法使用自定义字体的问题  \n- 重构了首页中“出站运行模式”选择卡片及其视觉布局  \n- 在 Linux 版本的打包包中内嵌了 Polkit 授权规则，并进一步收紧了权限范围，由 VillagerTom 完成  \n- 优化了 Linux 端 Appimage 的右键菜单重启逻辑  \n- 优化了移动端导航栏的平滑滚动效果，并统一了动画开关的设置  \n- 全面统一了各类卡片与对话框的主题风格，提升了 UI 的精致度  \n- 优化了编辑器的全选功能；桌面端现支持通过触控板双指手势或快捷键进行缩放操作  \n- 优化了详情页面中应用进程图标的提取与加载性能  \n\n- 注意：由于 Google 账号相关原因，此版本暂时禁用了 Windows 数字签名流程  \n# Bettbox 正式版本发布\n\n---\n\n---\n---\n\n| **操作系统** | **版本要求** | **直接下载链接** |\n|:---:|:---|:---|\n| | macOS 12.0 及以上 | |\n| | Android 8.0 及以上  \n*(兼容 Android TV)* | \n|\n| | Windows 8.1 及以上  \n*(兼容较旧的 CPU)* | \n|\n| | Linux 内核 5.4 及以上  \n*(兼容较旧的 CPU)* | \n|\n---"
       },
       "cachedReleases": [
+        {
+          "id": 414656052,
+          "tag": "v1.19.6",
+          "name": "v1.19.6",
+          "prerelease": false,
+          "published_at": "2026-10-16T07:14:30Z",
+          "url": "https://github.com/appshubcc/Bettbox/releases/tag/v1.19.6",
+          "body": "- 按需禁用 Impeller，修复部分桌面端渲染异常\r\n- 新增配置开启脚本后，支持独立覆写逻辑\r\n- 修复部分Android设备无法使用自定义字体\r\n- 重构首页出站运行模式选择卡片与视觉布局\r\n- Linux 打包内嵌 Polkit 授权规则并收紧权限范围 by VillagerTom\r\n- 优化 Linux 端Appimage右键重启逻辑\r\n- 优化移动端导航栏的平滑滚动并统一动画开关\r\n- 全面统一卡片、对话框主题风格，提升UI精致度\r\n- 编辑器全选优化，桌面端支持触控板双指及快捷键缩放\r\n- 优化详情页面中应用进程图标的提取与加载性能\r\n\n- 注意：因Google账号原因，此版本临时禁用了Windows数字签名流程\r\n# Bettbox 正式版本发布\r\n\n---\r\n\n---\r\n---\r\n\n| **OS/ 系统** | **Requirements / 版本要求** | **Direct Links / 点击直链下载** |\r\n|:---:|:---|:---|\r\n| | macOS 12.0+ | |\r\n| | Android 8.0+\n*(Compatible with Android TV)* | \n|\r\n| | Windows 8.1+\n*(Compatible for Older CPU)* | \n|\r\n| | Linux Kernel 5.4+\n*(Compatible for Older CPU)* | \n|\r\n---",
+          "authorZh": "",
+          "zh": "- 可按需禁用 Impeller，修复了部分桌面端的渲染异常问题  \n- 新增配置项：在启用脚本后，支持单独覆写相关逻辑  \n- 修复了部分 Android 设备无法使用自定义字体的问题  \n- 重构了首页中“出站运行模式”选择卡片及其视觉布局  \n- 在 Linux 版本的打包包中内嵌了 Polkit 授权规则，并进一步收紧了权限范围，由 VillagerTom 完成  \n- 优化了 Linux 端 Appimage 的右键菜单重启逻辑  \n- 优化了移动端导航栏的平滑滚动效果，并统一了动画开关的设置  \n- 全面统一了各类卡片与对话框的主题风格，提升了 UI 的精致度  \n- 优化了编辑器的全选功能；桌面端现支持通过触控板双指手势或快捷键进行缩放操作  \n- 优化了详情页面中应用进程图标的提取与加载性能  \n\n- 注意：由于 Google 账号相关原因，此版本暂时禁用了 Windows 数字签名流程  \n# Bettbox 正式版本发布\n\n---\n\n---\n---\n\n| **操作系统** | **版本要求** | **直接下载链接** |\n|:---:|:---|:---|\n| | macOS 12.0 及以上 | |\n| | Android 8.0 及以上  \n*(兼容 Android TV)* | \n|\n| | Windows 8.1 及以上  \n*(兼容较旧的 CPU)* | \n|\n| | Linux 内核 5.4 及以上  \n*(兼容较旧的 CPU)* | \n|\n---"
+        },
         {
           "id": 411802199,
           "tag": "v1.19.5",
@@ -30333,26 +30366,37 @@
       ]
     },
     "t59688/newsnook": {
-      "key": "rel:413856614",
-      "tag": "v1.9.0-beta.2",
+      "key": "rel:414639128",
+      "tag": "v1.9.0-beta.3",
       "prerelease": true,
-      "published_at": "2026-10-15T13:39:16Z",
+      "published_at": "2026-10-16T06:52:33Z",
       "url": "https://github.com/t59688/newsnook",
       "lang": "TypeScript",
       "desc": "你的开箱即用，唯一资讯，RSS，LinuxDO  新闻，知乎APP",
-      "releasesEtag": "W/\"52e894cd3d383120432fcd69fdc2bab8394952f53d7a9fa38db7a6bde67b022e\"",
+      "releasesEtag": "W/\"6024932b302985eff736aa6dfd38954681964632fd666ca114a64d628016b96d\"",
       "cachedLatest": {
-        "id": 413856614,
-        "tag": "v1.9.0-beta.2",
-        "name": "v1.9.0-beta.2",
+        "id": 414639128,
+        "tag": "v1.9.0-beta.3",
+        "name": "v1.9.0-beta.3",
         "prerelease": true,
-        "published_at": "2026-10-15T13:39:16Z",
-        "url": "https://github.com/t59688/newsnook/releases/tag/v1.9.0-beta.2",
-        "body": "## 有所闻 NewsNook v1.9.0-beta.2\n\n### 社区阅读\n- 修复 Linux.do 信息流标题里的社区表情显示为 face 等文字名称的问题，恢复标题中的内联表情。\n- 修复知乎评论区小表情被当作普通图片、从评论文字中移走的问题，保留文字和表情的原始顺序。\n- 优化知乎评论内联表情的显示尺寸，并沿用现有图片加载失败兜底机制。\n\n### 其它\n- 补充 Linux.do 标题和知乎评论表情的回归测试。\n- 版本号 1.9.0-beta.2。\n\n* fix: 修复 Linux.do 信息流与知乎评论区表情渲染",
+        "published_at": "2026-10-16T06:52:33Z",
+        "url": "https://github.com/t59688/newsnook/releases/tag/v1.9.0-beta.3",
+        "body": "## 有所闻 NewsNook v1.9.0-beta.3\n\n### Linux.do 工作区\n- 优化账户页与用户资料页布局：关键数据高亮、终端风格指标卡片，交互更顺手。\n- 完善帖子串楼：楼主标识、站长角标与角色展示更清晰。\n- 改进搜索、私信与通知行的信息呈现与操作入口。\n- 话题卡片 / 发现流等处更易点开用户资料，徽章与摘要展示更完整。\n\n### 其它\n- 补充 Linux.do 资料区、串楼与话题卡片相关测试。\n- 版本号 1.9.0-beta.3；本版本为 Beta 测试版。",
         "authorZh": "",
-        "zh": "## 有所闻 NewsNook v1.9.0-beta.2\n\n### 社区阅读\n- 修复了 Linux.do 信息流标题中社区表情显示为“face”等文字名称的问题，恢复了标题中的内联表情显示。\n- 修复了知乎评论区中小表情被当作普通图片并从评论文本中分离出去的问题，保留了文字与表情原有的排列顺序。\n- 优化了知乎评论中内联表情的显示尺寸，同时沿用了现有的图片加载失败时的备用显示机制。\n\n### 其它\n- 补充了对 Linux.do 标题及知乎评论中表情功能的回归测试。\n- 版本号为 1.9.0-beta.2。\n\n* 修复：修正了 Linux.do 信息流与知乎评论区中的表情渲染问题"
+        "zh": "## 有所闻 NewsNook v1.9.0-beta.3\n\n### Linux.do 工作区\n- 优化了账户页与用户资料页的布局：关键数据得以突出显示，终端风格的指标卡片让操作更加便捷。\n- 完善了帖子串楼功能：帖主标识、站长标记以及用户角色的展示更加清晰明了。\n- 改进了搜索、私信与通知列表中信息的呈现方式及操作入口。\n- 在话题卡片及发现流等位置，用户资料更易点击访问，徽章与内容摘要的展示也更加完整。\n\n### 其它\n- 补充了与 Linux.do 资料区、帖子串楼及话题卡片相关的测试内容。\n- 当前版本号为 1.9.0-beta.3，此版本为 Beta 测试版。"
       },
       "cachedReleases": [
+        {
+          "id": 414639128,
+          "tag": "v1.9.0-beta.3",
+          "name": "v1.9.0-beta.3",
+          "prerelease": true,
+          "published_at": "2026-10-16T06:52:33Z",
+          "url": "https://github.com/t59688/newsnook/releases/tag/v1.9.0-beta.3",
+          "body": "## 有所闻 NewsNook v1.9.0-beta.3\n\n### Linux.do 工作区\n- 优化账户页与用户资料页布局：关键数据高亮、终端风格指标卡片，交互更顺手。\n- 完善帖子串楼：楼主标识、站长角标与角色展示更清晰。\n- 改进搜索、私信与通知行的信息呈现与操作入口。\n- 话题卡片 / 发现流等处更易点开用户资料，徽章与摘要展示更完整。\n\n### 其它\n- 补充 Linux.do 资料区、串楼与话题卡片相关测试。\n- 版本号 1.9.0-beta.3；本版本为 Beta 测试版。",
+          "authorZh": "",
+          "zh": "## 有所闻 NewsNook v1.9.0-beta.3\n\n### Linux.do 工作区\n- 优化了账户页与用户资料页的布局：关键数据得以突出显示，终端风格的指标卡片让操作更加便捷。\n- 完善了帖子串楼功能：帖主标识、站长标记以及用户角色的展示更加清晰明了。\n- 改进了搜索、私信与通知列表中信息的呈现方式及操作入口。\n- 在话题卡片及发现流等位置，用户资料更易点击访问，徽章与内容摘要的展示也更加完整。\n\n### 其它\n- 补充了与 Linux.do 资料区、帖子串楼及话题卡片相关的测试内容。\n- 当前版本号为 1.9.0-beta.3，此版本为 Beta 测试版。"
+        },
         {
           "id": 413856614,
           "tag": "v1.9.0-beta.2",
@@ -31518,7 +31562,7 @@
       "url": "https://github.com/Kyant0/AndroidLiquidGlass",
       "lang": "Kotlin",
       "desc": "Compose Multiplatform Liquid Glass effect",
-      "releasesEtag": "W/\"3bb8388677cf66f633e6591f7500bad53b3e249624c5b8d4a93d7827bbde86a2\"",
+      "releasesEtag": "W/\"c59848b05fea04860520aca9f546be6b06ce3ede5ee74a3b139082cdf61215a8\"",
       "cachedLatest": {
         "id": 376872168,
         "tag": "2.0.1",
@@ -31893,7 +31937,7 @@
       "url": "https://github.com/liaoliao666/v2ex",
       "lang": "TypeScript",
       "desc": "V2EX 好看的第三方客户端，原生 App，支持夜间模式。",
-      "releasesEtag": "W/\"04ac5b3edaf5031c32d17859d2b45a80ee45b262814129c99440f92041b666bf\"",
+      "releasesEtag": "W/\"fe8261e23d1d264c1d9df885c6711c29cd3e3392e902289f124d8bd6fce3eaa4\"",
       "cachedLatest": {
         "id": 391916732,
         "tag": "1.9.6",
@@ -32906,9 +32950,9 @@
       "url": "https://github.com/wcq-glhf/prex-quant",
       "lang": "—",
       "desc": "Hosted quantitative backtest API contract and client examples for PREX Quant.",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"ad2b9c2f265a5fd299aac9243199d45c9258c1671e728ba7969836f6218a2a5c\"",
+      "commitsEtag": "W/\"72cf6d4ea1ac1dfccf81e84c5abdf4ed6f1500534970ccdc7509b7237d818390\"",
       "cachedCommit": {
         "sha": "5a8155d",
         "date": "2026-09-13T20:59:35Z",
@@ -32928,9 +32972,9 @@
       "url": "https://github.com/Tongyi-MAI/Z-Image",
       "lang": "Python",
       "desc": "",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"e2e862e7a5bb73ed27cf1ff8356c76d28353c49dcc6ffa09fb59c6b115ee5ae0\"",
+      "commitsEtag": "W/\"ec6eada7f0143deeca4b04d68b9a2f777a791465dd42156b2a167d80b5900403\"",
       "cachedCommit": {
         "sha": "26f23ed",
         "date": "2026-02-09T12:49:08Z",
@@ -32950,7 +32994,7 @@
       "url": "https://github.com/foru17/make-x-great-again",
       "lang": "TypeScript",
       "desc": "Make X Great Again — passive ambient browser extension that makes X usable: spam shield, KOL signal score, profile digest, social graph hints. Public-good, open source.",
-      "releasesEtag": "W/\"bae339fc28190b5d0484f29f0657a7ae7f196de087293d4830c21fd05122e842\"",
+      "releasesEtag": "W/\"a1b80b01d58240637228cb60286ddddca0284da39871cf06e8817e8a07166bcc\"",
       "cachedLatest": {
         "id": 330895492,
         "tag": "v0.4.0",
@@ -33009,7 +33053,7 @@
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
       "lang": "TypeScript",
       "desc": "✨ Zero-config AI chat assistant. No API key needed — sign up and instantly chat with GPT-5, Claude 4, Gemini 2.5, DeepSeek & 100+ top models. Pay-as-you-go saves you more. Available on Web, iOS, macOS, Android, Linux, Windows.",
-      "releasesEtag": "W/\"72827838fb6ffde446178f8d69a82dd8374022a7b88b6157327ddd9d24c60f0f\"",
+      "releasesEtag": "W/\"476f83bdb19b42f6e2fab5ecbf6cd9116c7a17056432b6e773e96b78dc84b7a5\"",
       "cachedLatest": {
         "id": 224764863,
         "tag": "v2.16.1",
@@ -33879,9 +33923,9 @@
       "url": "https://github.com/codeman008/Financial_freedom",
       "lang": "—",
       "desc": "Technical guide to making money and investing（最全赚钱投资指南）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"6b9fd2d4dd4676b006b85191e07947231f06eaabe10a98fdb205b0100002aed1\"",
+      "commitsEtag": "W/\"09f90d48782a415dbc51a6b1f7ffbcf95edc6433754c6d326be1fe92516aadd3\"",
       "cachedCommit": {
         "sha": "322f1bc",
         "date": "2026-08-06T12:46:02Z",
@@ -33901,9 +33945,9 @@
       "url": "https://github.com/ka-pi-ba-la/awesome-ai-tools",
       "lang": "—",
       "desc": "好用好玩的AI工具导航站，手工筛选，持续更新",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"91cb9ecfde1fd4bb8641bf8134caa7160c5204d69340ece10c1d5c300fd42b88\"",
+      "commitsEtag": "W/\"c265bb059a3f80f7f4d5bc120a9fd4ed3644f93c7b122e45e260f0c4ddf8f833\"",
       "cachedCommit": {
         "sha": "dc94622",
         "date": "2026-08-08T23:51:43Z",
@@ -33923,7 +33967,7 @@
       "url": "https://github.com/bojieli/ai-agent-book",
       "lang": "Python",
       "desc": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
-      "releasesEtag": "W/\"48146a39b6ed9618a81a511290c853727abbe1eb746db0c23b77a3bf46fee428\"",
+      "releasesEtag": "W/\"7b8feb15ce4b7bff6fa386e5d5f3b6719a554b9952967ed2474d44e5b4724ce9\"",
       "cachedLatest": {
         "id": 357097654,
         "tag": "latest",
@@ -33957,7 +34001,7 @@
       "url": "https://github.com/hifengzy/ima-sync",
       "lang": "TypeScript",
       "desc": "Import Tencent IMA knowledge base and notes, automatically convert to Markdown.",
-      "releasesEtag": "W/\"a5a088631c50e3d0dba8d217507bc183dd610121bd632f62966542a415c318cf\"",
+      "releasesEtag": "W/\"6a85651520ff399b87e6e159ffa93b78043c9e3144ac2246a895957bddd14861\"",
       "cachedLatest": {
         "id": 379017926,
         "tag": "0.3.1",
@@ -34093,7 +34137,7 @@
       "url": "https://github.com/SMNETSTUDIO/WeChat-AI",
       "lang": "TypeScript",
       "desc": "WeChat AI - 自托管微信角色扮演对话服务",
-      "releasesEtag": "W/\"0b12fadb7789052fe45d749f75b0212fb567c9a36ade306297e97987b3e1d570\"",
+      "releasesEtag": "W/\"2c3aada1fc9aca58846a309b3aaff3bdc92d2c3ff34f1e3c00ad28163dae5225\"",
       "cachedLatest": {
         "id": 369770378,
         "tag": "v0.12.0",
@@ -34130,7 +34174,7 @@
       "url": "https://github.com/xweiba/location-spoofer",
       "lang": "Swift",
       "desc": "面向 iOS 定位服务行为研究和开发测试的虚拟定位工具，支持地图选点、本地与第三方代理、WGS-84 / GCJ-02 双坐标、环境检测和问题诊断。",
-      "releasesEtag": "W/\"608113c66d0f7c7177a1f10b8622fbe118f777d67722acf6003a20d93d14f38b\"",
+      "releasesEtag": "W/\"22aaeee8a838c8a5d24f022748e465b4a94cca2130b1b6e421d5bb96a6542040\"",
       "cachedLatest": {
         "id": 412550813,
         "tag": "v1.0.9",
@@ -34255,7 +34299,7 @@
       "url": "https://github.com/z-mio/ParseHub",
       "lang": "Python",
       "desc": "轻量、异步、开箱即用的社交媒体聚合解析库",
-      "releasesEtag": "W/\"360a982c197c941c063ba8405b3a3d89d87e8399d317bb449cf4ea5abf041adc\"",
+      "releasesEtag": "W/\"cc3412776c4c5b2dd79402394360e6eb3c706ef7cc42d09050dc49ec07c23b97\"",
       "cachedLatest": {
         "id": 414097243,
         "tag": "v2.3.10",
@@ -35917,7 +35961,7 @@
       "url": "https://github.com/z-mio/parse_hub_bot",
       "lang": "Python",
       "desc": "Telegram 多平台聚合解析机器人",
-      "releasesEtag": "W/\"e271dedb979cf84f58add93dd2e796318517322ab542746d3152546ff8c1e0a9\"",
+      "releasesEtag": "W/\"0f5b8c26e30d7afd2769a20cd05da588f1629d3cfd9c630bd3e71237ed4a32f7\"",
       "cachedLatest": {
         "id": 414081287,
         "tag": "v2.2.4",
@@ -36714,26 +36758,37 @@
       ]
     },
     "waditu/czsc": {
-      "key": "rel:367492193",
-      "tag": "v1.0.1",
+      "key": "rel:414545467",
+      "tag": "v1.0.2",
       "prerelease": false,
-      "published_at": "2026-08-09T13:55:51Z",
+      "published_at": "2026-10-16T04:42:58Z",
       "url": "https://github.com/waditu/czsc",
       "lang": "Rust",
       "desc": "缠中说禅技术分析工具；缠论；股票；期货；Quant；量化交易",
-      "releasesEtag": "W/\"8f6d213a47e32f0cbb5b3de19f261b27c54590876f0a1ca84eb8953d51f60e45\"",
+      "releasesEtag": "W/\"0870ccbc25d2928a2388db0ce5521d1b7c0afca01ed222d98aa69dbb1df982a8\"",
       "cachedLatest": {
-        "id": 367492193,
-        "tag": "v1.0.1",
-        "name": "Release 1.0.1",
+        "id": 414545467,
+        "tag": "v1.0.2",
+        "name": "Release 1.0.2",
         "prerelease": false,
-        "published_at": "2026-08-09T13:55:51Z",
-        "url": "https://github.com/waditu/czsc/releases/tag/v1.0.1",
-        "body": "czsc 1.0.1\n\n### 更新内容\n详细变更请查看提交历史以及 `docs/MIGRATION_NOTES.md`。\n\n### 安装方式\n```bash\npip install czsc==1.0.1\n```\n\n### 文档\n- 项目文档: README.md",
+        "published_at": "2026-10-16T04:42:58Z",
+        "url": "https://github.com/waditu/czsc/releases/tag/v1.0.2",
+        "body": "czsc 1.0.2\n\n### 更新内容\n详细变更请查看提交历史以及 `docs/MIGRATION_NOTES.md`。\n\n### 安装方式\n```bash\npip install czsc==1.0.2\n```\n\n### 文档\n- 项目文档: README.md",
         "authorZh": "",
-        "zh": "### 更新内容\n详细变更请查看提交历史以及 `docs/MIGRATION_NOTES.md`。\n### 安装方式\n### 文档\n- 项目文档: README.md"
+        "zh": "czsc 1.0.2\n\n### 更新内容\n详细的变更信息请查阅提交历史及 `docs/MIGRATION_NOTES.md` 文件。\n\n### 安装方式\n```bash\npip install czsc==1.0.2\n```\n\n### 文档\n- 项目文档: README.md"
       },
       "cachedReleases": [
+        {
+          "id": 414545467,
+          "tag": "v1.0.2",
+          "name": "Release 1.0.2",
+          "prerelease": false,
+          "published_at": "2026-10-16T04:42:58Z",
+          "url": "https://github.com/waditu/czsc/releases/tag/v1.0.2",
+          "body": "czsc 1.0.2\n\n### 更新内容\n详细变更请查看提交历史以及 `docs/MIGRATION_NOTES.md`。\n\n### 安装方式\n```bash\npip install czsc==1.0.2\n```\n\n### 文档\n- 项目文档: README.md",
+          "authorZh": "",
+          "zh": "czsc 1.0.2\n\n### 更新内容\n详细的变更信息请查阅提交历史及 `docs/MIGRATION_NOTES.md` 文件。\n\n### 安装方式\n```bash\npip install czsc==1.0.2\n```\n\n### 文档\n- 项目文档: README.md"
+        },
         {
           "id": 367492193,
           "tag": "v1.0.1",
@@ -38350,9 +38405,9 @@
       "url": "https://github.com/jbiaojerry/ebook-treasure-chest",
       "lang": "Python",
       "desc": "欢迎来到电子书下载宝库，一个汇聚了各类电子书下载链接的地方。无论你是喜欢阅读经典文学、经管励志、终身学习、职场创业、技术手册还是其他类型的书籍，这里都能满足你的需求。 该库涵盖了帆书app(原樊登读书)、微信读书、京东读书、喜马拉雅等读书app的大部分电子书。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"d9aad76880f5411c44b52b4a4622442e81f3eca3c5a1c32103c9b9675cceeec6\"",
+      "commitsEtag": "W/\"d6ba4c8a9a506e8bb6f1df3b88473404ffdf9da3c508c20a90332f4487cb69c4\"",
       "cachedCommit": {
         "sha": "93cf3ff",
         "date": "2026-01-13T00:59:11Z",
@@ -38372,9 +38427,9 @@
       "url": "https://github.com/gedoor/legado",
       "lang": "Kotlin",
       "desc": "Legado 3.0 Book Reader with powerful controls & full functions❤️阅读3.0, 阅读是一款可以自定义来源阅读网络内容的工具，为广大网络文学爱好者提供一种方便、快捷舒适的试读体验。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"a61b8e29490274f4cf7a37cfb9b3b3a91efa1012a8fc656c265d037236e04c86\"",
+      "commitsEtag": "W/\"9af1055d7ed460bcbdda83ab3cf18d70a10290c149d6397219cd2cdf3178b069\"",
       "cachedCommit": {
         "sha": "9bb0569",
         "date": "2026-05-27T08:30:57Z",
@@ -38394,7 +38449,7 @@
       "url": "https://github.com/zjssun/TradeMirror",
       "lang": "Python",
       "desc": "Connect with MT5, transform trading data, and turn it into AI-powered trading insights.",
-      "releasesEtag": "W/\"02bac90b10395ab737deba6a2366b80ffb640d717f2ca5c5a09d21b34750da2a\"",
+      "releasesEtag": "W/\"9b46b5725a67c833162b209de01142841cb7f999b6f79937c565eac8ec5ffd7d\"",
       "cachedLatest": {
         "id": 364764552,
         "tag": "v1.2",
@@ -38453,9 +38508,9 @@
       "url": "https://github.com/xykt/IPQuality",
       "lang": "Shell",
       "desc": "IP质量检测脚本 - IP Quality Check Script",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"8d5fd55dbb623a92d40fb1041d1e5a5564762b053f8f3be78406f9c76b2dddc2\"",
+      "commitsEtag": "W/\"254426d54696b172b769fdcf4d59c8446876f256e7b82a5f22e7ccef0e0df3c1\"",
       "cachedCommit": {
         "sha": "87397e2",
         "date": "2026-09-30T11:34:09Z",
@@ -38475,9 +38530,9 @@
       "url": "https://github.com/xykt/NetQuality",
       "lang": "Shell",
       "desc": "网络质量检测脚本 - Network Quality Check Script",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"dda1361adb8041517439f6494d53c401a896e5d665383ace63becebc51425af2\"",
+      "commitsEtag": "W/\"baeb8ceaa83c28f3d408cdefd4c1ed872e7fb3fa16d703521a051cdfc77d1d8e\"",
       "cachedCommit": {
         "sha": "d5b9948",
         "date": "2026-09-01T06:22:34Z",
@@ -38497,9 +38552,9 @@
       "url": "https://github.com/myikuns/jichangtz-tuijian",
       "lang": "—",
       "desc": "2026最新机场推荐、机场推荐，梯子推荐，翻墙推荐，低价机场，专线机场，平价机场，性价比机场，高速机场，便宜机场，稳定机场，翻墙机场，付费机场，收费机场，冷门机场，优质机场，廉价机场。机场评测，中国翻墙，科学上网，梯子。永久VPN，永久梯子，翻墙梯子，翻墙APP，VPN。按量计费机场，按量付费机场，不限时机场。机场节点订阅，节点分享，Clash节点，V2ray节点，非免费节点。适用ClashForWindows，V2rayN，ClashVerge，Clashparty，karing，singbox，nekobox，shadowrocket小火箭，Loon等代理软件",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"680c61b5e7a76cf56e3f10b45e0de7d140e65bb7c835906e6251bb1fad997ca1\"",
+      "commitsEtag": "W/\"8e71e32e596eb1fba916566e29ac5e73f9b2bfe54a2e1af1903988acf7582bbc\"",
       "cachedCommit": {
         "sha": "707de9e",
         "date": "2026-10-15T01:40:51Z",
@@ -38516,7 +38571,7 @@
       "url": "https://github.com/huiyadanli/RevokeMsgPatcher",
       "lang": "C#",
       "desc": ":trollface: A hex editor for WeChat/QQ/TIM - PC版微信/QQ/TIM防撤回补丁（我已经看到了，撤回也没用了）",
-      "releasesEtag": "W/\"ccde5faa2cc9a8c3de6cf8427ba29d7139b0dae9e3bc423c6fb75bdac60e8d6d\"",
+      "releasesEtag": "W/\"f69d8b4430b67cd237ae811c429df1b57e4a7bb920652bb6f409a8e8cb86f4a1\"",
       "cachedLatest": {
         "id": 237180847,
         "tag": "2.1",
@@ -38770,9 +38825,9 @@
       "url": "https://github.com/hicccc77/WeFlow",
       "lang": "TypeScript",
       "desc": "WeFlow - 一个本地的微信聊天记录导出和年度报告应用",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"76c7da8362f93ac75a442da9fc47de41db687250b19c5bf5406afb4ab229f3c8\"",
+      "commitsEtag": "W/\"02b03049664346364dc212566d04e679eb837be601e3e5365b503ffa710e0e96\"",
       "cachedCommit": {
         "sha": "73cab4c",
         "date": "2026-10-15T11:37:17Z",
@@ -38789,7 +38844,7 @@
       "url": "https://github.com/j4Uq/TVBoxOSC",
       "lang": "—",
       "desc": "",
-      "releasesEtag": "W/\"4fe0db5ff0b9c8631fa1ccb88801b28ad3811bac5579d8e4029a21b17ad9a537\"",
+      "releasesEtag": "W/\"fafe88a0b261fa237e54f3ef432837793ca6e76c00b6035c21d228ee80024da8\"",
       "cachedLatest": {
         "id": 388446099,
         "tag": "20260914-1520",
@@ -43798,7 +43853,7 @@
       "url": "https://github.com/Lingyan000/fluxdo",
       "lang": "Dart",
       "desc": "一个 Linux.do 第三方客户端",
-      "releasesEtag": "W/\"6700f9a6702039d47a5e3e6db8fe6058e65c7164cd38f29613150a537fa6d628\"",
+      "releasesEtag": "W/\"31af89d64f480408fa9fd38e09aac918b5648cd3c297f144210dda098560c9d5\"",
       "cachedLatest": {
         "id": 382778287,
         "tag": "v0.2.28",
@@ -44726,7 +44781,7 @@
       "url": "https://github.com/nicejade/wealth-tracker",
       "lang": "Svelte",
       "desc": "💰生财有迹（Wealth Tracker）是一款专注于个人资产分析的应用程序。其核心功能是：全面记录并展示用户的资产状况，帮助用户轻松了解财务现状；运用 AI 能力，结合每种资产的特性和当前环境，提供适宜的财务建议。",
-      "releasesEtag": "W/\"189083f77416ac2e1b66171654edd30de05cc16d06fc9a43bf94c385264a88fb\"",
+      "releasesEtag": "W/\"81e1d7a0dd29d65d1bd0555f26da68fa6777fe702fa6c2a501055f151ee75858\"",
       "cachedLatest": {
         "id": 338990478,
         "tag": "v5.0.0",
@@ -44870,9 +44925,9 @@
       "url": "https://github.com/1c7/chinese-independent-developer",
       "lang": "—",
       "desc": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"66b3cc9aad22acd002e7a9041abd6ab539146248b8af4e08e8f039e7beca0038\"",
+      "commitsEtag": "W/\"c4a943e74c96ad7db177e4c73b6d7582427f865775f4a776c6fd0198e6752876\"",
       "cachedCommit": {
         "sha": "627fd8c",
         "date": "2026-10-16T02:21:32Z",
@@ -44889,7 +44944,7 @@
       "url": "https://github.com/thedjchi/Shizuku",
       "lang": "Kotlin",
       "desc": "Using system APIs directly with adb/root privileges from normal apps through a Java process started with app_process.",
-      "releasesEtag": "W/\"f77d435593518ef5fc14f10919e3e3e1ce94ab2b3e5f4c61972b1502c4cd9e1a\"",
+      "releasesEtag": "W/\"e34af4fe0be33fb5078eadb40b2554025bc02d2b3f71239c99807f1db9049a90\"",
       "cachedLatest": {
         "id": 348113237,
         "tag": "v13.7.0-thedjchi",
@@ -45256,7 +45311,7 @@
       "url": "https://github.com/KaringX/clashmi",
       "lang": "Dart",
       "desc": "Clash Mihomo for iOS/MacOS/Android/Windows/Linux",
-      "releasesEtag": "W/\"f846396ed19e479b104756e23eeac0597fdca77bcc2074d0318dbd7fcb66b7f5\"",
+      "releasesEtag": "W/\"cda5730b5f4982ec8ab640141f90698ab353cfc95b2ae13de45e40843691f7c0\"",
       "cachedLatest": {
         "id": 407450654,
         "tag": "v1.0.31.1703",
@@ -45543,7 +45598,7 @@
       "url": "https://github.com/RikkaApps/Shizuku",
       "lang": "Kotlin",
       "desc": "Using system APIs directly with adb/root privileges from normal apps through a Java process started with app_process.",
-      "releasesEtag": "W/\"5e66b2e1ea09c278c9341649a66530b308acc555acfdb6f471d8c1a3e8cc1bd4\"",
+      "releasesEtag": "W/\"ae07715dc84627b537ad1712ec78736ddab0e7987ab9c715f3eab7e0f3e685eb\"",
       "cachedLatest": {
         "id": 220853980,
         "tag": "v13.6.0",
@@ -46218,7 +46273,7 @@
       "url": "https://github.com/EKKOLearnAI/ekko-studio",
       "lang": "TypeScript",
       "desc": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
-      "releasesEtag": "W/\"c0f34cbc17434e439f5328d09f5a5b005ed5c5ddabe5137913db3987f7b94f62\"",
+      "releasesEtag": "W/\"a08c6e9325dc16c603a2879a4e9605f1bdcf2e618b7f12b651e6702c970d2540\"",
       "cachedLatest": {
         "id": 413799570,
         "tag": "v0.7.36",
@@ -47979,9 +48034,9 @@
       "url": "https://github.com/bozhouDev/codex-orange-book",
       "lang": "HTML",
       "desc": "Codex 橙皮书：从安装到实战案例的全链路 Codex 使用指南（非官方开源，含可下载 PDF）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"33dd08d5e19160da127c17e8b255c0e47fc020494c42f09cf331df07e51af18d\"",
+      "commitsEtag": "W/\"755f666c9d2c11838eb52b88f423daaf80fef79d34b219ad19ec801c97400efd\"",
       "cachedCommit": {
         "sha": "6c72add",
         "date": "2026-08-14T15:37:15Z",
@@ -48001,7 +48056,7 @@
       "url": "https://github.com/microsoft/PowerToys",
       "lang": "C",
       "desc": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-      "releasesEtag": "W/\"cc2c64855f3b059462410809c7d38508c8e3679c1c8076f2b9dab536f63b4b34\"",
+      "releasesEtag": "W/\"e3a2df76d456f49ce5b95255e225a0608c28bc9a899175d1cbfea388f68b824a\"",
       "cachedLatest": {
         "id": 412384899,
         "tag": "v0.102.2862.0",
@@ -49608,7 +49663,7 @@
       "url": "https://github.com/AyuGram/AyuGramDesktop",
       "lang": "C++",
       "desc": "Desktop Telegram client with good customization and Ghost mode.",
-      "releasesEtag": "W/\"5fa71cdd2d4ef2511e55fb6775acbded3a4d28bb273561cc737673c625d8d823\"",
+      "releasesEtag": "W/\"208045d68b6ebcaf768723367904b0b52570fc6ac77b58800f5c0b4017e85906\"",
       "cachedLatest": {
         "id": 403400227,
         "tag": "v7.2.9",
@@ -49983,9 +50038,9 @@
       "url": "https://github.com/zjp1997720/wechat-radar",
       "lang": "—",
       "desc": "微信聊天情报看板：聚合群聊信号、话题、链接和趋势",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"6e72322d4af4b6717d10596ad80dda9f11222ef4fa10698d54996a7c13203e6e\"",
+      "commitsEtag": "W/\"a48d6900865ff1dd0d8f88412f6c34fb6d3fc93e8776a927a96525c52a2fdb7a\"",
       "cachedCommit": {
         "sha": "de7ec99",
         "date": "2026-05-26T01:10:04Z",
@@ -50005,9 +50060,9 @@
       "url": "https://github.com/therealXiaomanChu/ex-skill",
       "lang": "Python",
       "desc": "把前任蒸馏成 AI Skill，用ta的方式跟你说话。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"86c22d0347b18056a791af0f8e20a018f035e7be6dadc2b7ca68ec06c805743a\"",
+      "commitsEtag": "W/\"e8c34fc6d32213fa01c847e98dd38ecffffbafd12225f94554a6d935a6ee99ca\"",
       "cachedCommit": {
         "sha": "a7c0638",
         "date": "2026-04-08T16:46:35Z",
@@ -50027,7 +50082,7 @@
       "url": "https://github.com/clash-verge-rev/clash-verge-rev",
       "lang": "Rust",
       "desc": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
-      "releasesEtag": "W/\"4cd75d8d89abf3998b5866a48d20a495cf318cda74f333cca79e3b2ce4acbd8f\"",
+      "releasesEtag": "W/\"17cc9085b411de987613a357d2b5139048c1f4d4d3660d687ea77dfb7ab344cf\"",
       "cachedLatest": {
         "id": 407425134,
         "tag": "v2.5.8",
@@ -50853,9 +50908,9 @@
       "url": "https://github.com/xgit01/sgkrank",
       "lang": "—",
       "desc": "2026最新免费社工库排行",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"0623bded2a499543cd40fc97d7a8d415d8f4f8941b01fa86630eff5fcb76ae36\"",
+      "commitsEtag": "W/\"c7411c22a8435c3c9b246970a6e13cb821e630978f5af0c06d0220f7db8ab040\"",
       "cachedCommit": {
         "sha": "0e77141",
         "date": "2026-10-11T14:20:57Z",
@@ -50865,21 +50920,21 @@
       "cachedReleases": []
     },
     "Aethersailor/Custom_OpenClash_Rules": {
-      "key": "commit:1685fee",
+      "key": "commit:4ac0a1c",
       "tag": null,
       "prerelease": false,
-      "published_at": "2026-10-15T19:42:19Z",
+      "published_at": "2026-10-16T07:08:19Z",
       "url": "https://github.com/Aethersailor/Custom_OpenClash_Rules",
       "lang": "Shell",
       "desc": "面向 OpenClash 用户的配置、订阅转换模板、YAML、规则、覆写模块、脚本与中文教程。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"ffd1f1549ce00e2f03f9fa5626abd4e3a3c994a8faa27d8ad22f08e37efbf940\"",
+      "commitsEtag": "W/\"cfd6d0eda6f9236237c79278d9a11781f9f2195f73c32f1f6bdd31ba1a91682e\"",
       "cachedCommit": {
-        "sha": "1685fee",
-        "date": "2026-10-15T19:42:19Z",
+        "sha": "4ac0a1c",
+        "date": "2026-10-16T07:08:19Z",
         "message": "chore(rules): auto generate derived rule files",
-        "url": "https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/1685fee3d35a4bccd940edb17e2e76a96ff1d311"
+        "url": "https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/4ac0a1cd9e22b2d1ecdd6cb3fddf3a93e8f21941"
       },
       "cachedReleases": []
     },
@@ -50891,7 +50946,7 @@
       "url": "https://github.com/Loyalsoldier/clash-rules",
       "lang": "—",
       "desc": "🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 等基于 Clash Premium 内核的客户端。",
-      "releasesEtag": "W/\"c6447b07a1767d306e89a16ecfcd7ff734860af5f0e54210cf5eaee8aba72c54\"",
+      "releasesEtag": "W/\"65d8aa19208772572f66b73519a1e97639ffc7fdeb843396612ab12f7c382567\"",
       "cachedLatest": {
         "id": 414340466,
         "tag": "202610152237",
@@ -76544,9 +76599,9 @@
       "url": "https://github.com/cmliu/edgetunnel",
       "lang": "JavaScript",
       "desc": "edgetunnel2 VLESS/Trojan/SS 多功能面板",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"fa1323a113131a5e55a5c8e9dfdeb31e78d57a42c206ad07374036b0dcef41ea\"",
+      "commitsEtag": "W/\"c340a558508e6f98aa418d2490324a9678898e3249960dacbfc47a96934225ed\"",
       "cachedCommit": {
         "sha": "a8ab111",
         "date": "2026-10-08T18:29:19Z",
@@ -76563,9 +76618,9 @@
       "url": "https://github.com/Hackl0us/GeoIP2-CN",
       "lang": "Go",
       "desc": "小巧精悍、准确、实用 GeoIP2 数据库",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"e82cd8a5b9a0bc38869ce5fd0d6817209281534f1187f946ca619afb8c141c63\"",
+      "commitsEtag": "W/\"c3828ff97e502823f327b59162fc24156f85ce23d4a6413e2f0ed3337371f31c\"",
       "cachedCommit": {
         "sha": "4eb80da",
         "date": "2024-05-13T07:37:10Z",
@@ -76582,7 +76637,7 @@
       "url": "https://github.com/lfnovo/open-notebook",
       "lang": "TypeScript",
       "desc": "An Open Source implementation of Notebook LM with more flexibility and features",
-      "releasesEtag": "W/\"5a230d09bab4f25b32c5cc5fbcefb7995f90620ddab2d98322789e66e5df9c43\"",
+      "releasesEtag": "W/\"ea734d0aaffcb67222d7636aa35176d7b6d0ea3d9002579f6b89c1d9a23ec7d3\"",
       "cachedLatest": {
         "id": 403258069,
         "tag": "v1.15.0",
@@ -77078,7 +77133,7 @@
       "url": "https://github.com/HsukqiLee/MediaUnlockTest",
       "lang": "Go",
       "desc": "MediaUnlockTest with golang",
-      "releasesEtag": "W/\"df0de24667d98a606cc9a43a3ce81e0c58a6fdbfe2d9dcc649dbabe4082f243c\"",
+      "releasesEtag": "W/\"f1705423458dc24de3d5c6cc2b1562ec61fb9d937115110bea43c42b270575d9\"",
       "cachedLatest": {
         "id": 385444916,
         "tag": "v1.9.10-1788951725",
@@ -77621,7 +77676,7 @@
       "url": "https://github.com/SagerNet/sing-box",
       "lang": "Go",
       "desc": "The universal proxy platform",
-      "releasesEtag": "W/\"6156f4c0dab40717d42d06ee7aa9bfae963714389a5485c766a8a6217c858dd7\"",
+      "releasesEtag": "W/\"6f655ba2f1435921fec785bdaffc1b50dbbb84782ba2b5ba5add3a52d9f70f02\"",
       "cachedLatest": {
         "id": 409427116,
         "tag": "v1.15.0-alpha.12",
@@ -84313,7 +84368,7 @@
       "url": "https://github.com/XTLS/Xray-core",
       "lang": "Go",
       "desc": "Xray, Penetrates Everything. Also the best v2ray-core. Where the magic happens. An open platform for various uses.",
-      "releasesEtag": "W/\"ce21ccd5a83111500a6baca909ef0171a6901ec95f24143b2de3096ef84339ae\"",
+      "releasesEtag": "W/\"ca40505b6ea8899f23f265d0bb214336f695c7cfeb02a6d2e519a8f494b9707a\"",
       "cachedLatest": {
         "id": 408835648,
         "tag": "v26.10.10",
@@ -85689,7 +85744,7 @@
       "url": "https://github.com/HyNetworks/hysteria",
       "lang": "Go",
       "desc": "Hysteria is powerful, lightning-fast, and censorship-resistant open-source proxy software",
-      "releasesEtag": "W/\"86bd752f7bb577bd21606e4c57d93dff85f0456df41610a6bdf8b416a267bcad\"",
+      "releasesEtag": "W/\"59026cce98881e1414a5118c5707d18c383f0b221cfcdd71367042879bbac393\"",
       "cachedLatest": {
         "id": 403367789,
         "tag": "app/v2.13.0",
@@ -86702,7 +86757,7 @@
       "url": "https://github.com/zzzgydi/clash-verge",
       "lang": "TypeScript",
       "desc": "A Clash GUI based on tauri. Supports Windows, macOS and Linux.",
-      "releasesEtag": "W/\"536b95bbbcdda9ea9adc0f1a21a10b5c113ac56bbf3d5a9f4f87bc5c95410471\"",
+      "releasesEtag": "W/\"67d357bfb7ba519b0b85cb77711d06dc613704c70d2a9efce3e3ee81907c8a6d\"",
       "cachedLatest": {
         "id": 127230375,
         "tag": "v1.3.8",
@@ -87319,7 +87374,7 @@
       "url": "https://github.com/MetaCubeX/mihomo",
       "lang": "Python",
       "desc": "A simple Python Pydantic model for Honkai: Star Rail parsed data from the Mihomo API.",
-      "releasesEtag": "W/\"f4b4ef2c0db1cd057d6b6391d07144d8e3f979cd2d0d3f0ca6c0fb20d264ed3c\"",
+      "releasesEtag": "W/\"ce2b028edb1bcfd7279f8b5d701bdc6500023d9e11c5881eb7fd751d554466e7\"",
       "cachedLatest": {
         "id": 400265188,
         "tag": "v1.19.32",
@@ -88046,9 +88101,9 @@
       "url": "https://github.com/bbstom/TelegramGroup",
       "lang": "—",
       "desc": "全网精选！2025年最新整理的90,000+ Telegram群组合集，包含最独特、有趣、实用的机器人BOT🤖，覆盖社交、学习、娱乐、技术等各个领域！无论你是想提升效率、拓展人脉，还是寻找放松娱乐的好去处，这里应有尽有。赶紧加入，探索更多奇趣内容，享受Telegram的无限可能！",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"933ca2ad83c004f32aa61ac6021815401c6892b38c045f48283f9ebb4f6c38d4\"",
+      "commitsEtag": "W/\"df5bd497571b6047bf94ad6716a70cc57adb7edfae8354b5e4115c007f2be74f\"",
       "cachedCommit": {
         "sha": "af9f7d7",
         "date": "2026-08-10T04:44:46Z",
@@ -88065,7 +88120,7 @@
       "url": "https://github.com/cooderl/wewe-rss",
       "lang": "TypeScript",
       "desc": "🤗更优雅的微信公众号订阅方式，支持私有化部署、微信公众号RSS生成（基于微信读书）",
-      "releasesEtag": "W/\"d81f0ce36b3fbe4bf34e0349c9ee792a9d88e8f5c6a82feaa4f744cf9ac9c157\"",
+      "releasesEtag": "W/\"8a310dc419e8f8ebe57e3f294252fb591443187aa392ba3d688902791da453aa\"",
       "cachedLatest": {
         "id": 190819715,
         "tag": "release-20241215130232",
@@ -88319,9 +88374,9 @@
       "url": "https://github.com/Max-Tortoise/DouyinLiveRecorder",
       "lang": "Python",
       "desc": "可循环值守和多人录制的直播录制软件，支持抖音、TikTok、快手、虎牙、斗鱼、B站、小红书、pandatv、afreecatv、flextv、popkontv、twitcasting、winktv、百度、微博、酷狗、花椒、流星、Twitch等平台直播录制",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"2a11cebeb7b1cc840fb7faa1b1e7485925137b0f2b233a488f9f33be8aed7253\"",
+      "commitsEtag": "W/\"05b529d3d46ee3af02d2f923645070262f621dc637e5cf264b54a7872879f7f5\"",
       "cachedCommit": {
         "sha": "dbd854f",
         "date": "2024-07-13T10:19:59Z",
@@ -88341,9 +88396,9 @@
       "url": "https://github.com/jiangrui1994/CloudSaver",
       "lang": "Vue",
       "desc": "一个基于 Vue 3 + Express 的网盘资源搜索与转存工具。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"93a658e8cafebe4752c8dfacbb61d94e752b4072dcb706e9ea7638e46d659016\"",
+      "commitsEtag": "W/\"86a7e119633e7da5fbadf3444798cb1f439b259e81fb924287ac8b01de9935aa\"",
       "cachedCommit": {
         "sha": "672cc48",
         "date": "2026-10-15T07:32:15Z",
@@ -88363,7 +88418,7 @@
       "url": "https://github.com/Xposed-Modules-Repo/com.skyhand.sinahelper",
       "lang": "—",
       "desc": "微博猪手",
-      "releasesEtag": "W/\"865fc3bd942a01383cb97efec77e1de055384f12fcdc72cdfc3a81fe2d80a9c5\"",
+      "releasesEtag": "W/\"bcfa2e5360cb722c6675c2ec58c6db064860f548a824ed759d8e9198aa9cb773\"",
       "cachedLatest": {
         "id": 226987074,
         "tag": "331-2.5.1",
@@ -88587,7 +88642,7 @@
       "url": "https://github.com/Yu-Core/SwashbucklerDiary",
       "lang": "C#",
       "desc": "侠客日记是一个开源、跨平台的本地日记app，使用Blazor开发，支持Android，Windows，macOS，Web，Linux。\"SwashbucklerDiary\" is an open source cross-platform local diary app using Blazor , support Android，Windows，macOS，Web，Linux.",
-      "releasesEtag": "W/\"4aa34105042d3d9c0807592609c99bcf6818bcba14e3160944fba28baacc67c2\"",
+      "releasesEtag": "W/\"207ed1cfa8b08fd0bd6605f10fde34ecd5933d794bddc29709c2e640fcb4a8cb\"",
       "cachedLatest": {
         "id": 269151943,
         "tag": "v1.31.5",
@@ -89028,7 +89083,7 @@
       "url": "https://github.com/TauricResearch/TradingAgents",
       "lang": "Python",
       "desc": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "releasesEtag": "W/\"47cba2fd5865a7871bd2683218b6685c3be5ef0e816fd06b3a5d5bd1358c3ec2\"",
+      "releasesEtag": "W/\"ff2bec0d6e8b026452a9c63ddbf5017a737b99c8aed64344ada37c1e10989e4d\"",
       "cachedLatest": {
         "id": 402699468,
         "tag": "v0.6.0",
@@ -89194,9 +89249,9 @@
       "url": "https://github.com/hsliuping/TradingAgents-CN",
       "lang": "Python",
       "desc": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"53496f3bd05f64d969b4495f1551e45f9d4a84ffa33de4a8a6aeb1aecc5233ae\"",
+      "commitsEtag": "W/\"bd975e2bcb329e476f259c1f8f95b1475f1c0ecc3235b219a537cbe09703507f\"",
       "cachedCommit": {
         "sha": "51060a7",
         "date": "2026-09-22T12:10:31Z",
@@ -89216,7 +89271,7 @@
       "url": "https://github.com/hiddify/hiddify-app",
       "lang": "Dart",
       "desc": "Multi-platform auto-proxy client, supporting Sing-box, X-ray, TUIC, Hysteria, Reality, Trojan, SSH etc. It’s an open-source, secure and ad-free.",
-      "releasesEtag": "W/\"d7892abe792161fbfe4724fdd641f8b74cd13a5f265c6d942102ee211d12a8aa\"",
+      "releasesEtag": "W/\"e758c4e072730fe7b6cef1cb8ac473c5b411931b27a13fc80c2b676f9e6ed293\"",
       "cachedLatest": {
         "id": 403244061,
         "tag": "draft",
@@ -90218,7 +90273,7 @@
       "url": "https://github.com/shufflewzc/faker2",
       "lang": "JavaScript",
       "desc": "不破楼兰终不还",
-      "releasesEtag": "W/\"7ab125bb5987c42275ef5b6edb45588ad7e21b2d4dbbb83fb87ac3c5f6438cab\"",
+      "releasesEtag": "W/\"af7d533d62121c986ab8e23fb437d4b201e914ca283d3c3818f7a4f8046687f2\"",
       "cachedLatest": {
         "id": 75873445,
         "tag": "publish",
@@ -90252,9 +90307,9 @@
       "url": "https://github.com/hoothin/UserScripts",
       "lang": "JavaScript",
       "desc": "Greasemonkey scripts ( Pagetual / Picviewer CE+ / DownloadAllContent ) 油猴腳本集 ユーザースクリプト集",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"f7be653281b046cfa5efae98971abd5bb4add7ebc8137678a1097896f4eddc7a\"",
+      "commitsEtag": "W/\"fb686436d2a0df101d281f3e1b4d9ec47e2f3aa7f9110aa5e123af67ccf8ae17\"",
       "cachedCommit": {
         "sha": "75eab20",
         "date": "2026-10-07T22:48:24Z",
@@ -90264,21 +90319,21 @@
       "cachedReleases": []
     },
     "adysec/tracker": {
-      "key": "commit:32c30d9",
+      "key": "commit:097d6fa",
       "tag": null,
       "prerelease": false,
-      "published_at": "2026-10-15T23:06:59Z",
+      "published_at": "2026-10-16T04:01:18Z",
       "url": "https://github.com/adysec/tracker",
       "lang": "Rust",
       "desc": "BT tracker 服务器列表，提供全网最全的 tracker 列表，每日聚合并测试存活服务器，trackers_all.txt 为全量列表（2902 行），trackers_best.txt 为可用列表（1137 行）",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"bcd0ae5e2b98d601a564fe7188bff83b048bf1a620466a59a7c4b0d37d7ef210\"",
+      "commitsEtag": "W/\"4c5a850370bb9aedf795a64cbfdae22ad6f4890c6292da32cf0ee0ee4e4b43c7\"",
       "cachedCommit": {
-        "sha": "32c30d9",
-        "date": "2026-10-15T23:06:59Z",
-        "message": "20261015",
-        "url": "https://github.com/adysec/tracker/commit/32c30d9fe928842d139f107bec3ed5c2477bc407"
+        "sha": "097d6fa",
+        "date": "2026-10-16T04:01:18Z",
+        "message": "20261016",
+        "url": "https://github.com/adysec/tracker/commit/097d6fa374f36c3aca6f5f9b1ab18f2425b944b9"
       },
       "cachedReleases": []
     },
@@ -90290,9 +90345,9 @@
       "url": "https://github.com/ngosang/trackerslist",
       "lang": "—",
       "desc": "Updated list of public BitTorrent trackers",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"48631b2eca89933be3d022c3fb8069e59e6fef25260154d0bf3f854311cb281a\"",
+      "commitsEtag": "W/\"fac9470e8ce0f1e6d40ac8ade8f4c7b018cd362128ff7e0d54b87ead343776eb\"",
       "cachedCommit": {
         "sha": "48cb125",
         "date": "2026-10-15T22:09:24Z",
@@ -90309,9 +90364,9 @@
       "url": "https://github.com/XIU2/TrackersListCollection",
       "lang": "—",
       "desc": "🎈 Updated daily! A list of popular BitTorrent Trackers! / 每天更新！全网热门 BT Tracker 列表！",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"278f140fcc3bb99bf0db9ed580c3bbfbdd4e3d33ef58525e5e360924ecf8cd01\"",
+      "commitsEtag": "W/\"a0aa85980229bb02bb79379e6ea94f60847ca8a5c6e6c09317ceabc31580af1e\"",
       "cachedCommit": {
         "sha": "b4db2eb",
         "date": "2026-10-16T00:16:00Z",
@@ -90328,7 +90383,7 @@
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
       "lang": "Python",
       "desc": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-      "releasesEtag": "W/\"626e44d99b2878cd2bfa773d6ef84a95d35baa8f3a8c8ab7a8cf7a616b36e389\"",
+      "releasesEtag": "W/\"def859bef21fe5593349fea474a0f946c4b117b451667e83a5bea037b0192f1a\"",
       "cachedLatest": {
         "id": 412932732,
         "tag": "autogpt-platform-beta-v0.8.4",
@@ -91726,7 +91781,7 @@
       "url": "https://github.com/ArvinLovegood/go-stock",
       "lang": "Go",
       "desc": "🦄🦄🦄AI赋能股票分析：AI加持的股票分析/选股工具。股票行情获取，AI热点资讯分析，AI资金/财务分析，涨跌报警推送。支持A股，港股，美股。支持市场整体/个股情绪分析，AI辅助选股等。数据全部保留在本地。支持DeepSeek，OpenAI， Ollama，LMStudio，AnythingLLM，硅基流动，火山方舟，阿里云百炼等平台或模型。",
-      "releasesEtag": "W/\"9426536f5b4667c8bbc89255c56d4f65978ffc43013ee7ac820ff580a26c8f00\"",
+      "releasesEtag": "W/\"bb977c4f2dfabe95ba9e384433faabf79583c05d16f781b27f22a8a9340a3770\"",
       "cachedLatest": {
         "id": 413416779,
         "tag": "v2026.10.15.1-release",
@@ -96908,7 +96963,7 @@
       "url": "https://github.com/NAStool/nas-tools",
       "lang": "—",
       "desc": "NAS媒体库管理工具",
-      "releasesEtag": "W/\"044aa1f6c65ffea22c6988cad79fa1e4ec8f8d94b4879beef2a6972fb96405fd\"",
+      "releasesEtag": "W/\"7f25e773f0648414d0b4273972310b97a4bfda37d8fb6481ff30884a9a6bbfed\"",
       "cachedLatest": {
         "id": 102926142,
         "tag": "v3.2.3",
@@ -96942,9 +96997,9 @@
       "url": "https://github.com/hamibot/hamibot",
       "lang": "Java",
       "desc": "安卓平台自动化工具，无需 root。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"fc2fee34f7a342e87fe9cd7de7ff4b821f2363652daebe14e5a040cf89e94bea\"",
+      "commitsEtag": "W/\"ece69ede1ac00aadb6927e38e3d9de17b4130b1e498d519674b1aef0c0b920c4\"",
       "cachedCommit": {
         "sha": "628aa9e",
         "date": "2023-11-01T08:14:44Z",
@@ -96954,26 +97009,37 @@
       "cachedReleases": []
     },
     "DIYgod/RSSHub": {
-      "key": "rel:413933172",
-      "tag": "v2026.10.15-8432.f23ada8",
+      "key": "rel:414632481",
+      "tag": "v2026.10.16-8433.8aeca4c",
       "prerelease": false,
-      "published_at": "2026-10-15T14:50:21Z",
+      "published_at": "2026-10-16T06:43:01Z",
       "url": "https://github.com/DIYgod/RSSHub",
       "lang": "TypeScript",
       "desc": "🧡 Everything is RSSible",
-      "releasesEtag": "W/\"8725195881457b1322003cbec7c25627e6303620b36172fded4ce54f8c609838\"",
+      "releasesEtag": "W/\"cf5fb0357cf768329417b9cb6b7ae6a9e781352c5849dcfd4c1d2cf18d6e0414\"",
       "cachedLatest": {
-        "id": 413933172,
-        "tag": "v2026.10.15-8432.f23ada8",
-        "name": "v2026.10.15-8432.f23ada8",
+        "id": 414632481,
+        "tag": "v2026.10.16-8433.8aeca4c",
+        "name": "v2026.10.16-8433.8aeca4c",
         "prerelease": false,
-        "published_at": "2026-10-15T14:50:21Z",
-        "url": "https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.15-8432.f23ada8",
-        "body": "Source commit: f23ada8a636fbbb5f92d8e91558cf4e8ffaca66a",
+        "published_at": "2026-10-16T06:43:01Z",
+        "url": "https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.16-8433.8aeca4c",
+        "body": "Source commit: 8aeca4cf7360a21651bf332d8363b4c1d45c003e",
         "authorZh": "",
-        "zh": "源码提交记录：f23ada8a636fbbb5f92d8e91558cf4e8ffaca66a"
+        "zh": "源码提交记录：8aeca4cf7360a21651bf332d8363b4c1d45c003e"
       },
       "cachedReleases": [
+        {
+          "id": 414632481,
+          "tag": "v2026.10.16-8433.8aeca4c",
+          "name": "v2026.10.16-8433.8aeca4c",
+          "prerelease": false,
+          "published_at": "2026-10-16T06:43:01Z",
+          "url": "https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.16-8433.8aeca4c",
+          "body": "Source commit: 8aeca4cf7360a21651bf332d8363b4c1d45c003e",
+          "authorZh": "",
+          "zh": "源码提交记录：8aeca4cf7360a21651bf332d8363b4c1d45c003e"
+        },
         {
           "id": 413933172,
           "tag": "v2026.10.15-8432.f23ada8",
@@ -97314,7 +97380,7 @@
       "url": "https://github.com/DIYgod/RSSHub-Radar",
       "lang": "TypeScript",
       "desc": "🧡 Browser extension that simplifies finding and subscribing RSS and RSSHub",
-      "releasesEtag": "W/\"48f82a4aab02c4cf6f7304573fcb72c1cb31adc38a18a222ed7d3451403aecca\"",
+      "releasesEtag": "W/\"3cc914acd2c3b55a6018bda30414ca85acc64827ce0dd14deb0eec1b68d5eb02\"",
       "cachedLatest": {
         "id": 285244410,
         "tag": "v2.2.0",
@@ -97799,7 +97865,7 @@
       "url": "https://github.com/chen08209/FlClash",
       "lang": "Dart",
       "desc": "A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.",
-      "releasesEtag": "W/\"829febe206f472366dee41aa5eab7964c76b58f9f9b444e24dabc879d4a6d6be\"",
+      "releasesEtag": "W/\"4db6cf840d19d5336e1c76646b2150307b6cbe5b53b2806823c29c029713ea86\"",
       "cachedLatest": {
         "id": 412264554,
         "tag": "v0.9.0",
@@ -99032,9 +99098,9 @@
       "url": "https://github.com/clearw5/Auto.js",
       "lang": "—",
       "desc": "Automation&Workflow JavaScript IDE on Android(安卓平台上的JavaScript编程IDE)",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"4485a4bbbad11abb5e098808ab6f2ebbf4b2178a1d16a7b3c72b6528cbd14acf\"",
+      "commitsEtag": "W/\"fb437c6a4b8ec7c17e0c5c9e3a5d04a4452e020ab110e5030db5adc5101b2eec\"",
       "cachedCommit": {
         "sha": "1d60aeb",
         "date": "2023-02-11T02:52:26Z",
@@ -99051,9 +99117,9 @@
       "url": "https://github.com/PlexPt/awesome-chatgpt-prompts-zh",
       "lang": "—",
       "desc": "ChatGPT 中文调教指南。各种场景使用指南。学习怎么让它听你的话。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"4d8f124e4931990c988908cc47c6fe4839c9451e0f494663e351a8e100b3af60\"",
+      "commitsEtag": "W/\"2cce9bb263f1e67c6d3a948ca2341c5115c8ef4147f3c6ac8f65db54b523daad\"",
       "cachedCommit": {
         "sha": "a708531",
         "date": "2026-04-28T10:52:14Z",
@@ -99070,9 +99136,9 @@
       "url": "https://github.com/dongyubin/IPTV",
       "lang": "—",
       "desc": "2026年10月更新直播源，体育直播源、F1直播源，IPTV电视直播源、APTV电视直播源、IPTV直播软件、中国IPTV直播源M3U、TV观看工具，iptv最新可用直播源iptv4/iptv6，TVBox接口，福利节目源，IPTV检查工具、电视家替代APP",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"d14f3d6b5d1228c5422bbf8e90b414c1e5d74ef50c0967031bc836d66dc8cce9\"",
+      "commitsEtag": "W/\"1985d4a73195c9095b7a8fb27719e3bbe7fb75c418a89787522aef43f618acc7\"",
       "cachedCommit": {
         "sha": "d12ec1b",
         "date": "2026-10-11T05:53:22Z",
@@ -99089,9 +99155,9 @@
       "url": "https://github.com/yuanzl77/IPTV",
       "lang": "Python",
       "desc": "每天自动更新IPTV直播源，支持IPV4/IPV6双栈访问！自定义频道，高质量直播源，❌不含有广告。Automatically update IPTV live streaming sources every day, supporting IPV4/IPV6 dual stack access! Custom channels, high-quality live streaming sources, ❌ Does not contain advertisements.",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"cbc6be7cd6e67f1f4aae2cebed2afb9b82207959cb9d53f705add89bd26cb6a3\"",
+      "commitsEtag": "W/\"8d8691ed0cf7eedc4cd851588baa09aeaba39200294f65ab15cb9dbf312ec822\"",
       "cachedCommit": {
         "sha": "c164c9c",
         "date": "2026-09-21T11:03:05Z",
@@ -99108,9 +99174,9 @@
       "url": "https://github.com/clashproxy/clash-download",
       "lang": "—",
       "desc": "Clash下载 | 各种Clash版本集合",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"b487456ff6fd38f263312af1a486f5ffda6f99e9f9cec79994b760c052959b2b\"",
+      "commitsEtag": "W/\"2dbf76a73f6c6c9beffad294331d837452c3d84dc0f5dc40dddac2bca0ee499c\"",
       "cachedCommit": {
         "sha": "cf74bf1",
         "date": "2026-08-07T08:39:17Z",
@@ -99127,7 +99193,7 @@
       "url": "https://github.com/ZCShou/GoGoGo",
       "lang": "Java",
       "desc": "一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆",
-      "releasesEtag": "W/\"5f603a9bd3091d86c80c99a14913ddf3bb42bbdb5996d879fd5c9619b6404f46\"",
+      "releasesEtag": "W/\"61c8d089d601dcbb734e1039b6938fbaba1b4125d4f2f45a277f9e37732af0e5\"",
       "cachedLatest": {
         "id": 238752496,
         "tag": "ReleaseV1.12.3",
@@ -99238,7 +99304,7 @@
       "url": "https://github.com/gkd-kit/gkd",
       "lang": "Kotlin",
       "desc": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
-      "releasesEtag": "W/\"3b3351a56c7155e56bccad301503b8495a2cb2bae21acd46c3dd4724651da2fe\"",
+      "releasesEtag": "W/\"df590435fcdcf8eb449bd8d4cea0d70bcfc851cb588c89a00d6e400cb19bf898\"",
       "cachedLatest": {
         "id": 413788158,
         "tag": "v1.13.0-beta-2",
@@ -100108,9 +100174,9 @@
       "url": "https://github.com/xaoyaoo/PyWxDump",
       "lang": "—",
       "desc": "删库",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"f8770c1cfded46218bf508db20236848d9c7d5b596359c26822d354e6df51e2e\"",
+      "commitsEtag": "W/\"20ff8d8676601d378c2ee3cc9569ab8e046f2068a6d88e11a8be7ab2d0e0735f\"",
       "cachedCommit": {
         "sha": "7f635fb",
         "date": "2025-10-20T09:58:47Z",
@@ -100127,9 +100193,9 @@
       "url": "https://github.com/likeflyme/cloudbak",
       "lang": "—",
       "desc": "微信云备份，备份到服务器、Docker、NAS，Web访问。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"5e03fe3076f44c74fcf60d365cc3c9ef06494e68ab897de0a15303fae0ac55ab\"",
+      "commitsEtag": "W/\"a61b830988cf24c018ae2ad27c6c89f4b8d5dda4b0d67e029ca2a4088065a236\"",
       "cachedCommit": {
         "sha": "47ed189",
         "date": "2025-10-24T08:58:27Z",
@@ -100146,7 +100212,7 @@
       "url": "https://github.com/TonyJiangWJ/Unify-Sign",
       "lang": "JavaScript",
       "desc": "聚合签到-薅羊毛-AutoJS",
-      "releasesEtag": "W/\"1c205e804731536d3a5fd233454c00e7ff40753b21c22adae82a78ff32536d48\"",
+      "releasesEtag": "W/\"50723ebf2786165c39651b628ce8d7d95500d9de2264d6fdc37b415a09f039aa\"",
       "cachedLatest": {
         "id": 210080722,
         "tag": "v2.4.2.2",
@@ -100304,7 +100370,7 @@
       "url": "https://github.com/TonyJiangWJ/Ant-Forest",
       "lang": "JavaScript",
       "desc": "基于AutoJS的蚂蚁森林收能量脚本",
-      "releasesEtag": "W/\"62d6cc2c79d1b608fdab0949ec58a3883ad7ca97f3e6e3d8b11d4421c1b8d947\"",
+      "releasesEtag": "W/\"bb04e0efc74226998e1e8c99621cac319938acca4689f40cc8412e675c75e968\"",
       "cachedLatest": {
         "id": 243691127,
         "tag": "v1.5.5.4",
@@ -100756,9 +100822,9 @@
       "url": "https://github.com/xiaoyaDev/xiaoya-alist",
       "lang": "Shell",
       "desc": "小雅Alist的相关周边",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"6d76f05714476f68371d5e499956348ad283bd4878ce1acee0819e358cdee900\"",
+      "commitsEtag": "W/\"dbcbe823ab0a81ffb787ba14e3ebee2d0034ac86a18fb0ef7c78d2e7f6926592\"",
       "cachedCommit": {
         "sha": "aadd245",
         "date": "2026-10-11T16:40:26Z",
@@ -100778,9 +100844,9 @@
       "url": "https://github.com/Momo707577045/m3u8-downloader",
       "lang": "JavaScript",
       "desc": "m3u8 视频在线提取工具",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"3cb918e29467658a09603eaba1c8a3d281d803a77a3b8f83717144e97832c092\"",
+      "commitsEtag": "W/\"c60debce5421192b904e25d33a5bccc8653ab6ca431c2e59ffb8ff0777d8ec4b\"",
       "cachedCommit": {
         "sha": "0043470",
         "date": "2025-04-22T02:30:23Z",
@@ -100797,9 +100863,9 @@
       "url": "https://github.com/zmqcherish/proxy-script",
       "lang": "JavaScript",
       "desc": "Quantumult X / Surge 微博和其他一些脚本",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"ddad646e608b744227dbc2bb6e5251742d1898830b7b8d8a47f688bf5aafc671\"",
+      "commitsEtag": "W/\"abd133594963231f849ddcb075e541cd930b69017212437748febfeeb621384c\"",
       "cachedCommit": {
         "sha": "1d9f51b",
         "date": "2024-05-15T04:59:15Z",
@@ -100816,7 +100882,7 @@
       "url": "https://github.com/Openwrt-Passwall/openwrt-passwall",
       "lang": "Lua",
       "desc": "",
-      "releasesEtag": "W/\"bfb55d0fe2db813fc046c6632a2213696eb7739b6da57807afda13ac47408ff4\"",
+      "releasesEtag": "W/\"6ccdcff3e4064eeba0acd2370426d8be18066c5482390a596d2e5e6c06a16c31\"",
       "cachedLatest": {
         "id": 414046323,
         "tag": "26.10.16-1",
@@ -101216,7 +101282,7 @@
       "url": "https://github.com/fw876/helloworld",
       "lang": "C",
       "desc": "",
-      "releasesEtag": "W/\"9eaaadfdef06bc983f1de506328232cb327db2090a8706293b7a857ea2186c3f\"",
+      "releasesEtag": "W/\"e6cf2f45faf9e9afe2ff75ee1877bab23fccbda95372ba587c50f8581224e40a\"",
       "cachedLatest": {
         "id": 405746497,
         "tag": "v196.19",
@@ -101418,7 +101484,7 @@
       "url": "https://github.com/Qv2ray/Qv2ray",
       "lang": "C++",
       "desc": ":star: Linux / Windows / macOS 跨平台 V2Ray 客户端 | 支持 VMess / VLESS / SSR / Trojan / Trojan-Go / NaiveProxy / HTTP / HTTPS / SOCKS5 | 使用 C++ / Qt 开发 | 可拓展插件式设计 :star:",
-      "releasesEtag": "W/\"a5e328efb660797db12e8ea0951b05d742525d072f79e9b9438f1ef333a452ac\"",
+      "releasesEtag": "W/\"b9c2ed6c333311e2322d8d46d5e6cbae60e3f07e84d059c3d822a1cb7447a558\"",
       "cachedLatest": {
         "id": 47946619,
         "tag": "v2.7.0",
@@ -101980,7 +102046,7 @@
       "url": "https://github.com/ritz078/moose",
       "lang": "TypeScript",
       "desc": "🦌  An application to stream, cast and download torrents. ",
-      "releasesEtag": "W/\"a115aee9af6c129c9d449d15e399ee13004459f66bc7b39b5a619b99548f3601\"",
+      "releasesEtag": "W/\"2c45c02087eafe4a3929053a2e8692ba02ad7223725b21fcbdda3f5fd1fcc8f5\"",
       "cachedLatest": {
         "id": 27892816,
         "tag": "v0.6.2",
@@ -102168,7 +102234,7 @@
       "url": "https://github.com/YaoZeyuan/stablog",
       "lang": "JavaScript",
       "desc": "稳部落. 专业备份导出微博记录, 稳!",
-      "releasesEtag": "W/\"02afa340c27539c87b22c258cd8045eece8dc68a29e6b6527bb56ec4f50ee38e\"",
+      "releasesEtag": "W/\"e2d403a5ea15238364e6f902995d2c245e7e7cf0ead4239dc601386cbece6b64\"",
       "cachedLatest": {
         "id": 73490786,
         "tag": "mac-3.3.7",
@@ -102260,9 +102326,9 @@
       "url": "https://github.com/ZainCheung/helper-618",
       "lang": "JavaScript",
       "desc": "🚀基于Autojs的淘宝/京东618以及淘宝双11活动自动刷任务项目。",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"7303ceda3aa9c6cb1d11f539c4c949d1d284115af798c347ce7e5ccf2c68ea5f\"",
+      "commitsEtag": "W/\"130c7bcc33c6cbfefd0985d14d7eeb5332424f457f4d5d76c908729807ebd823\"",
       "cachedCommit": {
         "sha": "cdba3f7",
         "date": "2022-10-10T08:28:36Z",
@@ -102282,9 +102348,9 @@
       "url": "https://github.com/zarkin404/sweater",
       "lang": "JavaScript",
       "desc": "薅 🐑 毛，做衬衫",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"78e7833b3d80b47a1066bb93f9732b17f5837f7cb6e9cdb5351352bb33bf33ec\"",
+      "commitsEtag": "W/\"c76a59503fb59d7a4aa1843cef2e9ececb198bbf0efcbb8394b398709c0d0371\"",
       "cachedCommit": {
         "sha": "51054ce",
         "date": "2020-10-27T09:01:06Z",
@@ -102304,9 +102370,9 @@
       "url": "https://github.com/hzlzh/Best-App",
       "lang": "—",
       "desc": "收集&推荐优秀的 Apps/硬件/技巧/周边等",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"4fda49ce6fce1209774e363ea98d9a8e4b05f3988e0ff0fd9b35dcf3e78f8a44\"",
+      "commitsEtag": "W/\"b73205aae1766cf5cbd1cf3dde83665efc69ed23fbace266d6a27f61f3d0f926\"",
       "cachedCommit": {
         "sha": "32b92a2",
         "date": "2026-03-17T04:55:46Z",
@@ -102323,7 +102389,7 @@
       "url": "https://github.com/MustangYM/WeChatExtension-ForMac",
       "lang": "Objective-C",
       "desc": "A plugin for Mac WeChat",
-      "releasesEtag": "W/\"d5c0f4f07182bf4ea7dcfab1419e96e9406568a9a216efcb9050a88c2ec3f958\"",
+      "releasesEtag": "W/\"0f0a58798de3d37c89e9031ddb0992d53223207af0b26958736d6ae9a04fed32\"",
       "cachedLatest": {
         "id": 112645357,
         "tag": "v3.8.2.1",
@@ -102885,9 +102951,9 @@
       "url": "https://github.com/koolshare/koolshare.github.io",
       "lang": "Classic ASP",
       "desc": "网站切换到：https://www.asusgo.com",
-      "releasesEtag": "\"70fcb63f2b57e301961f50adada9ea63114f8b27b10b0bc313fe6946b3bd3125\"",
+      "releasesEtag": "\"babbee49cb2d44da3f3883e028da07a1da428262bac2b38ee3bfe3a98a9e8a31\"",
       "cachedLatest": null,
-      "commitsEtag": "W/\"4c4bbe14df860eaf8fa2f76d81fce471e23def87c46704b44cbd11bb3433431a\"",
+      "commitsEtag": "W/\"51e02436bd890434a93885b7b05639448d2c48cd692bf0d55e5dffdc69874024\"",
       "cachedCommit": {
         "sha": "21e9357",
         "date": "2026-01-27T09:15:02Z",
@@ -102904,7 +102970,7 @@
       "url": "https://github.com/shadowsocks/shadowsocks-iOS",
       "lang": "Objective-C",
       "desc": "Removed according to regulations.",
-      "releasesEtag": "W/\"c31c9ea08ffd325356f9126e5765ead2f8057eca552c108cf31a465c104473d4\"",
+      "releasesEtag": "W/\"00a87358b314b57b7e06031fc1568cbe6a0ff18474274f78888f326d4a241f31\"",
       "cachedLatest": {
         "id": 1469663,
         "tag": "2.6.3",
@@ -102941,7 +103007,7 @@
       "url": "https://github.com/qinyuhang/ShadowsocksX-NG-R",
       "lang": "—",
       "desc": "Next Generation of ShadowsocksX",
-      "releasesEtag": "W/\"142e450f3489eeb2ec8fa2bf4b0fc87a0d6d1f70095c3ddc130b5f4a4b981ef1\"",
+      "releasesEtag": "W/\"44aef2ea79e74171555f92ca58b62a6ea15ae7313a2d9fc97e65ff0aab551b7b\"",
       "cachedLatest": {
         "id": 14633121,
         "tag": "1.4.4-r8-resigning",
@@ -103037,7 +103103,7 @@
       "topicsFetched": true
     },
     "DuarteSantos8/openGym": {
-      "releasesEtag": "W/\"6a5ddadd4004db79c48df1578da949db165534638b5f17a192392753fd1e0933\"",
+      "releasesEtag": "W/\"d135e5a7b6abb0f0f1ec55e2c0510a47712d10f1747810ac1514d80f6885d46f\"",
       "cachedReleases": [
         {
           "id": 409061151,
@@ -110917,11 +110983,31 @@
     "rel:414314696": {
       "zh": "### 漏洞修复\n* **Twitter - newx：** 当顶部栏的 X 标志消失时，保持静态小鸟图标不变 (bba8888)\n* **Twitter - newx：** 若时间线地图尚未加载，则跳过对该地图的写入操作 (41cb969)\n* **Twitter - newx：** 通过转发构造函数来识别 XDS 深色主题方案 (a40bf67)\n* **Twitter - newx：** 在存在空闲的四位寄存器的位置读取回复栏设置 (1027512)\n* **Twitter - newx：** 无论参数数量多少，均能正确调用卡片导航辅助函数 (06f6a17)\n* **Twitter - newx：** 在浅色媒体查看器中使用深色主题的色调效果 (df8a1ec)\n\n### 新功能\n* **Twitter - newx：** 弃用强制画质调整补丁，并记录媒体流请求信息 (1436559)\n* **Twitter - newx：** 新增 HLS 音频流记录的选项功能 (20176ed)\n* **Twitter：** 新增对版本号 12.34.0-prod.01 的支持 (cb884cf)\n\n新增补丁：\n- NewX：记录 HLS 音频流相关信息",
       "hash": "1037551139"
+    },
+    "rel:414477254": {
+      "zh": "# v3.0.19\n\n- 修复了部分模拟器在开始模拟时误判为版本过旧并导致账号退出的问题，同时优化了安装包的架构识别功能。\n- 当运行配置暂时不可用时，系统会保留已登录的账号信息，从而避免不必要的重复登录操作。\n- 完善了 OS4 和 Android 17 环境下的系统传感器动态匹配机制，提升了对结构相似设备的兼容性。\n- 新增了传感器接入状态诊断功能，便于排查系统更新后出现的适配问题。\n\n本次更新提供了全局版与非全局版两种版本，每种版本均包含 ARM 64 位与 32 位两种安装包。更新完成后请重启设备，以便新系统模块顺利加载。\n\n版本号：`3.0.19`；Android versionCode：`30053`。\n更新检查：可下载更新清单以确认最新版本信息。\n本次发布流程由自建的 Forgejo CI 系统完成测试、原证书签名、安装包校验以及自动发布操作。\n\n所有安装包均由自建 CI 系统构建并校验，GitHub 镜像亦由发布程序自动上传，其内容与自建下载站上的同版本安装包完全一致。\nGitHub 自动附带的源代码归档对应的是公开的 main 分支代码，并非本次 APK 的构建源码；本次构建的提交记录与安装包校验信息均记录在 build-info.json 及 SHA256SUMS 文件中。",
+      "hash": "2386110292"
+    },
+    "rel:414656052": {
+      "zh": "- 可按需禁用 Impeller，修复了部分桌面端的渲染异常问题  \n- 新增配置项：在启用脚本后，支持单独覆写相关逻辑  \n- 修复了部分 Android 设备无法使用自定义字体的问题  \n- 重构了首页中“出站运行模式”选择卡片及其视觉布局  \n- 在 Linux 版本的打包包中内嵌了 Polkit 授权规则，并进一步收紧了权限范围，由 VillagerTom 完成  \n- 优化了 Linux 端 Appimage 的右键菜单重启逻辑  \n- 优化了移动端导航栏的平滑滚动效果，并统一了动画开关的设置  \n- 全面统一了各类卡片与对话框的主题风格，提升了 UI 的精致度  \n- 优化了编辑器的全选功能；桌面端现支持通过触控板双指手势或快捷键进行缩放操作  \n- 优化了详情页面中应用进程图标的提取与加载性能  \n\n- 注意：由于 Google 账号相关原因，此版本暂时禁用了 Windows 数字签名流程  \n# Bettbox 正式版本发布\n\n---\n\n---\n---\n\n| **操作系统** | **版本要求** | **直接下载链接** |\n|:---:|:---|:---|\n| | macOS 12.0 及以上 | |\n| | Android 8.0 及以上  \n*(兼容 Android TV)* | \n|\n| | Windows 8.1 及以上  \n*(兼容较旧的 CPU)* | \n|\n| | Linux 内核 5.4 及以上  \n*(兼容较旧的 CPU)* | \n|\n---",
+      "hash": "3648749841"
+    },
+    "rel:414639128": {
+      "zh": "## 有所闻 NewsNook v1.9.0-beta.3\n\n### Linux.do 工作区\n- 优化了账户页与用户资料页的布局：关键数据得以突出显示，终端风格的指标卡片让操作更加便捷。\n- 完善了帖子串楼功能：帖主标识、站长标记以及用户角色的展示更加清晰明了。\n- 改进了搜索、私信与通知列表中信息的呈现方式及操作入口。\n- 在话题卡片及发现流等位置，用户资料更易点击访问，徽章与内容摘要的展示也更加完整。\n\n### 其它\n- 补充了与 Linux.do 资料区、帖子串楼及话题卡片相关的测试内容。\n- 当前版本号为 1.9.0-beta.3，此版本为 Beta 测试版。",
+      "hash": "1919253551"
+    },
+    "rel:414545467": {
+      "zh": "czsc 1.0.2\n\n### 更新内容\n详细的变更信息请查阅提交历史及 `docs/MIGRATION_NOTES.md` 文件。\n\n### 安装方式\n```bash\npip install czsc==1.0.2\n```\n\n### 文档\n- 项目文档: README.md",
+      "hash": "2158812615"
+    },
+    "rel:414632481": {
+      "zh": "源码提交记录：8aeca4cf7360a21651bf332d8363b4c1d45c003e",
+      "hash": "1031284229"
     }
   },
   "starredPages": {
     "p1": {
-      "etag": "W/\"eb6de9bd7b9732ce65005590e1356c3116a98d2425bbe460e7f62d27c7a34c2e\"",
+      "etag": "W/\"38b5b9da7a70a20d3b127814d095980752099ef2f734fa52ca210111d002cb4e\"",
       "items": [
         {
           "full_name": "DuarteSantos8/openGym",
@@ -110948,7 +111034,7 @@
             "weightlifting",
             "workout-tracker"
           ],
-          "stargazers_count": 12401
+          "stargazers_count": 12543
         },
         {
           "full_name": "zhanghai/MaterialFiles",
@@ -111015,7 +111101,7 @@
             "open-source-project",
             "windows"
           ],
-          "stargazers_count": 19480
+          "stargazers_count": 19484
         },
         {
           "full_name": "Inginnng/EditHere",
@@ -111023,7 +111109,7 @@
           "description": "EditHere — 截图、写下意见、直接调整布局，把修改意图一次交给 AI。",
           "language": "C++",
           "topics": [],
-          "stargazers_count": 492
+          "stargazers_count": 509
         },
         {
           "full_name": "exteraless/exteraless",
@@ -111031,7 +111117,7 @@
           "description": null,
           "language": "Java",
           "topics": [],
-          "stargazers_count": 384
+          "stargazers_count": 386
         },
         {
           "full_name": "bilibili/Index-Translate",
@@ -111042,7 +111128,7 @@
             "llm",
             "machine-translation"
           ],
-          "stargazers_count": 1609
+          "stargazers_count": 1622
         },
         {
           "full_name": "privacy-protection-tools/anti-AD",
@@ -111085,7 +111171,7 @@
             "qqbot",
             "telegram"
           ],
-          "stargazers_count": 41958
+          "stargazers_count": 41972
         },
         {
           "full_name": "dukangalex/HiClash",
@@ -111144,7 +111230,7 @@
           "description": "Aira Browser · 鸿蒙原生浏览器",
           "language": "JavaScript",
           "topics": [],
-          "stargazers_count": 230
+          "stargazers_count": 232
         },
         {
           "full_name": "echs-top/proxy",
@@ -111166,7 +111252,7 @@
             "motion-design",
             "remotion"
           ],
-          "stargazers_count": 488
+          "stargazers_count": 492
         },
         {
           "full_name": "pengchujin/jzsub",
@@ -111180,7 +111266,7 @@
             "video",
             "yt-dlp"
           ],
-          "stargazers_count": 1006
+          "stargazers_count": 1005
         },
         {
           "full_name": "Teamper/JHS",
@@ -111196,7 +111282,7 @@
             "userscript",
             "web-enhancement"
           ],
-          "stargazers_count": 89
+          "stargazers_count": 90
         },
         {
           "full_name": "liuran001/mihomo",
@@ -111212,7 +111298,7 @@
           "description": "高性价比人生指南: 长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
           "language": "HTML",
           "topics": [],
-          "stargazers_count": 63959
+          "stargazers_count": 64181
         },
         {
           "full_name": "op7418/Humanizer-zh",
@@ -111220,7 +111306,7 @@
           "description": "Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 19783
+          "stargazers_count": 19818
         },
         {
           "full_name": "kenischu/ReSource",
@@ -111236,7 +111322,7 @@
           "description": "酷安跨平台桌面版",
           "language": "Vue",
           "topics": [],
-          "stargazers_count": 1658
+          "stargazers_count": 1660
         },
         {
           "full_name": "linesoft2/TaskMonitor",
@@ -111343,7 +111429,7 @@
             "stock-market",
             "tushare"
           ],
-          "stargazers_count": 429
+          "stargazers_count": 520
         },
         {
           "full_name": "mpquant/Ashare",
@@ -111356,7 +111442,7 @@
             "stock",
             "tushare"
           ],
-          "stargazers_count": 3905
+          "stargazers_count": 3906
         },
         {
           "full_name": "freestylefly/awesome-gpt-image-2",
@@ -111375,7 +111461,7 @@
             "skills",
             "workflow-automation"
           ],
-          "stargazers_count": 34537
+          "stargazers_count": 34549
         },
         {
           "full_name": "create-codeless/spider2023",
@@ -111440,7 +111526,7 @@
           "description": "New X on Android compatible piko builds",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 486
+          "stargazers_count": 487
         },
         {
           "full_name": "crimera/piko",
@@ -111451,7 +111537,7 @@
             "morphe",
             "morphe-patches"
           ],
-          "stargazers_count": 5666
+          "stargazers_count": 5669
         },
         {
           "full_name": "tradingeconomics/notebooks",
@@ -111467,7 +111553,7 @@
           "description": "TRADING ECONOMICS - API Code Examples",
           "language": "JavaScript",
           "topics": [],
-          "stargazers_count": 983
+          "stargazers_count": 984
         },
         {
           "full_name": "Niklaus88/Clash-Config",
@@ -111540,7 +111626,7 @@
             "python",
             "smartdns"
           ],
-          "stargazers_count": 6648
+          "stargazers_count": 6649
         },
         {
           "full_name": "UniClipboard/UniClipboard",
@@ -111563,7 +111649,7 @@
             "tools",
             "windows"
           ],
-          "stargazers_count": 1895
+          "stargazers_count": 1896
         },
         {
           "full_name": "loc567/loc567",
@@ -111602,7 +111688,7 @@
             "mihomo",
             "mihomo-config"
           ],
-          "stargazers_count": 994
+          "stargazers_count": 995
         },
         {
           "full_name": "LifeArchiveProject/WeChatDataAnalysis",
@@ -111610,7 +111696,7 @@
           "description": "微信4.x数据解密并生成年度总结，高仿微信，实时更新，导出和修改聊天记录，朋友圈，收藏，自动回复等大量便捷功能",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 3694
+          "stargazers_count": 3699
         },
         {
           "full_name": "joeytoday/obsidian-canvas-enhance",
@@ -111626,7 +111712,7 @@
           "description": "指纹浏览器",
           "language": "Go",
           "topics": [],
-          "stargazers_count": 1988
+          "stargazers_count": 1989
         },
         {
           "full_name": "LibChecker/LibChecker",
@@ -111639,7 +111725,7 @@
             "fdroid",
             "kotlin"
           ],
-          "stargazers_count": 7261
+          "stargazers_count": 7262
         },
         {
           "full_name": "2977094657/ZsxqCrawler",
@@ -111655,7 +111741,7 @@
           "description": "虚拟定位软件，主要是定位，集成了 WiFi、蓝牙、基站等方案，主要有定点模拟和路线模拟。非全局方案，需要单独 hook 对应的软件(因为不想单独去适配各大手机厂商的系统)，",
           "language": "Kotlin",
           "topics": [],
-          "stargazers_count": 1911
+          "stargazers_count": 1921
         },
         {
           "full_name": "tingaicompass/AI-Compass",
@@ -111680,7 +111766,7 @@
           "description": "Beans Music - iOS 26 液态玻璃风格第三方音乐播放器（仅供学习）",
           "language": "Swift",
           "topics": [],
-          "stargazers_count": 402
+          "stargazers_count": 403
         },
         {
           "full_name": "ZGMFX01A/OrigRead",
@@ -111725,7 +111811,7 @@
             "wechat-articles",
             "weixin"
           ],
-          "stargazers_count": 691
+          "stargazers_count": 694
         },
         {
           "full_name": "Ajaxc/WeChatList",
@@ -111749,7 +111835,7 @@
           "description": null,
           "language": "JavaScript",
           "topics": [],
-          "stargazers_count": 1924
+          "stargazers_count": 1925
         },
         {
           "full_name": "zhangxiangliang/stock-api",
@@ -111774,7 +111860,7 @@
             "czsc",
             "python"
           ],
-          "stargazers_count": 1059
+          "stargazers_count": 1061
         },
         {
           "full_name": "imharryzhu/AndroidControl",
@@ -111814,7 +111900,7 @@
             "xiaohongshu",
             "youtube-transcript"
           ],
-          "stargazers_count": 97802
+          "stargazers_count": 97890
         },
         {
           "full_name": "cq0206/wechat2rss",
@@ -111859,7 +111945,7 @@
             "python",
             "xlsx"
           ],
-          "stargazers_count": 81829
+          "stargazers_count": 81850
         },
         {
           "full_name": "reeden-org/reeden-app",
@@ -111913,7 +111999,7 @@
             "qrcode-scanner",
             "upscaling"
           ],
-          "stargazers_count": 15022
+          "stargazers_count": 15025
         },
         {
           "full_name": "ShareX/ShareX",
@@ -111942,7 +112028,7 @@
             "sharex",
             "url-shortener"
           ],
-          "stargazers_count": 40096
+          "stargazers_count": 40101
         },
         {
           "full_name": "appshubcc/Bettbox",
@@ -111956,7 +112042,7 @@
             "mihomo",
             "mihomo-client"
           ],
-          "stargazers_count": 4145
+          "stargazers_count": 4150
         },
         {
           "full_name": "t59688/newsnook",
@@ -111982,7 +112068,7 @@
             "jetpack-compose",
             "liquid-glass"
           ],
-          "stargazers_count": 4176
+          "stargazers_count": 4179
         },
         {
           "full_name": "liaoliao666/v2ex",
@@ -112009,7 +112095,7 @@
           "description": null,
           "language": "Python",
           "topics": [],
-          "stargazers_count": 12095
+          "stargazers_count": 12096
         },
         {
           "full_name": "foru17/make-x-great-again",
@@ -112044,7 +112130,7 @@
             "vercel",
             "webui"
           ],
-          "stargazers_count": 88852
+          "stargazers_count": 88853
         },
         {
           "full_name": "codeman008/Financial_freedom",
@@ -112052,7 +112138,7 @@
           "description": "Technical guide to making money and investing（最全赚钱投资指南）",
           "language": null,
           "topics": [],
-          "stargazers_count": 7279
+          "stargazers_count": 7292
         },
         {
           "full_name": "ka-pi-ba-la/awesome-ai-tools",
@@ -112082,7 +112168,7 @@
             "rag",
             "reinforcement-learning"
           ],
-          "stargazers_count": 54431
+          "stargazers_count": 54499
         },
         {
           "full_name": "hifengzy/ima-sync",
@@ -112157,7 +112243,7 @@
             "quant",
             "tushare"
           ],
-          "stargazers_count": 6410
+          "stargazers_count": 6411
         },
         {
           "full_name": "jbiaojerry/ebook-treasure-chest",
@@ -112165,7 +112251,7 @@
           "description": "欢迎来到电子书下载宝库，一个汇聚了各类电子书下载链接的地方。无论你是喜欢阅读经典文学、经管励志、终身学习、职场创业、技术手册还是其他类型的书籍，这里都能满足你的需求。 该库涵盖了帆书app(原樊登读书)、微信读书、京东读书、喜马拉雅等读书app的大部分电子书。",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 20613
+          "stargazers_count": 20651
         },
         {
           "full_name": "gedoor/legado",
@@ -112189,7 +112275,7 @@
           "description": "IP质量检测脚本 - IP Quality Check Script",
           "language": "Shell",
           "topics": [],
-          "stargazers_count": 10730
+          "stargazers_count": 10735
         },
         {
           "full_name": "xykt/NetQuality",
@@ -112197,7 +112283,7 @@
           "description": "网络质量检测脚本 - Network Quality Check Script",
           "language": "Shell",
           "topics": [],
-          "stargazers_count": 5838
+          "stargazers_count": 5839
         },
         {
           "full_name": "myikuns/jichangtz-tuijian",
@@ -112219,7 +112305,7 @@
             "vmess",
             "vpn"
           ],
-          "stargazers_count": 990
+          "stargazers_count": 992
         },
         {
           "full_name": "huiyadanli/RevokeMsgPatcher",
@@ -112252,7 +112338,7 @@
             "message",
             "wechat"
           ],
-          "stargazers_count": 15157
+          "stargazers_count": 15173
         },
         {
           "full_name": "j4Uq/TVBoxOSC",
@@ -112260,12 +112346,12 @@
           "description": null,
           "language": null,
           "topics": [],
-          "stargazers_count": 17840
+          "stargazers_count": 17845
         }
       ]
     },
     "p2": {
-      "etag": "W/\"041a4cd2b7f1630cfd4bf21a1bf26906cc955d82f570b46beb3313ec9aafdb2b\"",
+      "etag": "W/\"ace061c01f1307218a0b44bd0d236fd5ee83ae8bc0831b0acfe7f4c2e7f1e72a\"",
       "items": [
         {
           "full_name": "Lingyan000/fluxdo",
@@ -112273,7 +112359,7 @@
           "description": "一个 Linux.do 第三方客户端",
           "language": "Dart",
           "topics": [],
-          "stargazers_count": 2500
+          "stargazers_count": 2501
         },
         {
           "full_name": "nicejade/wealth-tracker",
@@ -112305,7 +112391,7 @@
             "indie",
             "indie-developer"
           ],
-          "stargazers_count": 61818
+          "stargazers_count": 61826
         },
         {
           "full_name": "thedjchi/Shizuku",
@@ -112313,7 +112399,7 @@
           "description": "Using system APIs directly with adb/root privileges from normal apps through a Java process started with app_process.",
           "language": "Kotlin",
           "topics": [],
-          "stargazers_count": 6318
+          "stargazers_count": 6323
         },
         {
           "full_name": "KaringX/clashmi",
@@ -112325,7 +112411,7 @@
             "clashmi",
             "mihomo"
           ],
-          "stargazers_count": 9860
+          "stargazers_count": 9864
         },
         {
           "full_name": "RikkaApps/Shizuku",
@@ -112333,7 +112419,7 @@
           "description": "Using system APIs directly with adb/root privileges from normal apps through a Java process started with app_process.",
           "language": "Kotlin",
           "topics": [],
-          "stargazers_count": 31577
+          "stargazers_count": 31584
         },
         {
           "full_name": "EKKOLearnAI/ekko-studio",
@@ -112361,7 +112447,7 @@
             "web-ui",
             "workflow-automation"
           ],
-          "stargazers_count": 11426
+          "stargazers_count": 11436
         },
         {
           "full_name": "bozhouDev/codex-orange-book",
@@ -112369,7 +112455,7 @@
           "description": "Codex 橙皮书：从安装到实战案例的全链路 Codex 使用指南（非官方开源，含可下载 PDF）",
           "language": "HTML",
           "topics": [],
-          "stargazers_count": 3452
+          "stargazers_count": 3454
         },
         {
           "full_name": "microsoft/PowerToys",
@@ -112390,7 +112476,7 @@
             "windows-10",
             "windows-11"
           ],
-          "stargazers_count": 139358
+          "stargazers_count": 139369
         },
         {
           "full_name": "AyuGram/AyuGramDesktop",
@@ -112404,7 +112490,7 @@
             "telegram",
             "telegram-client"
           ],
-          "stargazers_count": 7086
+          "stargazers_count": 7089
         },
         {
           "full_name": "zjp1997720/wechat-radar",
@@ -112412,7 +112498,7 @@
           "description": "微信聊天情报看板：聚合群聊信号、话题、链接和趋势",
           "language": null,
           "topics": [],
-          "stargazers_count": 231
+          "stargazers_count": 232
         },
         {
           "full_name": "therealXiaomanChu/ex-skill",
@@ -112420,7 +112506,7 @@
           "description": "把前任蒸馏成 AI Skill，用ta的方式跟你说话。",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 6489
+          "stargazers_count": 6490
         },
         {
           "full_name": "clash-verge-rev/clash-verge-rev",
@@ -112437,7 +112523,7 @@
             "tauri-app",
             "windows"
           ],
-          "stargazers_count": 151664
+          "stargazers_count": 151730
         },
         {
           "full_name": "xgit01/sgkrank",
@@ -112451,7 +112537,7 @@
             "shegongku2026",
             "telegram-bot"
           ],
-          "stargazers_count": 4200
+          "stargazers_count": 4205
         },
         {
           "full_name": "Aethersailor/Custom_OpenClash_Rules",
@@ -112467,7 +112553,7 @@
             "ruleset",
             "vless"
           ],
-          "stargazers_count": 6625
+          "stargazers_count": 6626
         },
         {
           "full_name": "Loyalsoldier/clash-rules",
@@ -112493,7 +112579,7 @@
             "surge",
             "v2ray"
           ],
-          "stargazers_count": 28824
+          "stargazers_count": 28830
         },
         {
           "full_name": "cmliu/edgetunnel",
@@ -112507,7 +112593,7 @@
             "vless",
             "vless-ws-tls"
           ],
-          "stargazers_count": 47539
+          "stargazers_count": 47567
         },
         {
           "full_name": "Hackl0us/GeoIP2-CN",
@@ -112539,7 +112625,7 @@
             "notes-app",
             "self-learning"
           ],
-          "stargazers_count": 40235
+          "stargazers_count": 40236
         },
         {
           "full_name": "HsukqiLee/MediaUnlockTest",
@@ -112555,7 +112641,7 @@
           "description": "The universal proxy platform",
           "language": "Go",
           "topics": [],
-          "stargazers_count": 38910
+          "stargazers_count": 38922
         },
         {
           "full_name": "XTLS/Xray-core",
@@ -112584,7 +112670,7 @@
             "xtls",
             "xudp"
           ],
-          "stargazers_count": 42124
+          "stargazers_count": 42133
         },
         {
           "full_name": "HyNetworks/hysteria",
@@ -112604,7 +112690,7 @@
             "tun",
             "vpn"
           ],
-          "stargazers_count": 22664
+          "stargazers_count": 22667
         },
         {
           "full_name": "zzzgydi/clash-verge",
@@ -112631,7 +112717,7 @@
             "python",
             "star-rail-api"
           ],
-          "stargazers_count": 34909
+          "stargazers_count": 34920
         },
         {
           "full_name": "bbstom/TelegramGroup",
@@ -112683,7 +112769,7 @@
           "description": "一个基于 Vue 3 + Express 的网盘资源搜索与转存工具。",
           "language": "Vue",
           "topics": [],
-          "stargazers_count": 9370
+          "stargazers_count": 9372
         },
         {
           "full_name": "Xposed-Modules-Repo/com.skyhand.sinahelper",
@@ -112720,7 +112806,7 @@
             "multiagent",
             "trading"
           ],
-          "stargazers_count": 111399
+          "stargazers_count": 111435
         },
         {
           "full_name": "hsliuping/TradingAgents-CN",
@@ -112728,7 +112814,7 @@
           "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版",
           "language": "Python",
           "topics": [],
-          "stargazers_count": 32318
+          "stargazers_count": 32319
         },
         {
           "full_name": "hiddify/hiddify-app",
@@ -112755,7 +112841,7 @@
             "wireguard",
             "xray"
           ],
-          "stargazers_count": 33224
+          "stargazers_count": 33225
         },
         {
           "full_name": "shufflewzc/faker2",
@@ -112765,7 +112851,7 @@
           "topics": [
             "qinglong"
           ],
-          "stargazers_count": 2926
+          "stargazers_count": 2925
         },
         {
           "full_name": "hoothin/UserScripts",
@@ -112794,7 +112880,7 @@
             "userscript",
             "zoom-images"
           ],
-          "stargazers_count": 4329
+          "stargazers_count": 4330
         },
         {
           "full_name": "adysec/tracker",
@@ -112810,7 +112896,7 @@
             "trackers",
             "trackerslist"
           ],
-          "stargazers_count": 1705
+          "stargazers_count": 1707
         },
         {
           "full_name": "ngosang/trackerslist",
@@ -112834,7 +112920,7 @@
             "webtorrent",
             "ws"
           ],
-          "stargazers_count": 55404
+          "stargazers_count": 55405
         },
         {
           "full_name": "XIU2/TrackersListCollection",
@@ -112874,7 +112960,7 @@
             "openai",
             "python"
           ],
-          "stargazers_count": 187598
+          "stargazers_count": 187604
         },
         {
           "full_name": "ArvinLovegood/go-stock",
@@ -112892,7 +112978,7 @@
             "stock",
             "wails"
           ],
-          "stargazers_count": 7843
+          "stargazers_count": 7846
         },
         {
           "full_name": "NAStool/nas-tools",
@@ -112943,7 +113029,7 @@
             "youtube",
             "zhihu"
           ],
-          "stargazers_count": 46537
+          "stargazers_count": 46543
         },
         {
           "full_name": "DIYgod/RSSHub-Radar",
@@ -112957,7 +113043,7 @@
             "rss",
             "rsshub"
           ],
-          "stargazers_count": 7370
+          "stargazers_count": 7369
         },
         {
           "full_name": "chen08209/FlClash",
@@ -112975,7 +113061,7 @@
             "vless",
             "vpn"
           ],
-          "stargazers_count": 56000
+          "stargazers_count": 56055
         },
         {
           "full_name": "clearw5/Auto.js",
@@ -113007,7 +113093,7 @@
             "chatgpt4",
             "gpt"
           ],
-          "stargazers_count": 63597
+          "stargazers_count": 63615
         },
         {
           "full_name": "dongyubin/IPTV",
@@ -113023,7 +113109,7 @@
             "iptv-player",
             "iptv-playlist"
           ],
-          "stargazers_count": 4534
+          "stargazers_count": 4537
         },
         {
           "full_name": "yuanzl77/IPTV",
@@ -113041,7 +113127,7 @@
             "m3u8",
             "tv"
           ],
-          "stargazers_count": 2126
+          "stargazers_count": 2127
         },
         {
           "full_name": "clashproxy/clash-download",
@@ -113072,7 +113158,7 @@
             "mockgps",
             "virtual-location"
           ],
-          "stargazers_count": 11532
+          "stargazers_count": 11535
         },
         {
           "full_name": "gkd-kit/gkd",
@@ -113092,7 +113178,7 @@
             "kotlin-multiplatform",
             "webassembly"
           ],
-          "stargazers_count": 42899
+          "stargazers_count": 42908
         },
         {
           "full_name": "xaoyaoo/PyWxDump",
@@ -113134,7 +113220,7 @@
             "autojs",
             "javascript"
           ],
-          "stargazers_count": 1645
+          "stargazers_count": 1646
         },
         {
           "full_name": "xiaoyaDev/xiaoya-alist",
@@ -113142,7 +113228,7 @@
           "description": "小雅Alist的相关周边",
           "language": "Shell",
           "topics": [],
-          "stargazers_count": 8486
+          "stargazers_count": 8487
         },
         {
           "full_name": "Momo707577045/m3u8-downloader",
@@ -113174,7 +113260,7 @@
           "description": null,
           "language": "Lua",
           "topics": [],
-          "stargazers_count": 9957
+          "stargazers_count": 9959
         },
         {
           "full_name": "fw876/helloworld",
@@ -113256,7 +113342,7 @@
             "mac",
             "macos"
           ],
-          "stargazers_count": 17559
+          "stargazers_count": 17560
         },
         {
           "full_name": "MustangYM/WeChatExtension-ForMac",
