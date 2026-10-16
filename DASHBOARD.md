@@ -1,84 +1,34 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-15 23:29:20 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-16 02:34:14 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（5）
+## 🆕 本次新增（3）
 
-### [crimera/piko-newx](https://github.com/crimera/piko-newx) `✅ 正式版` `v3.57.0`
+### [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) `📦 规则集` `latest`
 
-发布时间：2026-10-15（1 小时前）｜ [查看 Release](https://github.com/crimera/piko-newx/releases/tag/v3.57.0)
-
-### 漏洞修复
-* **Twitter - newx：** 当顶部栏的 X 标志消失时，保持静态小鸟图标不变 (bba8888)
-* **Twitter - newx：** 若时间线地图尚未加载，则跳过对该地图的写入操作 (41cb969)
-* **Twitter - newx：** 通过转发构造函数来识别 XDS 深色主题方案 (a40bf67)
-* **Twitter - newx：** 在存在空闲的四位寄存器的位置读取回复栏设置 (1027512)
-* **Twitter - newx：** 无论参数数量多少，均能正确调用卡片导航辅助函数 (06f6a17)
-* **Twitter - newx：** 在浅色媒体查看器中使用深色主题的色调效果 (df8a1ec)
-
-### 新功能
-* **Twitter - newx：** 弃用强制画质调整补丁，并记录媒体流请求信息 (1436559)
-* **Twitter - newx：** 新增 HLS 音频流记录的选项功能 (20176ed)
-* **Twitter：** 新增对版本号 12.34.0-prod.01 的支持 (cb884cf)
-
-新增补丁：
-- NewX：记录 HLS 音频流相关信息
-
-<details><summary>查看原文</summary>
-
-###  Bug Fixes
-* **Twitter - newx:** keep the static bird when the top-bar xlogo is gone (bba8888)
-* **Twitter - newx:** skip only the timeline map write when not loaded (41cb969)
-* **Twitter - newx:** find the XDS dark scheme through forwarding constructors (a40bf67)
-* **Twitter - newx:** place the reply-bar setting read where a four-bit register is free (1027512)
-* **Twitter - newx:** match the card navigation helper regardless of arity (06f6a17)
-* **Twitter - newx:** use dark theme action tints in the light media viewer (df8a1ec)
-
-###  New Features
-* **Twitter - newx:** retire force-quality patch and log media stream requests (1436559)
-* **Twitter - newx:** add opt-in logging of HLS audio renditions (20176ed)
-* **Twitter:** support 12.34.0-prod.01 (cb884cf)
-
-New patches:
-- NewX: Log HLS audio renditions
-
-</details>
-
----
-
-### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `ba5c072`
-
-发布时间：2026-10-15（2 小时前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/ba5c072e532d2fb43f403e90ae887d6c9b89aea7)
-
-SKILL.md：分册搬迁补「按日期定位 + 兼容日/号两种标题格式」规则
-
----
-
-### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610152237`
-
-发布时间：2026-10-15（51 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610152237)
+发布时间：2026-10-16（1 小时前）｜ [查看 Release](https://github.com/appshubcc/bett-rules/releases/tag/latest)
 
 *（无更新说明）*
 
 ---
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `32c30d9`
+### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `627fd8c`
 
-发布时间：2026-10-15（22 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/32c30d9fe928842d139f107bec3ed5c2477bc407)
+发布时间：2026-10-16（13 分钟前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/627fd8c16f08128231fc9fab9b641bb13553e227)
 
 *（原文，翻译暂不可用）*
 
-20261015
+新增：WeChat to Markdown、AI Browser Games
 
 ---
 
-### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `48cb125`
+### [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) `📝 提交` `b4db2eb`
 
-发布时间：2026-10-15（1 小时前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/48cb12537eeb9ce63a141e301cbe9ded6909c2da)
+发布时间：2026-10-16（2 小时前）｜ [查看提交](https://github.com/XIU2/TrackersListCollection/commit/b4db2eb791207166aab697b6a3bdb3959b0ced87)
 
 *（原文，翻译暂不可用）*
 
-Update 2026/10/16
+2026-10-16
 
 ---
 
@@ -86,32 +36,32 @@ Update 2026/10/16
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-15 | 22 分钟前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610152237` | 正式版 | 2026-10-15 | 51 分钟前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-15 | 1 小时前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.0` | 正式版 | 2026-10-15 | 1 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-15 | 2 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.18` | 正式版 | 2026-10-15 | 3 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-15 | 3 小时前 |
-| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.10` | 正式版 | 2026-10-15 | 5 小时前 |
-| [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.4` | 正式版 | 2026-10-15 | 6 小时前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-1` | 正式版 | 2026-10-15 | 6 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.15-8432.f23ada8` | 正式版 | 2026-10-15 | 8 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.0-beta.2` | 测试版 | 2026-10-15 | 9 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-15 | 10 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.36` | 正式版 | 2026-10-15 | 10 小时前 |
-| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 10 小时前 |
-| [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-15 | 11 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.1` | 正式版 | 2026-10-15 | 15 小时前 |
-| [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) | — | 提交 | 2026-10-15 | 15 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.9` | 正式版 | 2026-10-15 | 16 小时前 |
-| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 17 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.7` | 正式版 | 2026-10-15 | 19 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.15.1-release` | 正式版 | 2026-10-15 | 19 小时前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0` | 正式版 | 2026-10-15 | 19 小时前 |
-| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-15 | 21 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-15 | 22 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-15 | 23 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-16 | 13 分钟前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-16 | 1 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-16 | 2 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-15 | 3 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610152237` | 正式版 | 2026-10-15 | 3 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-15 | 4 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.0` | 正式版 | 2026-10-15 | 4 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.18` | 正式版 | 2026-10-15 | 6 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-15 | 6 小时前 |
+| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.10` | 正式版 | 2026-10-15 | 8 小时前 |
+| [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.4` | 正式版 | 2026-10-15 | 9 小时前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-1` | 正式版 | 2026-10-15 | 9 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.15-8432.f23ada8` | 正式版 | 2026-10-15 | 11 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.0-beta.2` | 测试版 | 2026-10-15 | 12 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-15 | 13 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.36` | 正式版 | 2026-10-15 | 13 小时前 |
+| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 14 小时前 |
+| [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-15 | 14 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.1` | 正式版 | 2026-10-15 | 18 小时前 |
+| [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) | — | 提交 | 2026-10-15 | 19 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.9` | 正式版 | 2026-10-15 | 19 小时前 |
+| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 20 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.7` | 正式版 | 2026-10-15 | 22 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.15.1-release` | 正式版 | 2026-10-15 | 22 小时前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0` | 正式版 | 2026-10-15 | 22 小时前 |
+| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-15 | 1 天前 |
 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.8.4` | 测试版 | 2026-10-14 | 1 天前 |
 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.0` | 正式版 | 2026-10-14 | 1 天前 |
 | [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 1 天前 |
@@ -121,13 +71,13 @@ Update 2026/10/16
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 1 天前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2862.0` | 测试版 | 2026-10-14 | 1 天前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 1 天前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 1 天前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.0` | 正式版 | 2026-10-14 | 2 天前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 2 天前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 2 天前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.5` | 正式版 | 2026-10-13 | 2 天前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-13 | 2 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 2 天前 |
-| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.319` | 正式版 | 2026-10-13 | 2 天前 |
+| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.319` | 正式版 | 2026-10-13 | 3 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 3 天前 |
 | [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5-beta2` | 测试版 | 2026-10-12 | 3 天前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-11 | 4 天前 |
@@ -135,7 +85,7 @@ Update 2026/10/16
 | [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 4 天前 |
 | [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-38116174842-1` | 正式版 | 2026-10-11 | 4 天前 |
 | [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 4 天前 |
-| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 4 天前 |
+| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 5 天前 |
 | [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.1` | 正式版 | 2026-10-10 | 5 天前 |
 | [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 5 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 5 天前 |
@@ -145,7 +95,7 @@ Update 2026/10/16
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.0` | 正式版 | 2026-10-09 | 6 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.31.1703` | 正式版 | 2026-10-09 | 6 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 6 天前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 6 天前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 7 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 7 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 7 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 8 天前 |
@@ -155,7 +105,7 @@ Update 2026/10/16
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.21.0` | 正式版 | 2026-10-05 | 10 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 10 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 10 天前 |
-| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 10 天前 |
+| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 11 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 11 天前 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.6.0` | 正式版 | 2026-10-03 | 12 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 12 天前 |
@@ -164,7 +114,7 @@ Update 2026/10/16
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 15 天前 |
 | [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.1` | 正式版 | 2026-09-25 | 20 天前 |
 | [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-09-24 | 21 天前 |
-| [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 22 天前 |
+| [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 23 天前 |
 | [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) | — | 提交 | 2026-09-22 | 23 天前 |
 | [zhangxiangliang/stock-api](https://github.com/zhangxiangliang/stock-api) | `v2.7.5` | 正式版 | 2026-09-21 | 24 天前 |
 | [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) | `1.7.8-release` | 正式版 | 2026-09-21 | 24 天前 |
@@ -214,7 +164,7 @@ Update 2026/10/16
 | [tradingeconomics/notebooks](https://github.com/tradingeconomics/notebooks) | — | 提交 | 2026-04-23 | 5 个月前 |
 | [wink-wink-wink555/MarkiNote](https://github.com/wink-wink-wink555/MarkiNote) | `v3.0.1` | 正式版 | 2026-04-12 | 6 个月前 |
 | [therealXiaomanChu/ex-skill](https://github.com/therealXiaomanChu/ex-skill) | — | 提交 | 2026-04-08 | 6 个月前 |
-| [cq0206/wechat2rss](https://github.com/cq0206/wechat2rss) | — | 提交 | 2026-03-20 | 6 个月前 |
+| [cq0206/wechat2rss](https://github.com/cq0206/wechat2rss) | — | 提交 | 2026-03-20 | 7 个月前 |
 | [hzlzh/Best-App](https://github.com/hzlzh/Best-App) | — | 提交 | 2026-03-17 | 7 个月前 |
 | [quant-king299/EasyXT](https://github.com/quant-king299/EasyXT) | `v1.0.0` | 正式版 | 2026-03-12 | 7 个月前 |
 | [DIYgod/RSSHub-Radar](https://github.com/DIYgod/RSSHub-Radar) | `v2.2.0` | 正式版 | 2026-02-11 | 8 个月前 |
