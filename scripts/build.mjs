@@ -783,7 +783,7 @@ async function main() {
     return pid && !state.pushed[pid];
   });
   if (!isFirstRun && toPush.length > 0 && TG_TOKEN && TG_CHAT) {
-    await sendDigest(toPush);
+    await sendDigest(toPush, state);
     // 记录已推送
     for (const r of toPush) {
       const pid = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : null);
@@ -1091,12 +1091,36 @@ function toPlain(s) {
 }
 
 // ---------------- Telegram digest ----------------
-async function sendDigest(fresh) {
-  const lines = fresh.slice(0, 20).map((r) => {
+async function sendDigest(fresh, state) {
+  const lines = await Promise.all(fresh.slice(0, 20).map(async (r) => {
     const Lr = r.latest, Cr = r.commit;
     const isC = !Lr;
     const tag = escHtml(isC ? Cr.sha.slice(0, 7) : Lr.tag);
     const name = escHtml(r.full);
+    // 项目一句话介绍：优先用缓存的中文翻译
+    let descLine = '';
+    const rawDesc = (r.desc || '').trim();
+    if (rawDesc) {
+      const dKey = `desc:${r.full}`;
+      const dHit = state.translations[dKey];
+      let descZh = null;
+      if (dHit && dHit.zh) {
+        descZh = dHit.zh;
+      } else {
+        const cjkR = (rawDesc.match(/[一-鿿]/g) || []).length / rawDesc.length;
+        if (cjkR > 0.5) {
+          descZh = rawDesc; // 中文为主，直接用
+        } else {
+          // 英文描述，翻译（走 translateSmart 的缓存机制）
+          try {
+            const t = await translateSmart(state, dKey, rawDesc, `${r.full}/desc`);
+            if (t) descZh = t.zh;
+          } catch (e) { /* 翻译失败则用原文 */ }
+        }
+        if (!descZh) descZh = rawDesc;
+      }
+      descLine = `<i>${escHtml(descZh.slice(0, 100))}</i>\n`;
+    }
     // 摘要：优先用清洗过的中文，没有则对原文做去噪；转纯文本后整段进引用块
     let summary = r.zh || '';
     if (!summary) {
@@ -1108,8 +1132,8 @@ async function sendDigest(fresh) {
     const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
     const url = isC ? Cr.url : Lr.url;
-    return `<b>${name}</b>\n${kind} · <code>${tag}</code>\n${quote}<a href="${url}">${linkText}</a>`;
-  });
+    return `<b>${name}</b>\n${descLine}${kind} · <code>${tag}</code>\n${quote}<a href="${url}">${linkText}</a>`;
+  }));
   let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
   const url = siteUrl();
