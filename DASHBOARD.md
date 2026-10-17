@@ -1,36 +1,34 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-17 21:56:19 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-17 23:43:04 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（1）
+## 🆕 本次新增（3）
 
-### [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) `✅ 正式版` `v0.17.1`
+### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610172235`
 
-发布时间：2026-10-17（31 分钟前）｜ [查看 Release](https://github.com/rootSunc/CNEquity/releases/tag/v0.17.1)
+发布时间：2026-10-17（1 小时前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610172235)
 
-CNEquity 0.17.1 现已发布至 PyPI。
+*（无更新说明）*
 
-```bash
-python -m pip install --upgrade cnequity==0.17.1
-```
+---
 
-- **升级步骤：** 执行 `pip install -U cnequity` 后重启 `cne serve` 即可。数据集契约并未发生变化，因此无需迁移数据或调整配置。
-- `cne serve` 的启动流程有所简化，概览页面也更为紧凑；同时修正了面板中的中英文文案。
-- 在文档站点中切换语言时，页面会保持在当前位置；中文站点的站内搜索支持按词切分，能够准确匹配中文关键词；首页、导航栏以及 CLI 与 schema 参考内容也经过重新整理，更便于浏览。
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `01013e1`
 
-<details><summary>查看原文</summary>
+发布时间：2026-10-17（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/01013e1cdd921a0837a75edfc3b66bf74baa4aef)
 
-CNEquity 0.17.1 已发布至 PyPI。
+*（原文，翻译暂不可用）*
 
-```bash
-python -m pip install --upgrade cnequity==0.17.1
-```
+20261017
 
-- **升级步骤：** `pip install -U cnequity` 后重启 `cne serve`。数据集契约没有变化，不需要迁移数据或改配置。
-- `cne serve` 启动任务少点几步，概览页更紧凑；修正面板中英文文案。
-- 文档站切换语言时停留在当前页面；中文站内搜索按词切分，搜索中文词能命中；首页、导航与 CLI、schema 参考重新整理，更易浏览。
+---
 
-</details>
+### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `a9ac3ec`
+
+发布时间：2026-10-17（1 小时前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/a9ac3ec4b8900f45baa7760b20bcf8fb20346715)
+
+*（原文，翻译暂不可用）*
+
+Update 2026/10/18
 
 ---
 
@@ -38,24 +36,24 @@ python -m pip install --upgrade cnequity==0.17.1
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.1` | 正式版 | 2026-10-17 | 31 分钟前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.5` | 测试版 | 2026-10-17 | 2 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 2 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-17 | 3 小时前 |
-| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 6 小时前 |
-| [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 10 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-17 | 11 小时前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 11 小时前 |
-| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 12 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-17 | 13 小时前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 13 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 14 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.17-8441.5d47d3a` | 正式版 | 2026-10-17 | 16 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-17 | 17 小时前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.1` | 正式版 | 2026-10-17 | 21 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-17 | 21 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-17 | 21 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610162237` | 正式版 | 2026-10-16 | 23 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610172235` | 正式版 | 2026-10-17 | 1 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-17 | 1 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 1 小时前 |
+| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.1` | 正式版 | 2026-10-17 | 2 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.5` | 测试版 | 2026-10-17 | 4 小时前 |
+| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 8 小时前 |
+| [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 12 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-17 | 12 小时前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 13 小时前 |
+| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 14 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-17 | 15 小时前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 15 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 16 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.17-8441.5d47d3a` | 正式版 | 2026-10-17 | 18 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-17 | 19 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.1` | 正式版 | 2026-10-17 | 22 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-17 | 22 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-17 | 23 小时前 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 1 天前 |
 | [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 1 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 1 天前 |
@@ -104,14 +102,14 @@ python -m pip install --upgrade cnequity==0.17.1
 | [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 8 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 9 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 9 天前 |
-| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 9 天前 |
+| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 10 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 10 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 10 天前 |
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.21.0` | 正式版 | 2026-10-05 | 12 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 12 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 12 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 12 天前 |
-| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 12 天前 |
+| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 13 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.7` | 正式版 | 2026-10-03 | 14 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.32` | 正式版 | 2026-09-30 | 17 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 17 天前 |
