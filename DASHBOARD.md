@@ -1,74 +1,36 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-17 19:55:26 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-17 21:56:19 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（3）
+## 🆕 本次新增（1）
 
-### [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) `🧪 测试版` `v3.0.20-beta.5`
+### [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) `✅ 正式版` `v0.17.1`
 
-发布时间：2026-10-17（19 分钟前）｜ [查看 Release](https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.20-beta.5)
+发布时间：2026-10-17（31 分钟前）｜ [查看 Release](https://github.com/rootSunc/CNEquity/releases/tag/v0.17.1)
 
-# LocationSpoofer 3.0.20 测试版 5
+CNEquity 0.17.1 现已发布至 PyPI。
 
-- 接入自研的消息通道，支持通过通知栏发送消息以及应用内弹窗，无需连接 Google 服务。
-- 新增在线状态登记功能，支持根据客户端版本向后台发送消息。
-- 修复了修改密码时，若输入的旧密码有误则会导致用户退出登录的问题。
-- 新增新密码确认功能；当提交后无法确认结果时，会明确提示用户先尝试使用新密码登录，从而避免重复提交操作。
-- 保留原有的路线设置、步频设定，以及会员权限、额度限制和设备数量限制规则。
+```bash
+python -m pip install --upgrade cnequity==0.17.1
+```
 
-现提供全局模式／非全局模式、32位／64位四种原签名安装包，均可连接正式后端服务器。全局模式下的 64 位安装包仍内置 x86_64 系统模块，可供兼容的 MuMu／雷电模拟器使用。
-
-安装时请选择覆盖安装方式，安装完成后需重启手机或模拟器。若要接收通知栏消息，需授予相应的通知权限；弹窗仅在软件处于前台运行时才会显示。若网络中断或系统限制了后台联网，消息接收可能会出现延迟，此时重新打开软件即可补收未收到的消息。
-
-版本号：`3.0.20-beta.5`；Android versionCode：`30058`。
-更新检查：可下载更新清单以确认是否有新版本。
-本版本由自研的 Forgejo CI 系统完成测试、原证书签名、四种安装包的校验以及自动发布流程。
-
-安装包由自研 CI 系统构建并校验，GitHub 镜像文件则由发布程序自动上传；四种安装包的内容与自研下载站提供的同版本安装包完全一致。
-GitHub 自动附带的源代码压缩包对应当前的公开 main 分支代码，并非本次 APK 构建所使用的源码；本次构建的相关提交信息及安装包校验值均记录在 build-info.json 与 SHA256SUMS 文件中。
+- **升级步骤：** 执行 `pip install -U cnequity` 后重启 `cne serve` 即可。数据集契约并未发生变化，因此无需迁移数据或调整配置。
+- `cne serve` 的启动流程有所简化，概览页面也更为紧凑；同时修正了面板中的中英文文案。
+- 在文档站点中切换语言时，页面会保持在当前位置；中文站点的站内搜索支持按词切分，能够准确匹配中文关键词；首页、导航栏以及 CLI 与 schema 参考内容也经过重新整理，更便于浏览。
 
 <details><summary>查看原文</summary>
 
-# LocationSpoofer 3.0.20 Beta 5
+CNEquity 0.17.1 已发布至 PyPI。
 
-- 接入自建消息通道，支持通知栏消息与应用内弹窗，无需连接 Google 服务。
-- 增加在线状态登记，支持后台按客户端版本发送消息。
-- 修复修改密码时旧密码输入错误导致退出登录的问题。
-- 增加确认新密码；提交后无法确认结果时，明确提示先尝试使用新密码登录，避免重复提交。
-- 保留现有路线、步频以及会员、额度和设备数量限制。
+```bash
+python -m pip install --upgrade cnequity==0.17.1
+```
 
-提供全局／非全局、32／64 位四种原签名安装包，连接正式后端。全局 64 位包继续内置 x86_64 系统模块，供兼容的 MuMu／雷电模拟器使用。
-
-请保留数据覆盖安装，安装后重启手机或模拟器。通知栏消息需要授予通知权限，弹窗仅在软件前台显示；断网或系统限制后台联网时可能延迟，重新打开软件后补收。
-
-版本号：`3.0.20-beta.5`；Android versionCode：`30058`。
-更新检查：下载服务器更新清单。
-由自建 Forgejo CI 完成测试、原证书签名、四包校验和自动发布。
-
-安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，四包与自建下载站的同版本包一致。
-GitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。
+- **升级步骤：** `pip install -U cnequity` 后重启 `cne serve`。数据集契约没有变化，不需要迁移数据或改配置。
+- `cne serve` 启动任务少点几步，概览页更紧凑；修正面板中英文文案。
+- 文档站切换语言时停留在当前页面；中文站内搜索按词切分，搜索中文词能命中；首页、导航与 CLI、schema 参考重新整理，更易浏览。
 
 </details>
-
----
-
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `16134be`
-
-发布时间：2026-10-17（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/16134be01e8cc21e8a5564596c8005001530b00b)
-
-*（原文，翻译暂不可用）*
-
-20261017
-
----
-
-### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `a674695`
-
-发布时间：2026-10-17（31 分钟前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/a67469564e42e950b0c9bde81668544f02ce85e5)
-
-*（原文，翻译暂不可用）*
-
-Update 2026/10/17
 
 ---
 
@@ -76,25 +38,25 @@ Update 2026/10/17
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.5` | 测试版 | 2026-10-17 | 19 分钟前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 31 分钟前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-17 | 1 小时前 |
-| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.0` | 正式版 | 2026-10-17 | 3 小时前 |
-| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 4 小时前 |
-| [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 8 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-17 | 9 小时前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 9 小时前 |
-| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 10 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-17 | 11 小时前 |
-| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 11 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 12 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.17-8441.5d47d3a` | 正式版 | 2026-10-17 | 14 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-17 | 15 小时前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.1` | 正式版 | 2026-10-17 | 19 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-17 | 19 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-17 | 19 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610162237` | 正式版 | 2026-10-16 | 21 小时前 |
-| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 22 小时前 |
+| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.1` | 正式版 | 2026-10-17 | 31 分钟前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20-beta.5` | 测试版 | 2026-10-17 | 2 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 2 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-17 | 3 小时前 |
+| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 6 小时前 |
+| [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 10 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-17 | 11 小时前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 11 小时前 |
+| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 12 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-17 | 13 小时前 |
+| [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 13 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 14 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.17-8441.5d47d3a` | 正式版 | 2026-10-17 | 16 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-17 | 17 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.57.1` | 正式版 | 2026-10-17 | 21 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-17 | 21 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-17 | 21 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610162237` | 正式版 | 2026-10-16 | 23 小时前 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 1 天前 |
 | [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 1 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 1 天前 |
 | [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.2` | 正式版 | 2026-10-16 | 1 天前 |
@@ -123,7 +85,7 @@ Update 2026/10/17
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 3 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 3 天前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 3 天前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 3 天前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 4 天前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 4 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 4 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 5 天前 |
@@ -135,7 +97,7 @@ Update 2026/10/17
 | [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 7 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 7 天前 |
 | [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 7 天前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.2.1-rc01` | 测试版 | 2026-10-09 | 7 天前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.2.1-rc01` | 测试版 | 2026-10-09 | 8 天前 |
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.0` | 正式版 | 2026-10-09 | 8 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.31.1703` | 正式版 | 2026-10-09 | 8 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 8 天前 |
