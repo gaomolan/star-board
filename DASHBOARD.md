@@ -1,156 +1,22 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-18 12:20:45 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-18 16:16:58 UTC ｜ 共 172 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（7）
+## 🆕 本次新增（3）
 
-### [crimera/piko-newx](https://github.com/crimera/piko-newx) `✅ 正式版` `v3.59.0`
+### [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) `📝 提交` `be2fb43`
 
-发布时间：2026-10-18（1 小时前）｜ [查看 Release](https://github.com/crimera/piko-newx/releases/tag/v3.59.0)
-
-### 漏洞修复
-* **Twitter：** 取消对旧版本的支持 (8f07e33)
-
-### 新功能
-* **Twitter - NewX：** 隐藏帖子作者的操作选项 (11ea728)
-
-新增补丁：
-- NewX：隐藏帖子作者的操作选项
-
-<details><summary>查看原文</summary>
-
-###  Bug Fixes
-* **Twitter:** Remove support for older versions (8f07e33)
-
-###  New Features
-* **Twitter - newx:** hide post author actions (11ea728)
-
-New patches:
-- NewX: Hide post author actions
-
-</details>
-
----
-
-### [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) `✅ 正式版` `v3.0.20`
-
-发布时间：2026-10-18（2 小时前）｜ [查看 Release](https://github.com/HuangZhuoRui/LocationSpoofer/releases/tag/v3.0.20)
-
-# LocationSpoofer 3.0.20
-
-- 提升了对 Root 环境的兼容性：补充了授权 APatch 后的执行路径，同时保留了 Magisk 与 KernelSU 原有的调用方式。
-- 优化了路线启动流程及模式切换机制，新增了启动时的加载动画。
-- 路线模拟功能现已与运动数据实现联动；暂停、速度调节及摇杆操作体验均有改善，还新增了方向自动锁定功能。
-- 修复了全局版受旧版应用坐标配置干扰的问题，提升了 Google 地图的搜索、跳转及选点操作的一致性。
-- 云备份恢复功能采用了去重合并机制，可完整保留当前设备独有的收藏内容及路线数据。
-- 对会员中心、贡献奖励系统、地图工具栏及更新页面进行了优化，新增了地图缩放按钮与连续速度调节功能。
-- 完善了登录恢复、密码修改及错误诊断机制，新增了自定义通知与应用内消息功能。
-- 免费用户的使用额度调整为每月 100 次；会员权益、已用额度及设备数量限制仍遵循原有账号规则执行。
-
-本版本统一采用全局方案，提供 ARM64 与 ARM32 两种架构。完成数据覆盖安装后请务必重启设备，以便系统模块加载新版本。
-
-旧版本用户仍可在应用内完成更新：原非全局版入口现已提供全局迁移包，安装后即可切换至全局版逻辑。请按照全局版的推荐作用域进行配置并重启设备，切勿卸载或清除原有数据。后续仅会发布全局版更新，新版更新器已具备兼容性；原旧版更新入口仍保留本次迁移版本。
-
-版本号：`3.0.20`；Android versionCode：`30059`。
-更新检查：可下载服务器上的更新清单。
-本版本由自建的 Forgejo CI 完成测试、原证书签名、安装包校验及自动发布流程。
-
-安装包由自建 CI 完成构建与校验，GitHub 镜像亦由发布程序自动上传，内容与自建下载站的同版本安装包完全一致。
-GitHub 自动附带的源代码归档对应当前公开的 main 分支，并非本次 APK 的构建源码；本次构建的提交记录与包摘要信息均记录在 build-info.json 与 SHA256SUMS 文件中。
-
-<details><summary>查看原文</summary>
-
-# LocationSpoofer 3.0.20
-
-- 改进 Root 兼容性，补齐 APatch 授权后的执行路径，保留 Magisk、KernelSU 原有调用方式。
-- 优化路线启动与模式切换，增加启动中的加载动画。
-- 路线模拟联动运动数据，改善暂停、速度调节和摇杆操作，支持方向自动锁定。
-- 修复全局版受旧应用坐标配置影响的问题，改善 Google 地图搜索、跳转和选点一致性。
-- 云备份恢复采用去重合并，保留当前设备独有的收藏和路线。
-- 优化会员中心、贡献奖励、地图工具栏和更新页面，支持地图缩放按钮和连续速度调节。
-- 完善登录恢复、修改密码和错误诊断，支持自建通知及应用内消息。
-- 免费用户额度调整为每月 100 次，会员、已用额度及设备数量限制仍按账号规则执行。
-
-本版统一使用全局方案，提供 ARM64、ARM32 两种架构。保留数据覆盖安装后请重启设备，使系统模块加载新版本。
-
-旧版可继续在软件内更新：原非全局入口本次提供全局迁移包，安装后即使用全局逻辑。请按全局版推荐作用域配置并重启，不要卸载或清除数据。后续仅发布全局版，新版更新器已兼容；旧更新入口保留本次迁移版本。
-
-版本号：`3.0.20`；Android versionCode：`30059`。
-更新检查：下载服务器更新清单。
-由自建 Forgejo CI 完成测试、原证书签名、安装包校验和自动发布。
-
-安装包由自建 CI 构建和验包，GitHub 镜像由发布程序自动上传，与自建下载站的同版本包一致。
-GitHub 自动附带的 Source code 归档对应现有公开 main，并非本次 APK 的构建源码；本次构建提交与包摘要记录在 build-info.json 和 SHA256SUMS。
-
-</details>
-
----
-
-### [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) `✅ 正式版` `v1.7.1`
-
-发布时间：2026-10-18（30 分钟前）｜ [查看 Release](https://github.com/ZGMFX01A/OrigRead/releases/tag/v1.7.1)
-
-## 新增功能
-- **设置项全局搜索**：在设置页面顶部新增搜索入口，支持通过功能标题、功能描述、层级路径以及常用同义词快速查找 50 余项设置，点击结果可直接跳转至目标页面；支持通过系统返回键一键清空搜索返回原列表。
-- **DeepSeek 网页搜索**：在 Web Search 设置中新增 DeepSeek Search 服务商支持，可直接使用 DeepSeek API Key 检索互联网信息；提问时自动优先保留用户完整问题，仅在空间充裕时追加文章标题，确保符合官方字符上限。
-
-## 体验优化
-- **添加搜索服务列表支持滚动**：在配置 Web Search 页面添加新服务商时，弹窗列表支持纵向滚动，方便浏览和选取底部选项。
-
-## 问题修复
-- 修复在文章列表中修改相关设置后，无法自动恢复本地已保存译文的问题。
-- 修复读取单条损坏译文缓存可能导致整个列表恢复中断的隐患，保证其余条目正常展示。
-
-<details><summary>查看原文</summary>
-
-## New Features
-- **Search within settings**: Added a search bar at the top of the Settings page to quickly find over 50 configuration items by title, description, category path, or common keywords, with one-tap navigation to the target screen. Pressing the system back button clears the search query and returns to the full settings list.
-- **DeepSeek web search**: Added DeepSeek Search as an independent web search provider in Web Search settings, allowing direct searches with a DeepSeek API key without configuring a chat model. Queries automatically prioritize the full user question and append article titles only when space allows, fitting within the official character limit.
-
-## Experience Improvements
-- **Scrollable provider selection**: The "Add search provider" bottom sheet in Web Search settings can now be scrolled vertically to comfortably access all options on smaller screens.
-
-## Bug Fixes
-- Fixed saved list translations not being restored from local storage after changing settings on the same article list.
-- Fixed an issue where a corrupted local translation cache entry could interrupt translation restoration for the rest of the list.
-
-</details>
-
----
-
-### [z-mio/ParseHub](https://github.com/z-mio/ParseHub) `✅ 正式版` `v2.3.11`
-
-发布时间：2026-10-18（2 小时前）｜ [查看 Release](https://github.com/z-mio/ParseHub/releases/tag/v2.3.11)
-
-* 修复：受众受限内容改为使用 Cookie 作为回退方案，并补充了相关错误提示
-* 重构：检测到已配置 Cookie 时直接通过 Cookie 进行解析，移除了匿名回退机制
-* 重构：所有错误信息均附带所使用的 Cookie 信息，移除了各平台手动拼接该信息的逻辑
-* 维护：将版本号升级至 2.3.11
-
-<details><summary>查看原文</summary>
-
-*  fix: 受众受限内容回退到 Cookie 并补充报错
-*  refactor: 配了 Cookie 直接用 Cookie 解析, 移除匿名回退
-*  refactor: 错误统一携带使用的 Cookie, 移除各平台手动拼接
-*  chore: 升级版本号至 2.3.11
-
-</details>
-
----
-
-### [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) `📝 提交` `bf77102`
-
-发布时间：2026-10-18（8 分钟前）｜ [查看提交](https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/bf771022d2da546a02eb63d2d4e6420eb5bece6b)
+发布时间：2026-10-18（3 小时前）｜ [查看提交](https://github.com/tingaicompass/AI-Compass/commit/be2fb43cfe214ac0055c5dae24dd1b513f6920fa)
 
 *（原文，翻译暂不可用）*
 
-revert(config): restore game domain attribute filtering (c4382f90)
+docs: sync weekly highlight 59 and browser agent tooling
 
 ---
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `4414158`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `abbd809`
 
-发布时间：2026-10-18（3 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/44141582103b0f62caec5efc750b28ad9832bcc9)
+发布时间：2026-10-18（26 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/abbd809e87841147bff78cde3d90b7a94bcfcac0)
 
 *（原文，翻译暂不可用）*
 
@@ -158,11 +24,17 @@ revert(config): restore game domain attribute filtering (c4382f90)
 
 ---
 
-### [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) `✅ 正式版` `v2026.10.18.2-release`
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.18-8443.eb7d2c7`
 
-发布时间：2026-10-18（4 小时前）｜ [查看 Release](https://github.com/ArvinLovegood/go-stock/releases/tag/v2026.10.18.2-release)
+发布时间：2026-10-18（1 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.18-8443.eb7d2c7)
 
-*（无更新说明）*
+源码提交记录：eb7d2c75e4c90b529aa70e898ed6cbbd0680e665
+
+<details><summary>查看原文</summary>
+
+Source commit: eb7d2c75e4c90b529aa70e898ed6cbbd0680e665
+
+</details>
 
 ---
 
@@ -170,33 +42,34 @@ revert(config): restore game domain attribute filtering (c4382f90)
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-18 | 8 分钟前 |
-| [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 30 分钟前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.59.0` | 正式版 | 2026-10-18 | 1 小时前 |
-| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20` | 正式版 | 2026-10-18 | 2 小时前 |
-| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.11` | 正式版 | 2026-10-18 | 2 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-18 | 3 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.18.2-release` | 正式版 | 2026-10-18 | 4 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-18 | 5 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-18 | 9 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.18-8442.0f4b929` | 正式版 | 2026-10-18 | 9 小时前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta01` | 测试版 | 2026-10-18 | 10 小时前 |
-| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 10 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-18 | 12 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-18 | 12 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610172235` | 正式版 | 2026-10-17 | 13 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 14 小时前 |
-| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.1` | 正式版 | 2026-10-17 | 14 小时前 |
-| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 20 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-18 | 26 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.18-8443.eb7d2c7` | 正式版 | 2026-10-18 | 1 小时前 |
+| [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 3 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-18 | 4 小时前 |
+| [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 4 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.59.0` | 正式版 | 2026-10-18 | 5 小时前 |
+| [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20` | 正式版 | 2026-10-18 | 5 小时前 |
+| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.11` | 正式版 | 2026-10-18 | 6 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.18.2-release` | 正式版 | 2026-10-18 | 8 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-18 | 9 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-18 | 13 小时前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta01` | 测试版 | 2026-10-18 | 14 小时前 |
+| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 14 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-18 | 15 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-18 | 16 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610172235` | 正式版 | 2026-10-17 | 17 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-17 | 18 小时前 |
+| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.17.1` | 正式版 | 2026-10-17 | 18 小时前 |
+| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 1 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 1 天前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 1 天前 |
 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 1 天前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 1 天前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 1 天前 |
 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 1 天前 |
-| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 1 天前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 1 天前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.2` | 正式版 | 2026-10-16 | 1 天前 |
+| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 2 天前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 2 天前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.2` | 正式版 | 2026-10-16 | 2 天前 |
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-16 | 2 天前 |
 | [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5` | 正式版 | 2026-10-16 | 2 天前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2883.0` | 测试版 | 2026-10-16 | 2 天前 |
@@ -206,8 +79,8 @@ revert(config): restore game domain attribute filtering (c4382f90)
 | [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 2 天前 |
 | [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 2 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.4` | 正式版 | 2026-10-15 | 2 天前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.36` | 正式版 | 2026-10-15 | 2 天前 |
-| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 2 天前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.36` | 正式版 | 2026-10-15 | 3 天前 |
+| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 3 天前 |
 | [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) | — | 提交 | 2026-10-15 | 3 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.9` | 正式版 | 2026-10-15 | 3 天前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 3 天前 |
@@ -223,14 +96,14 @@ revert(config): restore game domain attribute filtering (c4382f90)
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 4 天前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 4 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 5 天前 |
-| [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 5 天前 |
+| [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 6 天前 |
 | [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 7 天前 |
 | [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-38116174842-1` | 正式版 | 2026-10-11 | 7 天前 |
 | [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 7 天前 |
 | [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 7 天前 |
 | [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.1` | 正式版 | 2026-10-10 | 7 天前 |
-| [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 7 天前 |
-| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 7 天前 |
+| [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 8 天前 |
+| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 8 天前 |
 | [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 8 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.31.1703` | 正式版 | 2026-10-09 | 9 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 9 天前 |
@@ -238,24 +111,23 @@ revert(config): restore game domain attribute filtering (c4382f90)
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 9 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 10 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 10 天前 |
-| [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 10 天前 |
-| [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 10 天前 |
+| [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 11 天前 |
+| [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 11 天前 |
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.21.0` | 正式版 | 2026-10-05 | 13 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 13 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 13 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 13 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 13 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.32` | 正式版 | 2026-09-30 | 17 天前 |
-| [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 17 天前 |
+| [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 18 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 18 天前 |
-| [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-09-24 | 24 天前 |
 | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 25 天前 |
 | [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) | — | 提交 | 2026-09-22 | 26 天前 |
-| [zhangxiangliang/stock-api](https://github.com/zhangxiangliang/stock-api) | `v2.7.5` | 正式版 | 2026-09-21 | 26 天前 |
-| [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) | `1.7.8-release` | 正式版 | 2026-09-21 | 26 天前 |
+| [zhangxiangliang/stock-api](https://github.com/zhangxiangliang/stock-api) | `v2.7.5` | 正式版 | 2026-09-21 | 27 天前 |
+| [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) | `1.7.8-release` | 正式版 | 2026-09-21 | 27 天前 |
 | [yuanzl77/IPTV](https://github.com/yuanzl77/IPTV) | — | 提交 | 2026-09-21 | 27 天前 |
 | [zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles) | `v1.7.5` | 正式版 | 2026-09-20 | 28 天前 |
-| [black-ant/Ant-Browser](https://github.com/black-ant/Ant-Browser) | `V1.8.0` | 正式版 | 2026-09-19 | 28 天前 |
+| [black-ant/Ant-Browser](https://github.com/black-ant/Ant-Browser) | `V1.8.0` | 正式版 | 2026-09-19 | 29 天前 |
 | [liaoliao666/v2ex](https://github.com/liaoliao666/v2ex) | `1.9.6` | 正式版 | 2026-09-19 | 29 天前 |
 | [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) | `epub-latest` | 正式版 | 2026-09-18 | 1 个月前 |
 | [j4Uq/TVBoxOSC](https://github.com/j4Uq/TVBoxOSC) | `20260914-1520` | 正式版 | 2026-09-14 | 1 个月前 |
