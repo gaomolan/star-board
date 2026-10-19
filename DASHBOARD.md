@@ -1,74 +1,48 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-19 18:05:30 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-19 22:43:41 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（5）
+## 🆕 本次新增（4）
 
-### [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) `✅ 正式版` `v2.2.4`
+### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610192237`
 
-发布时间：2026-10-19（2 小时前）｜ [查看 Release](https://github.com/x554960766/wechat-mp-tools/releases/tag/v2.2.4)
+发布时间：2026-10-19（8 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610192237)
 
-Release v2.2.4: 腾讯防水墙(TCaptcha)人机验证与风控熔断防御，文档优化与版本升级
-
----
-
-### [t59688/newsnook](https://github.com/t59688/newsnook) `🧪 测试版` `v1.9.1-beta.1`
-
-发布时间：2026-10-19（2 小时前）｜ [查看 Release](https://github.com/t59688/newsnook/releases/tag/v1.9.1-beta.1)
-
-## 有所闻 NewsNook v1.9.1-beta.1
-
-### 内置浏览器
-
-- 新增应用内浏览器：多标签浏览、隐私会话、历史管理与起始页
-- 可注册为 Android 系统浏览器，并支持接收外部应用链接
-- 内置用户脚本运行时，站点适配脚本本地加载
-- 页面图片浏览与选取，缩略图按来源缓存
-- WebView 渲染进程崩溃后自动恢复
-- 工具栏统一图标比例，新增「返回有所闻」快捷按钮
-
-### 阅读与划词
-
-- 划词菜单新增「搜索」，半屏浏览器就地查询、可切换搜索引擎
-- 百科 / 搜索面板支持拖拽调高与触感反馈，可交接到浏览器
-
-### 其它
-
-- 版本号 1.9.1-beta.1；本版本为 Beta 测试版。
+*（无更新说明）*
 
 ---
 
-### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `1de1e7b`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `c6e939d`
 
-发布时间：2026-10-19（5 小时前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/1de1e7b12d46b099a51767bff11e9165c41fb850)
-
-把 2024 年 11-12 月的 4 个区块移到更早的项目分册
-
----
-
-### [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) `✅ 正式版` `v1.0.8`
-
-发布时间：2026-10-19（6 小时前）｜ [查看 Release](https://github.com/EKKOLearnAI/ekko-studio/releases/tag/v1.0.8)
+发布时间：2026-10-19（4 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/c6e939dfb279321065f6c0f7e9fb297055092a77)
 
 *（原文，翻译暂不可用）*
 
-Ekko Studio Android v1.0.8
-
-- 版本：1.0.8
-- 版本号（versionCode）：163
-- 架构：arm64-v8a
-- 安装包：EkkoStudio.apk
-- 文件大小：41,321,249 bytes
-- 已使用原正式证书签名，并通过签名与资源完整性校验。
-- SHA-256：`6dbb57b327c7319007460d3c1a5b31b3c3327b43a4c18255fbcc9e1167f75b88`
+20261019
 
 ---
 
-### [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) `✅ 正式版` `v2026.10.19.1-release`
+### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `78217e7`
 
-发布时间：2026-10-19（5 小时前）｜ [查看 Release](https://github.com/ArvinLovegood/go-stock/releases/tag/v2026.10.19.1-release)
+发布时间：2026-10-19（36 分钟前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/78217e7aa1ca492ee638c3c95b835cdb8ce7ff34)
 
-go-stock v2026.10.19.1 release: OKX 信号交易新增方向模式/大势门控/单日限笔数，广场默认接口域名改自建反代
+*（原文，翻译暂不可用）*
+
+Update 2026/10/20
+
+---
+
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.19-8448.5b399b2`
+
+发布时间：2026-10-19（3 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.19-8448.5b399b2)
+
+源提交：5b399b2fdd77d006973f73959f8f24b2bc117d5f
+
+<details><summary>查看原文</summary>
+
+Source commit: 5b399b2fdd77d006973f73959f8f24b2bc117d5f
+
+</details>
 
 ---
 
@@ -76,27 +50,27 @@ go-stock v2026.10.19.1 release: OKX 信号交易新增方向模式/大势门控/
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 2 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 2 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-19 | 5 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 5 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 6 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.19-8446.4fbf0d3` | 正式版 | 2026-10-19 | 6 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 7 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 7 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-19 | 8 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 8 小时前 |
-| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 9 小时前 |
-| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 12 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.8` | 正式版 | 2026-10-19 | 13 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 13 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-19 | 17 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-19 | 17 小时前 |
-| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 17 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610182236` | 正式版 | 2026-10-18 | 19 小时前 |
-| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 19 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-18 | 19 小时前 |
-| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-18 | 22 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610192237` | 正式版 | 2026-10-19 | 8 分钟前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-19 | 36 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.19-8448.5b399b2` | 正式版 | 2026-10-19 | 3 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-19 | 4 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 7 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 7 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-19 | 10 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 10 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 10 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 11 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 12 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 13 小时前 |
+| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 13 小时前 |
+| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 17 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.8` | 正式版 | 2026-10-19 | 17 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 18 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-19 | 22 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-19 | 22 小时前 |
+| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 22 小时前 |
+| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 1 天前 |
+| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-18 | 1 天前 |
 | [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 1 天前 |
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 1 天前 |
 | [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.59.0` | 正式版 | 2026-10-18 | 1 天前 |
@@ -110,7 +84,7 @@ go-stock v2026.10.19.1 release: OKX 信号交易新增方向模式/大势门控/
 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.1` | 正式版 | 2026-10-17 | 2 天前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 2 天前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-17 | 2 天前 |
-| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 2 天前 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 3 天前 |
 | [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.320` | 正式版 | 2026-10-16 | 3 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.16-2` | 正式版 | 2026-10-16 | 3 天前 |
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-16 | 3 天前 |
@@ -130,7 +104,7 @@ go-stock v2026.10.19.1 release: OKX 信号交易新增方向模式/大势门控/
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 5 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 5 天前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 5 天前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 5 天前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 6 天前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 6 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 6 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 7 天前 |
@@ -144,7 +118,7 @@ go-stock v2026.10.19.1 release: OKX 信号交易新增方向模式/大势门控/
 | [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 9 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 10 天前 |
 | [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 10 天前 |
-| [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 10 天前 |
+| [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 11 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 11 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 11 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 12 天前 |
