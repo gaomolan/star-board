@@ -1,26 +1,26 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-19T11:45:44.365Z
+生成时间：2026-10-19T18:07:41.067Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：174
-- 缓存条目数：1923
-- Release 总数：9104
-- 符合检查条件的 Release：5284
-- 有效缓存：1779
-- 缺失译文：3499
-- 哈希过期：6
+- 缓存条目数：1925
+- Release 总数：9109
+- 符合检查条件的 Release：5289
+- 有效缓存：1780
+- 缺失译文：3502
+- 哈希过期：7
 - 无效译文：0
 - 跳过（作者已提供中文）：134
 - 跳过（原文过短或中文占比过高）：3686
 
 ## 缺口分类
 
-- missing：3499
-- stale_hash：6
+- missing：3502
+- stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
 
@@ -88,6 +88,7 @@
 - [Teamper/JHS — JHS 4.7.0](https://github.com/Teamper/JHS/releases/tag/v4.7.0) — `rel:332888469`（missing）
 - [Teamper/JHS — JHS 4.5.0](https://github.com/Teamper/JHS/releases/tag/v4.5.0) — `rel:331899917`（missing）
 - [Teamper/JHS — JHS 4.4.1](https://github.com/Teamper/JHS/releases/tag/v4.4.1) — `rel:331893094`（missing）
+- [liuran001/mihomo — Mihomo Alpha with Smart Group](https://github.com/liuran001/mihomo/releases/tag/Prerelease-Alpha) — `rel:373897180`（stale_hash）
 - [eternity4719/HowToLiveBetter — 电子书（EPUB / PDF / 离线 HTML / Anki，自动更新）](https://github.com/eternity4719/HowToLiveBetter/releases/tag/epub-latest) — `rel:391356253`（stale_hash）
 - [kenischu/ReSource — 2.0.8](https://github.com/kenischu/ReSource/releases/tag/2.0.8) — `rel:307880275`（missing）
 - [kenischu/ReSource — 1.8.23](https://github.com/kenischu/ReSource/releases/tag/1.8.23) — `rel:284477468`（missing）
@@ -123,6 +124,5 @@
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
 - [felinics/Memoh — v0.14.0](https://github.com/felinics/Memoh/releases/tag/v0.14.0) — `rel:344199344`（missing）
-- [felinics/Memoh — v0.13.1](https://github.com/felinics/Memoh/releases/tag/v0.13.1) — `rel:341154510`（missing）
 
-其余 3405 条详见 Actions 工件 `translation-gaps`。
+其余 3409 条详见 Actions 工件 `translation-gaps`。
