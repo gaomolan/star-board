@@ -5633,7 +5633,7 @@
   },
   "rel:373897180": {
     "zh": "**[声明]** 本分支是在上游代码的基础上增加Smart策略组功能，关于Smart策略组的任何问题均与上游无关!\n我应该下载哪个文件? / Which file should I download?\n二进制文件筛选 / Binary file selector\n查看文档 / Docs\nSmart 策略组使用 / Smart Group Introduce",
-    "hash": "280232523"
+    "hash": "4067644562"
   },
   "rel:416790653": {
     "zh": "- 能力配置并入 Providers，并重整设置侧栏分组 -  (94d76)\n- 用方格图重做上下文用量弹层与 Context Inspector -  (d452d)\n- Apply_patch 按文件渲染 edit 同款 diff -  (56386)\n- 欢迎页首发等服务端确认再转场 -  (c86ec)\n- 添加使用示例与提示词预填 -  (50e89)\n- 新对话页显示 Bot 专属推荐问题 -  (e3c38)\n- 飞书卡片改用 JSON 2.0 markdown 组件，流式回复走 CardKit -  (7dc47)\n- 统一运行环境暂停状态并扩展资源指标契约 -  (5eff8)\n- 定时任务卡片展开查看每次运行的会话，并从「最近」中移除 -  (70a8f)\n- 新增内置 memoh-help skill，让 agent 依据官方文档回答产品问题 -  (860ff)\n- 接入 Grok Build 直连运行时 - by , **Claude Opus 5.5** and  in https://github.com/felinics/Memoh/issues/1607  (bf466)\n- 请求字段缺失与无效的通用错误码 -  (7b440)\n- IM 的 /new 按名称指定 Agent -  (86ea5)\n- 自定义 Base URL 的 Codex Agent 支持选择推理强度 -  (5ba7c)\n- 在 Apple 芯片 Mac 上检测误装的 Intel 安装包并提示换装 -  (d06cb)\n- 按桌面可见性管理查看连接 -  (10952)\n- 同步本机与远程桌面的文本剪贴板 -  (c07cf)\n- 按会话缓存窗口延迟刷新记忆概览 -  (68a87)\n- Discuss 模式先确认收到并在长任务中同步进度 - by  and **Claude Opus 5.5** in https://github.com/felinics/Memoh/issues/1557  (378f9)\n- 消息操作按钮的复制确认、按压动效，代码块复制统一 -  (db4cf)\n- 扩展工作台键盘快捷键 -  (5f918)\n- 会话菜单支持多选与批量删除 - by ,  and **Claude Opus 5.5** in https://github.com/felinics/Memoh/issues/1305  (ae7cf)\n- 工作区焦点只由用户操作改变，后台事件不再抢标签页 -  (5bbde)\n- 原生工具失败时 Web 端按失败调用渲染 -  (ab9f2)\n- 删除当前 bot 后自动回退到其他 bot -  (d2467)\n- 去掉依赖目录缓存横幅，到期时后台刷新 - by  and **Claude Opus 5.5** in https://github.com/felinics/Memoh/issues/1560  (944ce)\n- 隐藏工具调用时保留工具调用前的文字 - by  and **Claude Opus 5.5** in https://github.com/felinics/Memoh/issues/1558  (58e60)\n- IM 正在输入状态按轮次保活并覆盖 discuss 模式 - by  and **Claude Opus 5.5** in https://github.com/felinics/Memoh/issues/1559  (c1072)\n- 连接电脑对话框改用共享代码块并精简引导文案 -  (be7",
@@ -5666,5 +5666,9 @@
   "rel:417230479": {
     "zh": "- 版本：1.0.8\n- 版本号（versionCode）：163\n- 架构：arm64-v8a\n- 安装包：EkkoStudio.apk\n- 文件大小：41,321,249 bytes\n- 已使用原正式证书签名，并通过签名与资源完整性校验。",
     "hash": "1405916757"
+  },
+  "rel:417999646": {
+    "zh": "\"修复导出文章时提示'路径中具有非法字符'\",\n\"增加采集结束后自动停止采集功能\",\n\"增加文章类型显示，文章和贴图分开\",\n\"采集完成后，自动按发布日期重新排序\"",
+    "hash": "384902519"
   }
 }
