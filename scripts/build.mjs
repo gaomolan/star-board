@@ -1090,6 +1090,99 @@ function toPlain(s) {
   .filter((t, i, arr) => t !== arr[i - 1]);             // 去相邻重复行
 }
 
+// ---------------- Telegram 分类展示 ----------------
+// 条目清洗（Telegram HTML）：保留 **加粗**，去链接/裸 URL/PR 引用
+function fmtTgItem(s) {
+  let t = String(s || '');
+  t = t.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  t = t.replace(/https?:\/\/\S+/g, '').trim();
+  t = t.replace(/\s*\(#\d+(?:\s*,\s*#\d+)*\)/g, '');
+  t = escHtml(t);
+  t = t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<b>$1</b>');
+  t = t.replace(/[`~]/g, '');
+  t = t.replace(/\s+/g, ' ').trim();
+  if (t.length > 120) t = t.slice(0, 120).trim() + '…';
+  return t;
+}
+
+// 章节标题 -> 变更分类（认不出返回 null）
+function sectionCatOf(h) {
+  const t = String(h || '').toLowerCase();
+  if (/新增|新特性|added|new features?/.test(t)) return '新增';
+  if (/修复|fixed|bug ?fix|hotfix/.test(t)) return '修复';
+  if (/移除|删除|removed|removal/.test(t)) return '移出';
+  if (/改进|优化|增强|improv|enhanc|performance|性能/.test(t)) return '改进';
+  if (/变更|更改|changed|changes/.test(t)) return '变更';
+  if (/调整|adjust|misc/.test(t)) return '调整';
+  if (/其他|其它|other/.test(t)) return '其他';
+  return null;
+}
+
+// 单条内容分类：返回 [分类, 去掉 conventional 前缀后的文本]
+function classifyItem(raw) {
+  const t = String(raw || '').trim();
+  const m = t.match(/^(feat|fix|perf|refactor|chore|docs|style|test|build|ci|revert)(\([^)]*\))?\s*[!:：:]\s*/i);
+  if (m) {
+    const map = { feat: '新增', fix: '修复', perf: '改进', refactor: '调整', chore: '调整', docs: '调整', style: '调整', test: '调整', build: '调整', ci: '调整', revert: '变更' };
+    return [map[m[1].toLowerCase()] || '其他', t.slice(m[0].length)];
+  }
+  if (/(移除|删除|去掉|下线|不再支持|\bremove[ds]?\b|\bdelete[ds]?\b|\bdrop\b)/i.test(t)) return ['移出', t];
+  if (/(修复|闪退|崩溃|\bfix(e[ds])?\b|\bbug\b|\bcrash\b|hotfix)/i.test(t)) return ['修复', t];
+  if (/(新增|添加|增加|新功能|加入|全新|\badd(e[ds])?\b|\bintroduc\w+|\bnew\b)/i.test(t)) return ['新增', t];
+  if (/(优化|改进|增强|提升|加速|改善|\bimprov\w+|\benhanc\w+|\boptimi[sz]\w+|\bfaster\b|performance)/i.test(t)) return ['改进', t];
+  if (/(调整|微调|\badjust\w+|\btweak\w*|\bpolish\b)/i.test(t)) return ['调整', t];
+  if (/(变更|改为|更新|升级|改版|\bchange[ds]?\b|\bupdate[ds]?\b|\bupgrade[ds]?\b)/i.test(t)) return ['变更', t];
+  return ['其他', t];
+}
+
+const TG_CAT_ORDER = ['新增', '改进', '变更', '修复', '移出', '调整', '其他'];
+
+// 把清洗后的 release 文本按变更类型归类；无条目返回 null（调用方回退引用块）
+function classifyChanges(text) {
+  if (!text) return null;
+  const groups = {};
+  let curCat = null;
+  let count = 0;
+  for (const rawLine of String(text).split('\n')) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    const hm = line.match(/^#{1,6}\s+(.+)$/) || line.match(/^\*\*(.+?)\*\*[:：]?\s*$/);
+    if (hm) {
+      const htext = hm[1].trim();
+      // GitHub 自动生成的 What's Changed 不设上下文，条目按前缀逐条分
+      curCat = /^what'?s changed$/i.test(htext) ? null : sectionCatOf(htext);
+      continue;
+    }
+    const im = line.match(/^[-*+•·●]\s+(.+)$/) || line.match(/^\d{1,3}[.)、]\s*(.+)$/);
+    if (!im) continue; // 非条目行（散文/说明）跳过
+    const content = im[1].trim();
+    if (!content) continue;
+    const [guessCat, dispText] = classifyItem(content);
+    const cat = curCat || guessCat;
+    const fmt = fmtTgItem(dispText);
+    if (!fmt) continue;
+    (groups[cat] = groups[cat] || []).push(fmt);
+    count++;
+  }
+  return count > 0 ? groups : null;
+}
+
+// 分类结果 -> Telegram 文本块（每类最多 6 条，总长预算控制）
+function renderCats(groups) {
+  const parts = [];
+  let budget = 1400;
+  for (const cat of TG_CAT_ORDER) {
+    const items = groups[cat];
+    if (!items || !items.length) continue;
+    const show = items.slice(0, 6);
+    let block = '<b>' + cat + '</b>\n' + show.map((i) => '· ' + i).join('\n');
+    if (items.length > show.length) block += '\n· …还有 ' + (items.length - show.length) + ' 项';
+    if (block.length > budget) break;
+    parts.push(block);
+    budget -= block.length + 2;
+  }
+  return parts.join('\n\n');
+}
 // ---------------- Telegram digest ----------------
 async function sendDigest(fresh, state) {
   const lines = await Promise.all(fresh.slice(0, 20).map(async (r) => {
@@ -1119,26 +1212,43 @@ async function sendDigest(fresh, state) {
         }
         if (!descZh) descZh = rawDesc;
       }
-      descLine = `<i>${escHtml(descZh.slice(0, 100))}</i>\n`;
+      let dShort = descZh.replace(/\s+/g, ' ').trim();
+      if (dShort.length > 60) dShort = dShort.slice(0, 60).trim();
+      descLine = `<i>${escHtml(dShort)}</i>\n`;
     }
-    // 摘要：优先用清洗过的中文，没有则对原文做去噪；转纯文本后整段进引用块
+    // 摘要：优先用清洗过的中文，没有则对原文做去噪
     let summary = r.zh || '';
     if (!summary) {
       const raw = isC ? Cr.message : (Lr.body || '');
       summary = stripNoise(raw);
     }
-    const qLines = toPlain(summary).map(s => escHtml(s));
-    const quote = `<blockquote>${qLines.length ? qLines.join('\n') : '无更新说明'}</blockquote>`;
-    const kind = isC ? '📝 提交' : (Lr.prerelease ? '🧪 测试版' : '✅ 正式版');
+    // 分类展示：按变更类型归类（新增/改进/变更/修复/移出/调整）；分不了类时回退引用块
+    const groups = isC ? null : classifyChanges(summary);
+    let bodyBlock;
+    if (groups) {
+      bodyBlock = renderCats(groups);
+    } else {
+      const qLines = toPlain(summary).map(s => escHtml(s));
+      bodyBlock = `<blockquote>${qLines.length ? qLines.join('\n') : '无更新说明'}</blockquote>`;
+    }
+    const kind = isC ? '仅提交' : (Lr.prerelease ? '测试版' : '正式版');
     const linkText = isC ? '查看提交' : '查看 Release';
     const url = isC ? Cr.url : Lr.url;
-    return `<b>${name}</b>\n${descLine}${kind} · <code>${tag}</code>\n${quote}<a href="${url}">${linkText}</a>`;
+    // 时间：MM-DD HH:MM（UTC+8）
+    let timeStr = '';
+    const pubAt = isC ? Cr.date : Lr.published_at;
+    if (pubAt) {
+      const d = new Date(new Date(pubAt).getTime() + 8 * 3600 * 1000);
+      timeStr = `${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')} ${String(d.getUTCHours()).padStart(2, '0')}:${String(d.getUTCMinutes()).padStart(2, '0')}`;
+    }
+    const meta = (timeStr ? `🕐 ${timeStr} · ` : '') + `<a href="${url}">🔗 ${linkText}</a>`;
+    return `<b>${name}</b>\n${descLine}${kind} · <code>${tag}</code>\n${bodyBlock}\n${meta}`;
   }));
-  let text = `<b>⭐ Star 更新速览</b>（新增 ${fresh.length} 条）\n\n${lines.join('\n\n')}`;
+  let text = `⭐ <b>Star 更新速览</b> · 新增 ${fresh.length} 条\n\n${lines.join('\n\n')}`;
   if (fresh.length > 20) text += `\n\n<i>…还有 ${fresh.length - 20} 条，详见看板</i>`;
   const url = siteUrl();
-  if (url) text += `\n\n<a href="${url}">打开完整看板</a>`;
-  else if (REPO_SLUG) text += `\n\n<a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
+  if (url) text += `\n\n🖥️ <a href="${url}">打开完整看板</a>`;
+  else if (REPO_SLUG) text += `\n\n🖥️ <a href="https://github.com/${REPO_SLUG}/blob/main/DASHBOARD.md">打开完整看板</a>`;
 
   // 按 4096 字符切分
   const chunks = [];
