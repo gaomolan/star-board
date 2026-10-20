@@ -1,20 +1,30 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-19 22:43:41 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-20 01:24:57 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（4）
 
-### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610192237`
+### [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) `📦 规则集` `latest`
 
-发布时间：2026-10-19（8 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610192237)
+发布时间：2026-10-20（13 分钟前）｜ [查看 Release](https://github.com/appshubcc/bett-rules/releases/tag/latest)
 
 *（无更新说明）*
 
 ---
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `c6e939d`
+### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `70d2a1d`
 
-发布时间：2026-10-19（4 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/c6e939dfb279321065f6c0f7e9fb297055092a77)
+发布时间：2026-10-20（2 分钟前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/70d2a1d7f03b5d9a42f7e2d09b63a36a23239f6d)
+
+*（原文，翻译暂不可用）*
+
+docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
+
+---
+
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `626c89a`
+
+发布时间：2026-10-19（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/626c89ad2e32df4f0944a945cba796000c2b0ac9)
 
 *（原文，翻译暂不可用）*
 
@@ -22,27 +32,13 @@
 
 ---
 
-### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `78217e7`
+### [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) `📝 提交` `f1b77ad`
 
-发布时间：2026-10-19（36 分钟前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/78217e7aa1ca492ee638c3c95b835cdb8ce7ff34)
+发布时间：2026-10-20（1 小时前）｜ [查看提交](https://github.com/XIU2/TrackersListCollection/commit/f1b77adf561ac37f319f6fc35d4de82356f531fb)
 
 *（原文，翻译暂不可用）*
 
-Update 2026/10/20
-
----
-
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.19-8448.5b399b2`
-
-发布时间：2026-10-19（3 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.19-8448.5b399b2)
-
-源提交：5b399b2fdd77d006973f73959f8f24b2bc117d5f
-
-<details><summary>查看原文</summary>
-
-Source commit: 5b399b2fdd77d006973f73959f8f24b2bc117d5f
-
-</details>
+2026-10-20
 
 ---
 
@@ -50,25 +46,25 @@ Source commit: 5b399b2fdd77d006973f73959f8f24b2bc117d5f
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610192237` | 正式版 | 2026-10-19 | 8 分钟前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-19 | 36 分钟前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.19-8448.5b399b2` | 正式版 | 2026-10-19 | 3 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-19 | 4 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 7 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 7 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-19 | 10 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 10 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 10 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 11 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 12 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 13 小时前 |
-| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 13 小时前 |
-| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 17 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.8` | 正式版 | 2026-10-19 | 17 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 18 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-19 | 22 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-19 | 22 小时前 |
-| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 22 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-20 | 2 分钟前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-20 | 13 分钟前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-20 | 1 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-19 | 1 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610192237` | 正式版 | 2026-10-19 | 2 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-19 | 3 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.19-8448.5b399b2` | 正式版 | 2026-10-19 | 5 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 10 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 10 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 13 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 13 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 14 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 15 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 15 小时前 |
+| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 16 小时前 |
+| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 20 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.8` | 正式版 | 2026-10-19 | 20 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 20 小时前 |
+| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 1 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 1 天前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-18 | 1 天前 |
 | [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 1 天前 |
@@ -120,13 +116,13 @@ Source commit: 5b399b2fdd77d006973f73959f8f24b2bc117d5f
 | [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 10 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 11 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 11 天前 |
-| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 11 天前 |
+| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 12 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 12 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 12 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 14 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 14 天前 |
-| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 14 天前 |
-| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 14 天前 |
+| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 15 天前 |
+| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 15 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.32` | 正式版 | 2026-09-30 | 19 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 19 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 19 天前 |
