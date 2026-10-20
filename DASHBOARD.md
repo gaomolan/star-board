@@ -1,44 +1,88 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-20 01:24:57 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-20 06:57:28 UTC ｜ 共 173 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（4）
 
-### [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) `📦 规则集` `latest`
+### [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) `✅ 正式版` `v7.3.1.9`
 
-发布时间：2026-10-20（13 分钟前）｜ [查看 Release](https://github.com/appshubcc/bett-rules/releases/tag/latest)
+发布时间：2026-10-20（2 小时前）｜ [查看 Release](https://github.com/Kindness-Kismet/AstraGram-Desktop/releases/tag/v7.3.1.9)
 
-*（无更新说明）*
+- 新增了消息定位标记自定义功能，现在可以选择轮廓角标或跳动标记，调整颜色、时长和大小，并实时预览效果
+- 新增了主菜单排序功能，现在可以长按拖动菜单项，也可以在外观设置中调整顺序
+- 新增了隐藏直播和群通话入口的开关，现在可以隐藏相关按钮、菜单项和状态标记
+- 对日历导航进行了改善，这使得年份和月份可以通过菜单选择，并提供快捷日期和圆角日期格，选择日期范围时也能保持导航可见
+- 对表情、贴纸和 GIF 面板的间距进行了改善，这使得左右留白更均衡，贴纸列保持居中
+- 对表情包联想进行了改善，这使得面板底部保留适当间距，悬停时只加深目标贴纸并保留透明边缘
+- 对弹出菜单的滚动条进行了改善，这使得滚动条上下留出间距，同时保持菜单项的位置不变
+- 对界面图标进行了改善，这使得设置导入和导出操作更容易区分，主菜单的联系人图标也更清晰
+- 修复了关于群通话按钮的错误，该问题曾导致视频图标不正确，关闭菜单后按钮仍保持高亮
+- 修复了关于深色主题下 Windows 标题栏的错误，该问题曾导致纯色背景遮住已启用的云母和亚克力材质
+- 修复了关于转发弹窗文件夹标签栏的错误，该问题曾导致聊天背景透出，与弹窗本身的背景不一致
+- 修复了关于聊天内搜索结果的错误，该问题曾导致顶部控件遮挡结果列表，以及收藏夹标签使搜索栏位置错乱
+- 修复了关于输入光标的错误，该问题曾导致浅色搜索框和半透明背景上的光标不可见
+- 修复了关于对话框全宽操作按钮的错误，该问题曾导致文件夹邀请中的数量标记和按钮文字互相挤占空间
+- 修复了关于频道选择器的错误，该问题曾导致动画过大，以及加载完成后提示仍不消失
+- 修复了关于资料外观设置的错误，该问题曾导致图标行和自定义表情的间距错位
+- 修复了关于托盘菜单的错误，该问题曾导致应用锁定后桌面通知开关消失
+
+<details><summary>查看原文</summary>
+
+- Added customizable message location indicators, so you can now choose outline corners or a bouncing marker and adjust the color, duration and size with a live preview
+- Added drawer item reordering, so you can now long-press and drag items in the main menu or reorder them in appearance settings
+- Added a switch to hide live stream and group call controls, so you can now hide their buttons, menu entries and status indicators
+- Improved calendar navigation, which now offers year and month menus, date shortcuts and rounded day cells while keeping navigation visible during range selection
+- Improved emoji, sticker and GIF panel spacing, which now uses balanced side margins and centered sticker columns
+- Improved sticker suggestions, which now leave space at the bottom and darken the hovered sticker itself while preserving its transparent edges
+- Improved popup menu scrollbars, which now leave space at the top and bottom without changing menu item positions
+- Improved interface icons, which now distinguish settings import and export actions and use a clearer contacts icon in the main menu
+- Fixed an issue with group call buttons that previously caused the wrong video icon to appear and left menu buttons highlighted after dismissal
+- Fixed an issue with dark Windows title bars that previously caused solid backgrounds to cover active Mica and Acrylic materials
+- Fixed an issue with forwarding dialog folder tabs that previously caused the chat background to show through instead of matching the dialog
+- Fixed an issue with in-chat search results that previously caused top controls to overlap the list and Saved Messages tags to misalign the search bar
+- Fixed an issue with text carets that previously caused them to disappear on light search fields and translucent backgrounds
+- Fixed an issue with full-width dialog action buttons that previously caused folder invitation counts and labels to compete for space
+- Fixed an issue with the channel picker that previously caused ove
+
+</details>
 
 ---
 
-### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `70d2a1d`
+### [ShareX/ShareX](https://github.com/ShareX/ShareX) `🧪 测试版` `v22.0.0`
 
-发布时间：2026-10-20（2 分钟前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/70d2a1d7f03b5d9a42f7e2d09b63a36a23239f6d)
+发布时间：2026-10-20（4 小时前）｜ [查看 Release](https://github.com/ShareX/ShareX/releases/tag/v22.0.0)
 
-*（原文，翻译暂不可用）*
+**变更日志：** https://getsharex.com/changelog#v22.0.0
 
-docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
+<details><summary>查看原文</summary>
 
----
+**Changelog:** https://getsharex.com/changelog#v22.0.0
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `626c89a`
-
-发布时间：2026-10-19（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/626c89ad2e32df4f0944a945cba796000c2b0ac9)
-
-*（原文，翻译暂不可用）*
-
-20261019
+</details>
 
 ---
 
-### [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) `📝 提交` `f1b77ad`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `f7ada76`
 
-发布时间：2026-10-20（1 小时前）｜ [查看提交](https://github.com/XIU2/TrackersListCollection/commit/f1b77adf561ac37f319f6fc35d4de82356f531fb)
+发布时间：2026-10-20（2 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/f7ada76670992ec1860ce144cd050503d7a3c0bb)
 
 *（原文，翻译暂不可用）*
 
-2026-10-20
+20261020
+
+---
+
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.20-8449.1c7e106`
+
+发布时间：2026-10-20（1 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.20-8449.1c7e106)
+
+源提交：1c7e106e63bcc6725fe6b13f39544385666c89c0
+
+<details><summary>查看原文</summary>
+
+Source commit: 1c7e106e63bcc6725fe6b13f39544385666c89c0
+
+</details>
 
 ---
 
@@ -46,24 +90,25 @@ docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-20 | 2 分钟前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-20 | 13 分钟前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-20 | 1 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-19 | 1 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610192237` | 正式版 | 2026-10-19 | 2 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-19 | 3 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.19-8448.5b399b2` | 正式版 | 2026-10-19 | 5 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 10 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 10 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 13 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 13 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 14 小时前 |
-| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 15 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 15 小时前 |
-| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 16 小时前 |
-| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 20 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.8` | 正式版 | 2026-10-19 | 20 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 20 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.20-8449.1c7e106` | 正式版 | 2026-10-20 | 1 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.9` | 正式版 | 2026-10-20 | 2 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-20 | 2 小时前 |
+| [ShareX/ShareX](https://github.com/ShareX/ShareX) | `v22.0.0` | 测试版 | 2026-10-20 | 4 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-20 | 5 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-20 | 5 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-20 | 6 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610192237` | 正式版 | 2026-10-19 | 8 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-19 | 8 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 15 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.2.4` | 正式版 | 2026-10-19 | 15 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.19.1-release` | 正式版 | 2026-10-19 | 18 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v1.0.8` | 正式版 | 2026-10-19 | 19 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-19 | 19 小时前 |
+| [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 20 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2911.0` | 测试版 | 2026-10-19 | 21 小时前 |
+| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-19 | 22 小时前 |
+| [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 1 天前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-19 | 1 天前 |
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 1 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 1 天前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-18 | 1 天前 |
@@ -72,8 +117,8 @@ docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
 | [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.59.0` | 正式版 | 2026-10-18 | 1 天前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20` | 正式版 | 2026-10-18 | 1 天前 |
 | [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.11` | 正式版 | 2026-10-18 | 1 天前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta01` | 测试版 | 2026-10-18 | 1 天前 |
-| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 1 天前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta01` | 测试版 | 2026-10-18 | 2 天前 |
+| [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 2 天前 |
 | [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.17` | 测试版 | 2026-10-17 | 2 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-17 | 2 天前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 2 天前 |
@@ -86,52 +131,52 @@ docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-16 | 3 天前 |
 | [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5` | 正式版 | 2026-10-16 | 3 天前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.6` | 正式版 | 2026-10-16 | 3 天前 |
-| [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 3 天前 |
-| [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 3 天前 |
-| [NEORUAA/MeiloX](https://github.com/NEORUAA/MeiloX) | `1.55.1` | 正式版 | 2026-10-16 | 3 天前 |
+| [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 4 天前 |
+| [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 4 天前 |
+| [NEORUAA/MeiloX](https://github.com/NEORUAA/MeiloX) | `1.55.1` | 正式版 | 2026-10-16 | 4 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.4` | 正式版 | 2026-10-15 | 4 天前 |
 | [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 4 天前 |
 | [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) | — | 提交 | 2026-10-15 | 4 天前 |
-| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 4 天前 |
-| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0` | 正式版 | 2026-10-15 | 4 天前 |
+| [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 5 天前 |
+| [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0` | 正式版 | 2026-10-15 | 5 天前 |
 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.8.4` | 测试版 | 2026-10-14 | 5 天前 |
 | [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 5 天前 |
 | [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) | `v1.0.9` | 正式版 | 2026-10-14 | 5 天前 |
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 5 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 5 天前 |
-| [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 5 天前 |
+| [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 6 天前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-1ad6a60` | 测试版 | 2026-10-13 | 6 天前 |
 | [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.1` | 正式版 | 2026-10-13 | 6 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 6 天前 |
 | [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 7 天前 |
-| [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 8 天前 |
-| [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-38116174842-1` | 正式版 | 2026-10-11 | 8 天前 |
-| [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 8 天前 |
-| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 8 天前 |
+| [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 9 天前 |
+| [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-38116174842-1` | 正式版 | 2026-10-11 | 9 天前 |
+| [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 9 天前 |
+| [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 9 天前 |
 | [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.1` | 正式版 | 2026-10-10 | 9 天前 |
 | [crimera/piko](https://github.com/crimera/piko) | `v3.10.0` | 正式版 | 2026-10-10 | 9 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-10 | 9 天前 |
-| [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 9 天前 |
-| [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 10 天前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 10 天前 |
+| [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 10 天前 |
+| [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 11 天前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.1.2` | 正式版 | 2026-10-09 | 11 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 11 天前 |
-| [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 11 天前 |
+| [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 12 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 12 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 12 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v196.19` | 正式版 | 2026-10-07 | 12 天前 |
-| [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 14 天前 |
-| [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 14 天前 |
+| [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 15 天前 |
+| [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 15 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 15 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 15 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.32` | 正式版 | 2026-09-30 | 19 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 19 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 19 天前 |
-| [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 26 天前 |
+| [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 27 天前 |
 | [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) | — | 提交 | 2026-09-22 | 27 天前 |
 | [zhangxiangliang/stock-api](https://github.com/zhangxiangliang/stock-api) | `v2.7.5` | 正式版 | 2026-09-21 | 28 天前 |
 | [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) | `1.7.8-release` | 正式版 | 2026-09-21 | 28 天前 |
 | [yuanzl77/IPTV](https://github.com/yuanzl77/IPTV) | — | 提交 | 2026-09-21 | 28 天前 |
-| [zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles) | `v1.7.5` | 正式版 | 2026-09-20 | 29 天前 |
+| [zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles) | `v1.7.5` | 正式版 | 2026-09-20 | 1 个月前 |
 | [black-ant/Ant-Browser](https://github.com/black-ant/Ant-Browser) | `V1.8.0` | 正式版 | 2026-09-19 | 1 个月前 |
 | [liaoliao666/v2ex](https://github.com/liaoliao666/v2ex) | `1.9.6` | 正式版 | 2026-09-19 | 1 个月前 |
 | [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) | `epub-latest` | 正式版 | 2026-09-18 | 1 个月前 |
@@ -158,7 +203,6 @@ docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
 | [zjssun/TradeMirror](https://github.com/zjssun/TradeMirror) | `v1.2` | 正式版 | 2026-08-04 | 2 个月前 |
 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | `latest` | 测试版 | 2026-07-21 | 3 个月前 |
 | [pengchujin/jzsub](https://github.com/pengchujin/jzsub) | `v1.8.1` | 正式版 | 2026-07-13 | 3 个月前 |
-| [ShareX/ShareX](https://github.com/ShareX/ShareX) | `v21.0.0` | 正式版 | 2026-07-03 | 3 个月前 |
 | [thedjchi/Shizuku](https://github.com/thedjchi/Shizuku) | `v13.7.0-thedjchi` | 正式版 | 2026-07-02 | 3 个月前 |
 | [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.2` | 正式版 | 2026-06-26 | 3 个月前 |
 | [woijfwefw/ZsxqCrawler](https://github.com/woijfwefw/ZsxqCrawler) | — | 提交 | 2026-06-25 | 3 个月前 |
@@ -182,7 +226,7 @@ docs: refresh Pagekin and InvoiceFlowAI descriptions (#1610)
 | [Tongyi-MAI/Z-Image](https://github.com/Tongyi-MAI/Z-Image) | — | 提交 | 2026-02-09 | 8 个月前 |
 | [koolshare/koolshare.github.io](https://github.com/koolshare/koolshare.github.io) | — | 提交 | 2026-01-27 | 8 个月前 |
 | [jbiaojerry/ebook-treasure-chest](https://github.com/jbiaojerry/ebook-treasure-chest) | — | 提交 | 2026-01-13 | 9 个月前 |
-| [mpquant/Ashare](https://github.com/mpquant/Ashare) | — | 提交 | 2025-12-24 | 9 个月前 |
+| [mpquant/Ashare](https://github.com/mpquant/Ashare) | — | 提交 | 2025-12-24 | 10 个月前 |
 | [Yu-Core/SwashbucklerDiary](https://github.com/Yu-Core/SwashbucklerDiary) | `v1.31.5` | 正式版 | 2025-12-10 | 10 个月前 |
 | [likeflyme/cloudbak](https://github.com/likeflyme/cloudbak) | — | 提交 | 2025-10-24 | 12 个月前 |
 | [xaoyaoo/PyWxDump](https://github.com/xaoyaoo/PyWxDump) | — | 提交 | 2025-10-20 | 12 个月前 |
