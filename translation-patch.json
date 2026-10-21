@@ -4473,7 +4473,7 @@
   },
   "rel:169820418": {
     "zh": "我应该下载哪个文件? / Which file should I download?\n二进制文件筛选 / Binary file selector\n查看文档 / Docs",
-    "hash": "1832382318"
+    "hash": "380924289"
   },
   "rel:71114178": {
     "zh": "- Hysteria协议支持\n  # 部分配置\n     up: 40 #默认为Mbps\n- Shadowsocks-2022加密方式支持\n  Shadowsocks-2022采用预共享密钥方式作为密码，不同加密方式对密钥长度有要求，可参考 Xray\n- Shadowsocks 支持UDP over TCP(Xray-core v1.5.7)",
@@ -5702,5 +5702,9 @@
   "rel:419510937": {
     "zh": "紧急安全更新：由于前几天印度八张中间证书的私钥因过于简单而被破解，本版本内置的 RootCAs 依赖库移除了三张根证书（v26.10.10、v26.10.17 内置有这些证书，已被撤版），并使用 Go 1.27.3 编译以确保即使操作系统 CA 库未更新也会过滤掉问题证书，用户应尽快升级到该版本，月底发 stable release（操作系统的 CA 库可能更新较慢，所以要覆盖掉上一个 latest）",
     "hash": "1145336896"
+  },
+  "rel:419789352": {
+    "zh": "## :mega: 获取其他软件包 / How to Get Other Packages\n### 方式 1：添加软件源 / Method 1: Add Software Source\n * 请按照 openwrt-passwall-build 仓库的说明，将其提供的软件源添加到设备中，然后直接使用包管理器安装。",
+    "hash": "3108610577"
   }
 }
