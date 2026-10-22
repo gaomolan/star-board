@@ -1,96 +1,44 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-21 22:56:31 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-22 01:10:42 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（3）
+## 🆕 本次新增（4）
 
-### [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) `✅ 正式版` `v1.3.0`
+### [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) `📦 规则集` `latest`
 
-发布时间：2026-10-21（38 分钟前）｜ [查看 Release](https://github.com/UniClipboard/UniClipboard/releases/tag/v1.3.0)
-
-## 1.3.0 - 2026-10-21
-
-### 特点
-
-- 选择自动、效果优先或平滑优先的视觉效果，重新启动应用程序后会记住您的选择 (#2050)
-- 在常规→托盘图标中切换默认重叠卡片图标和经典猫头图标；更改立即应用 (#2052)
-
-### 修复
-
-- 保持跨窗口的设置一致，并可靠地应用快速面板快捷方式更改，并在无法激活快捷方式时提供清晰的反馈 (#2052)
-- 恢复托盘菜单并正确识别 Linux 系统托盘中的 UniClipboard (#2051)
-- 使用带标签的侧边栏条目使设备管理更容易查找（#2048）
-- 通过可折叠侧边栏和项目详细信息的后退按钮，使历史浏览在狭窄的 Linux 窗口中可用（#2049）
-- 当密码恢复不可用时提供诊断导出和恢复指导（#2032）
-- 在 Linux 上复制图像后减少内存使用（#2055）
-
-**变更日志文件**
-
-- 英文变更日志：1.3.0.md
-- 中文变更日志: 1.3.0.zh.md
-
-## Windows 软件包没有代码签名
-
-此版本中的 Windows 安装程序、可移植 zip 和 CLI 存档**未经过代码签名**。 Windows SmartScreen 或防病毒软件可能会发出警告。根据“SHA256SUMS.txt”（和“SHA256SUMS.txt.minisig”）验证下载。应用内更新仍通过更新程序签名进行验证。
-
-## 应用程序安装
-
-## 验证
-
-所有版本均已签名。提供`.sig`文件用于验证。
-
-<details><summary>查看原文</summary>
-
-## 1.3.0 - 2026-10-21
-
-### Features
-
-- Choose automatic, effects-first, or smooth-first visual effects, with your choice remembered after restarting the app (#2050)
-- Switch between the default overlapping-card icon and the classic cat-head icon in General → Tray icon; changes apply immediately (#2052)
-
-### Fixes
-
-- Keep settings consistent across windows and apply quick-panel shortcut changes reliably, with clear feedback when a shortcut cannot be activated (#2052)
-- Restore the tray menu and correctly identify UniClipboard in the Linux system tray (#2051)
-- Make device management easier to find with a labeled sidebar entry (#2048)
-- Keep history browsing usable in narrow Linux windows with a collapsible sidebar and a back button for item details (#2049)
-- Offer diagnostic export and recovery guidance when passphrase recovery is unavailable (#2032)
-- Reduce memory use after copying images on Linux (#2055)
-
-**Changelog Files**
-
-- English changelog: 1.3.0.md
-- 中文变更日志: 1.3.0.zh.md
-
-##  Windows packages are not code-signed
-
-The Windows installer, portable zip and CLI archive in this release are **not code-signed**. Windows SmartScreen or antivirus software may warn about them. Verify the downloads against `SHA256SUMS.txt` (and `SHA256SUMS.txt.minisig`). In-app updates are still verified with the updater signature.
-
-## App Installation
-
-## Verification
-
-All releases are signed. `.sig` files are provided for verification.
-
-</details>
-
----
-
-### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610212239`
-
-发布时间：2026-10-21（19 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610212239)
+发布时间：2026-10-22（19 分钟前）｜ [查看 Release](https://github.com/appshubcc/bett-rules/releases/tag/latest)
 
 *（无更新说明）*
 
 ---
 
-### [ngosang/trackerslist](https://github.com/ngosang/trackerslist) `📝 提交` `42ebbf8`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `5cfddbc`
 
-发布时间：2026-10-21（49 分钟前）｜ [查看提交](https://github.com/ngosang/trackerslist/commit/42ebbf8f0659aa68fe8ea5b50472b819c231067f)
+发布时间：2026-10-21（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/5cfddbc7657a65f36ae41c9ed1dd17d7332d490d)
 
 *（原文，翻译暂不可用）*
 
-Update 2026/10/22
+20261021
+
+---
+
+### [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) `📝 提交` `b63d13d`
+
+发布时间：2026-10-22（57 分钟前）｜ [查看提交](https://github.com/XIU2/TrackersListCollection/commit/b63d13d636e25c2208113d71c13eb4d275e14ba6)
+
+*（原文，翻译暂不可用）*
+
+2026-10-22
+
+---
+
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.22-8458.ec765d3`
+
+发布时间：2026-10-22（36 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.22-8458.ec765d3)
+
+*（原文，翻译暂不可用）*
+
+Source commit: ec765d3c4b95b515b0d6a651be98e75d94affbb9
 
 ---
 
@@ -98,31 +46,31 @@ Update 2026/10/22
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610212239` | 正式版 | 2026-10-21 | 19 分钟前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.3.0` | 正式版 | 2026-10-21 | 38 分钟前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-21 | 49 分钟前 |
-| [fw876/helloworld](https://github.com/fw876/helloworld) | `v198.1` | 正式版 | 2026-10-21 | 4 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.21-8455.1facb67` | 正式版 | 2026-10-21 | 4 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-21 | 5 小时前 |
-| [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.33` | 正式版 | 2026-10-21 | 6 小时前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-1` | 正式版 | 2026-10-21 | 6 小时前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-8b7ec40` | 测试版 | 2026-10-21 | 7 小时前 |
-| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.321` | 正式版 | 2026-10-21 | 7 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-21 | 9 小时前 |
-| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.7-pre1` | 测试版 | 2026-10-21 | 9 小时前 |
-| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.21` | 测试版 | 2026-10-21 | 10 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.21.2-release` | 正式版 | 2026-10-21 | 11 小时前 |
-| [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.6` | 正式版 | 2026-10-21 | 12 小时前 |
-| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.14` | 正式版 | 2026-10-21 | 12 小时前 |
-| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2933.0` | 正式版 | 2026-10-21 | 15 小时前 |
-| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-21 | 16 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.0` | 正式版 | 2026-10-21 | 16 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-21 | 17 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-21 | 20 小时前 |
-| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-21 | 20 小时前 |
-| [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-39523784335-3` | 正式版 | 2026-10-21 | 21 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-21 | 22 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-21 | 22 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-22 | 19 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.22-8458.ec765d3` | 正式版 | 2026-10-22 | 36 分钟前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-22 | 57 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-21 | 1 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610212239` | 正式版 | 2026-10-21 | 2 小时前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.3.0` | 正式版 | 2026-10-21 | 2 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-21 | 3 小时前 |
+| [fw876/helloworld](https://github.com/fw876/helloworld) | `v198.1` | 正式版 | 2026-10-21 | 7 小时前 |
+| [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.33` | 正式版 | 2026-10-21 | 8 小时前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-1` | 正式版 | 2026-10-21 | 8 小时前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-8b7ec40` | 测试版 | 2026-10-21 | 9 小时前 |
+| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.321` | 正式版 | 2026-10-21 | 9 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-21 | 11 小时前 |
+| [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.7-pre1` | 测试版 | 2026-10-21 | 12 小时前 |
+| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.21` | 测试版 | 2026-10-21 | 13 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.21.2-release` | 正式版 | 2026-10-21 | 14 小时前 |
+| [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.6` | 正式版 | 2026-10-21 | 15 小时前 |
+| [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.14` | 正式版 | 2026-10-21 | 15 小时前 |
+| [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2933.0` | 正式版 | 2026-10-21 | 17 小时前 |
+| [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-21 | 18 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.0` | 正式版 | 2026-10-21 | 19 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-21 | 19 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-21 | 22 小时前 |
+| [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-21 | 23 小时前 |
+| [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-39523784335-3` | 正式版 | 2026-10-21 | 23 小时前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-20 | 1 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-20 | 1 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-20 | 1 天前 |
@@ -134,7 +82,7 @@ Update 2026/10/22
 | [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.1` | 测试版 | 2026-10-19 | 2 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.10` | 正式版 | 2026-10-19 | 2 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 2 天前 |
-| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 2 天前 |
+| [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 3 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 3 天前 |
 | [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 3 天前 |
 | [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 3 天前 |
@@ -176,7 +124,7 @@ Update 2026/10/22
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 14 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 16 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 16 天前 |
-| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 16 天前 |
+| [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 17 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 17 天前 |
 | [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 21 天前 |
 | [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 21 天前 |
