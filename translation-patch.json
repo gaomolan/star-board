@@ -5706,5 +5706,13 @@
   "rel:419789352": {
     "zh": "## :mega: 获取其他软件包 / How to Get Other Packages\n### 方式 1：添加软件源 / Method 1: Add Software Source\n * 请按照 openwrt-passwall-build 仓库的说明，将其提供的软件源添加到设备中，然后直接使用包管理器安装。",
     "hash": "3108610577"
+  },
+  "rel:420224053": {
+    "zh": "* 统一还原公众号短链中的 ~，并按完整的 MP_WXS_账号ID_ 前缀提取短链，保留下划线\n* feat: 抖音批量下载支持断点续传，重启后从上次进度继续\n* feat: Add avatar | 增加微信公众号订阅源头像",
+    "hash": "1281868913"
+  },
+  "rel:420319996": {
+    "zh": "## 有所闻 NewsNook v1.9.1-beta.2\n### 内置浏览器 · AI Agent\n- 新增端侧 AI 浏览器 Agent（BYOK）：空白页即可自主 ReAct 调用原生工具\n- 浮动 ReAct 工作台：可拖拽半屏面板，支持 Markdown 展示\n- Agent 可管理浏览器设置与用户脚本；息屏 / 后台由 Foreground Service 维持任务\n- 隐私书签改为连点五下揭示，避免误触暴露\n### 启动与性能\n- 冷启动优化：组件懒加载、WebView 初始化与启动指标\n- 启动屏与 WebView 背景色统一，减少首帧闪烁\n- 诊断能力与正式包隔离，并加强启动回归测试覆盖\n### 其它\n- 版本号 1.9.1-beta.2；本版本为 Beta 测试版。",
+    "hash": "1196762595"
   }
 }
