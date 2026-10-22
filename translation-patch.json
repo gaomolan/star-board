@@ -5730,5 +5730,9 @@
   "rel:420511313": {
     "zh": "## 有所闻 NewsNook v1.9.1-beta.3\n### 订阅与发现\n- X/Twitter 主页更稳地识别 RSSHub 用户路由，并在公开实例间自动回退重试\n- 多实例连续失败时给出更明确错误，可选择保存未验证订阅\n### 阅读与列表\n- 列表封面缺失时自动补回；图片请求加强 Referer / 代理处理，减少裂图\n### AI 与设置\n- AI Provider 可按提供商显式允许明文 HTTP（翻译 / 速读 / TTS / Browser Agent）；默认仍为 HTTPS，并提示风险\n### 其它\n- 版本号 1.9.1-beta.3；本版本为 Beta 测试版。",
     "hash": "4059433298"
+  },
+  "rel:420902672": {
+    "zh": "## :mega: 获取其他软件包 / How to Get Other Packages\n### 方式 1：添加软件源 / Method 1: Add Software Source\n * 请按照 openwrt-passwall-build 仓库的说明，将其提供的软件源添加到设备中，然后直接使用包管理器安装。",
+    "hash": "3108610577"
   }
 }
