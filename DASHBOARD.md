@@ -1,111 +1,96 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-23 15:34:31 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-23 19:41:27 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（6）
+## 🆕 本次新增（2）
 
-### [crimera/piko-newx](https://github.com/crimera/piko-newx) `✅ 正式版` `v3.61.0`
+### [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) `🧪 测试版` `v1.5.0-alpha.1`
 
-发布时间：2026-10-23（59 分钟前）｜ [查看 Release](https://github.com/crimera/piko-newx/releases/tag/v3.61.0)
+发布时间：2026-10-23（3 小时前）｜ [查看 Release](https://github.com/UniClipboard/UniClipboard/releases/tag/v1.5.0-alpha.1)
 
-### 新功能
-* **Twitter - newx:** 支持 12.36.1-prod.01 (370eac8)
+## 1.5.0-alpha.1 - 2026-10-23
 
-### 改进
-* **Twitter：** 清理 Kotlin 警告和已弃用的资源助手 (c7256d5)
+### 重大变化
+
+- Linux deb、rpm 和 AppImage 软件包现在需要 glibc 2.39 或更高版本，Linux 快速面板使用常规窗口，没有以前的覆盖放置或独占键盘捕获 (#2094)
+
+### 特点
+
+- 无需打开主窗口即可直接解锁 Linux 快速面板，与在 macOS 和 Windows 上使用后备面板时可用的选项相同 (#2102)
+
+### 修复
+
+- 恢复 Linux Quick Panel 窗口大小调整和文本缩放，包括文本缩放低于 100% (#2102)
+- 将 Windows 快速面板和预览字体与主窗口匹配，包括中文文本 (#2098)
+
+**变更日志文件**
+
+- 英文更新日志：1.5.0-alpha.1.md
+- 中文变更日志: 1.5.0-alpha.1.zh.md
+
+## 售前警告
+
+这是一个 **alpha** 版本，可能包含错误或不完整的功能。
+不建议用于生产用途。请在 GitHub 上报告问题。
+
+## Windows 软件包没有代码签名
+
+此版本中的 Windows 安装程序、可移植 zip 和 CLI 存档**未经过代码签名**。 Windows SmartScreen 或防病毒软件可能会发出警告。根据“SHA256SUMS.txt”（和“SHA256SUMS.txt.minisig”）验证下载。应用内更新仍通过更新程序签名进行验证。
+
+## 应用程序安装
+
+## 验证
+
+所有版本均已签名。提供`.sig`文件用于验证。
 
 <details><summary>查看原文</summary>
 
-###  New Features
-* **Twitter - newx:** support 12.36.1-prod.01 (370eac8)
+## 1.5.0-alpha.1 - 2026-10-23
 
-###  Improvements
-* **Twitter:** clean up Kotlin warnings and deprecated resource helpers (c7256d5)
+### Breaking Changes
+
+- Linux deb, rpm, and AppImage packages now require glibc 2.39 or newer, and the Linux Quick Panel uses a regular window without the previous overlay placement or exclusive keyboard capture (#2094)
+
+### Features
+
+- Unlock the Linux Quick Panel directly without opening the main window, with the same option available when using the fallback panel on macOS and Windows (#2102)
+
+### Fixes
+
+- Restore Linux Quick Panel window resizing and text scaling, including text zoom below 100% (#2102)
+- Match Windows Quick Panel and preview fonts to the main window, including Chinese text (#2098)
+
+**Changelog Files**
+
+- English changelog: 1.5.0-alpha.1.md
+- 中文变更日志: 1.5.0-alpha.1.zh.md
+
+##  Prerelease Warning
+
+This is a **alpha** release and may contain bugs or incomplete features.
+Not recommended for production use. Please report issues on GitHub.
+
+##  Windows packages are not code-signed
+
+The Windows installer, portable zip and CLI archive in this release are **not code-signed**. Windows SmartScreen or antivirus software may warn about them. Verify the downloads against `SHA256SUMS.txt` (and `SHA256SUMS.txt.minisig`). In-app updates are still verified with the updater signature.
+
+## App Installation
+
+## Verification
+
+All releases are signed. `.sig` files are provided for verification.
 
 </details>
 
 ---
 
-### [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) `✅ 正式版` `v2.3.3`
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.23-8474.3c11932`
 
-发布时间：2026-10-23（2 小时前）｜ [查看 Release](https://github.com/x554960766/wechat-mp-tools/releases/tag/v2.3.3)
-
-Release v2.3.3: 微信读书错误码自愈优化与文档完善
-
----
-
-### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `b6c6f9b`
-
-发布时间：2026-10-23（1 小时前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/b6c6f9b70e99210abffbd111081f1020a07f3d07)
-
-收录 Companest、AI Dance Generator、Crazy Cattle 3D、多奇灵感实验室三款 H5；更新票号核对台；搬迁容量
-
----
-
-### [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) `✅ 正式版` `v0.7.39`
-
-发布时间：2026-10-23（4 小时前）｜ [查看 Release](https://github.com/EKKOLearnAI/ekko-studio/releases/tag/v0.7.39)
+发布时间：2026-10-23（1 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.23-8474.3c11932)
 
 *（原文，翻译暂不可用）*
 
-## 更新重点
-
-- 新增跨轮次会话任务记录，Agent 可持续跟进用户目标并保存完成依据 (#3499)
-- 新增会话任务抽屉，可跳转到关联对话；完善移动端列表、任务详情与会话名称，减少琐碎任务记录 (#3501、#3509、#3510)
-- 远程 Studio 的 Agent 可在桌面端明确授权后使用本机内置浏览器，支持随时停止共享 (#3478)
-- 账号主题快捷切换新增跟随系统模式；统一抽屉的顶部间距、主题背景与直角样式 (#3496、#3475)
-- 群聊空状态展示全部 Agent，并适配不同窗口宽度 (#3471)
-- Ekko 默认推理强度调整为无，统一单聊、群聊和工作流中的 Agent 标签 (#3488)
-- 修复停止后思考指示器不消失，以及工具结果截断时中文或表情损坏、请求失败的问题 (#3473、#3457、#3460)
-- 服务商导入链接支持自动 API 模式；JEV 兼容带版本前缀及完整接口地址，并区分接口缺失与模型错误 (#3494、#3493、#3491)
-- 桌面截图缺少录屏权限时可直接前往系统设置授权，避免阻塞式弹窗 (#3492)
-- 修复 Windows ARM64 原生 Hermes 运行时构建中的依赖与终端兼容问题 (#3429)
-- 停止提供 TerraMaster TOS 专用安装包与自动构建支持 (#3503)
-- 会话任务新增创建与完成 Webhook 事件，支持分别订阅，并按内容开关控制任务标题、摘要和完成依据的发送 (#3512)
-- Studio 与桌面端版本同步更新为 `0.7.39`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3511)。
-
-* Show all agent avatars in responsive group chat empty states
-* Stop the thinking indicator after abort completion
-* [codex] keep drawers below the header with themed backgrounds and square corners
-* fix: preserve surrogate pairs when truncating tool results
-* fix: cut tool results on character boundaries instead of UTF-16 halves
-* fix: log every auth rejection instead of failing silently
-* fix: default Ekko reasoning to none and unify agent labels
-* fix: pin CI and Docker Node.js to 24.22.1
-* feat: allow remote Studio agents to use consented Desktop browser
-* support auto API mode in provider import links
-* [codex] accept full JEV provider endpoint URLs
-* fix: report missing endpoints as address errors (#3490)
-* [codex] route command approvals through Studio
-* fix: offer screenshot permission authorization without a blocking dialog
-* feat: add follow-system mode to account theme shortcut
-* feat: track session goals across turns with native and MCP tools
-* chore: discontinue TerraMaster TOS packaging support
-* feat: add a session task drawer with chat turn navigation
-* revert: roll back Codex app-server approval integration (#3495)
-* fix: stabilize task links and polish mobile task lists
-* fix: reduce task noise and resolve untitled session names
-* [codex] fix
-
----
-
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `2866b04`
-
-发布时间：2026-10-23（2 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/2866b042448df680e37fcc9c46e81ac6d17d0061)
-
-*（原文，翻译暂不可用）*
-
-20261023
-
----
-
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.23-8472.a90c8b4`
-
-发布时间：2026-10-23（4 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.23-8472.a90c8b4)
-
-*（原文，翻译暂不可用）*
-
-Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
+Source commit: 3c119327f9ba7c8ab7fa3a4a3bad36383775862b
 
 ---
 
@@ -113,36 +98,36 @@ Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.23-8472.a90c8b4` | 正式版 | 2026-10-23 | 4 分钟前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.61.0` | 正式版 | 2026-10-23 | 59 分钟前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-23 | 1 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-23 | 2 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.3` | 正式版 | 2026-10-23 | 2 小时前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.39` | 正式版 | 2026-10-23 | 4 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.23.1-release` | 正式版 | 2026-10-23 | 5 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.6` | 测试版 | 2026-10-23 | 6 小时前 |
-| [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.2` | 正式版 | 2026-10-23 | 6 小时前 |
-| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | `v1.6.0` | 正式版 | 2026-10-23 | 8 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.2` | 正式版 | 2026-10-23 | 11 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-23 | 11 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.10` | 正式版 | 2026-10-23 | 12 小时前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.4.0-alpha.3` | 测试版 | 2026-10-23 | 12 小时前 |
-| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.9.0` | 测试版 | 2026-10-23 | 14 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-23 | 14 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-23 | 14 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-23 | 15 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610222237` | 正式版 | 2026-10-22 | 16 小时前 |
-| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.1` | 测试版 | 2026-10-22 | 17 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-22 | 17 小时前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 20 小时前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-2` | 正式版 | 2026-10-22 | 23 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.23-8474.3c11932` | 正式版 | 2026-10-23 | 1 小时前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.5.0-alpha.1` | 测试版 | 2026-10-23 | 3 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.61.0` | 正式版 | 2026-10-23 | 5 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-23 | 5 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-23 | 6 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.3` | 正式版 | 2026-10-23 | 7 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.39` | 正式版 | 2026-10-23 | 8 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.23.1-release` | 正式版 | 2026-10-23 | 9 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.6` | 测试版 | 2026-10-23 | 10 小时前 |
+| [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.2` | 正式版 | 2026-10-23 | 10 小时前 |
+| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | `v1.6.0` | 正式版 | 2026-10-23 | 12 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.2` | 正式版 | 2026-10-23 | 15 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-23 | 15 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.10` | 正式版 | 2026-10-23 | 16 小时前 |
+| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.9.0` | 测试版 | 2026-10-23 | 18 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-23 | 18 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-23 | 18 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-23 | 19 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610222237` | 正式版 | 2026-10-22 | 21 小时前 |
+| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.1` | 测试版 | 2026-10-22 | 21 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-22 | 21 小时前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 1 天前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-2` | 正式版 | 2026-10-22 | 1 天前 |
 | [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.3` | 正式版 | 2026-10-22 | 1 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.11` | 正式版 | 2026-10-22 | 1 天前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.7` | 正式版 | 2026-10-22 | 1 天前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-22 | 1 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v198.2` | 正式版 | 2026-10-22 | 1 天前 |
-| [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.33` | 正式版 | 2026-10-21 | 1 天前 |
-| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-8b7ec40` | 测试版 | 2026-10-21 | 1 天前 |
+| [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.33` | 正式版 | 2026-10-21 | 2 天前 |
+| [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-8b7ec40` | 测试版 | 2026-10-21 | 2 天前 |
 | [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.321` | 正式版 | 2026-10-21 | 2 天前 |
 | [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.21` | 正式版 | 2026-10-21 | 2 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.6` | 正式版 | 2026-10-21 | 2 天前 |
@@ -151,7 +136,7 @@ Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
 | [myikuns/jichangtz-tuijian](https://github.com/myikuns/jichangtz-tuijian) | — | 提交 | 2026-10-21 | 2 天前 |
 | [LifeArchiveProject/WeChatDataAnalysis](https://github.com/LifeArchiveProject/WeChatDataAnalysis) | `macos-source-runtime-39523784335-3` | 正式版 | 2026-10-21 | 2 天前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-20 | 2 天前 |
-| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-20 | 2 天前 |
+| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-20 | 3 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-20 | 3 天前 |
 | [Lingyan000/fluxdo](https://github.com/Lingyan000/fluxdo) | `v0.2.29` | 正式版 | 2026-10-20 | 3 天前 |
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-20 | 3 天前 |
@@ -187,7 +172,7 @@ Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
 | [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 12 天前 |
 | [pengchujin/livecanvas](https://github.com/pengchujin/livecanvas) | — | 提交 | 2026-10-10 | 13 天前 |
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 14 天前 |
-| [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 14 天前 |
+| [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 15 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 15 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 15 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 16 天前 |
@@ -230,7 +215,7 @@ Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | `latest` | 测试版 | 2026-07-21 | 3 个月前 |
 | [pengchujin/jzsub](https://github.com/pengchujin/jzsub) | `v1.8.1` | 正式版 | 2026-07-13 | 3 个月前 |
 | [thedjchi/Shizuku](https://github.com/thedjchi/Shizuku) | `v13.7.0-thedjchi` | 正式版 | 2026-07-02 | 3 个月前 |
-| [woijfwefw/ZsxqCrawler](https://github.com/woijfwefw/ZsxqCrawler) | — | 提交 | 2026-06-25 | 3 个月前 |
+| [woijfwefw/ZsxqCrawler](https://github.com/woijfwefw/ZsxqCrawler) | — | 提交 | 2026-06-25 | 4 个月前 |
 | [yyyyymmmmm/InkRoot](https://github.com/yyyyymmmmm/InkRoot) | `v1.1.13` | 正式版 | 2026-06-22 | 4 个月前 |
 | [loc567/loc567](https://github.com/loc567/loc567) | — | 提交 | 2026-06-19 | 4 个月前 |
 | [LibChecker/LibChecker](https://github.com/LibChecker/LibChecker) | `2.5.4` | 正式版 | 2026-06-17 | 4 个月前 |
