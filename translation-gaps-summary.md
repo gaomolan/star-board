@@ -1,25 +1,25 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-23T05:39:59.905Z
+生成时间：2026-10-23T10:49:26.663Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：175
-- 缓存条目数：1978
-- Release 总数：9180
-- 符合检查条件的 Release：5348
-- 有效缓存：1830
-- 缺失译文：3510
+- 缓存条目数：1980
+- Release 总数：9185
+- 符合检查条件的 Release：5352
+- 有效缓存：1832
+- 缺失译文：3512
 - 哈希过期：8
 - 无效译文：0
 - 跳过（作者已提供中文）：138
-- 跳过（原文过短或中文占比过高）：3694
+- 跳过（原文过短或中文占比过高）：3695
 
 ## 缺口分类
 
-- missing：3510
+- missing：3512
 - stale_hash：8
 
 ## 缺失译文条目（最多 100 条）
@@ -27,7 +27,6 @@
 - [Monica-Pass/Monica — V1.0.299](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.299) — `rel:366362320`（missing）
 - [Monica-Pass/Monica — V1.0.298](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.298) — `rel:363431268`（missing）
 - [Monica-Pass/Monica — V1.0.288b](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.288b) — `rel:329400576`（missing）
-- [Monica-Pass/Monica — ⚠️ Development Preview (build.202610230417)](https://github.com/Monica-Pass/Monica/releases/tag/preview) — `rel:310170382`（stale_hash）
 - [Monica-Pass/Monica — V1.0.281](https://github.com/Monica-Pass/Monica/releases/tag/1.0.281) — `rel:305370199`（missing）
 - [AstrBotDevs/AstrBot — v4.25.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.25.2) — `rel:331929934`（missing）
 - [AstrBotDevs/AstrBot — v4.24.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.24.2) — `rel:316886365`（missing）
@@ -124,5 +123,6 @@
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
 - [felinics/Memoh — v0.14.0](https://github.com/felinics/Memoh/releases/tag/v0.14.0) — `rel:344199344`（missing）
+- [felinics/Memoh — v0.13.1](https://github.com/felinics/Memoh/releases/tag/v0.13.1) — `rel:341154510`（missing）
 
-其余 3418 条详见 Actions 工件 `translation-gaps`。
+其余 3420 条详见 Actions 工件 `translation-gaps`。
