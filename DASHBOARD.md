@@ -1,165 +1,111 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-23 10:48:44 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-23 15:34:31 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（6）
 
-### [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) `✅ 正式版` `v1.4.2`
+### [crimera/piko-newx](https://github.com/crimera/piko-newx) `✅ 正式版` `v3.61.0`
 
-发布时间：2026-10-23（1 小时前）｜ [查看 Release](https://github.com/DuarteSantos8/openGym/releases/tag/v1.4.2)
+发布时间：2026-10-23（59 分钟前）｜ [查看 Release](https://github.com/crimera/piko-newx/releases/tag/v3.61.0)
 
-openGym 登陆 App Store，并附带 Apple Watch 应用。加上你要求的一切
-since v1.4.1, five reported security holes closed and a fresh look at the animations.
+### 新功能
+* **Twitter - newx:** 支持 12.36.1-prod.01 (370eac8)
 
-**iPhone 上的 openGym。** App Store 应用程序与 openGym 相同：单独在手机上使用，或者
-将其连接到您自己的服务器。 Your data stays where it is (no account with us, nothing collected).
-Get it on the App Store: https://apps.apple.com/app/id6822275400
-
-- **Apple Watch.** Start a workout on the wrist, or on the phone and the watch app opens with it,
-  then tick off sets with a big Done button and the Digital Crown for reps and weight.休息是一个
-  full-screen countdown with +15 s and Skip, holds count down, sides say Left or Right, supersets
-  轮流去。 Heart rate per set, a summary at the end, a Smart Stack widget and complications
-  为您的表盘。它使用应用程序的语言，如果您愿意，可以在开始时要求称重，
-  makes weights quick to change, and you pick what the set screen shows.没有电话可以联系到吗？你的
-  滴答声等待手表并稍后赶上。
-- **小部件和实时活动。** 今天在主屏幕和锁定屏幕上的锻炼，您的
-  连胜也。 A running workout sits on the Lock Screen and in the Dynamic Island, with a Done
-  按钮，用于记录设置并启动其余部分，而无需打开应用程序。
-- **Apple Health.** Finished workouts and weigh-ins go to Apple Health, the same switch Android
-  有 Health Connect，一开始就提供一次。删除 openGym 中的锻炼（在您的任何设备上）
-  设备），它也离开了苹果健康。
-- **更清晰的动画，您的选择。** 设置 → 锻炼 → 动画质量：仅限静止，内置
-  (180 px) 或 240、360、480、720 和 1080 px，选择它们时从 App Store 下载。
-  Auto takes 360 on a phone and 720 on an iPad, over Wi-Fi.女性和男性人物下载
-  分开，所以你只能得到你使用的那个。
-- **不再有盒子。** 应用程序中的动画在移动的 p 周围显示出微弱的矩形
+### 改进
+* **Twitter：** 清理 Kotlin 警告和已弃用的资源助手 (c7256d5)
 
 <details><summary>查看原文</summary>
 
-openGym comes to the App Store, with an Apple Watch app in tow. Plus everything you asked for
-since v1.4.1, five reported security holes closed and a fresh look at the animations.
+###  New Features
+* **Twitter - newx:** support 12.36.1-prod.01 (370eac8)
 
-**openGym on the iPhone.** The App Store app is the same openGym: use it on the phone alone, or
-connect it to your own server. Your data stays where it is (no account with us, nothing collected).
-Get it on the App Store: https://apps.apple.com/app/id6822275400
-
-- **Apple Watch.** Start a workout on the wrist, or on the phone and the watch app opens with it,
-  then tick off sets with a big Done button and the Digital Crown for reps and weight. Rest is a
-  full-screen countdown with +15 s and Skip, holds count down, sides say Left or Right, supersets
-  go in turns. Heart rate per set, a summary at the end, a Smart Stack widget and complications
-  for your watch face. It speaks the app's language, asks for a weigh-in at the start if you like,
-  makes weights quick to change, and you pick what the set screen shows. No phone in reach? Your
-  ticks wait on the watch and catch up later.
-- **Widgets and a Live Activity.** Today's workout on the Home Screen and the Lock Screen, your
-  streak too. A running workout sits on the Lock Screen and in the Dynamic Island, with a Done
-  button that logs the set and starts the rest without opening the app.
-- **Apple Health.** Finished workouts and weigh-ins go to Apple Health, the same switch Android
-  has for Health Connect, offered once at the start. Delete a workout in openGym (on any of your
-  devices) and it leaves Apple Health too.
-- **Sharper animations, your choice.** Settings → Workout → Animation quality: Still only, built in
-  (180 px), or 240, 360, 480, 720 and 1080 px, downloaded from the App Store when you pick them.
-  Auto takes 360 on a phone and 720 on an iPad, over Wi-Fi. Female and male figures download
-  separately, so you only get the one you use.
-- **No more boxes.** The animations in the app showed faint rectangles around the moving p
+###  Improvements
+* **Twitter:** clean up Kotlin warnings and deprecated resource helpers (c7256d5)
 
 </details>
 
 ---
 
-### [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) `✅ 正式版` `v1.6.0`
+### [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) `✅ 正式版` `v2.3.3`
 
-发布时间：2026-10-23（4 小时前）｜ [查看 Release](https://github.com/Panniantong/Agent-Reach/releases/tag/v1.6.0)
+发布时间：2026-10-23（2 小时前）｜ [查看 Release](https://github.com/x554960766/wechat-mp-tools/releases/tag/v2.3.3)
 
-中文：
-
-- 从旧版升级：把"帮我更新 Agent Reach"那句话发给你的 AI 就行。你的密钥和设置都保留，旧版程序会自动删掉。
-- 加一个平台只要说一句，需要的软件都会自动装好，不需要管理员密码；你只需要登录或者填一个 Key。
-- 小红书、推特这类要登录的平台，改用 Agent Reach 自己的专用浏览器，不弹窗、不占用你的浏览器；多个 AI 可以同时查。
-- RSS 订阅和 Exa 全网搜索合并进了"网页"。以后有新版本，AI 会用大白话告诉你改了什么，你同意了才更新。
-
-English:
-
-- Upgrading from an older version: just send your AI the "update Agent Reach" sentence. Your keys and settings are kept, and the old program is removed for you.
-- Adding a platform takes one sentence. Everything it needs is installed for you, with no admin password; you only log in or enter a key.
-- Platforms that need a login, such as Xiaohongshu and X, now use Agent Reach's own browser in the background, never yours, and several AIs can search at once.
-- RSS and Exa search are now part of "web". When a new version is out, your AI tells you in plain words what changed and updates only if you say yes.
-
-1.6 is a rebuild. Agents call one command, `agent-reach`; everything Agent Reach installs or stores lives under `~/.agent-reach/`.
-1.6 是重构版本：Agent 只调一个命令 `agent-reach`，Agent Reach 装的、存的东西全部在 `~/.agent-reach/` 下。
-
-中文（技术细节）：
-- 本版发布前已真实测通 28/40 个动作；以下未在发布机上测通，经维护者批准随本版发布：Reddit（测试网络被拦）、Instagram（限流）、B站字幕、LinkedIn、雪球热帖热股（未登录）、小宇宙（未配 Key）。
-- 修复未登录 gh 阻断公开 API、公开行情触发浏览器、错误认证提示和未登记缓存清理；临时音频/字幕保存在 Reach 内。BOSS 站内搜索优先官方 OpenCLI，JD 上游适配故障单列；PR 与发版均检查真实验收和待验状态。
-- CLI 对已声明的公开搜索/阅读先复用网页工具，成功后不准备浏览器；结果标注来源和内容范围，站内路径明确要求认证时才提示登录。可指定后端保留原有站内能力。
-- 浏览器渠道共用一份登录，闲置十分钟自动关闭，下次使用自动打开。
-- 添加渠道自动准备工具；删除时只清理该网站的登录。默认平台也能去掉，去掉后更新不会再加回来。
-- 更新时，有已测版本的工具保持在已测版本，其他工具用兼容范围内的最新版。
-- 公开内容继续先读，不强制登录；安装后用简短表格说明能查什么。
-- 保留小宇宙转录；去掉额外模型配置和重复的网站抓取实现。
-- Bridge 随专用浏览器管理；按真实页面操作计时、定期保存登录。清理失败保留渠道，卸载只删台账文件。发布前必须有渠道真实验收。
-- 查询默认无头，优先只读复用本机已有的站点登录；显窗登录与无头查询共用配置。B站字幕、雪球社区自动同步登录，BOSS JD 使用上游浏览器接口。缺失接口和限流不再误报为需要重登。
-- 专用浏览器按扩展保存在它自己配置里的编号识别，不会再把用户日常的 Chrome 认成专用浏览器；登录窗口开着时查询不再把它收掉。
-- 浏览器渠道可以并行查询：同一平台最多 2 条、合计 4 条同时跑，多出来的排队而不是立刻报"正忙"；登录窗口、退出登录等操作等正在跑的查询结束再做。
-- 没登录时报"需要登录"而不是"上游工具坏了"：雪球社区（错误码 400016）、B站字幕（没有 B站登录）、LinkedIn（专用浏览器里没有 LinkedIn 登录）。
-- 从 1.5 升级更顺：安装和更新合成一份 ins
+Release v2.3.3: 微信读书错误码自愈优化与文档完善
 
 ---
 
-### [t59688/newsnook](https://github.com/t59688/newsnook) `🧪 测试版` `v1.9.1-beta.6`
+### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `b6c6f9b`
 
-发布时间：2026-10-23（1 小时前）｜ [查看 Release](https://github.com/t59688/newsnook/releases/tag/v1.9.1-beta.6)
+发布时间：2026-10-23（1 小时前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/b6c6f9b70e99210abffbd111081f1020a07f3d07)
 
-## 有所闻 NewsNook v1.9.1-beta.6
-
-### 订阅与 RSSHub
-
-- 支持直接粘贴 `rsshub://` 逻辑订阅地址，通过已配置 RSSHub 实例探测可用订阅源，并保留路由与实例元数据；实例不可用时自动尝试其他可用实例。（#86）
-- 改进订阅地址验证、重复订阅识别及编辑后的路由元数据更新，避免将逻辑地址错误当作 HTTP 链接保存。
-
-### 阅读与离线
-
-- 修复部分图文 RSS 在阅读器中出现文字断段、图片顺序错乱或重复封面的问题，统一规范化短正文、换行与内嵌媒体排版。
-- 改进 RSS、Atom 与 JSON Feed 的正文完整性识别，明确区分全文和摘要，避免仅凭 800 字阈值误判内容。
-- 原站读取失败时保留已有订阅源内容，并按完整性准确标注，减少错误的“付费墙”提示。
-- 优化离线正文缓存：防止较短内容覆盖更完整的原文；短图文采用统一容量管理进行预存；可在网络恢复或内容过期后重新验证未确认完整性的正文。
-
-### 知乎社区
-
-- 新增知乎用户本地备注名和标签，可从作者、评论区及用户主页编辑或清除，备注在信息流、文章、评论和用户列表中显示。（#83）
-- 备注按知乎用户稳定标识匹配、按账户隔离，仅保存在本机，不替换用户原始昵称。
-
-### 验证
-
-- RSSHub 自定义订阅、知乎备注/正文/评论、Feed 全文解析与缓存、分页、预存、WebView 兼容、应用更新回归测试通过。
-- Android Beta 安装包由官方 Android Release CI 构建、签名及发布。
+收录 Companest、AI Dance Generator、Crazy Cattle 3D、多奇灵感实验室三款 H5；更新票号核对台；搬迁容量
 
 ---
 
-### [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) `📝 提交` `98d6d26`
+### [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) `✅ 正式版` `v0.7.39`
 
-发布时间：2026-10-23（1 小时前）｜ [查看提交](https://github.com/1c7/chinese-independent-developer/commit/98d6d26930726dea7191b99b49e5c05db24e0564)
+发布时间：2026-10-23（4 小时前）｜ [查看 Release](https://github.com/EKKOLearnAI/ekko-studio/releases/tag/v0.7.39)
 
 *（原文，翻译暂不可用）*
 
-Remove entry from README (#1641)
+## 更新重点
+
+- 新增跨轮次会话任务记录，Agent 可持续跟进用户目标并保存完成依据 (#3499)
+- 新增会话任务抽屉，可跳转到关联对话；完善移动端列表、任务详情与会话名称，减少琐碎任务记录 (#3501、#3509、#3510)
+- 远程 Studio 的 Agent 可在桌面端明确授权后使用本机内置浏览器，支持随时停止共享 (#3478)
+- 账号主题快捷切换新增跟随系统模式；统一抽屉的顶部间距、主题背景与直角样式 (#3496、#3475)
+- 群聊空状态展示全部 Agent，并适配不同窗口宽度 (#3471)
+- Ekko 默认推理强度调整为无，统一单聊、群聊和工作流中的 Agent 标签 (#3488)
+- 修复停止后思考指示器不消失，以及工具结果截断时中文或表情损坏、请求失败的问题 (#3473、#3457、#3460)
+- 服务商导入链接支持自动 API 模式；JEV 兼容带版本前缀及完整接口地址，并区分接口缺失与模型错误 (#3494、#3493、#3491)
+- 桌面截图缺少录屏权限时可直接前往系统设置授权，避免阻塞式弹窗 (#3492)
+- 修复 Windows ARM64 原生 Hermes 运行时构建中的依赖与终端兼容问题 (#3429)
+- 停止提供 TerraMaster TOS 专用安装包与自动构建支持 (#3503)
+- 会话任务新增创建与完成 Webhook 事件，支持分别订阅，并按内容开关控制任务标题、摘要和完成依据的发送 (#3512)
+- Studio 与桌面端版本同步更新为 `0.7.39`，前端更新日志覆盖 12 种语言并保留最近三个版本 (#3511)。
+
+* Show all agent avatars in responsive group chat empty states
+* Stop the thinking indicator after abort completion
+* [codex] keep drawers below the header with themed backgrounds and square corners
+* fix: preserve surrogate pairs when truncating tool results
+* fix: cut tool results on character boundaries instead of UTF-16 halves
+* fix: log every auth rejection instead of failing silently
+* fix: default Ekko reasoning to none and unify agent labels
+* fix: pin CI and Docker Node.js to 24.22.1
+* feat: allow remote Studio agents to use consented Desktop browser
+* support auto API mode in provider import links
+* [codex] accept full JEV provider endpoint URLs
+* fix: report missing endpoints as address errors (#3490)
+* [codex] route command approvals through Studio
+* fix: offer screenshot permission authorization without a blocking dialog
+* feat: add follow-system mode to account theme shortcut
+* feat: track session goals across turns with native and MCP tools
+* chore: discontinue TerraMaster TOS packaging support
+* feat: add a session task drawer with chat turn navigation
+* revert: roll back Codex app-server approval integration (#3495)
+* fix: stabilize task links and polish mobile task lists
+* fix: reduce task noise and resolve untitled session names
+* [codex] fix
 
 ---
 
-### [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) `✅ 正式版` `v2026.10.23.1-release`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `2866b04`
 
-发布时间：2026-10-23（23 分钟前）｜ [查看 Release](https://github.com/ArvinLovegood/go-stock/releases/tag/v2026.10.23.1-release)
-
-*（无更新说明）*
-
----
-
-### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.23-8470.a630023`
-
-发布时间：2026-10-23（4 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.23-8470.a630023)
+发布时间：2026-10-23（2 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/2866b042448df680e37fcc9c46e81ac6d17d0061)
 
 *（原文，翻译暂不可用）*
 
-Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
+20261023
+
+---
+
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.23-8472.a90c8b4`
+
+发布时间：2026-10-23（4 分钟前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.23-8472.a90c8b4)
+
+*（原文，翻译暂不可用）*
+
+Source commit: a90c8b46f13037ebc7d1a1e4ab039931cde34167
 
 ---
 
@@ -167,36 +113,38 @@ Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.23.1-release` | 正式版 | 2026-10-23 | 23 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.23-8472.a90c8b4` | 正式版 | 2026-10-23 | 4 分钟前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.61.0` | 正式版 | 2026-10-23 | 59 分钟前 |
 | [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-23 | 1 小时前 |
-| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.6` | 测试版 | 2026-10-23 | 1 小时前 |
-| [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.2` | 正式版 | 2026-10-23 | 1 小时前 |
-| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | `v1.6.0` | 正式版 | 2026-10-23 | 4 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.23-8470.a630023` | 正式版 | 2026-10-23 | 4 小时前 |
-| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.2` | 正式版 | 2026-10-23 | 5 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.2` | 正式版 | 2026-10-23 | 6 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-23 | 6 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-23 | 7 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.10` | 正式版 | 2026-10-23 | 7 小时前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.4.0-alpha.3` | 测试版 | 2026-10-23 | 7 小时前 |
-| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.9.0` | 测试版 | 2026-10-23 | 9 小时前 |
-| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-23 | 9 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-23 | 9 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-23 | 10 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610222237` | 正式版 | 2026-10-22 | 12 小时前 |
-| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.1` | 测试版 | 2026-10-22 | 12 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-22 | 12 小时前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 15 小时前 |
-| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-2` | 正式版 | 2026-10-22 | 19 小时前 |
-| [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.3` | 正式版 | 2026-10-22 | 21 小时前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-23 | 2 小时前 |
+| [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.3` | 正式版 | 2026-10-23 | 2 小时前 |
+| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.39` | 正式版 | 2026-10-23 | 4 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.23.1-release` | 正式版 | 2026-10-23 | 5 小时前 |
+| [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.6` | 测试版 | 2026-10-23 | 6 小时前 |
+| [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | `v1.4.2` | 正式版 | 2026-10-23 | 6 小时前 |
+| [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | `v1.6.0` | 正式版 | 2026-10-23 | 8 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.11.2` | 正式版 | 2026-10-23 | 11 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-23 | 11 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.10` | 正式版 | 2026-10-23 | 12 小时前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.4.0-alpha.3` | 测试版 | 2026-10-23 | 12 小时前 |
+| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.9.0` | 测试版 | 2026-10-23 | 14 小时前 |
+| [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-23 | 14 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-23 | 14 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-23 | 15 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610222237` | 正式版 | 2026-10-22 | 16 小时前 |
+| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.1` | 测试版 | 2026-10-22 | 17 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-22 | 17 小时前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 20 小时前 |
+| [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-2` | 正式版 | 2026-10-22 | 23 小时前 |
+| [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.3` | 正式版 | 2026-10-22 | 1 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.11` | 正式版 | 2026-10-22 | 1 天前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.7` | 正式版 | 2026-10-22 | 1 天前 |
 | [AIsouler/MyClash](https://github.com/AIsouler/MyClash) | — | 提交 | 2026-10-22 | 1 天前 |
 | [fw876/helloworld](https://github.com/fw876/helloworld) | `v198.2` | 正式版 | 2026-10-22 | 1 天前 |
 | [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) | `v1.19.33` | 正式版 | 2026-10-21 | 1 天前 |
 | [exteraless/exteraless](https://github.com/exteraless/exteraless) | `ci-8b7ec40` | 测试版 | 2026-10-21 | 1 天前 |
-| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.321` | 正式版 | 2026-10-21 | 1 天前 |
-| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.21` | 正式版 | 2026-10-21 | 1 天前 |
+| [Monica-Pass/Monica](https://github.com/Monica-Pass/Monica) | `V1.0.321` | 正式版 | 2026-10-21 | 2 天前 |
+| [XTLS/Xray-core](https://github.com/XTLS/Xray-core) | `v26.10.21` | 正式版 | 2026-10-21 | 2 天前 |
 | [z-mio/parse_hub_bot](https://github.com/z-mio/parse_hub_bot) | `v2.2.6` | 正式版 | 2026-10-21 | 2 天前 |
 | [z-mio/ParseHub](https://github.com/z-mio/ParseHub) | `v2.3.14` | 正式版 | 2026-10-21 | 2 天前 |
 | [microsoft/PowerToys](https://github.com/microsoft/PowerToys) | `v0.102.2933.0` | 正式版 | 2026-10-21 | 2 天前 |
@@ -205,16 +153,14 @@ Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-20 | 2 天前 |
 | [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-20 | 2 天前 |
 | [xgit01/sgkrank](https://github.com/xgit01/sgkrank) | — | 提交 | 2026-10-20 | 3 天前 |
-| [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.38` | 正式版 | 2026-10-20 | 3 天前 |
 | [Lingyan000/fluxdo](https://github.com/Lingyan000/fluxdo) | `v0.2.29` | 正式版 | 2026-10-20 | 3 天前 |
 | [hicccc77/WeFlow](https://github.com/hicccc77/WeFlow) | — | 提交 | 2026-10-20 | 3 天前 |
 | [ShareX/ShareX](https://github.com/ShareX/ShareX) | `v22.0.0` | 测试版 | 2026-10-20 | 3 天前 |
 | [KaringX/clashmi](https://github.com/KaringX/clashmi) | `v1.0.32.1800` | 测试版 | 2026-10-19 | 4 天前 |
 | [felinics/Memoh](https://github.com/felinics/Memoh) | `v0.22.0` | 正式版 | 2026-10-19 | 4 天前 |
 | [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.18.0` | 正式版 | 2026-10-18 | 4 天前 |
-| [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 4 天前 |
-| [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 4 天前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.59.0` | 正式版 | 2026-10-18 | 4 天前 |
+| [tingaicompass/AI-Compass](https://github.com/tingaicompass/AI-Compass) | — | 提交 | 2026-10-18 | 5 天前 |
+| [ZGMFX01A/OrigRead](https://github.com/ZGMFX01A/OrigRead) | `v1.7.1` | 正式版 | 2026-10-18 | 5 天前 |
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20` | 正式版 | 2026-10-18 | 5 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 5 天前 |
 | [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.1` | 正式版 | 2026-10-17 | 6 天前 |
@@ -225,17 +171,17 @@ Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
 | [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 7 天前 |
 | [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 7 天前 |
 | [NEORUAA/MeiloX](https://github.com/NEORUAA/MeiloX) | `1.55.1` | 正式版 | 2026-10-16 | 7 天前 |
-| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 7 天前 |
+| [gkd-kit/gkd](https://github.com/gkd-kit/gkd) | `v1.13.0-beta-2` | 测试版 | 2026-10-15 | 8 天前 |
 | [jiangrui1994/CloudSaver](https://github.com/jiangrui1994/CloudSaver) | — | 提交 | 2026-10-15 | 8 天前 |
 | [JushiZen/Nimbus.Player](https://github.com/JushiZen/Nimbus.Player) | — | 提交 | 2026-10-15 | 8 天前 |
 | [daimiaopeng/coolapk-desktop](https://github.com/daimiaopeng/coolapk-desktop) | `v1.35.0` | 正式版 | 2026-10-15 | 8 天前 |
-| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 8 天前 |
+| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-14 | 9 天前 |
 | [xweiba/location-spoofer](https://github.com/xweiba/location-spoofer) | `v1.0.9` | 正式版 | 2026-10-14 | 9 天前 |
 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | — | 提交 | 2026-10-14 | 9 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.7.4` | 正式版 | 2026-10-14 | 9 天前 |
 | [Ajaxc/WeChatList](https://github.com/Ajaxc/WeChatList) | `2.5.2` | 正式版 | 2026-10-14 | 9 天前 |
 | [dukangalex/HiClash](https://github.com/dukangalex/HiClash) | — | 提交 | 2026-10-13 | 10 天前 |
-| [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 10 天前 |
+| [7723mod/NPatch](https://github.com/7723mod/NPatch) | `v1.0.9` | 正式版 | 2026-10-12 | 11 天前 |
 | [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.12` | 测试版 | 2026-10-11 | 12 天前 |
 | [dongyubin/IPTV](https://github.com/dongyubin/IPTV) | — | 提交 | 2026-10-11 | 12 天前 |
 | [opendatalab/MinerU](https://github.com/opendatalab/MinerU) | `mineru-4.0.12-released` | 正式版 | 2026-10-11 | 12 天前 |
@@ -244,13 +190,13 @@ Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 14 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 15 天前 |
 | [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 15 天前 |
-| [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 15 天前 |
+| [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 16 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 18 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 18 天前 |
 | [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | `v1.15.0` | 正式版 | 2026-10-04 | 18 天前 |
 | [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-04 | 18 天前 |
-| [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 22 天前 |
-| [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 22 天前 |
+| [linesoft2/TaskMonitor](https://github.com/linesoft2/TaskMonitor) | `v2026.9.30.1` | 正式版 | 2026-09-30 | 23 天前 |
+| [xykt/IPQuality](https://github.com/xykt/IPQuality) | — | 提交 | 2026-09-30 | 23 天前 |
 | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | — | 提交 | 2026-09-23 | 1 个月前 |
 | [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) | — | 提交 | 2026-09-22 | 1 个月前 |
 | [zhangxiangliang/stock-api](https://github.com/zhangxiangliang/stock-api) | `v2.7.5` | 正式版 | 2026-09-21 | 1 个月前 |
@@ -270,7 +216,7 @@ Source commit: a630023ed0c0398f9610f7aeea36ec2dea7e126e
 | [tradingeconomics/tradingeconomics](https://github.com/tradingeconomics/tradingeconomics) | — | 提交 | 2026-08-31 | 1 个月前 |
 | [hifengzy/ima-sync](https://github.com/hifengzy/ima-sync) | `0.3.1` | 正式版 | 2026-08-29 | 1 个月前 |
 | [Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass) | `2.0.1` | 正式版 | 2026-08-26 | 1 个月前 |
-| [Conquerer-yinn/Kakaaaa-quant](https://github.com/Conquerer-yinn/Kakaaaa-quant) | `v1.0.0` | 正式版 | 2026-08-24 | 1 个月前 |
+| [Conquerer-yinn/Kakaaaa-quant](https://github.com/Conquerer-yinn/Kakaaaa-quant) | `v1.0.0` | 正式版 | 2026-08-24 | 2 个月前 |
 | [yeximm/Access_wechat_article](https://github.com/yeximm/Access_wechat_article) | `v2.2.0` | 正式版 | 2026-08-23 | 2 个月前 |
 | [liuran001/mihomo](https://github.com/liuran001/mihomo) | `Prerelease-Alpha` | 测试版 | 2026-08-20 | 2 个月前 |
 | [bozhouDev/codex-orange-book](https://github.com/bozhouDev/codex-orange-book) | — | 提交 | 2026-08-14 | 2 个月前 |
