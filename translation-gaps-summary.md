@@ -1,17 +1,17 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-24T18:30:48.301Z
+生成时间：2026-10-24T21:22:15.869Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：175
-- 缓存条目数：2007
-- Release 总数：9212
-- 符合检查条件的 Release：5375
-- 有效缓存：1860
-- 缺失译文：3508
+- 缓存条目数：2009
+- Release 总数：9213
+- 符合检查条件的 Release：5376
+- 有效缓存：1862
+- 缺失译文：3507
 - 哈希过期：7
 - 无效译文：0
 - 跳过（作者已提供中文）：138
@@ -19,7 +19,7 @@
 
 ## 缺口分类
 
-- missing：3508
+- missing：3507
 - stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
@@ -28,7 +28,6 @@
 - [Monica-Pass/Monica — V1.0.298](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.298) — `rel:363431268`（missing）
 - [Monica-Pass/Monica — V1.0.288b](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.288b) — `rel:329400576`（missing）
 - [Monica-Pass/Monica — V1.0.281](https://github.com/Monica-Pass/Monica/releases/tag/1.0.281) — `rel:305370199`（missing）
-- [AstrBotDevs/AstrBot — v4.29.3](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.3) — `rel:422824641`（missing）
 - [AstrBotDevs/AstrBot — v4.25.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.25.2) — `rel:331929934`（missing）
 - [AstrBotDevs/AstrBot — v4.24.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.24.2) — `rel:316886365`（missing）
 - [AstrBotDevs/AstrBot — v4.24.1](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.24.1) — `rel:316875197`（missing）
@@ -68,7 +67,6 @@
 - [AstrBotDevs/AstrBot — v3.0.0](https://github.com/AstrBotDevs/AstrBot/releases/tag/v3.0.0) — `rel:98657778`（missing）
 - [AstrBotDevs/AstrBot — Windows启动器  V2.4](https://github.com/AstrBotDevs/AstrBot/releases/tag/publish2.4) — `rel:94169456`（missing）
 - [AstrBotDevs/AstrBot — Windows启动器  V2.0](https://github.com/AstrBotDevs/AstrBot/releases/tag/publish) — `rel:88294298`（missing）
-- [mason173/aira-browser — Aira Community 3.8.4 (1000555)](https://github.com/mason173/aira-browser/releases/tag/v3.8.4) — `rel:422812843`（missing）
 - [mason173/aira-browser — Aira Community 3.5.4 (1000485)](https://github.com/mason173/aira-browser/releases/tag/v3.5.4) — `rel:401046016`（missing）
 - [mason173/aira-browser — Aira Community 3.5.2 (1000479)](https://github.com/mason173/aira-browser/releases/tag/v3.5.2) — `rel:399028856`（missing）
 - [mason173/aira-browser — Aira Community 3.4.3 (1000472)](https://github.com/mason173/aira-browser/releases/tag/v3.4.3) — `rel:398132675`（missing）
@@ -124,5 +122,7 @@
 - [felinics/Memoh — v0.17.0](https://github.com/felinics/Memoh/releases/tag/v0.17.0) — `rel:361716395`（missing）
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
+- [felinics/Memoh — v0.14.0](https://github.com/felinics/Memoh/releases/tag/v0.14.0) — `rel:344199344`（missing）
+- [felinics/Memoh — v0.13.1](https://github.com/felinics/Memoh/releases/tag/v0.13.1) — `rel:341154510`（missing）
 
-其余 3415 条详见 Actions 工件 `translation-gaps`。
+其余 3414 条详见 Actions 工件 `translation-gaps`。

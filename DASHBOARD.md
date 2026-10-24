@@ -1,112 +1,22 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-24 18:30:11 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-24 21:21:38 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
 
 ## 🆕 本次新增（3）
 
-### [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) `✅ 正式版` `v4.29.3`
+### [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) `📝 提交` `c5092e4`
 
-发布时间：2026-10-24（2 小时前）｜ [查看 Release](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.3)
-
-*（原文，翻译暂不可用）*
-
-## [4.29.3] - 2026-10-24
-
-Life is like a box of chocolates.
-
-### 新增
-
-- 消息追踪：进一步完善消息追踪能力，支持记录和观测所有入站消息事件，以及事件对应的插件调用和 Agent 调用。（需要先在 WebUI 左下角设置中开启） (#10614)
-- 诊断导出：支持从控制台和系统设置导出支持脱敏的系统诊断包，包含日志、追踪、配置、插件状态和环境等信息。 (#10418, #10659)
-- 安装脚本：新增多语言安装流程和中国大陆镜像支持。 (#10629)
-
-### 修复
-
-- 备份：补全定时任务、持久化文件和相关数据目录的备份与恢复，避免数据遗漏。 (#10644, #10661)
-- Gemini：支持模型自定义生成参数，保留显式设置的零值；修复非字符串枚举导致工具 Schema 不兼容的问题。 (#10719, #10635)
-- NVIDIA Rerank：保留模型专属 API 端点路径，避免请求错误的通用地址。 (#10732)
-- 电脑使用：修复 Shipyard Bay 执行结果的解析，以及 Windows Shell 超时或取消时的子进程清理。 (#10671, #10729)
-- WebUI：修复配置刷新后模型元数据丢失、默认聊天模型选择、插件侧栏名称本地化、桌面更新通知和配置模板字段默认值。 (#10522, #10663, #10576, #10622, #10517)
-- WebUI：优化配置说明与条件选项显示，修复全屏日志中的 Pip 安装弹窗、日志流连接等待和页面切换后的重复日志，并明确插件筛选范围。 (#10647, #10608, #10666, #10694, #10691)
-- 数据库：使用跨数据库兼容的 JSON 查询表达式。 (#10664)
-
-### Added
-
-- Message tracing: Improved tracing to record and inspect all incoming message events and their associated plugin and Agent calls. Enable it first in Settings in the lower-left corner of the WebUI. (#10614)
-- Diagnostics: Export system diagnostic bundles with redaction support from the console and system settings, including logs, traces, configuration, plugin status, and environment information. (#10418, #10659)
-- Installer: Added multilingual setup and mainland China mirrors. (#10629)
-
-### Fixed
-
-- Backups: Include scheduled tasks, persistent files, and related data directories in backup and restore operations. (#10644, #10661)
-- Gemini: Honor model-specific generation parameters and explicit zero values, and handle non-string enums in tool schemas. (#10719, #10635)
-- NVIDIA Rerank: Preserve model-specific endpoint paths instead of substituting a generic endpoint. (#10732)
-- Computer use: Parse Shipyard Bay execution envelopes correctly and clean up Windows shell child processes on timeout or cancellation. (#10671, #10729)
-- WebUI: Preserve fetched model metadata after configuration refresh; restore default chat model selection; localize plugin sidebar names; fix desktop update not
-
----
-
-### [mason173/aira-browser](https://github.com/mason173/aira-browser) `✅ 正式版` `v3.8.4`
-
-发布时间：2026-10-24（3 小时前）｜ [查看 Release](https://github.com/mason173/aira-browser/releases/tag/v3.8.4)
+发布时间：2026-10-24（1 小时前）｜ [查看提交](https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/c5092e4b3e4ee87357dfed15ec5db1efdd55b609)
 
 *（原文，翻译暂不可用）*
 
-# Aira Community 3.8.4 (1000555)
-
-这是 **Community 未签名 HAP**，包名 `org.aira.browser`。不是华为应用市场里的 Official 商店包（`com.aira.browser`）。
-
-下载后需要你自己用 `org.aira.browser` 的 HarmonyOS 签名材料签名，再侧载安装。未签名包不能直接装到设备上。
-
-## 安装
-
-1. 用 DevEco Studio 打开本仓库的 `AiraBrowser/`，为 `org.aira.browser` 配置你自己的签名。
-2. 对这个 HAP 签名（DevEco 或 HarmonyOS `hap-sign-tool`）。
-3. 用 `hdc` 安装到已开启开发者调试的设备。
-
-Community 默认没有官方云、华为账号、华为云空间和 IAP。本地浏览、WebDAV 和自建 Personal Server 可用。
-
-## 产物
-
-- 文件：`Aira-community-v3.8.4-1000555-default-unsigned.hap`
-- 包名：`org.aira.browser`
-- versionName：`3.8.4`
-- versionCode：`1000555`
-- SHA-256：`89a8cbf2feaea57734251f4ddb7ec21326d3b0de9dc382efc58f1189b7c15f95`
-
-## 更新日志
-
-### 3.8.4 (1000555)
-
-2026-10-24
-
-这次更新修复了网页 QQ 登录，并改善了视频、下载和浏览体验。
-
-- 修复部分网页使用 QQ 快捷登录后无法返回并完成登录的问题。
-- 改善视频播放与投屏体验，修复直播进度异常和部分投屏连接问题。
-- 优化广告拦截兼容性和启动加载，减少部分网页打开时的等待。
-- 完善下载恢复、断点续传和部分视频下载。
-- 修复电脑端点击标题栏时误触发拖动、导致最大化窗口还原的问题。
-
-## Changelog
-
-### 3.8.4 (1000555)
-
-2026-10-24
-
-This release fixes QQ website sign-in and improves video, downloads and browsing.
-
-- Fixed QQ quick sign-in failing to return to the website and complete sign-in on some pages.
-- Improved video playback and casting, including fixes for live-stream progress and some casting connection issues.
-- Improved ad-blocking compatibility and startup loading to reduce waiting on some webpages.
-- Improved download recovery, resuming interrupted downloads and downloading some videos.
-- Fixed title-bar clicks on desktop accidentally starting a drag and restoring a maximized window.
+chore(rules): auto generate derived rule files
 
 ---
 
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `4915a84`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `8047969`
 
-发布时间：2026-10-24（2 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/4915a847de4b7e222b8ea3c5d7e4c78bb936b60a)
+发布时间：2026-10-24（2 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/80479694df050d30edc48b8a55a3efac672c78bd)
 
 *（原文，翻译暂不可用）*
 
@@ -114,27 +24,37 @@ This release fixes QQ website sign-in and improves video, downloads and browsing
 
 ---
 
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.24-8478.263559f`
+
+发布时间：2026-10-24（2 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.24-8478.263559f)
+
+*（原文，翻译暂不可用）*
+
+Source commit: 263559f8f5d7b835757796a37073aff816790150
+
+---
+
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-24 | 1 小时前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.24-8478.263559f` | 正式版 | 2026-10-24 | 2 小时前 |
 | [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-24 | 2 小时前 |
-| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.3` | 正式版 | 2026-10-24 | 2 小时前 |
-| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.8.4` | 正式版 | 2026-10-24 | 3 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-24 | 3 小时前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-24 | 4 小时前 |
-| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-24 | 9 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.24.3-release` | 正式版 | 2026-10-24 | 9 小时前 |
-| [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.4` | 正式版 | 2026-10-24 | 12 小时前 |
-| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.64.0` | 正式版 | 2026-10-24 | 12 小时前 |
-| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.2` | 正式版 | 2026-10-24 | 12 小时前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.4.0` | 正式版 | 2026-10-24 | 13 小时前 |
-| [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.13` | 测试版 | 2026-10-24 | 17 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.24-8477.ab97c63` | 正式版 | 2026-10-24 | 17 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-24 | 17 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-24 | 18 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610232237` | 正式版 | 2026-10-23 | 19 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-23 | 20 小时前 |
+| [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.3` | 正式版 | 2026-10-24 | 5 小时前 |
+| [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.8.4` | 正式版 | 2026-10-24 | 5 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-24 | 6 小时前 |
+| [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-24 | 12 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.24.3-release` | 正式版 | 2026-10-24 | 12 小时前 |
+| [komi-store/komi-store](https://github.com/komi-store/komi-store) | `v1.9.4` | 正式版 | 2026-10-24 | 14 小时前 |
+| [crimera/piko-newx](https://github.com/crimera/piko-newx) | `v3.64.0` | 正式版 | 2026-10-24 | 15 小时前 |
+| [chen08209/FlClash](https://github.com/chen08209/FlClash) | `v0.9.2` | 正式版 | 2026-10-24 | 15 小时前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.4.0` | 正式版 | 2026-10-24 | 15 小时前 |
+| [SagerNet/sing-box](https://github.com/SagerNet/sing-box) | `v1.15.0-alpha.13` | 测试版 | 2026-10-24 | 20 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-24 | 20 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-24 | 21 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610232237` | 正式版 | 2026-10-23 | 22 小时前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-23 | 23 小时前 |
 | [x554960766/wechat-mp-tools](https://github.com/x554960766/wechat-mp-tools) | `v2.3.3` | 正式版 | 2026-10-23 | 1 天前 |
 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | `v0.7.39` | 正式版 | 2026-10-23 | 1 天前 |
 | [t59688/newsnook](https://github.com/t59688/newsnook) | `v1.9.1-beta.6` | 测试版 | 2026-10-23 | 1 天前 |
@@ -145,7 +65,7 @@ This release fixes QQ website sign-in and improves video, downloads and browsing
 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `autogpt-platform-beta-v0.9.0` | 测试版 | 2026-10-23 | 1 天前 |
 | [yijixiuxin/chanlun-pro](https://github.com/yijixiuxin/chanlun-pro) | — | 提交 | 2026-10-23 | 1 天前 |
 | [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.1` | 测试版 | 2026-10-22 | 1 天前 |
-| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 1 天前 |
+| [T8RIN/ImageToolbox](https://github.com/T8RIN/ImageToolbox) | `4.3.0-beta02` | 测试版 | 2026-10-22 | 2 天前 |
 | [Openwrt-Passwall/openwrt-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall) | `26.10.22-2` | 正式版 | 2026-10-22 | 2 天前 |
 | [joeytoday/obsidian-canvas-enhance](https://github.com/joeytoday/obsidian-canvas-enhance) | `1.0.11` | 正式版 | 2026-10-22 | 2 天前 |
 | [appshubcc/Bettbox](https://github.com/appshubcc/Bettbox) | `v1.19.7` | 正式版 | 2026-10-22 | 2 天前 |
