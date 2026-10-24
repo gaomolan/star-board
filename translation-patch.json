@@ -4473,7 +4473,7 @@
   },
   "rel:169820418": {
     "zh": "我应该下载哪个文件? / Which file should I download?\n二进制文件筛选 / Binary file selector\n查看文档 / Docs",
-    "hash": "380924289"
+    "hash": "1013294824"
   },
   "rel:71114178": {
     "zh": "- Hysteria协议支持\n  # 部分配置\n     up: 40 #默认为Mbps\n- Shadowsocks-2022加密方式支持\n  Shadowsocks-2022采用预共享密钥方式作为密码，不同加密方式对密钥长度有要求，可参考 Xray\n- Shadowsocks 支持UDP over TCP(Xray-core v1.5.7)",
