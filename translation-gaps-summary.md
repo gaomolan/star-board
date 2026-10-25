@@ -1,35 +1,33 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-25T07:59:37.660Z
+生成时间：2026-10-25T13:02:31.671Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：175
-- 缓存条目数：2012
-- Release 总数：9219
-- 符合检查条件的 Release：5378
-- 有效缓存：1863
-- 缺失译文：3506
-- 哈希过期：9
+- 缓存条目数：2014
+- Release 总数：9224
+- 符合检查条件的 Release：5381
+- 有效缓存：1866
+- 缺失译文：3508
+- 哈希过期：7
 - 无效译文：0
-- 跳过（作者已提供中文）：140
-- 跳过（原文过短或中文占比过高）：3701
+- 跳过（作者已提供中文）：141
+- 跳过（原文过短或中文占比过高）：3702
 
 ## 缺口分类
 
-- missing：3506
-- stale_hash：9
+- missing：3508
+- stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
 
 - [Monica-Pass/Monica — V1.0.299](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.299) — `rel:366362320`（missing）
 - [Monica-Pass/Monica — V1.0.298](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.298) — `rel:363431268`（missing）
 - [Monica-Pass/Monica — V1.0.288b](https://github.com/Monica-Pass/Monica/releases/tag/V1.0.288b) — `rel:329400576`（missing）
-- [Monica-Pass/Monica — ⚠️ Development Preview (build.202610250329)](https://github.com/Monica-Pass/Monica/releases/tag/preview) — `rel:310170382`（stale_hash）
 - [Monica-Pass/Monica — V1.0.281](https://github.com/Monica-Pass/Monica/releases/tag/1.0.281) — `rel:305370199`（missing）
-- [AstrBotDevs/AstrBot — v4.29.3](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.3) — `rel:422824641`（stale_hash）
 - [AstrBotDevs/AstrBot — v4.25.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.25.2) — `rel:331929934`（missing）
 - [AstrBotDevs/AstrBot — v4.24.2](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.24.2) — `rel:316886365`（missing）
 - [AstrBotDevs/AstrBot — v4.24.1](https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.24.1) — `rel:316875197`（missing）
@@ -103,6 +101,7 @@
 - [guangxiangdebizi/FinanceMCP — v4.7.1](https://github.com/guangxiangdebizi/FinanceMCP/releases/tag/v4.7.1) — `rel:292798976`（missing）
 - [guangxiangdebizi/FinanceMCP — v1.0.0](https://github.com/guangxiangdebizi/FinanceMCP/releases/tag/v1.0.0) — `rel:228671707`（missing）
 - [wink-wink-wink555/MarkiNote — 🚀 MarkiNote v3.0.0 - The AI Agent Update](https://github.com/wink-wink-wink555/MarkiNote/releases/tag/v3.0.0) — `rel:307597085`（missing）
+- [rootSunc/CNEquity — 0.19.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.19.0) — `rel:423301250`（missing）
 - [rootSunc/CNEquity — 0.18.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.18.0) — `rel:416747419`（missing）
 - [rootSunc/CNEquity — 0.17.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.17.0) — `rel:415936905`（missing）
 - [rootSunc/CNEquity — 0.16.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.16.0) — `rel:406083718`（missing）
@@ -124,5 +123,6 @@
 - [felinics/Memoh — v0.17.0](https://github.com/felinics/Memoh/releases/tag/v0.17.0) — `rel:361716395`（missing）
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
+- [felinics/Memoh — v0.14.0](https://github.com/felinics/Memoh/releases/tag/v0.14.0) — `rel:344199344`（missing）
 
 其余 3415 条详见 Actions 工件 `translation-gaps`。
