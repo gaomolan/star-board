@@ -1,16 +1,16 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-25T17:20:55.637Z
+生成时间：2026-10-25T20:14:39.375Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
 - 仓库数：175
-- 缓存条目数：2014
-- Release 总数：9224
-- 符合检查条件的 Release：5381
-- 有效缓存：1866
+- 缓存条目数：2017
+- Release 总数：9227
+- 符合检查条件的 Release：5384
+- 有效缓存：1869
 - 缺失译文：3508
 - 哈希过期：7
 - 无效译文：0
@@ -101,6 +101,7 @@
 - [guangxiangdebizi/FinanceMCP — v4.7.1](https://github.com/guangxiangdebizi/FinanceMCP/releases/tag/v4.7.1) — `rel:292798976`（missing）
 - [guangxiangdebizi/FinanceMCP — v1.0.0](https://github.com/guangxiangdebizi/FinanceMCP/releases/tag/v1.0.0) — `rel:228671707`（missing）
 - [wink-wink-wink555/MarkiNote — 🚀 MarkiNote v3.0.0 - The AI Agent Update](https://github.com/wink-wink-wink555/MarkiNote/releases/tag/v3.0.0) — `rel:307597085`（missing）
+- [rootSunc/CNEquity — 0.20.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.20.0) — `rel:423628932`（missing）
 - [rootSunc/CNEquity — 0.19.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.19.0) — `rel:423301250`（missing）
 - [rootSunc/CNEquity — 0.18.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.18.0) — `rel:416747419`（missing）
 - [rootSunc/CNEquity — 0.17.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.17.0) — `rel:415936905`（missing）
@@ -123,6 +124,5 @@
 - [felinics/Memoh — v0.17.0](https://github.com/felinics/Memoh/releases/tag/v0.17.0) — `rel:361716395`（missing）
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
-- [felinics/Memoh — v0.14.0](https://github.com/felinics/Memoh/releases/tag/v0.14.0) — `rel:344199344`（missing）
 
 其余 3415 条详见 Actions 工件 `translation-gaps`。
