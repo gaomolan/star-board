@@ -1,155 +1,20 @@
 # ⭐ Star 动态看板
 
-> 生成时间：2026-10-25 20:13:38 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
+> 生成时间：2026-10-25 22:57:34 UTC ｜ 共 174 个项目 ｜ 每 3 小时自动更新
 
-## 🆕 本次新增（5）
+## 🆕 本次新增（3）
 
-### [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) `✅ 正式版` `v0.20.0`
+### [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) `📦 规则集` `202610252236`
 
-发布时间：2026-10-25（15 分钟前）｜ [查看 Release](https://github.com/rootSunc/CNEquity/releases/tag/v0.20.0)
+发布时间：2026-10-25（20 分钟前）｜ [查看 Release](https://github.com/Loyalsoldier/clash-rules/releases/tag/202610252236)
 
-CNEquity 0.20.0 已发布至 PyPI。
-
-```bash
-python -m pip install --upgrade cnequity==0.20.0
-```
-
-- **升级步骤：** `pip install -U cnequity` 后重启 `cne serve` 和已在运行的 `cne mcp`。数据集契约只有兼容变更：`industry_members` 升到 schema 版本 2，新增 6 列层级列（见下文），新写入的东财行 `industry_code` 固定为三级行业；按固定层级统计请读 `l1_*`..`l3_*`。旧湖运行 `cne migrate` 预览、再 `cne migrate --apply`，补齐本版四步一次性迁移：`industry-levels`（在线读取东财当前板块层级）、`sw-delisted`、`offshore-final`（在线读取新浪 COMEX 黄金最终日线）和 `sw-never-listed`。基金派生状态行要标为非 ST 的，另按窗口运行 `cne repair status-traded --start … --end … --apply`。时点读取的截点改按北京时间日期判定，`as_of=T` 不再包含 T 日公告。EquityLab 等下游的消费契约无需改动。
-- `load_profile` 新增 `pit_mode="published"`：只认记录了发布时间的值，不用公告日或入湖日代替，且不早于值生效日；`cutoff` 指定截至日的北京时间截点（收盘信号用 15:00），过了截点的发布从下一天起可见。另加 `canonical`（按当日生效代码匹配）、`data_root` 和 `revision_map`（固定版本读取）。
-- 新增 `cnequity.query.load_profile`：一次取多只证券、多个截至日的多项时点资料（上市、交易状态与 ST、股本、股东户数、财报科目、申万/东财各级行业），每个值带它描述的日期、最早可知日、来源和时点质量（`strict` / `reconstructed` / `snapshot_only`），缺失的值给出原因（上市前、退市后、超出覆盖、尚未公布、值未知、无时点证据、无记录），过旧的值标 `stale`。每个数据集只读一次，全市场 12 个截至日 8 个字段约 19 秒。
-- 申万行业快照不再包含从未上市的证券：申万在 IPO 审核阶段就给公司定行业，且文件没有剔除日期，IPO 未完成的公司会一直留在之后每个月的快照里。本湖有 12 个这样的代码（2010–2023 年定类，如 002525.SZ、601206.SH、874090.BJ），在证券主表、日线、交易状态和公告里都没有任何记录，东财也不列出。只有四类记录全都没有才剔除；回填时剔除，旧湖用 `cne migrate --apply` 删除。剔除的证券记在 `meta/sw_never_listed.json`，`cne verify --industry` 以 `excluded_never_listed` 继续列出。
-- 新增 `cne migrate` 一步 `offshore-final`：替换 COMEX 黄金（`GC0.CMX`）在 CME 交易时段结束前存入的日线。写入端已改为收盘后才写、并重读最近 7 天，但更早的盘中值没有被替换；本湖 1,758 行中有 23 行收盘价与新浪最终值不同，最大差 3.5%（2026-08-19 存 4425.6，最终 4580.7），另缺 2026-09-25 一行。迁移在线读取新浪最终日线一次，只改有差异或缺失的行。
-- 新增 `cne derive industry_crosswalk`：在申万与东财都有完整快照的同一天，按层级比较两边行业的成员，写出每对行业的成员数、重叠数、Jaccard、相互包含比例和关系（等价、被包含、部分重叠）到 `meta/industry_crosswalk.parquet`。只用同日证据、只比较两边当天都有的股票；0.20 之前的东财快照层级不全，不作证据。每次运行追加当天证据、保留更早的日期，不合并任何行业。
-- 申万行业和国证指数成分按月回填只取已经结束的月份：此前当月最后一个已知交易日也被当作“月末”，周日运行会生成日期为下一个（尚未开盘的）交易日的快照。
-- 新增 `cne derive industry_taxonomy`：为每个行业写一个稳定身份 `industry_id = 体系:版本:代码` 到 `meta/industry_taxonomy.parquet`，带层级、名称、上级、首末出现日期和最大成员数。申万 2021 年 7
+*（无更新说明）*
 
 ---
 
-### [crimera/piko](https://github.com/crimera/piko) `🧪 测试版` `v3.11.0-dev.3`
+### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `bf7ba74`
 
-发布时间：2026-10-25（2 小时前）｜ [查看 Release](https://github.com/crimera/piko/releases/tag/v3.11.0-dev.3)
-
-## 3.11.0-dev.3 (2026-10-25)
-
-### 错误修复
-
-* **Instagram：** 使用 Patcher 2.0.1 修复隐藏提要帖子 (abfc1c7)
-
-### 改进
-
-* **Instagram：** 尊重设置依赖性 (a9f4ad0)
-* **Instagram：** 恢复推荐补丁并完成补丁状态报告 (eb8b4db)
-
-<details><summary>查看原文</summary>
-
-## 3.11.0-dev.3 (2026-10-25)
-
-###  Bug Fixes
-
-* **Instagram:** Fix hide feed posts with Patcher 2.0.1 (abfc1c7)
-
-###  Improvements
-
-* **Instagram:** Respect settings dependencies (a9f4ad0)
-* **Instagram:** Restore recommended patches and complete patch status reporting (eb8b4db)
-
-</details>
-
----
-
-### [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) `📝 提交` `d90e470`
-
-发布时间：2026-10-25（1 小时前）｜ [查看提交](https://github.com/Aethersailor/Custom_OpenClash_Rules/commit/d90e470ddc769bccd518dea5299f3525efddeb3d)
-
-*（原文，翻译暂不可用）*
-
-chore(deps-dev): bump wrangler from 4.151.3 to 4.152.0 in /workers/repository-mirror in the routine-updates group (#426)
-
----
-
-### [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) `🧪 测试版` `draft`
-
-发布时间：2026-10-25（31 分钟前）｜ [查看 Release](https://github.com/hiddify/hiddify-app/releases/tag/draft)
-
-**根据您的操作系统下载：**
-
-**根据您的操作系统下载：**
-
-## 下载
-
-操作系统
-下载
-下载
-病毒总数
-
-安卓
-
-通用APK 
-
-APK ARMv8 
-
-APK ARMv7 
-
-64位APK 
-
-窗户
-
-设置x64 
-
-macOS（v10.15+）
-
-DMG 通用 
-
-Linux
-
-Deb 包 x64 
-
-**所有更改列表：** 更改日志
-
-<details><summary>查看原文</summary>
-
-**Download based on your OS:**
-
-**بر اساس سیستم عامل خود دانلود کنید:**
-
-## Downloads
-
-OS
-Download
-Downloads
-VirusTotal
-
-Android
-
-APK Universal 
-
-APK ARMv8 
-
-APK ARMv7 
-
-APK x64 
-
-Windows
-
-Setup x64 
-
-macOS (v10.15+)
-
-DMG Universal 
-
-Linux
-
-DebPackage x64 
-
-**List of all changes:** ChangeLog
-
-</details>
-
----
-
-### [adysec/tracker](https://github.com/adysec/tracker) `📝 提交` `9142b0c`
-
-发布时间：2026-10-25（1 小时前）｜ [查看提交](https://github.com/adysec/tracker/commit/9142b0c15ea11acf8445117ac7564c55c7d08fe8)
+发布时间：2026-10-25（25 分钟前）｜ [查看提交](https://github.com/adysec/tracker/commit/bf7ba7496ca71e71cc933e4791a90231ca3fb454)
 
 *（原文，翻译暂不可用）*
 
@@ -157,28 +22,38 @@ DebPackage x64
 
 ---
 
+### [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) `✅ 正式版` `v2026.10.25-8480.1f481e4`
+
+发布时间：2026-10-25（1 小时前）｜ [查看 Release](https://github.com/DIYgod/RSSHub/releases/tag/v2026.10.25-8480.1f481e4)
+
+*（原文，翻译暂不可用）*
+
+Source commit: 1f481e461da07398cdbc3961414e397b9eb91948
+
+---
+
 ## 📋 全部项目（按最近更新排序）
 
 | 项目 | 最新版本 | 类型 | 更新时间 | 距今 |
 |---|---|---|---|---|
-| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.20.0` | 正式版 | 2026-10-25 | 15 分钟前 |
-| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-25 | 31 分钟前 |
-| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-25 | 1 小时前 |
-| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-25 | 1 小时前 |
-| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.3` | 测试版 | 2026-10-25 | 2 小时前 |
-| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-25 | 6 小时前 |
-| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.5.0-alpha.3` | 测试版 | 2026-10-25 | 7 小时前 |
-| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-25 | 8 小时前 |
-| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.25.1-release` | 正式版 | 2026-10-25 | 8 小时前 |
-| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.25-8479.a8d10ca` | 正式版 | 2026-10-25 | 9 小时前 |
-| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.12.1` | 正式版 | 2026-10-25 | 11 小时前 |
-| [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo) | `v2.5.2` | 正式版 | 2026-10-25 | 16 小时前 |
-| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.13` | 正式版 | 2026-10-25 | 18 小时前 |
-| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-25 | 19 小时前 |
-| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-25 | 19 小时前 |
-| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610242236` | 正式版 | 2026-10-24 | 21 小时前 |
-| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-24 | 22 小时前 |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-24 | 22 小时前 |
+| [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules) | `202610252236` | 正式版 | 2026-10-25 | 20 分钟前 |
+| [adysec/tracker](https://github.com/adysec/tracker) | — | 提交 | 2026-10-25 | 25 分钟前 |
+| [DIYgod/RSSHub](https://github.com/DIYgod/RSSHub) | `v2026.10.25-8480.1f481e4` | 正式版 | 2026-10-25 | 1 小时前 |
+| [rootSunc/CNEquity](https://github.com/rootSunc/CNEquity) | `v0.20.0` | 正式版 | 2026-10-25 | 2 小时前 |
+| [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) | `draft` | 测试版 | 2026-10-25 | 3 小时前 |
+| [Aethersailor/Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules) | — | 提交 | 2026-10-25 | 3 小时前 |
+| [crimera/piko](https://github.com/crimera/piko) | `v3.11.0-dev.3` | 测试版 | 2026-10-25 | 5 小时前 |
+| [johamwon/wechrss](https://github.com/johamwon/wechrss) | — | 提交 | 2026-10-25 | 8 小时前 |
+| [UniClipboard/UniClipboard](https://github.com/UniClipboard/UniClipboard) | `v1.5.0-alpha.3` | 测试版 | 2026-10-25 | 10 小时前 |
+| [1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer) | — | 提交 | 2026-10-25 | 10 小时前 |
+| [ArvinLovegood/go-stock](https://github.com/ArvinLovegood/go-stock) | `v2026.10.25.1-release` | 正式版 | 2026-10-25 | 11 小时前 |
+| [Inginnng/EditHere](https://github.com/Inginnng/EditHere) | `v0.12.1` | 正式版 | 2026-10-25 | 14 小时前 |
+| [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo) | `v2.5.2` | 正式版 | 2026-10-25 | 18 小时前 |
+| [Kindness-Kismet/AstraGram-Desktop](https://github.com/Kindness-Kismet/AstraGram-Desktop) | `v7.3.1.13` | 正式版 | 2026-10-25 | 21 小时前 |
+| [appshubcc/bett-rules](https://github.com/appshubcc/bett-rules) | `latest` | 正式版 | 2026-10-25 | 22 小时前 |
+| [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection) | — | 提交 | 2026-10-25 | 22 小时前 |
+| [bilibili/Index-Translate](https://github.com/bilibili/Index-Translate) | — | 提交 | 2026-10-24 | 1 天前 |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | — | 提交 | 2026-10-24 | 1 天前 |
 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | `v4.29.3` | 正式版 | 2026-10-24 | 1 天前 |
 | [mason173/aira-browser](https://github.com/mason173/aira-browser) | `v3.8.4` | 正式版 | 2026-10-24 | 1 天前 |
 | [xiaoyaDev/xiaoya-alist](https://github.com/xiaoyaDev/xiaoya-alist) | — | 提交 | 2026-10-24 | 1 天前 |
@@ -219,7 +94,7 @@ DebPackage x64
 | [HuangZhuoRui/LocationSpoofer](https://github.com/HuangZhuoRui/LocationSpoofer) | `v3.0.20` | 正式版 | 2026-10-18 | 7 天前 |
 | [kenischu/ReSource](https://github.com/kenischu/ReSource) | `3.0.8` | 正式版 | 2026-10-18 | 7 天前 |
 | [Niklaus88/Clash-Config](https://github.com/Niklaus88/Clash-Config) | — | 提交 | 2026-10-17 | 8 天前 |
-| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 8 天前 |
+| [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | `v0.7.0` | 正式版 | 2026-10-16 | 9 天前 |
 | [1zumiii/AppOpsNext](https://github.com/1zumiii/AppOpsNext) | `v1.6.5` | 正式版 | 2026-10-16 | 9 天前 |
 | [Teamper/JHS](https://github.com/Teamper/JHS) | `v6.5.2` | 正式版 | 2026-10-16 | 9 天前 |
 | [waditu/czsc](https://github.com/waditu/czsc) | `v1.0.2` | 正式版 | 2026-10-16 | 9 天前 |
@@ -239,7 +114,7 @@ DebPackage x64
 | [clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev) | `v2.5.8` | 正式版 | 2026-10-09 | 16 天前 |
 | [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) | — | 提交 | 2026-10-08 | 17 天前 |
 | [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader) | `desktop-v0.12.5` | 正式版 | 2026-10-08 | 17 天前 |
-| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 17 天前 |
+| [hoothin/UserScripts](https://github.com/hoothin/UserScripts) | — | 提交 | 2026-10-07 | 18 天前 |
 | [reeden-org/reeden-app](https://github.com/reeden-org/reeden-app) | `v1.43.1` | 正式版 | 2026-10-07 | 18 天前 |
 | [AyuGram/AyuGramDesktop](https://github.com/AyuGram/AyuGramDesktop) | `v7.2.9` | 正式版 | 2026-10-05 | 20 天前 |
 | [HyNetworks/hysteria](https://github.com/HyNetworks/hysteria) | `app/v2.13.0` | 正式版 | 2026-10-05 | 20 天前 |
