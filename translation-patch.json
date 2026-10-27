@@ -5778,5 +5778,9 @@
   "rel:424280545": {
     "zh": "## 有所闻 NewsNook v1.9.1-beta.8\n### 阅读与翻译\n- 翻译新增「双语对照」「仅显示译文」展示模式，阅读器可按偏好在原文与译文间切换。\n### 订阅与界面\n- 首页各布局统一品牌标识与标语展示。\n- 修复首页布局切换未正确接到 FeedScreen 的问题。\n- 信息流顶栏品牌标识随主题变化，紧凑布局下 Logo 对齐更稳。\n- 若干界面样式与间距微调。\n### 其它\n- 版本号 1.9.1-beta.8",
     "hash": "2239316734"
+  },
+  "rel:424962508": {
+    "zh": "- 支持在外观设置中隐藏侧边栏示例入口 -  (eb1ce)\n- 升级 twilight v0.9.0 并将模型配置迁移到 v2 结构 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1574  (16e60)\n- 服务商页面分为订阅与其他 LLM 服务商 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1619  (998b7)\n- 一次压缩事件折叠全部可折叠内容，run 内在步骤边界原位续跑 -  (58cb0)\n- 一轮之内的请求只追加，工具结果在产生时一次性截断 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1654  (ca781)\n- Retry、edit 与 native Discuss 接入 run 内压缩 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1661  (c0f2f)\n- 通过 Markdown 引用发布图片和文件 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1196  (d4bab)\n- 斜杠菜单列出 Claude Code 已安装的 skill -  (93ce6)\n- Run 内折叠在 run 的上一个请求末尾请求摘要，复用 provider 的前缀缓存 -  (17a60)\n- Get_messages 可按 ref 分页读回当前会话的原始工具结果 -  (79074)\n- 服务端管理 models.dev 目录与模型导入 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1575  (45039)\n- 支持手机端添加到主屏幕(PWA manifest 与图标) -  (5d6f2)\n- 删除 Bot 需输入 Bot URL 确认 -  (6c8ec)\n- 恢复 /data/skills/<name> 作为用户技能位置 - by  and **Claude Opus 5.5 (1M context)** in https://github.com/felinics/Memoh/issues/1629  (4f0e6)\n- 清零 Web 类型检查存量错误并改为 CI 硬门禁 -  (2ebe0)\n- 切换 Bot 时不再中止原 Bot 正在进行的任务 -  (6f140)",
+    "hash": "190061152"
   }
 }

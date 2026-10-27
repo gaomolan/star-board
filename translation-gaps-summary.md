@@ -1,25 +1,25 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-27T03:10:58.731Z
+生成时间：2026-10-27T09:30:16.593Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
-- 仓库数：175
-- 缓存条目数：2030
-- Release 总数：9245
-- 符合检查条件的 Release：5397
-- 有效缓存：1881
-- 缺失译文：3509
+- 仓库数：176
+- 缓存条目数：2031
+- Release 总数：9257
+- 符合检查条件的 Release：5407
+- 有效缓存：1882
+- 缺失译文：3518
 - 哈希过期：7
 - 无效译文：0
 - 跳过（作者已提供中文）：142
-- 跳过（原文过短或中文占比过高）：3706
+- 跳过（原文过短或中文占比过高）：3708
 
 ## 缺口分类
 
-- missing：3509
+- missing：3518
 - stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
@@ -67,6 +67,7 @@
 - [AstrBotDevs/AstrBot — v3.0.0](https://github.com/AstrBotDevs/AstrBot/releases/tag/v3.0.0) — `rel:98657778`（missing）
 - [AstrBotDevs/AstrBot — Windows启动器  V2.4](https://github.com/AstrBotDevs/AstrBot/releases/tag/publish2.4) — `rel:94169456`（missing）
 - [AstrBotDevs/AstrBot — Windows启动器  V2.0](https://github.com/AstrBotDevs/AstrBot/releases/tag/publish) — `rel:88294298`（missing）
+- [mason173/aira-browser — Aira Community 3.9.1 (1000562)](https://github.com/mason173/aira-browser/releases/tag/v3.9.1) — `rel:425231101`（missing）
 - [mason173/aira-browser — Aira Community 3.5.4 (1000485)](https://github.com/mason173/aira-browser/releases/tag/v3.5.4) — `rel:401046016`（missing）
 - [mason173/aira-browser — Aira Community 3.5.2 (1000479)](https://github.com/mason173/aira-browser/releases/tag/v3.5.2) — `rel:399028856`（missing）
 - [mason173/aira-browser — Aira Community 3.4.3 (1000472)](https://github.com/mason173/aira-browser/releases/tag/v3.4.3) — `rel:398132675`（missing）
@@ -120,9 +121,8 @@
 - [rootSunc/CNEquity — 0.3.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.3.0) — `rel:361454452`（missing）
 - [rootSunc/CNEquity — 0.2.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.2.0) — `rel:360287162`（missing）
 - [rootSunc/CNEquity — v0.1.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.1.0) — `rel:360147523`（missing）
-- [felinics/Memoh — v1.0.0-beta.1](https://github.com/felinics/Memoh/releases/tag/v1.0.0-beta.1) — `rel:424962508`（missing）
 - [felinics/Memoh — v0.18.0](https://github.com/felinics/Memoh/releases/tag/v0.18.0) — `rel:371942860`（missing）
 - [felinics/Memoh — v0.17.0](https://github.com/felinics/Memoh/releases/tag/v0.17.0) — `rel:361716395`（missing）
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 
-其余 3416 条详见 Actions 工件 `translation-gaps`。
+其余 3425 条详见 Actions 工件 `translation-gaps`。
