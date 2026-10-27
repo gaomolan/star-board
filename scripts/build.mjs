@@ -778,10 +778,15 @@ async function main() {
   for (const k of Object.keys(state.pushed)) {
     if (now - state.pushed[k] > 7 * 86400 * 1000) delete state.pushed[k];
   }
-  const toPush = fresh.filter(r => {
+  const toPushAll = fresh.filter(r => {
     const pid = r.latest ? `rel:${r.latest.id}` : (r.commit ? `commit:${r.commit.sha}` : null);
     return pid && !state.pushed[pid];
   });
+  // 试行（2026-10-27 起）：仅提交（无 release）的条目不推送 Telegram，看板端照常展示；
+  // 恢复推送时把 PUSH_COMMIT_ONLY 改回 true 即可
+  const PUSH_COMMIT_ONLY = false;
+  const toPush = PUSH_COMMIT_ONLY ? toPushAll : toPushAll.filter(r => r.latest);
+  if (toPushAll.length > toPush.length) console.log(`Telegram 试行：跳过仅提交条目 ${toPushAll.length - toPush.length} 条`);
   if (!isFirstRun && toPush.length > 0 && TG_TOKEN && TG_CHAT) {
     await sendDigest(toPush, state);
     // 记录已推送
@@ -793,7 +798,7 @@ async function main() {
   } else if (!TG_TOKEN || !TG_CHAT) {
     console.log('未配置 Telegram，跳过推送');
   } else if (fresh.length > 0 && toPush.length === 0) {
-    console.log(`Telegram 跳过 ${fresh.length} 条（均已推送过）`);
+    console.log(`Telegram 跳过 ${fresh.length} 条（已推送过/仅提交试行）`);
   }
 }
 
