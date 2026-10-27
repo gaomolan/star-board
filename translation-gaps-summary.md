@@ -1,6 +1,6 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-26T23:03:44.092Z
+生成时间：2026-10-27T03:10:58.731Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
@@ -8,10 +8,10 @@
 
 - 仓库数：175
 - 缓存条目数：2030
-- Release 总数：9244
-- 符合检查条件的 Release：5396
+- Release 总数：9245
+- 符合检查条件的 Release：5397
 - 有效缓存：1881
-- 缺失译文：3508
+- 缺失译文：3509
 - 哈希过期：7
 - 无效译文：0
 - 跳过（作者已提供中文）：142
@@ -19,7 +19,7 @@
 
 ## 缺口分类
 
-- missing：3508
+- missing：3509
 - stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
@@ -120,9 +120,9 @@
 - [rootSunc/CNEquity — 0.3.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.3.0) — `rel:361454452`（missing）
 - [rootSunc/CNEquity — 0.2.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.2.0) — `rel:360287162`（missing）
 - [rootSunc/CNEquity — v0.1.0](https://github.com/rootSunc/CNEquity/releases/tag/v0.1.0) — `rel:360147523`（missing）
+- [felinics/Memoh — v1.0.0-beta.1](https://github.com/felinics/Memoh/releases/tag/v1.0.0-beta.1) — `rel:424962508`（missing）
 - [felinics/Memoh — v0.18.0](https://github.com/felinics/Memoh/releases/tag/v0.18.0) — `rel:371942860`（missing）
 - [felinics/Memoh — v0.17.0](https://github.com/felinics/Memoh/releases/tag/v0.17.0) — `rel:361716395`（missing）
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
-- [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
 
-其余 3415 条详见 Actions 工件 `translation-gaps`。
+其余 3416 条详见 Actions 工件 `translation-gaps`。
