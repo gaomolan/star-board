@@ -7,7 +7,7 @@
  *
  * 环境变量：
  *   GH_USER / GITHUB_TOKEN(GH_TOKEN)   GitHub 用户名与 token（Actions 里自动提供）
- *   REPO_SLUG                           本仓库 slug（如 ly6980/star-board），用于看板内链接
+ *   REPO_SLUG                           本仓库 slug（如 gaomolan/star-board），用于看板内链接
  *   TRANSLATE_API_URL                   主翻译源（默认 https://api.life-pulse.io/v1，OpenAI 兼容）
  *   TRANSLATE_API_KEY                   主翻译源 key（可选）
  *   TRANSLATE_MODEL                     主翻译模型（默认 tencent/Hy-MT2-30B-A3B）
@@ -22,7 +22,7 @@ import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 // ---------------- 配置 ----------------
-const GH_USER = process.env.GH_USER || 'ly6980';
+const GH_USER = process.env.GH_USER || 'gaomolan';
 const GH_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
 const REPO_SLUG = process.env.REPO_SLUG || '';
 const STATE_PATH = process.env.STATE_PATH || 'state.json';
