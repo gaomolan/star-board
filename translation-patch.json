@@ -5846,5 +5846,17 @@
   "rel:423850278": {
     "zh": "yaf 最初的简单版本：跑在 Cloudflare Workers + D1 上的 flomo 风格笔记应用，没有 AI、API 和微信。想要一个精简的起点来 fork，可以用这个标签。\n- Memos in Markdown, `#tags` with nesting, tag filter · Markdown memo、层级标签、按标签筛选\n- Keyword search, export to Markdown / JSON · 关键词搜索、导出 Markdown / JSON\n- Email + password login, light / dark themes, stats and heatmap · 邮箱密码登录、亮暗主题、统计与热力图\nLicensed under AGPL-3.0 (see the LICENSE file on `main`). 以 AGPL-3.0 授权（见 `main` 分支的 LICENSE）。",
     "hash": "3005839822"
+  },
+  "rel:426764705": {
+    "zh": "## 有所闻 NewsNook v1.9.2-beta.1\n### 其它\n- 开启 1.9.2 Beta 周期；内容与正式版 1.9.1 同基线，供后续迭代。\n- 版本号 1.9.2-beta.1",
+    "hash": "1496945970"
+  },
+  "rel:426759776": {
+    "zh": "## 有所闻 NewsNook v1.9.1\n### 内置浏览器与 AI\n- 新增端侧 AI 浏览器 Agent（BYOK）：空白页可自主 ReAct 调用原生工具；浮动工作台可拖拽，支持息屏/后台维持任务。\n- 隐私书签改为连点五下揭示，降低误触暴露。\n- 浏览器顶栏可展示已识别媒体并直接播放；大图预览改为流式加载并限制移动端占用。\n### 阅读与媒体\n- 内置播放器升级为 Ink Player V2：沉浸式控件、无框悬浮窗；完善双指缩放、横向切集与进度反馈。\n- 修复 RSS 图文内嵌视频被误判为纯视频、正文只剩短摘要的问题（#85）。\n- 翻译新增「双语对照」「仅显示译文」展示模式。\n- 改进 RSS/Atom/JSON Feed 正文完整性识别与离线缓存，减少断段、裂图与错误付费墙提示。\n### 订阅与发现\n- 支持粘贴 rsshub:// 逻辑地址，经已配置实例探测可用源；改进 X/Twitter 用户路由识别与实例回退（#86）。\n- 列表封面缺失时自动补回；头条封面补救失败后仍保留固定高度，避免信息流跳动。\n### 知乎与界面\n- 知乎用户支持本地备注名与标签，按账户隔离、仅存本机（#83）。\n- 首页各布局统一品牌标识与标语；分类栏/信源筛选样式对齐；预设切换器按平台处理内置浏览器入口。\n### 其它\n- 冷启动与导航切换更顺；AI Provider 可显式允许明文 HTTP（默认仍为 HTTPS）。\n- 版本号 1.9.1",
+    "hash": "1036374528"
+  },
+  "rel:426919879": {
+    "zh": "## :mega: 获取其他软件包 / How to Get Other Packages\n### 方式 1：添加软件源 / Method 1: Add Software Source\n * 请按照 openwrt-passwall-build 仓库的说明，将其提供的软件源添加到设备中，然后直接使用包管理器安装。\n## :rocket: 配套固件与工具 / Firmwares & Tools\n### :fire: OpenWrtAction —— 集成 Passwall 的 CI 固件 / Ready-to-use firmware with Passwall\n* 集成官方 OpenWrt 25.12、ImmortalWrt 25.12、Lean (Snapshot) 固件，支持 x86、R2S、R2C、R4S、R5S、R5C、H66K、H68K、H69K、R66S、R68S 等设备，刷入即用。\n* 支持 GitHub 一键更新：直接从 GitHub Releases 在线升级固件，无需手动下载和刷写。\n### :package: Are-u-ok —— iStoreOS .run 更新包 / iStoreOS .run update packages\n* 为 iStoreOS 提供 .run 格式更新包，无需重刷固件，上传执行即可安装/升级。",
+    "hash": "2311522781"
   }
 }
