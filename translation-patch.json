@@ -4473,7 +4473,7 @@
   },
   "rel:169820418": {
     "zh": "我应该下载哪个文件? / Which file should I download?\n二进制文件筛选 / Binary file selector\n查看文档 / Docs",
-    "hash": "185227764"
+    "hash": "2548673354"
   },
   "rel:71114178": {
     "zh": "- Hysteria协议支持\n  # 部分配置\n     up: 40 #默认为Mbps\n- Shadowsocks-2022加密方式支持\n  Shadowsocks-2022采用预共享密钥方式作为密码，不同加密方式对密钥长度有要求，可参考 Xray\n- Shadowsocks 支持UDP over TCP(Xray-core v1.5.7)",
@@ -5838,5 +5838,13 @@
   "rel:419756537": {
     "zh": "TikTools 首个公开版本，版本号 **0.4.0 / 5**。\n- 地区和城市预设、地图点选及本机设备字段，减少手填参数不一致。\n- 分组控制 SIM/网络、语言、时区、定位、基站、Wi-Fi 和设备信息。\n- TikTok 界面规则、关键词评论过滤、ML Kit 本机翻译及当前可识别视频保存入口。\n- 新应用 ID `io.github.sunisup666.tiktools`；提供旧 TrillKit 配置和语言模型迁移工具。\n- 公开源码、构建脚本、实机验证脚本及给其他 Agent 的应用插件分析指南。\n需要 Android 13+、ARM64，以及 Vector 或兼容的 LSPosed / Xposed 框架。实机验证环境为 Redmi K40 / Android 17 / Vector 2.2 / TikTok `com.ss.android.ugc.trill` 47.4.3。其他 TikTok 包名和版本仍需验证；部分界面规则只能匹配已识别的小视图，视频保存不支持直播、图片帖、DRM 或分段流。\n旧版与新版请勿同时启用。迁移方式、功能边界及隐私说明见 README，具体验证结果和摘要见附件 `build-info.json` 与 `SHA256SUMS.txt`。\n本轮已通过配置/模型迁移、六组接口探针、六个设置页、预设与地图、评论过滤及正常配置冷启动。两轮保存测试未识别到可明确对应当前内容的直链，端到端保存本轮未验证通过；详见 测试记录。\n安装 `TikTools-0.4.0.apk`。源码归档不含签名私钥、手机配置、截图或备份。",
     "hash": "3764007408"
+  },
+  "rel:426503322": {
+    "zh": "## 更新内容\n- 已审核通过的免费账号可使用 OpenStreetMap 普通地图和地点搜索。\n- 免费账号可使用定点模拟、路线模拟、路线录制、收藏及云备份，模拟范围仍限已批准的应用。\n- 自己采集的 WiFi 和基站数据可用于本地模拟；云端 WiFi、基站数据仍需有效会员。\n- Google 平面图、卫星图、搜索、逆地理编码及道路规划继续仅对会员开放。\n- 优化地图和搜索缓存，合并重复请求，减少重复加载；OSM 署名移至地图左上角。\n- 修复已审核免费账号仍被购买会员页面拦截的问题，完善授权状态显示。\n## 下载\n### 手机端\n### 模拟器\n| 平台 | 架构 | 安装包 |\n| macOS | ARM64 | 开发中 |\n| Windows | x86 | 开发中 |",
+    "hash": "129965479"
+  },
+  "rel:423850278": {
+    "zh": "yaf 最初的简单版本：跑在 Cloudflare Workers + D1 上的 flomo 风格笔记应用，没有 AI、API 和微信。想要一个精简的起点来 fork，可以用这个标签。\n- Memos in Markdown, `#tags` with nesting, tag filter · Markdown memo、层级标签、按标签筛选\n- Keyword search, export to Markdown / JSON · 关键词搜索、导出 Markdown / JSON\n- Email + password login, light / dark themes, stats and heatmap · 邮箱密码登录、亮暗主题、统计与热力图\nLicensed under AGPL-3.0 (see the LICENSE file on `main`). 以 AGPL-3.0 授权（见 `main` 分支的 LICENSE）。",
+    "hash": "3005839822"
   }
 }
