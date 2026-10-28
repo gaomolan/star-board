@@ -5806,5 +5806,37 @@
   "rel:415505315": {
     "zh": "## What's New / 更新亮点\n### 中文\n- **macOS 自动粘贴回到正确输入框。** 悬浮窗会释放键盘焦点并保留用户选择的输入框；可读取的编辑器会核对落点，不会对不确定结果静默重复粘贴。\n- **悬浮听写反馈更顺滑。** 录音、处理和完成状态保持稳定位置，动效与脉冲节奏更均衡。\n- **各条工作流共享完整版提示词。** 日常听写、提示词工作室和快捷键任务共享同一套语言、上下文与排版规则；长内容会自动分段并用数字列出要点。\n- **首次使用更顺畅。** 识别引擎遵循听写语言，模型在后台准备，引导完成后进入账户首页。\n- **Pro 与邀请权益统一。** 注册登录后在活动期间持续享受 Pro；已有授权码仍可直接使用。符合条件的邀请让双方各得 30 天增量 Pro，邀请奖励长期有效。\n- **更容易发现 AI 润色。** 检测到有效 Pro 后自动打开润色入口，同时保留用户主动关闭的选择。",
     "hash": "2966084860"
+  },
+  "rel:423757478": {
+    "zh": "1. 适配 QQ 9.3.0+\n2. 重绘模块入口图标\n3. 其他功能优化，提升稳定性",
+    "hash": "3732374123"
+  },
+  "rel:423180311": {
+    "zh": "1. 重大更新，适配全新 UI\n2. 适配 libxposed API，可选择继续下载 legacy 版本\n3. 更新 API 37\n4. 适配 QQ 9.2.0+\n5. 其他功能优化，提升稳定性",
+    "hash": "3565236861"
+  },
+  "rel:126042496": {
+    "zh": "1. 使用 DexKit 来动态适配每个版本的 QQ\n2. 更新底层 Hook API\n3. 更新 API 34\n4. 其它功能优化，提升稳定性",
+    "hash": "1784527176"
+  },
+  "rel:423200398": {
+    "zh": "- 适配 X 12.37.2-prod.01，更新浏览历史、自动翻译、图库与视频下载、最高画质、停止自动连播、广告过滤和自动刷新控制。<br>\n- 修复摘要重访覆盖历史全文，以及分享链接净化未写回的问题。<br>\n- 修复部分图片原图地址及自定义命名处理；设置保存失败时保留待保存内容并提示重试。<br>\n- 改进翻译语言判断和下载结果排查信息。<br>\n你的 Star 是我持续适配和更新 XTQ 的最大动力。每一颗 Star 都是对我的鼓励！<br>\n项目 / Project: https://github.com/Xposed-Modules-Repo/com.tianqianguai.xtq\n交流群 / Group: https://t.me/XTQ_Offical\n发布频道 / Release channel: https://t.me/zhongjitianqianguai3",
+    "hash": "1870017712"
+  },
+  "rel:420210684": {
+    "zh": "- 适配 X 12.36.1-prod.01，恢复浏览历史、自动翻译、原图与视频下载、最高画质、停止自动连播、广告过滤及自动刷新控制的新版兼容性。<br>\n- 改进排查信息分享，准备附件时显示进度提示，并标注日志时间、版本、会话及记录完整性，便于识别旧日志和缺失记录。<br>\n你的 Star 是我持续适配和更新 XTQ 的最大动力。每一颗 Star 都是对我的鼓励！<br>\n项目主页 / Project: https://github.com/Xposed-Modules-Repo/com.tianqianguai.xtq\n交流群 / Community: https://t.me/XTQ_Offical\n发布频道 / Release channel: https://t.me/zhongjitianqianguai3",
+    "hash": "4137413222"
+  },
+  "rel:415636191": {
+    "zh": "- 适配 X 12.35.0-prod.01，恢复浏览历史、自动翻译、原图与视频下载、最高画质、停止自动连播、广告过滤及自动刷新控制的新版兼容性。<br>\n- 修复新版侧栏中浏览历史的图标，恢复时钟样式。<br>\n- 改进排查信息，补充模块加载状态与更完整的性能统计，便于定位问题。<br>\n保留现有功能、设置与默认值，无功能移除。<br>\n你的 Star 是我持续适配和更新 XTQ 的最大动力。每一颗 Star 都是对我的鼓励！<br>\n项目 / Project: https://github.com/Xposed-Modules-Repo/com.tianqianguai.xtq<br>\n交流群 / Community: https://t.me/XTQ_Offical<br>\n发布频道 / Release channel: https://t.me/zhongjitianqianguai3",
+    "hash": "1836926795"
+  },
+  "rel:424347188": {
+    "zh": "## English settings / 英文设置\n- Open **Overview → App language** and choose **Follow system**, **English**, or **简体中文**. This also syncs with Android 13+ system app-language settings.\n在“概览 → 界面语言”切换跟随系统、English 或简体中文。设置页、地图、预设名称和校验提示支持中英双语；原参数和功能开关保留。",
+    "hash": "2344078227"
+  },
+  "rel:419756537": {
+    "zh": "TikTools 首个公开版本，版本号 **0.4.0 / 5**。\n- 地区和城市预设、地图点选及本机设备字段，减少手填参数不一致。\n- 分组控制 SIM/网络、语言、时区、定位、基站、Wi-Fi 和设备信息。\n- TikTok 界面规则、关键词评论过滤、ML Kit 本机翻译及当前可识别视频保存入口。\n- 新应用 ID `io.github.sunisup666.tiktools`；提供旧 TrillKit 配置和语言模型迁移工具。\n- 公开源码、构建脚本、实机验证脚本及给其他 Agent 的应用插件分析指南。\n需要 Android 13+、ARM64，以及 Vector 或兼容的 LSPosed / Xposed 框架。实机验证环境为 Redmi K40 / Android 17 / Vector 2.2 / TikTok `com.ss.android.ugc.trill` 47.4.3。其他 TikTok 包名和版本仍需验证；部分界面规则只能匹配已识别的小视图，视频保存不支持直播、图片帖、DRM 或分段流。\n旧版与新版请勿同时启用。迁移方式、功能边界及隐私说明见 README，具体验证结果和摘要见附件 `build-info.json` 与 `SHA256SUMS.txt`。\n本轮已通过配置/模型迁移、六组接口探针、六个设置页、预设与地图、评论过滤及正常配置冷启动。两轮保存测试未识别到可明确对应当前内容的直链，端到端保存本轮未验证通过；详见 测试记录。\n安装 `TikTools-0.4.0.apk`。源码归档不含签名私钥、手机配置、截图或备份。",
+    "hash": "3764007408"
   }
 }
