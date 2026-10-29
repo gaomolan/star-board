@@ -5866,5 +5866,9 @@
   "rel:427554331": {
     "zh": "- 适配 X 12.38.1-prod.01，更新浏览历史、自动翻译、原图与视频下载、最高画质、广告过滤和自动刷新控制。<br>\n- 修复新版视频下载入口与停止自动连播，保留手动切换视频。<br>\n- 修复新版浏览历史的时钟图标，并清理帖子分享链接新增的归因参数。<br>\n你的 Star 是我持续适配和更新 XTQ 的最大动力。每一颗 Star 都是对我的鼓励！<br>\n项目 / Project: https://github.com/Xposed-Modules-Repo/com.tianqianguai.xtq\n交流群 / Group: https://t.me/XTQ_Offical\n发布频道 / Release channel: https://t.me/zhongjitianqianguai3",
     "hash": "3515238879"
+  },
+  "rel:428035362": {
+    "zh": "## 有所闻 NewsNook v1.9.2-beta.2\n### 阅读与媒体\n- 调整内置播放器控件显隐逻辑，暂停时点击更稳定地显示/隐藏控件。\n### 其它\n- 版本号 1.9.2-beta.2",
+    "hash": "4220949929"
   }
 }
