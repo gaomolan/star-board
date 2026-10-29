@@ -5862,5 +5862,9 @@
   "rel:427379033": {
     "zh": "## :mega: 获取其他软件包 / How to Get Other Packages\n### 方式 1：添加软件源 / Method 1: Add Software Source\n * 请按照 openwrt-passwall-build 仓库的说明，将其提供的软件源添加到设备中，然后直接使用包管理器安装。\n## :rocket: 配套固件与工具 / Firmwares & Tools\n### :fire: OpenWrtAction —— 集成 Passwall 的 CI 固件 / Ready-to-use firmware with Passwall\n* 集成官方 OpenWrt 25.12、ImmortalWrt 25.12、Lean (Snapshot) 固件，支持 x86、R2S、R2C、R4S、R5S、R5C、H66K、H68K、H69K、R66S、R68S 等设备，刷入即用。\n* 支持 GitHub 一键更新：直接从 GitHub Releases 在线升级固件，无需手动下载和刷写。\n### :package: Are-u-ok —— iStoreOS .run 更新包 / iStoreOS .run update packages\n* 为 iStoreOS 提供 .run 格式更新包，无需重刷固件，上传执行即可安装/升级。",
     "hash": "2311522781"
+  },
+  "rel:427554331": {
+    "zh": "- 适配 X 12.38.1-prod.01，更新浏览历史、自动翻译、原图与视频下载、最高画质、广告过滤和自动刷新控制。<br>\n- 修复新版视频下载入口与停止自动连播，保留手动切换视频。<br>\n- 修复新版浏览历史的时钟图标，并清理帖子分享链接新增的归因参数。<br>\n你的 Star 是我持续适配和更新 XTQ 的最大动力。每一颗 Star 都是对我的鼓励！<br>\n项目 / Project: https://github.com/Xposed-Modules-Repo/com.tianqianguai.xtq\n交流群 / Group: https://t.me/XTQ_Offical\n发布频道 / Release channel: https://t.me/zhongjitianqianguai3",
+    "hash": "3515238879"
   }
 }
