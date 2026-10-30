@@ -1,25 +1,25 @@
 # 历史译文缺口诊断
 
-生成时间：2026-10-30T02:18:25.902Z
+生成时间：2026-10-30T09:23:17.641Z
 
 > 本报告由工作流自动生成；仅诊断，不修改 state.json。
 
 ## 统计
 
-- 仓库数：185
+- 仓库数：188
 - 缓存条目数：2088
-- Release 总数：9332
-- 符合检查条件的 Release：5462
+- Release 总数：9340
+- 符合检查条件的 Release：5469
 - 有效缓存：1937
-- 缺失译文：3518
+- 缺失译文：3525
 - 哈希过期：7
 - 无效译文：0
-- 跳过（作者已提供中文）：158
+- 跳过（作者已提供中文）：159
 - 跳过（原文过短或中文占比过高）：3712
 
 ## 缺口分类
 
-- missing：3518
+- missing：3525
 - stale_hash：7
 
 ## 缺失译文条目（最多 100 条）
@@ -125,4 +125,4 @@
 - [felinics/Memoh — v0.16.0](https://github.com/felinics/Memoh/releases/tag/v0.16.0) — `rel:352564362`（missing）
 - [felinics/Memoh — v0.15.0](https://github.com/felinics/Memoh/releases/tag/v0.15.0) — `rel:350683560`（missing）
 
-其余 3425 条详见 Actions 工件 `translation-gaps`。
+其余 3432 条详见 Actions 工件 `translation-gaps`。
